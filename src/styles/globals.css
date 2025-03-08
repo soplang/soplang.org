@@ -3,27 +3,27 @@
 @tailwind utilities;
 
 :root {
-  --primary-color: #1E3A8A; /* Default blue */
-  --secondary-color: #F59E0B; /* Default orange */
-  --background-color: #FFFFFF;
-  --text-color: #333333;
-  --link-color: #1E3A8A;
-  --header-bg: #1E3A8A; /* Header background */
-  --footer-bg: #f6f6f6;
-  --nav-hover: #2563EB;
-  --border-color: #e0e0e0;
+  --primary-color: #3F72AF; /* Soft blue - easier on eyes */
+  --secondary-color: #5E9A78; /* Soft green - math education friendly */
+  --background-color: #F9F7F7; /* Very light gray with slight warmth */
+  --text-color: #333333; /* Dark gray but not pure black */
+  --link-color: #3F72AF; /* Matching primary */
+  --header-bg: #3F72AF; /* Header background */
+  --footer-bg: #F2F2F2; /* Light gray */
+  --nav-hover: #5085C1; /* Slightly lighter blue for hover */
+  --border-color: #DBE2EF; /* Light blue-gray */
 }
 
 .dark {
-  --primary-color: #3B82F6; /* Lighter blue for dark mode */
-  --secondary-color: #F59E0B; /* Same orange */
-  --background-color: #111827;
-  --text-color: #F9FAFB;
-  --link-color: #3B82F6;
-  --header-bg: #1E3A8A; /* Header background in dark mode */
-  --footer-bg: #1f2937;
-  --nav-hover: #3B82F6;
-  --border-color: #374151;
+  --primary-color: #5085C1; /* Lighter blue for dark mode */
+  --secondary-color: #6BAA88; /* Lighter green for dark mode */
+  --background-color: #1A202C; /* Dark blue-gray, not pure black */
+  --text-color: #E2E8F0; /* Off-white, not pure white */
+  --link-color: #5085C1; /* Matching dark mode primary */
+  --header-bg: #2D3748; /* Slightly lighter than background */
+  --footer-bg: #2D3748; /* Matching header */
+  --nav-hover: #5085C1; /* Same as primary */
+  --border-color: #4A5568; /* Medium gray */
 }
 
 body {
