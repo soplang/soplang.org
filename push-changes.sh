@@ -4,7 +4,7 @@
 git add .
 
 # Commit the changes
-git commit -m "Redesign website to match Python.org style with custom colors (primary: #1E3A8A, secondary: #F59E0B)"
+git commit -m "Update color scheme to be more eye-friendly for math education website (primary: #3F72AF, secondary: #5E9A78)"
 
 # Push to GitHub
 git push origin main
