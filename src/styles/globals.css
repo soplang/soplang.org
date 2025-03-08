@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-color: #1E3A8A; /* Default blue */
+  --secondary-color: #F59E0B; /* Default orange */
+  --background-color: #FFFFFF;
+  --text-color: #1F2937;
+}
+
+.dark {
+  --primary-color: #3B82F6; /* Lighter blue for dark mode */
+  --secondary-color: #F59E0B; /* Same orange */
+  --background-color: #111827;
+  --text-color: #F9FAFB;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+@layer components {
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .btn-primary {
+    @apply bg-primary text-white px-4 py-2 rounded-md hover:opacity-90 transition-opacity;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary text-white px-4 py-2 rounded-md hover:opacity-90 transition-opacity;
+  }
+  
+  .nav-link {
+    @apply text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors;
+  }
+  
+  .nav-link-active {
+    @apply text-primary dark:text-primary font-medium;
+  }
+} 
