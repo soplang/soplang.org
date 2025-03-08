@@ -13,152 +13,87 @@ for i in range(10):
     print(fibonacci(i))
 `;
 
-// Features section data
-const features = [
+// Latest news items
+const latestNews = [
   {
-    title: "Simple & Intuitive",
-    description:
-      "Soplang is designed to be easy to learn and use, with a clean syntax inspired by Python.",
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        className="h-6 w-6"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M13 10V3L4 14h7v7l9-11h-7z"
-        />
-      </svg>
-    ),
+    title: "Soplang 1.2.0 Released",
+    date: "October 15, 2023",
+    url: "/blog/release-notes-v1.2.0",
   },
   {
-    title: "High Performance",
-    description:
-      "Built with performance in mind, Soplang offers fast execution times and efficient memory usage.",
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        className="h-6 w-6"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
-        />
-      </svg>
-    ),
+    title: "Soplang Developer Survey Results",
+    date: "September 28, 2023",
+    url: "/blog/developer-survey-results",
   },
   {
-    title: "Cross-Platform",
-    description:
-      "Run your Soplang code on Windows, macOS, Linux, and more with consistent behavior across platforms.",
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        className="h-6 w-6"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
-        />
-      </svg>
-    ),
-  },
-  {
-    title: "Rich Ecosystem",
-    description:
-      "Access a growing library of packages and tools to enhance your development experience.",
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        className="h-6 w-6"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
-        />
-      </svg>
-    ),
+    title: "Upcoming Soplang Conference 2023",
+    date: "September 15, 2023",
+    url: "/events/soplang-conference-2023",
   },
 ];
 
-// Testimonials data
-const testimonials = [
+// Upcoming events
+const upcomingEvents = [
   {
-    content:
-      "Soplang has transformed how I approach programming. Its intuitive syntax and powerful features make development a joy.",
-    author: "Mr Sharafdin",
-    role: "Senior Developer",
+    title: "Soplang Conference 2023",
+    date: "November 15-17, 2023",
+    location: "Virtual Event",
+    url: "/events/soplang-conference-2023",
   },
   {
-    content:
-      "As someone who teaches programming, I find Soplang to be the perfect language for beginners while still being powerful enough for advanced projects.",
-    author: "Omar Tood",
-    role: "Computer Science Professor",
+    title: "Monthly Community Call",
+    date: "October 26, 2023",
+    location: "Discord",
+    url: "/events/monthly-community-call",
+  },
+];
+
+// Success stories
+const successStories = [
+  {
+    company: "TechInnovate",
+    quote: "Soplang has transformed our data processing pipeline, reducing processing time by 30%.",
+    author: "Ismail Ainte, CTO",
+    url: "/success-stories/techinnovate",
   },
   {
-    content:
-      "The performance improvements we've seen after switching to Soplang are remarkable. Our data processing tasks run 30% faster now.",
-    author: "Ismail Ainte",
-    role: "CTO, TechInnovate",
+    company: "EduTech Solutions",
+    quote: "We use Soplang to teach programming concepts. Its clean syntax makes it perfect for beginners.",
+    author: "Omar Tood, Lead Instructor",
+    url: "/success-stories/edutech",
   },
 ];
 
 export default function Home() {
   return (
-    <div suppressHydrationWarning>
+    <div className="bg-white dark:bg-gray-900" suppressHydrationWarning>
       {/* Hero Section */}
-      <section className="bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800 pt-16 pb-24">
-        <div className="container-custom" suppressHydrationWarning>
-          <div className="flex flex-col lg:flex-row items-center" suppressHydrationWarning>
-            <div className="lg:w-1/2 lg:pr-12" suppressHydrationWarning>
-              <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white leading-tight">
-                A Modern Programming Language Inspired by{" "}
-                <span className="text-primary">Python</span>
+      <section className="bg-[var(--primary-color)] text-white py-12">
+        <div className="container-custom">
+          <div className="flex flex-col lg:flex-row items-center">
+            <div className="lg:w-1/2 lg:pr-12">
+              <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
+                Soplang
               </h1>
-              <p className="mt-6 text-xl text-gray-600 dark:text-gray-300">
-                Soplang combines the simplicity of Python with enhanced performance
-                and modern language features to make coding more enjoyable and
-                productive.
+              <p className="text-xl mb-6">
+                A modern, intuitive programming language inspired by Python, designed for simplicity and performance.
               </p>
-              <div className="mt-8 flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4" suppressHydrationWarning>
-                <Link href="/downloads" className="btn-primary text-center">
+              <div className="flex flex-wrap gap-4">
+                <Link href="/downloads" className="bg-white text-[var(--primary-color)] font-bold px-6 py-3 rounded hover:bg-gray-100 transition-colors">
                   Download Soplang
                 </Link>
-                <Link
-                  href="/docs/getting-started"
-                  className="bg-white dark:bg-gray-800 text-primary border border-primary px-4 py-2 rounded-md hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors text-center"
-                >
+                <Link href="/docs/getting-started" className="bg-[var(--secondary-color)] text-gray-900 font-bold px-6 py-3 rounded hover:bg-opacity-90 transition-colors">
                   Get Started
                 </Link>
               </div>
             </div>
-            <div className="lg:w-1/2 mt-12 lg:mt-0" suppressHydrationWarning>
-              <div className="bg-gray-900 dark:bg-gray-800 rounded-lg shadow-xl p-4 text-white overflow-hidden" suppressHydrationWarning>
-                <div className="flex items-center space-x-2 mb-4" suppressHydrationWarning>
-                  <div className="w-3 h-3 rounded-full bg-red-500" suppressHydrationWarning></div>
-                  <div className="w-3 h-3 rounded-full bg-yellow-500" suppressHydrationWarning></div>
-                  <div className="w-3 h-3 rounded-full bg-green-500" suppressHydrationWarning></div>
-                  <div className="ml-2 text-sm text-gray-400" suppressHydrationWarning>example.sop</div>
+            <div className="lg:w-1/2 mt-8 lg:mt-0">
+              <div className="bg-gray-900 rounded p-4 text-white overflow-hidden shadow-lg">
+                <div className="flex items-center space-x-2 mb-4">
+                  <div className="w-3 h-3 rounded-full bg-red-500"></div>
+                  <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+                  <div className="w-3 h-3 rounded-full bg-green-500"></div>
+                  <div className="ml-2 text-sm text-gray-400">example.sop</div>
                 </div>
                 <pre className="font-mono text-sm overflow-x-auto">
                   <code>{codeSnippet}</code>
@@ -169,124 +104,212 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="py-16 bg-white dark:bg-gray-900">
-        <div className="container-custom" suppressHydrationWarning>
-          <div className="text-center mb-16" suppressHydrationWarning>
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white">
-              Why Choose Soplang?
-            </h2>
-            <p className="mt-4 text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Designed with developers in mind, Soplang offers a unique combination
-              of simplicity, performance, and modern features.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8" suppressHydrationWarning>
-            {features.map((feature, index) => (
-              <div
-                key={index}
-                className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg hover:shadow-md transition-shadow"
-                suppressHydrationWarning
-              >
-                <div className="w-12 h-12 bg-primary bg-opacity-10 rounded-lg flex items-center justify-center text-primary mb-4" suppressHydrationWarning>
-                  {feature.icon}
-                </div>
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
-                  {feature.title}
-                </h3>
-                <p className="text-gray-600 dark:text-gray-300">
-                  {feature.description}
+      {/* Main Content */}
+      <section className="py-8">
+        <div className="container-custom">
+          <div className="flex flex-col lg:flex-row gap-8">
+            {/* Main Content Area */}
+            <div className="lg:w-2/3">
+              {/* Introduction */}
+              <div className="python-box">
+                <h2 className="python-header">What is Soplang?</h2>
+                <p className="mb-4">
+                  Soplang is a high-level, general-purpose programming language designed with a focus on code readability and developer productivity. It takes inspiration from Python's clean syntax while introducing performance optimizations and modern language features.
+                </p>
+                <p>
+                  Whether you're a beginner or an experienced developer, Soplang provides a clean and intuitive syntax that makes it easy to express concepts in fewer lines of code than would be possible in languages like C++ or Java.
                 </p>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* Stats Section */}
-      <section className="py-16 bg-primary">
-        <div className="container-custom" suppressHydrationWarning>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center" suppressHydrationWarning>
-            <div suppressHydrationWarning>
-              <div className="text-4xl font-bold text-white" suppressHydrationWarning>10K+</div>
-              <div className="mt-2 text-blue-100" suppressHydrationWarning>Downloads</div>
-            </div>
-            <div suppressHydrationWarning>
-              <div className="text-4xl font-bold text-white" suppressHydrationWarning>5K+</div>
-              <div className="mt-2 text-blue-100" suppressHydrationWarning>GitHub Stars</div>
-            </div>
-            <div suppressHydrationWarning>
-              <div className="text-4xl font-bold text-white" suppressHydrationWarning>500+</div>
-              <div className="mt-2 text-blue-100" suppressHydrationWarning>Packages</div>
-            </div>
-            <div suppressHydrationWarning>
-              <div className="text-4xl font-bold text-white" suppressHydrationWarning>50+</div>
-              <div className="mt-2 text-blue-100" suppressHydrationWarning>Contributors</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials Section */}
-      <section className="py-16 bg-gray-50 dark:bg-gray-800">
-        <div className="container-custom" suppressHydrationWarning>
-          <div className="text-center mb-16" suppressHydrationWarning>
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white">
-              What Developers Say
-            </h2>
-            <p className="mt-4 text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Hear from developers who have made Soplang a part of their toolkit.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8" suppressHydrationWarning>
-            {testimonials.map((testimonial, index) => (
-              <div
-                key={index}
-                className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md"
-                suppressHydrationWarning
-              >
-                <div className="text-gray-600 dark:text-gray-300 mb-4" suppressHydrationWarning>
-                  "{testimonial.content}"
+              {/* Features */}
+              <div className="python-box">
+                <h2 className="python-header">Key Features</h2>
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <h3 className="font-bold text-gray-900 dark:text-white mb-2">Clean, Readable Syntax</h3>
+                    <p className="text-gray-700 dark:text-gray-300 mb-4">
+                      Soplang uses indentation to define code blocks, making your code clean and consistent.
+                    </p>
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-gray-900 dark:text-white mb-2">Performance Optimized</h3>
+                    <p className="text-gray-700 dark:text-gray-300 mb-4">
+                      Built with a just-in-time compiler that provides significant performance improvements.
+                    </p>
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-gray-900 dark:text-white mb-2">Cross-Platform</h3>
+                    <p className="text-gray-700 dark:text-gray-300 mb-4">
+                      Runs on Windows, macOS, Linux, and more with consistent behavior across platforms.
+                    </p>
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-gray-900 dark:text-white mb-2">Rich Ecosystem</h3>
+                    <p className="text-gray-700 dark:text-gray-300 mb-4">
+                      Access a growing library of packages and tools to enhance your development experience.
+                    </p>
+                  </div>
                 </div>
-                <div className="font-semibold text-gray-900 dark:text-white" suppressHydrationWarning>
-                  {testimonial.author}
-                </div>
-                <div className="text-sm text-gray-500 dark:text-gray-400" suppressHydrationWarning>
-                  {testimonial.role}
+                <div className="mt-4">
+                  <Link href="/about/features" className="python-link">
+                    Learn more about Soplang features →
+                  </Link>
                 </div>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* CTA Section */}
-      <section className="py-16 bg-white dark:bg-gray-900">
-        <div className="container-custom" suppressHydrationWarning>
-          <div className="bg-primary rounded-lg p-8 md:p-12 shadow-lg" suppressHydrationWarning>
-            <div className="text-center" suppressHydrationWarning>
-              <h2 className="text-3xl font-bold text-white mb-4">
-                Ready to Get Started with Soplang?
-              </h2>
-              <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
-                Download Soplang today and join thousands of developers building
-                amazing applications with this powerful language.
-              </p>
-              <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4" suppressHydrationWarning>
-                <Link
-                  href="/downloads"
-                  className="bg-white text-primary font-semibold px-6 py-3 rounded-md hover:bg-gray-100 transition-colors text-center"
-                >
+              {/* Getting Started */}
+              <div className="python-box">
+                <h2 className="python-header">Getting Started</h2>
+                <p className="mb-4">
+                  Ready to dive in? Here's how to get started with Soplang:
+                </p>
+                <ol className="list-decimal list-inside space-y-2 mb-4">
+                  <li>
+                    <Link href="/downloads" className="python-link">
+                      Download and install Soplang
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/docs/tutorial" className="python-link">
+                      Follow the beginner's tutorial
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/docs/reference" className="python-link">
+                      Explore the language reference
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/community" className="python-link">
+                      Join the community
+                    </Link>
+                  </li>
+                </ol>
+                <div className="bg-gray-100 dark:bg-gray-800 p-4 rounded">
+                  <h3 className="font-bold text-gray-900 dark:text-white mb-2">Quick Installation</h3>
+                  <pre className="bg-gray-900 text-white p-3 rounded overflow-x-auto">
+                    <code># On macOS/Linux
+$ curl -sSL https://install.soplang.org | bash
+
+# On Windows (PowerShell)
+{'>'}iwr -useb https://install.soplang.org/win | iex</code>
+                  </pre>
+                </div>
+              </div>
+
+              {/* Success Stories */}
+              <div className="python-box">
+                <h2 className="python-header">Success Stories</h2>
+                <div className="space-y-4">
+                  {successStories.map((story, index) => (
+                    <div key={index} className="bg-gray-50 dark:bg-gray-800 p-4 rounded">
+                      <p className="italic mb-2">"{story.quote}"</p>
+                      <div className="flex justify-between items-center">
+                        <p className="font-medium text-gray-900 dark:text-white">
+                          {story.author}, {story.company}
+                        </p>
+                        <Link href={story.url} className="python-link text-sm">
+                          Read more
+                        </Link>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-4">
+                  <Link href="/success-stories" className="python-link">
+                    View all success stories →
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* Sidebar */}
+            <div className="lg:w-1/3">
+              {/* Latest Version */}
+              <div className="python-box">
+                <h2 className="sidebar-header">Latest Version</h2>
+                <div className="mb-4">
+                  <div className="text-2xl font-bold text-[var(--primary-color)]">Soplang 1.2.0</div>
+                  <div className="text-sm text-gray-600 dark:text-gray-400">Released: October 15, 2023</div>
+                </div>
+                <Link href="/downloads" className="btn-primary w-full text-center block">
                   Download Now
                 </Link>
-                <Link
-                  href="/docs"
-                  className="bg-transparent text-white border border-white px-6 py-3 rounded-md hover:bg-white/10 transition-colors text-center"
-                >
-                  Read the Docs
+                <div className="mt-2 text-center">
+                  <Link href="/blog/release-notes-v1.2.0" className="text-sm python-link">
+                    Release Notes
+                  </Link>
+                </div>
+              </div>
+
+              {/* Latest News */}
+              <div className="python-box">
+                <h2 className="sidebar-header">Latest News</h2>
+                <ul className="sidebar-list">
+                  {latestNews.map((item, index) => (
+                    <li key={index}>
+                      <Link href={item.url} className="sidebar-item">
+                        {item.title}
+                      </Link>
+                      <div className="text-xs text-gray-500 dark:text-gray-500">
+                        {item.date}
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+                <Link href="/blog" className="python-link text-sm">
+                  More news →
                 </Link>
+              </div>
+
+              {/* Upcoming Events */}
+              <div className="python-box">
+                <h2 className="sidebar-header">Upcoming Events</h2>
+                <ul className="sidebar-list">
+                  {upcomingEvents.map((event, index) => (
+                    <li key={index}>
+                      <Link href={event.url} className="sidebar-item">
+                        {event.title}
+                      </Link>
+                      <div className="text-xs text-gray-500 dark:text-gray-500">
+                        {event.date} • {event.location}
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+                <Link href="/events" className="python-link text-sm">
+                  All events →
+                </Link>
+              </div>
+
+              {/* Community */}
+              <div className="python-box">
+                <h2 className="sidebar-header">Join the Community</h2>
+                <p className="mb-4 text-sm">
+                  Connect with other Soplang developers and get involved in the community.
+                </p>
+                <ul className="space-y-2">
+                  <li>
+                    <a href="https://github.com/soplang" className="python-link" target="_blank" rel="noopener noreferrer">
+                      GitHub
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://discord.gg/soplang" className="python-link" target="_blank" rel="noopener noreferrer">
+                      Discord
+                    </a>
+                  </li>
+                  <li>
+                    <Link href="/community/forums" className="python-link">
+                      Forums
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/community/mailing-lists" className="python-link">
+                      Mailing Lists
+                    </Link>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>

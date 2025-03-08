@@ -3,53 +3,39 @@ import { getCurrentYear } from "@/utils/formatDate";
 
 const footerLinks = [
   {
-    title: "About",
+    title: "Resources",
     links: [
-      { name: "About Soplang", href: "/about" },
-      { name: "Getting Started", href: "/docs/getting-started" },
-      { name: "Applications", href: "/about/applications" },
-      { name: "Quotes", href: "/about/quotes" },
-      { name: "Help", href: "/about/help" },
-    ],
-  },
-  {
-    title: "Downloads",
-    links: [
-      { name: "All Releases", href: "/downloads" },
-      { name: "Source Code", href: "/downloads/source" },
-      { name: "Windows", href: "/downloads/windows" },
-      { name: "macOS", href: "/downloads/macos" },
-      { name: "Linux/UNIX", href: "/downloads/linux" },
-    ],
-  },
-  {
-    title: "Documentation",
-    links: [
-      { name: "Docs Home", href: "/docs" },
-      { name: "Tutorial", href: "/docs/tutorial" },
-      { name: "Library Reference", href: "/docs/reference" },
-      { name: "Language Reference", href: "/docs/language" },
-      { name: "Extending Soplang", href: "/docs/extending" },
-      { name: "FAQs", href: "/docs/faq" },
+      { name: "Documentation", href: "/docs" },
+      { name: "Tutorials", href: "/docs/tutorials" },
+      { name: "Examples", href: "/docs/examples" },
+      { name: "API Reference", href: "/docs/api" },
     ],
   },
   {
     title: "Community",
     links: [
-      { name: "Community Home", href: "/community" },
+      { name: "GitHub", href: "https://github.com/soplang" },
       { name: "Discord", href: "https://discord.gg/soplang" },
-      { name: "Forums", href: "/community/forums" },
-      { name: "Workshops", href: "/community/workshops" },
-      { name: "Mailing Lists", href: "/community/mailing-lists" },
+      { name: "Twitter", href: "https://twitter.com/soplang" },
+      { name: "Stack Overflow", href: "https://stackoverflow.com/questions/tagged/soplang" },
     ],
   },
   {
-    title: "Contribute",
+    title: "Company",
     links: [
-      { name: "Core Development", href: "/contribute/core" },
-      { name: "Documentation", href: "/contribute/documentation" },
-      { name: "Bug Tracker", href: "https://github.com/soplang/soplang/issues" },
-      { name: "Report a Security Issue", href: "/contribute/security" },
+      { name: "About", href: "/about" },
+      { name: "Blog", href: "/blog" },
+      { name: "Careers", href: "/careers" },
+      { name: "Contact", href: "/contact" },
+    ],
+  },
+  {
+    title: "Legal",
+    links: [
+      { name: "Privacy Policy", href: "/privacy" },
+      { name: "Terms of Service", href: "/terms" },
+      { name: "Code of Conduct", href: "/code-of-conduct" },
+      { name: "License", href: "/license" },
     ],
   },
 ];
@@ -60,7 +46,7 @@ const socialLinks = [
     href: "https://github.com/soplang",
     icon: (
       <svg
-        className="h-5 w-5"
+        className="h-6 w-6"
         fill="currentColor"
         viewBox="0 0 24 24"
         aria-hidden="true"
@@ -78,7 +64,7 @@ const socialLinks = [
     href: "https://twitter.com/soplang",
     icon: (
       <svg
-        className="h-5 w-5"
+        className="h-6 w-6"
         fill="currentColor"
         viewBox="0 0 24 24"
         aria-hidden="true"
@@ -92,12 +78,30 @@ const socialLinks = [
     href: "https://discord.gg/soplang",
     icon: (
       <svg
-        className="h-5 w-5"
+        className="h-6 w-6"
         fill="currentColor"
         viewBox="0 0 24 24"
         aria-hidden="true"
       >
         <path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z" />
+      </svg>
+    ),
+  },
+  {
+    name: "YouTube",
+    href: "https://youtube.com/soplang",
+    icon: (
+      <svg
+        className="h-6 w-6"
+        fill="currentColor"
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+      >
+        <path
+          fillRule="evenodd"
+          d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.746 22 12 22 12s0 3.255-.418 4.814a2.504 2.504 0 0 1-1.768 1.768c-1.56.419-7.814.419-7.814.419s-6.255 0-7.814-.419a2.505 2.505 0 0 1-1.768-1.768C2 15.255 2 12 2 12s0-3.255.417-4.814a2.507 2.507 0 0 1 1.768-1.768C5.744 5 11.998 5 11.998 5s6.255 0 7.814.418ZM15.194 12 10 15V9l5.194 3Z"
+          clipRule="evenodd"
+        />
       </svg>
     ),
   },
@@ -108,20 +112,20 @@ export default function Footer() {
   const currentYear = getCurrentYear();
   
   return (
-    <footer className="bg-[var(--footer-bg)] border-t border-[var(--border-color)]">
+    <footer className="bg-gray-50 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
       <div className="container-custom py-12" suppressHydrationWarning>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8" suppressHydrationWarning>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8" suppressHydrationWarning>
           {footerLinks.map((group) => (
             <div key={group.title} suppressHydrationWarning>
-              <h3 className="text-sm font-bold text-gray-900 dark:text-white uppercase tracking-wider mb-4">
+              <h3 className="text-sm font-semibold text-gray-900 dark:text-white tracking-wider uppercase">
                 {group.title}
               </h3>
-              <ul className="space-y-2">
+              <ul className="mt-4 space-y-4">
                 {group.links.map((link) => (
                   <li key={link.name}>
                     <Link
                       href={link.href}
-                      className="text-sm text-[var(--link-color)] hover:underline"
+                      className="text-base text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary"
                     >
                       {link.name}
                     </Link>
@@ -132,28 +136,23 @@ export default function Footer() {
           ))}
         </div>
 
-        <div className="mt-12 pt-8 border-t border-[var(--border-color)]" suppressHydrationWarning>
+        <div className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-800" suppressHydrationWarning>
           <div className="flex flex-col md:flex-row justify-between items-center" suppressHydrationWarning>
-            <div className="flex items-center space-x-2 mb-4 md:mb-0" suppressHydrationWarning>
-              <div className="relative w-8 h-8 flex items-center justify-center bg-[var(--primary-color)] rounded-full" suppressHydrationWarning>
-                <span className="text-white font-bold text-xs">S</span>
+            <div className="flex items-center space-x-2" suppressHydrationWarning>
+              <div className="relative w-6 h-6" suppressHydrationWarning>
+                <div className="absolute inset-0 bg-primary rounded-full opacity-20" suppressHydrationWarning></div>
+                <div className="absolute inset-1 bg-primary rounded-full" suppressHydrationWarning></div>
+                <div className="absolute inset-0 flex items-center justify-center text-white font-bold text-xs" suppressHydrationWarning>S</div>
               </div>
-              <div>
-                <p className="text-sm text-gray-600 dark:text-gray-400">
-                  Copyright ©{currentYear} Soplang Software Foundation
-                </p>
-                <p className="text-xs text-gray-500 dark:text-gray-500 mt-1">
-                  Soplang is an open-source programming language that lets you work quickly and integrate systems effectively.
-                </p>
-              </div>
+              <span className="text-gray-900 dark:text-white font-semibold">Soplang</span>
             </div>
             
-            <div className="flex space-x-4" suppressHydrationWarning>
+            <div className="flex space-x-6 mt-4 md:mt-0" suppressHydrationWarning>
               {socialLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
-                  className="text-gray-500 hover:text-[var(--primary-color)] dark:text-gray-400 dark:hover:text-[var(--primary-color)]"
+                  className="text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-primary"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={link.name}
@@ -164,14 +163,9 @@ export default function Footer() {
             </div>
           </div>
           
-          <div className="mt-8 text-center text-xs text-gray-500 dark:text-gray-500">
-            <p>
-              <Link href="/privacy" className="hover:underline">Privacy Policy</Link> | 
-              <Link href="/terms" className="hover:underline ml-2">Terms of Use</Link> | 
-              <Link href="/trademarks" className="hover:underline ml-2">Trademarks</Link> | 
-              <Link href="/sitemap" className="hover:underline ml-2">Sitemap</Link>
-            </p>
-          </div>
+          <p className="mt-8 text-center text-base text-gray-500 dark:text-gray-400">
+            &copy; {currentYear} Soplang. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>

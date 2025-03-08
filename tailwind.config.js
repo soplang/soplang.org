@@ -13,7 +13,7 @@ module.exports = {
         secondary: 'var(--secondary-color)',
       },
       fontFamily: {
-        sans: ['Inter', 'Roboto', 'sans-serif'],
+        sans: ['var(--font-roboto)', 'Roboto', 'sans-serif'],
       },
     },
   },

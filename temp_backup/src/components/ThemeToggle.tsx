@@ -13,13 +13,13 @@ export default function ThemeToggle() {
   }, []);
 
   if (!mounted) {
-    return <div className="w-8 h-8" suppressHydrationWarning></div>; // Placeholder to avoid layout shift
+    return <div className="w-10 h-10" suppressHydrationWarning></div>; // Placeholder to avoid layout shift
   }
 
   return (
     <button
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      className="p-2 rounded hover:bg-[var(--nav-hover)] focus:outline-none"
+      className="rounded-full p-2 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50"
       aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
       suppressHydrationWarning
     >
@@ -27,7 +27,7 @@ export default function ThemeToggle() {
         // Sun icon for dark mode
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="h-5 w-5 text-white"
+          className="h-6 w-6 text-yellow-300"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -44,7 +44,7 @@ export default function ThemeToggle() {
         // Moon icon for light mode
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="h-5 w-5 text-white"
+          className="h-6 w-6 text-gray-700"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"

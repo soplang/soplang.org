@@ -1,22 +1,16 @@
 import '@/styles/globals.css';
 import type { Metadata } from 'next';
-import { Inter, Roboto } from 'next/font/google';
+import { Inter } from 'next/font/google';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
-const roboto = Roboto({ 
-  weight: ['400', '500', '700'],
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-roboto',
-});
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Soplang - A Python-inspired Programming Language',
   description: 'Soplang is a modern, intuitive programming language inspired by Python, designed for simplicity and usability.',
   keywords: ['Soplang', 'programming language', 'Python-inspired', 'coding', 'development'],
-  metadataBase: new URL('https://soplang.org'),
   openGraph: {
     title: 'Soplang - A Python-inspired Programming Language',
     description: 'Soplang is a modern, intuitive programming language inspired by Python, designed for simplicity and usability.',
@@ -47,8 +41,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning className={roboto.variable}>
-      <body className={roboto.className} suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
+      <body className={inter.className} suppressHydrationWarning>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Navbar />
           <main className="flex-grow">{children}</main>

@@ -6,7 +6,12 @@
   --primary-color: #1E3A8A; /* Default blue */
   --secondary-color: #F59E0B; /* Default orange */
   --background-color: #FFFFFF;
-  --text-color: #1F2937;
+  --text-color: #333333;
+  --link-color: #1E3A8A;
+  --header-bg: #1E3A8A; /* Header background */
+  --footer-bg: #f6f6f6;
+  --nav-hover: #2563EB;
+  --border-color: #e0e0e0;
 }
 
 .dark {
@@ -14,12 +19,19 @@
   --secondary-color: #F59E0B; /* Same orange */
   --background-color: #111827;
   --text-color: #F9FAFB;
+  --link-color: #3B82F6;
+  --header-bg: #1E3A8A; /* Header background in dark mode */
+  --footer-bg: #1f2937;
+  --nav-hover: #3B82F6;
+  --border-color: #374151;
 }
 
 body {
   background-color: var(--background-color);
   color: var(--text-color);
   transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  line-height: 1.5;
 }
 
 @layer components {
@@ -28,18 +40,62 @@ body {
   }
   
   .btn-primary {
-    @apply bg-primary text-white px-4 py-2 rounded-md hover:opacity-90 transition-opacity;
+    @apply bg-primary text-white px-4 py-2 rounded hover:opacity-90 transition-opacity;
   }
   
   .btn-secondary {
-    @apply bg-secondary text-white px-4 py-2 rounded-md hover:opacity-90 transition-opacity;
+    @apply bg-secondary text-gray-800 px-4 py-2 rounded hover:opacity-90 transition-opacity;
   }
   
   .nav-link {
-    @apply text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors;
+    @apply text-white hover:bg-[var(--nav-hover)] px-3 py-2 rounded transition-colors;
   }
   
   .nav-link-active {
-    @apply text-primary dark:text-primary font-medium;
+    @apply bg-[var(--nav-hover)] text-white px-3 py-2 rounded;
+  }
+
+  .python-box {
+    @apply border border-[var(--border-color)] rounded p-4 mb-4 bg-white dark:bg-gray-800;
+  }
+
+  .python-header {
+    @apply text-xl font-bold text-primary mb-2;
+  }
+
+  .python-list {
+    @apply list-disc list-inside ml-4 space-y-1;
+  }
+
+  .python-link {
+    @apply text-[var(--link-color)] hover:underline;
+  }
+
+  .main-content {
+    @apply py-8;
+  }
+
+  .sidebar {
+    @apply border-l border-[var(--border-color)] pl-6;
+  }
+
+  .sidebar-header {
+    @apply text-lg font-bold mb-3 text-primary;
+  }
+
+  .sidebar-list {
+    @apply space-y-2 mb-6;
+  }
+
+  .sidebar-item {
+    @apply text-[var(--link-color)] hover:underline block;
+  }
+
+  .quick-links {
+    @apply flex flex-wrap gap-2 mb-4;
+  }
+
+  .quick-link {
+    @apply bg-gray-100 dark:bg-gray-700 px-3 py-1 rounded text-sm hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors;
   }
 } 
