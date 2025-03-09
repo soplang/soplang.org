@@ -1,30 +1,52 @@
-# Soplang.org - Official Website
+# Soplang | Modern Programming Education Platform
 
-This is the official website for Soplang, a modern programming language inspired by Python. The website is built with Next.js and Tailwind CSS.
+<div align="center">
+  <img src="public/logo.png" alt="Soplang Logo" width="200"/>
+  <p><em>Empowering the next generation of programmers through intuitive language learning</em></p>
+</div>
 
-## Features
+## About Soplang
 
-- **Modern Design**: Clean, responsive design optimized for all devices
-- **Dark Mode Support**: Toggle between light and dark themes
-- **SEO Optimized**: Meta tags, OpenGraph, and fast page speed
-- **Documentation**: Comprehensive documentation with a dynamic sidebar
-- **Blog**: Latest news, updates, and tutorials
-- **Community**: Links to forums, GitHub, and social media
+Soplang is an innovative educational platform designed to make programming language learning accessible, engaging, and effective. Inspired by Python's readability and modern pedagogical approaches, Soplang creates a seamless bridge between theoretical computer science concepts and practical coding skills.
 
-## Tech Stack
+### Our Mission
 
-- **Framework**: [Next.js](https://nextjs.org/)
-- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
-- **Deployment**: [Vercel](https://vercel.com/)
+To democratize programming education by providing a structured, intuitive learning path that adapts to individual learning styles while maintaining academic rigor and industry relevance.
 
-## Getting Started
+## Platform Features
 
-### Prerequisites
+- **Interactive Learning Environment**: Code, compile, and run programs directly in your browser
+- **Progressive Curriculum**: Structured learning paths from fundamentals to advanced concepts
+- **Real-time Feedback**: Immediate code evaluation with helpful error messages and suggestions
+- **Mathec Integration**: Mathematical concepts seamlessly integrated with programming exercises
+- **Multilingual Support**: Learn programming concepts in multiple human languages
+- **Accessibility Focus**: Designed with eye-friendly color schemes and accessibility standards
+- **Community Collaboration**: Share projects, participate in challenges, and learn together
+
+## Educational Approach
+
+Soplang's educational methodology is built on three core principles:
+
+1. **Concept Before Syntax**: Understanding the "why" before the "how"
+2. **Learn by Doing**: Practical application through guided exercises and projects
+3. **Scaffolded Learning**: Progressive complexity with appropriate support at each stage
+
+## Technical Implementation
+
+### Tech Stack
+
+- **Framework**: [Next.js](https://nextjs.org/) for server-rendered React applications
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/) for responsive, accessible design
+- **Deployment**: [Vercel](https://vercel.com/) for seamless continuous deployment
+
+### Getting Started for Developers
+
+#### Prerequisites
 
 - Node.js 18.x or later
 - npm or yarn
 
-### Installation
+#### Installation
 
 1. Clone the repository:
 
@@ -76,45 +98,33 @@ yarn dev
 └── package.json          # Project dependencies and scripts
 ```
 
-## Customization
+## Design Philosophy
 
-### Colors
+### Accessibility First
 
-The primary and secondary colors are defined as CSS variables in `src/styles/globals.css`:
+Soplang is designed with accessibility as a priority. Our color scheme is specifically chosen to reduce eye strain during extended learning sessions:
 
 ```css
 :root {
-  --primary-color: #1E3A8A; /* Default blue */
-  --secondary-color: #F59E0B; /* Default orange */
+  --primary-color: #3F72AF; /* Soft blue - easier on eyes */
+  --secondary-color: #5E9A78; /* Soft green - math education friendly */
+  --background-color: #F9F7F7; /* Very light gray with slight warmth */
 }
 ```
 
-These variables are used in the Tailwind configuration (`tailwind.config.js`) to define the `primary` and `secondary` color classes:
+### Responsive Design
 
-```js
-theme: {
-  extend: {
-    colors: {
-      primary: 'var(--primary-color)',
-      secondary: 'var(--secondary-color)',
-    },
-  },
-},
-```
-
-To change the colors, simply update the CSS variables in `globals.css`.
-
-### Dark Mode
-
-Dark mode is implemented using Tailwind's `dark` class and a custom `ThemeProvider` component. The theme can be toggled using the `ThemeToggle` component in the navigation bar.
-
-## Deployment
-
-The website is configured for deployment on Vercel. Simply connect your GitHub repository to Vercel for automatic deployments.
+The platform is fully responsive, providing an optimal learning experience across all devices from desktop workstations to mobile phones.
 
 ## Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+We welcome contributions from educators, developers, and language enthusiasts. Whether you're improving documentation, adding new features, or fixing bugs, your input helps make programming education more accessible to everyone.
+
+Please see our [Contributing Guidelines](CONTRIBUTING.md) for more information.
+
+## Educational Partners
+
+Soplang collaborates with educational institutions worldwide to develop curriculum materials and teaching methodologies. If you're an educator interested in partnering with us, please contact [education@soplang.org](mailto:education@soplang.org).
 
 ## License
 
@@ -122,4 +132,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## Contact
 
-For questions or feedback, please reach out to us at [contact@soplang.org](mailto:contact@soplang.org) or join our [Discord community](https://discord.gg/soplang).
+- **Website**: [https://soplang.org](https://soplang.org)
+- **Email**: [contact@soplang.org](mailto:contact@soplang.org)
+- **Community**: [Discord](https://discord.gg/soplang)
+- **Twitter**: [@SoplangEdu](https://twitter.com/SoplangEdu)
