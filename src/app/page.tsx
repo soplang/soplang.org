@@ -1,16 +1,25 @@
 import Link from "next/link";
 import Image from "next/image";
+import CodeWindow from "../components/CodeWindow";
 
 // Sample code snippet for the hero section
 const codeSnippet = `# Soplang example
-def fibonacci(n):
-    if n <= 1:
-        return n
-    return fibonacci(n-1) + fibonacci(n-2)
 
-# Print the first 10 Fibonacci numbers
-for i in range(10):
-    print(fibonacci(i))
+door x = 10
+
+haddii (x > 5) {
+    qor("X waa weyn yahay!")
+} haddii_kale (x == 5) {
+    qor("X waa shan!")
+} haddii_kalena {
+    qor("X waa yar yahay!")
+}
+
+howl salaam(magac) {
+    qor("Salaan, " + magac)
+}
+
+salaam("Sharafdin")
 `;
 
 // Latest news items
@@ -88,17 +97,7 @@ export default function Home() {
               </div>
             </div>
             <div className="lg:w-1/2 mt-8 lg:mt-0">
-              <div className="bg-gray-900 rounded p-4 text-white overflow-hidden shadow-lg">
-                <div className="flex items-center space-x-2 mb-4">
-                  <div className="w-3 h-3 rounded-full bg-red-500"></div>
-                  <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-                  <div className="w-3 h-3 rounded-full bg-green-500"></div>
-                  <div className="ml-2 text-sm text-gray-400">example.sop</div>
-                </div>
-                <pre className="font-mono text-sm overflow-x-auto">
-                  <code>{codeSnippet}</code>
-                </pre>
-              </div>
+              <CodeWindow code={codeSnippet} title="main.so" />
             </div>
           </div>
         </div>
@@ -187,13 +186,14 @@ export default function Home() {
                 </ol>
                 <div className="bg-gray-100 dark:bg-gray-800 p-4 rounded">
                   <h3 className="font-bold text-gray-900 dark:text-white mb-2">Quick Installation</h3>
-                  <pre className="bg-gray-900 text-white p-3 rounded overflow-x-auto">
-                    <code># On macOS/Linux
+                  <CodeWindow 
+                    code={`# On macOS/Linux
 $ curl -sSL https://install.soplang.org | bash
 
 # On Windows (PowerShell)
-{'>'}iwr -useb https://install.soplang.org/win | iex</code>
-                  </pre>
+> iwr -useb https://install.soplang.org/win | iex`} 
+                    title="terminal" 
+                  />
                 </div>
               </div>
 

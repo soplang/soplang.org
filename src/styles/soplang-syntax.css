@@ -1,0 +1,168 @@
+/**
+ * Soplang syntax highlighting theme
+ * Based on VSCode-like styling
+ */
+
+code[class*="language-soplang"],
+pre[class*="language-soplang"] {
+  color: #d4d4d4;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  direction: ltr;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  line-height: 1.5;
+  tab-size: 4;
+  hyphens: none;
+  background: #1e1e1e;
+  border-radius: 0.3em;
+}
+
+/* Code blocks */
+pre[class*="language-soplang"] {
+  padding: 1em;
+  margin: 0.5em 0;
+  overflow: auto;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-soplang"] {
+  padding: 0.1em 0.3em;
+  border-radius: 0.3em;
+  white-space: normal;
+}
+
+.token.comment {
+  color: #6a9955;
+}
+
+.token.keyword {
+  color: #569cd6;
+}
+
+.token.string {
+  color: #ce9178;
+}
+
+.token.function {
+  color: #dcdcaa;
+}
+
+.token.number {
+  color: #b5cea8;
+}
+
+.token.boolean {
+  color: #569cd6;
+}
+
+.token.operator {
+  color: #d4d4d4;
+}
+
+.token.punctuation {
+  color: #d4d4d4;
+}
+
+/* Line highlighting */
+.line-highlight {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Line numbers */
+.line-numbers .line-numbers-rows {
+  border-right: 1px solid #999;
+}
+
+.line-numbers-rows > span:before {
+  color: #999;
+}
+
+/* Match braces */
+.token.punctuation.brace-hover,
+.token.punctuation.brace-selected {
+  outline: solid 1px #75a7ca;
+}
+
+/* Code editor window styling */
+.code-window {
+  background: #1e1e1e;
+  border-radius: 0.5em;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.code-window-header {
+  display: flex;
+  align-items: center;
+  padding: 0.5em 1em;
+  background: #252526;
+  border-bottom: 1px solid #333;
+}
+
+.window-button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 6px;
+}
+
+.window-button.red {
+  background: #ff5f56;
+}
+
+.window-button.yellow {
+  background: #ffbd2e;
+}
+
+.window-button.green {
+  background: #27c93f;
+}
+
+.window-title {
+  margin-left: 8px;
+  font-size: 12px;
+  color: #999;
+}
+
+/* Scrollbar styling */
+pre[class*="language-soplang"]::-webkit-scrollbar {
+  width: 14px;
+  height: 14px;
+}
+
+pre[class*="language-soplang"]::-webkit-scrollbar-track {
+  background: #1e1e1e;
+}
+
+pre[class*="language-soplang"]::-webkit-scrollbar-thumb {
+  background: #3e3e3e;
+  border-radius: 10px;
+  border: 3px solid #1e1e1e;
+}
+
+pre[class*="language-soplang"]::-webkit-scrollbar-thumb:hover {
+  background: #505050;
+}
+
+/* Dark mode adjustments */
+.dark pre[class*="language-soplang"] {
+  background: #121212;
+}
+
+.dark .code-window {
+  background: #121212;
+}
+
+.dark .code-window-header {
+  background: #1a1a1a;
+}
+
+.dark pre[class*="language-soplang"]::-webkit-scrollbar-track {
+  background: #121212;
+}
+
+.dark pre[class*="language-soplang"]::-webkit-scrollbar-thumb {
+  border-color: #121212;
+} 

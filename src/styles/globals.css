@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import './soplang-syntax.css';
 
 :root {
   --primary-color: #3F72AF; /* Soft blue - easier on eyes */

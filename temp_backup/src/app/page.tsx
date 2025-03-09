@@ -158,7 +158,7 @@ export default function Home() {
                   <div className="w-3 h-3 rounded-full bg-red-500" suppressHydrationWarning></div>
                   <div className="w-3 h-3 rounded-full bg-yellow-500" suppressHydrationWarning></div>
                   <div className="w-3 h-3 rounded-full bg-green-500" suppressHydrationWarning></div>
-                  <div className="ml-2 text-sm text-gray-400" suppressHydrationWarning>example.sop</div>
+                  <div className="ml-2 text-sm text-gray-400" suppressHydrationWarning>main.so</div>
                 </div>
                 <pre className="font-mono text-sm overflow-x-auto">
                   <code>{codeSnippet}</code>
