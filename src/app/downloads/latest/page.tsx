@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { Metadata } from 'next';
+import CodeWindow from "../../../components/CodeWindow";
 
 export const metadata: Metadata = {
   title: 'Download Latest Version of Soplang',
@@ -120,20 +121,33 @@ export default function DownloadLatestPage() {
           
           <div className="mb-4">
             <h3 className="font-semibold mb-2">Package Managers</h3>
-            <div className="bg-gray-800 text-white p-4 rounded-md mb-2">
-              <p className="font-mono text-sm">pip install soplang=={latestVersion}</p>
-            </div>
-            <div className="bg-gray-800 text-white p-4 rounded-md">
-              <p className="font-mono text-sm">brew install soplang</p>
+            <div className="space-y-4">
+              <CodeWindow 
+                code={`pip install soplang==${latestVersion}`} 
+                title="Python (pip)" 
+                className="shadow-lg"
+              />
+              <CodeWindow 
+                code="brew install soplang" 
+                title="macOS (Homebrew)" 
+                className="shadow-lg"
+              />
             </div>
           </div>
           
           <div>
             <h3 className="font-semibold mb-2">Source Code</h3>
             <p className="mb-2">For developers who want to build from source:</p>
+            <div className="mt-3">
+              <CodeWindow 
+                code="git clone https://github.com/soplang/soplang.git" 
+                title="Git" 
+                className="shadow-lg"
+              />
+            </div>
             <a 
               href="https://github.com/soplang/soplang/releases/tag/v1.2.0"
-              className="text-primary hover:underline"
+              className="text-primary hover:underline block mt-4"
               target="_blank"
               rel="noopener noreferrer"
             >

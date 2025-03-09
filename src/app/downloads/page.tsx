@@ -1,4 +1,5 @@
 import Link from "next/link";
+import CodeWindow from "../../components/CodeWindow";
 
 // OS-specific download data
 const downloads = [
@@ -203,18 +204,20 @@ export default function DownloadsPage() {
                 Soplang can also be installed using various package managers:
               </p>
 
-              <div className="space-y-4">
+              <div className="space-y-6">
                 {packageManagers.map((pm) => (
                   <div
                     key={pm.name}
                     className="bg-gray-50 dark:bg-gray-700 rounded-md p-4"
                   >
-                    <div className="font-semibold text-gray-900 dark:text-white mb-2">
+                    <div className="font-semibold text-gray-900 dark:text-white mb-3">
                       {pm.name}
                     </div>
-                    <div className="bg-gray-900 dark:bg-black rounded p-3 font-mono text-sm text-white overflow-x-auto">
-                      <code>{pm.command}</code>
-                    </div>
+                    <CodeWindow 
+                      code={pm.command} 
+                      title="Terminal" 
+                      className="shadow-lg"
+                    />
                   </div>
                 ))}
               </div>
@@ -235,7 +238,7 @@ export default function DownloadsPage() {
               </p>
 
               <div className="bg-gray-50 dark:bg-gray-700 rounded-md p-4">
-                <div className="flex justify-between items-center">
+                <div className="flex justify-between items-center mb-3">
                   <div className="font-semibold text-gray-900 dark:text-white">
                     GitHub Repository
                   </div>
@@ -248,9 +251,11 @@ export default function DownloadsPage() {
                     View on GitHub
                   </a>
                 </div>
-                <div className="bg-gray-900 dark:bg-black rounded p-3 font-mono text-sm text-white mt-2 overflow-x-auto">
-                  <code>git clone https://github.com/soplang/soplang.git</code>
-                </div>
+                <CodeWindow 
+                  code="git clone https://github.com/soplang/soplang.git" 
+                  title="Terminal" 
+                  className="shadow-lg"
+                />
               </div>
             </div>
           </div>
