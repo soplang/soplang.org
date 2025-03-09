@@ -4,7 +4,7 @@
 git add .
 
 # Commit the changes
-git commit -m "Update color scheme to be more eye-friendly for math education website (primary: #3F72AF, secondary: #5E9A78)"
+git commit -m "Add new pages: Download Latest, Get Started, Reference, Forums, and Contribute"
 
 # Force push to GitHub (use with caution)
 git push -f origin main

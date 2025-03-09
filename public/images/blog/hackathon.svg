@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
+    <rect width="800" height="450" fill="#E84A5F" />
+    <text x="400" y="200" font-family="Arial" font-size="36" font-weight="bold" fill="white" text-anchor="middle">
+      Soplang Hackathon
+    </text>
+    <text x="400" y="250" font-family="Arial" font-size="24" fill="white" text-anchor="middle">
+      Soplang News
+    </text>
+  </svg>
