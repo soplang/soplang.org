@@ -279,5 +279,5 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 - **Website**: [https://soplang.org](https://soplang.org)
 - **Email**: [contact@soplang.org](mailto:contact@soplang.org)
-- **Community**: [Discord](https://discord.gg/soplang)
-- **Twitter**: [@SoplangEdu](https://twitter.com/SoplangEdu)
+- **Community**: [Discord](https://discord.gg/n296G4dd7x)
+- **Twitter**: [@SoplangEdu](https://twitter.com/xSoplang)

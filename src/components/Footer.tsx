@@ -37,7 +37,7 @@ const footerLinks = [
     title: "Community",
     links: [
       { name: "Community Home", href: "/community" },
-      { name: "Discord", href: "https://discord.gg/soplang" },
+      { name: "Discord", href: "https://discord.gg/n296G4dd7x" },
       { name: "Forums", href: "/community/forums" },
       { name: "Workshops", href: "/community/workshops" },
       { name: "Mailing Lists", href: "/community/mailing-lists" },
@@ -75,7 +75,7 @@ const socialLinks = [
   },
   {
     name: "Twitter",
-    href: "https://twitter.com/soplang",
+    href: "https://x.com/xsoplang",
     icon: (
       <svg
         className="h-5 w-5"
@@ -89,7 +89,7 @@ const socialLinks = [
   },
   {
     name: "Discord",
-    href: "https://discord.gg/soplang",
+    href: "https://discord.gg/n296G4dd7x",
     icon: (
       <svg
         className="h-5 w-5"
