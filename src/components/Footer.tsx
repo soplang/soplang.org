@@ -109,10 +109,10 @@ export default function Footer() {
   
   return (
     <footer className="bg-[var(--footer-bg)] border-t border-[var(--border-color)]">
-      <div className="container-custom py-12" suppressHydrationWarning>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8" suppressHydrationWarning>
+      <div className="container-custom py-12">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
           {footerLinks.map((group) => (
-            <div key={group.title} suppressHydrationWarning>
+            <div key={group.title}>
               <h3 className="text-sm font-bold text-gray-900 dark:text-white uppercase tracking-wider mb-4">
                 {group.title}
               </h3>
@@ -132,10 +132,10 @@ export default function Footer() {
           ))}
         </div>
 
-        <div className="mt-12 pt-8 border-t border-[var(--border-color)]" suppressHydrationWarning>
-          <div className="flex flex-col md:flex-row justify-between items-center" suppressHydrationWarning>
-            <div className="flex items-center space-x-2 mb-4 md:mb-0" suppressHydrationWarning>
-              <div className="relative w-8 h-8 flex items-center justify-center bg-[var(--primary-color)] rounded-full" suppressHydrationWarning>
+        <div className="mt-12 pt-8 border-t border-[var(--border-color)]">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <div className="flex items-center space-x-2 mb-4 md:mb-0">
+              <div className="relative w-8 h-8 flex items-center justify-center bg-[var(--primary-color)] rounded-full">
                 <span className="text-white font-bold text-xs">S</span>
               </div>
               <div>
@@ -148,7 +148,7 @@ export default function Footer() {
               </div>
             </div>
             
-            <div className="flex space-x-4" suppressHydrationWarning>
+            <div className="flex space-x-4">
               {socialLinks.map((link) => (
                 <a
                   key={link.name}
