@@ -1,132 +1,200 @@
-# Soplang | Modern Programming Education Platform
+# Soplang | The First Somali Programming Language
 
 <div align="center">
   <img src="public/logo.png" alt="Soplang Logo" width="200"/>
-  <p><em>Empowering the next generation of programmers through intuitive language learning</em></p>
+  <p><em>Dhis Software Adigoo Adeegsanaya Afkaaga Hooyo!</em></p>
+  <p><em>(Build software using your mother tongue!)</em></p>
 </div>
 
-## About Soplang
+## 🌟 About Soplang
 
-Soplang is an innovative educational platform designed to make programming language learning accessible, engaging, and effective. As the first Somali programming language, Soplang creates a seamless bridge between theoretical computer science concepts and practical coding skills, with a focus on making programming accessible to Somali speakers worldwide.
+Soplang is the first Somali programming language, designed to make programming accessible to Somali speakers worldwide. By using Somali keywords and syntax, Soplang breaks down language barriers that have traditionally made programming difficult for non-English speakers.
 
-### Our Mission
+### 🎯 Our Mission
 
-To democratize programming education by providing a structured, intuitive learning path that adapts to individual learning styles while maintaining academic rigor and industry relevance, with special emphasis on accessibility for Somali speakers.
+To democratize programming education by providing a structured, intuitive programming language that makes coding accessible to Somali speakers, while maintaining the power and flexibility needed for real-world applications.
 
-## Platform Features
+## 🚀 Features
 
-- **Interactive Learning Environment**: Code, compile, and run programs directly in your browser
-- **Progressive Curriculum**: Structured learning paths from fundamentals to advanced concepts
-- **Real-time Feedback**: Immediate code evaluation with helpful error messages and suggestions
-- **Mathec Integration**: Mathematical concepts seamlessly integrated with programming exercises
-- **Multilingual Support**: Learn programming concepts in multiple human languages
-- **Accessibility Focus**: Designed with eye-friendly color schemes and accessibility standards
-- **Community Collaboration**: Share projects, participate in challenges, and learn together
+- **Somali Keywords & Syntax**: Program using familiar Somali words like "door" (function), "qor" (print), and "haddii" (if)
+- **Bilingual Documentation**: Comprehensive documentation available in both Somali and English
+- **Cross-Platform**: Runs on Windows, macOS, Linux, and more with consistent behavior
+- **Cultural Integration**: Examples and tutorials incorporate Somali cultural contexts
+- **Modern Language Features**: Includes pattern matching, async/await, and other modern programming paradigms
+- **Performance Optimized**: Includes a just-in-time compiler for significant performance improvements
+- **Comprehensive Standard Library**: Rich set of modules and functions for common tasks
 
-## Educational Approach
+## 🌐 Website Structure
 
-Soplang's educational methodology is built on three core principles:
+This repository contains the source code for the Soplang programming language's official website (soplang.org). The website is built using Next.js and TailwindCSS.
 
-1. **Concept Before Syntax**: Understanding the "why" before the "how"
-2. **Learn by Doing**: Practical application through guided exercises and projects
-3. **Scaffolded Learning**: Progressive complexity with appropriate support at each stage
+### 📂 Project Structure
 
-## Language Syntax Highlighting
+```
+/soplang.org
+├── public/               # Static assets (images, fonts, etc.)
+├── src/                  # Source directory
+│   ├── app/              # Next.js App Router
+│   │   ├── about/        # About pages (team, quotes, help, applications)
+│   │   ├── blog/         # Blog and news articles
+│   │   ├── community/    # Community pages (forums, contribute, events)
+│   │   ├── docs/         # Documentation pages
+│   │   │   ├── getting-started/ # Getting started guides
+│   │   │   ├── faq/      # Frequently asked questions
+│   │   │   └── ...       # Other documentation sections
+│   │   ├── downloads/    # Download pages for different platforms
+│   │   ├── privacy/      # Privacy policy
+│   │   ├── terms/        # Terms of use
+│   │   ├── trademarks/   # Trademark information
+│   │   ├── sitemap/      # Site map
+│   │   ├── success-stories/ # Success stories and testimonials
+│   │   ├── write/        # Contribution writing page
+│   │   ├── layout.tsx    # Root layout component
+│   │   └── page.tsx      # Homepage
+│   ├── components/       # Reusable components
+│   │   ├── CodeWindow.tsx # Code display component
+│   │   ├── Footer.tsx    # Footer component
+│   │   ├── Navbar.tsx    # Navigation bar component
+│   │   ├── SoplangHighlighter.tsx # Syntax highlighting component
+│   │   ├── ThemeProvider.tsx # Dark/light theme provider
+│   │   └── ThemeToggle.tsx # Theme toggle component
+│   ├── styles/           # Global styles
+│   │   ├── globals.css   # Global CSS with Tailwind imports
+│   │   └── soplang-syntax.css # Syntax highlighting styles
+│   └── utils/            # Utility functions
+│       └── formatDate.ts # Date formatting utilities
+├── scripts/              # Helper scripts
+├── .gitignore            # Git ignore file
+├── LICENSE               # License information
+├── next.config.js        # Next.js configuration
+├── package.json          # Project dependencies and scripts
+├── postcss.config.js     # PostCSS configuration
+├── tailwind.config.js    # Tailwind CSS configuration
+└── tsconfig.json         # TypeScript configuration
+```
 
-Soplang provides syntax highlighting support for popular code editors to enhance the learning experience. Our syntax highlighting emphasizes readability and makes it easier to identify different elements of the code.
+## 🛠️ Development Setup
 
-### VSCode Extension
+### Prerequisites
 
-For Visual Studio Code users, we provide a dedicated extension that offers full syntax highlighting for Soplang files. The extension uses the following TextMate grammar:
+- Node.js 18.x or later
+- npm or yarn
 
-```json
-{
-  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-  "name": "Soplang",
-  "scopeName": "source.soplang",
-  "patterns": [
-    { "include": "#comments" },
-    { "include": "#keywords" },
-    { "include": "#strings" },
-    { "include": "#numbers" },
-    { "include": "#identifiers" }
-  ],
-  "repository": {
-    "comments": {
-      "patterns": [
-        {
-          "name": "comment.block.soplang",
-          "begin": "/\\*",
-          "end": "\\*/",
-          "captures": {
-            "0": {
-              "name": "punctuation.definition.comment.soplang"
-            }
-          }
-        },
-        {
-          "name": "comment.line.soplang",
-          "match": "//.*$"
-        }
-      ]
-    },
-    "keywords": {
-      "patterns": [
-        {
-          "name": "keyword.control.soplang",
-          "match": "\\b(?:door|howl|soo_celi|qor|akhri|haddii|haddii_kale|haddii_kalena|ku_celi|inta_ay|jooji|sii_wad|isku_day|qabo|ka_keen|fasalka|ka_dhaxal|cusub|nafta|liis|shey|waxba|run|been)\\b"
-        }
-      ]
-    },
-    "strings": {
-      "patterns": [
-        {
-          "name": "string.quoted.double.soplang",
-          "begin": "\"",
-          "end": "\"",
-          "patterns": [
-            {
-              "name": "constant.character.escape.soplang",
-              "match": "\\\\."
-            }
-          ]
-        },
-        {
-          "name": "string.quoted.single.soplang",
-          "begin": "'",
-          "end": "'",
-          "patterns": [
-            {
-              "name": "constant.character.escape.soplang",
-              "match": "\\\\."
-            }
-          ]
-        }
-      ]
-    },
-    "numbers": {
-      "patterns": [
-        {
-          "name": "constant.numeric.soplang",
-          "match": "\\b\\d+(?:\\.\\d+)?\\b"
-        }
-      ]
-    },
-    "identifiers": {
-      "patterns": [
-        {
-          "name": "variable.other.soplang",
-          "match": "\\b[a-zA-Z_][a-zA-Z0-9_]*\\b"
-        }
-      ]
-    }
-  }
+### Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/soplang/soplang.org.git
+cd soplang.org
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+# or
+yarn install
+```
+
+3. Run the development server:
+
+```bash
+npm run dev
+# or
+yarn dev
+# or use the provided script for colored output
+./start-dev-with-colors.sh
+```
+
+4. Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
+
+## 🤝 Contributing
+
+We welcome contributions from everyone! Here's how you can help:
+
+### Types of Contributions
+
+1. **Code Contributions**: Improve the website, fix bugs, or add new features
+2. **Documentation**: Enhance or translate documentation
+3. **Design**: Improve UI/UX or create visual assets
+4. **Content**: Write blog posts, tutorials, or examples
+5. **Testing**: Test the website on different devices and browsers
+
+### Contribution Process
+
+1. **Fork the Repository**: Create your own fork of the project
+2. **Create a Branch**: Make your changes in a new branch
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
+3. **Make Changes**: Implement your changes following our coding standards
+4. **Test Your Changes**: Ensure your changes work as expected
+5. **Commit Your Changes**: Use clear commit messages
+   ```bash
+   git commit -m "Add feature: your feature description"
+   ```
+6. **Push to Your Fork**: Upload your changes
+   ```bash
+   git push origin feature/your-feature-name
+   ```
+7. **Create a Pull Request**: Submit a PR to the main repository
+
+### Coding Standards
+
+- Follow the existing code style and structure
+- Use TailwindCSS for styling (avoid inline styles)
+- Write clean, readable, and well-documented code
+- Ensure your code is responsive and accessible
+- Test your changes on different browsers and devices
+
+## 🎨 Design Guidelines
+
+### Colors
+
+We use CSS variables for colors to maintain consistency and enable theming:
+
+```css
+:root {
+  --primary-color: #3F72AF; /* Soft blue */
+  --secondary-color: #5E9A78; /* Soft green */
+  --background-color: #F9F7F7; /* Light gray with slight warmth */
+  --text-color: #333333; /* Dark gray */
+  --link-color: #3F72AF; /* Matching primary */
+}
+
+.dark {
+  --primary-color: #5085C1; /* Lighter blue for dark mode */
+  --secondary-color: #6BAA88; /* Lighter green for dark mode */
+  --background-color: #1A202C; /* Dark blue-gray */
+  --text-color: #E2E8F0; /* Off-white */
+  --link-color: #5085C1; /* Matching dark mode primary */
 }
 ```
 
-### Soplang Keywords
+### Typography
 
-The language includes the following Somali-based keywords that are highlighted:
+- Use the Roboto font family for consistent typography
+- Follow a clear hierarchy with appropriate heading sizes
+- Ensure sufficient contrast for readability
+
+### Components
+
+Use our predefined component classes for consistency:
+
+```css
+.container-custom /* Main container */
+.btn-primary /* Primary buttons */
+.btn-secondary /* Secondary buttons */
+.nav-link /* Navigation links */
+.soplang-box /* Content boxes */
+.soplang-header /* Section headers */
+.soplang-link /* Text links */
+```
+
+## 📚 Soplang Language Syntax
+
+Soplang uses Somali keywords to make programming more intuitive for Somali speakers:
 
 | Keyword | English Equivalent | Description |
 |---------|-------------------|-------------|
@@ -155,129 +223,19 @@ The language includes the following Somali-based keywords that are highlighted:
 | `run` | true | Boolean true value |
 | `been` | false | Boolean false value |
 
-### Installation
+## 📝 License
 
-To install the VSCode extension:
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-1. Open VS Code
-2. Go to Extensions (Ctrl+Shift+X)
-3. Search for "Soplang"
-4. Click Install
+## 📞 Contact
 
-Alternatively, you can download the extension from our [downloads page](https://soplang.org/downloads).
+- Website: [https://soplang.org](https://soplang.org)
+- GitHub: [https://github.com/soplang](https://github.com/soplang)
+- Discord: [https://discord.gg/soplang](https://discord.gg/soplang)
+- Email: info@soplang.org
 
-### Other Editors
+## 🙏 Acknowledgements
 
-We also provide syntax highlighting configurations for:
-- Sublime Text
-- Atom
-- JetBrains IDEs (IntelliJ, PyCharm, etc.)
-- Vim/Neovim
-
-Visit our [documentation](https://soplang.org/docs/tools/syntax-highlighting) for installation instructions for these editors.
-
-## Technical Implementation
-
-### Tech Stack
-
-- **Framework**: [Next.js](https://nextjs.org/) for server-rendered React applications
-- **Styling**: [Tailwind CSS](https://tailwindcss.com/) for responsive, accessible design
-- **Deployment**: [Vercel](https://vercel.com/) for seamless continuous deployment
-
-### Getting Started for Developers
-
-#### Prerequisites
-
-- Node.js 18.x or later
-- npm or yarn
-
-#### Installation
-
-1. Clone the repository:
-
-```bash
-git clone https://github.com/soplang/soplang.org.git
-cd soplang.org
-```
-
-2. Install dependencies:
-
-```bash
-npm install
-# or
-yarn install
-```
-
-3. Run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-```
-
-4. Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
-
-## Project Structure
-
-```
-/soplang.org
-├── src/                  # Source directory
-│   ├── app/              # Next.js App Router
-│   │   ├── about/        # About page
-│   │   ├── blog/         # Blog pages
-│   │   ├── community/    # Community page
-│   │   ├── docs/         # Documentation pages
-│   │   ├── downloads/    # Downloads page
-│   │   └── page.tsx      # Homepage
-│   ├── components/       # Reusable components
-│   │   ├── Footer.tsx    # Footer component
-│   │   ├── Navbar.tsx    # Navigation bar component
-│   │   └── ...           # Other components
-│   └── styles/           # Global styles
-│       └── globals.css   # Global CSS with Tailwind imports
-├── public/               # Static assets
-├── next.config.js        # Next.js configuration
-├── tailwind.config.js    # Tailwind CSS configuration
-├── tsconfig.json         # TypeScript configuration
-└── package.json          # Project dependencies and scripts
-```
-
-## Design Philosophy
-
-### Accessibility First
-
-Soplang is designed with accessibility as a priority. Our color scheme is specifically chosen to reduce eye strain during extended learning sessions:
-
-```css
-:root {
-  --primary-color: #3F72AF; /* Soft blue - easier on eyes */
-  --secondary-color: #5E9A78; /* Soft green - math education friendly */
-  --background-color: #F9F7F7; /* Very light gray with slight warmth */
-}
-```
-
-### Responsive Design
-
-The platform is fully responsive, providing an optimal learning experience across all devices from desktop workstations to mobile phones.
-
-## Contributing
-
-We welcome contributions from educators, developers, and language enthusiasts. Whether you're improving documentation, adding new features, or fixing bugs, your input helps make programming education more accessible to everyone.
-
-Please see our [Contributing Guidelines](CONTRIBUTING.md) for more information.
-
-## Educational Partners
-
-Soplang collaborates with educational institutions worldwide to develop curriculum materials and teaching methodologies. If you're an educator interested in partnering with us, please contact [education@soplang.org](mailto:education@soplang.org).
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Contact
-
-- **Website**: [https://soplang.org](https://soplang.org)
-- **Email**: [contact@soplang.org](mailto:contact@soplang.org)
-- **Community**: [Discord](https://discord.gg/n296G4dd7x)
-- **Twitter**: [@SoplangEdu](https://twitter.com/xSoplang)
+- All contributors who have helped build and improve Soplang
+- The Somali tech community for their support and feedback
+- Open source projects that have inspired and enabled this work
