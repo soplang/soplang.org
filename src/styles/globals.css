@@ -13,6 +13,13 @@
   --footer-bg: #F2F2F2; /* Light gray */
   --nav-hover: #5085C1; /* Slightly lighter blue for hover */
   --border-color: #DBE2EF; /* Light blue-gray */
+  
+  /* Responsive spacing variables */
+  --container-padding-mobile: 1rem;
+  --container-padding-tablet: 1.5rem;
+  --container-padding-desktop: 2rem;
+  --section-spacing-mobile: 2rem;
+  --section-spacing-desktop: 3rem;
 }
 
 .dark {
@@ -27,12 +34,30 @@
   --border-color: #4A5568; /* Medium gray */
 }
 
+/* Base responsive typography */
+html {
+  font-size: 16px;
+}
+
+@media (max-width: 640px) {
+  html {
+    font-size: 14px;
+  }
+}
+
 body {
   background-color: var(--background-color);
   color: var(--text-color);
   transition: background-color 0.3s ease, color 0.3s ease;
   font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
   line-height: 1.5;
+  overflow-x: hidden; /* Prevent horizontal scroll on mobile */
+}
+
+/* Responsive images */
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 @layer components {
@@ -41,11 +66,11 @@ body {
   }
   
   .btn-primary {
-    @apply bg-primary text-white px-4 py-2 rounded hover:opacity-90 transition-opacity;
+    @apply bg-primary text-white px-4 py-2 rounded hover:opacity-90 transition-opacity text-sm sm:text-base;
   }
   
   .btn-secondary {
-    @apply bg-secondary text-gray-800 px-4 py-2 rounded hover:opacity-90 transition-opacity;
+    @apply bg-secondary text-gray-800 px-4 py-2 rounded hover:opacity-90 transition-opacity text-sm sm:text-base;
   }
   
   .nav-link {
@@ -57,7 +82,7 @@ body {
   }
 
   .soplang-box {
-    @apply border border-[var(--border-color)] rounded p-4 mb-4 bg-white dark:bg-gray-800;
+    @apply border border-[var(--border-color)] rounded p-4 sm:p-6 mb-4 bg-white dark:bg-gray-800;
   }
 
   .soplang-header {
@@ -76,11 +101,11 @@ body {
      Somali programming language with its own identity */
 
   .main-content {
-    @apply py-8;
+    @apply py-6 sm:py-8;
   }
 
   .sidebar {
-    @apply border-l border-[var(--border-color)] pl-6;
+    @apply border-t md:border-t-0 md:border-l border-[var(--border-color)] pt-6 md:pt-0 md:pl-6 mt-6 md:mt-0;
   }
 
   .sidebar-header {
@@ -101,5 +126,27 @@ body {
 
   .quick-link {
     @apply bg-gray-100 dark:bg-gray-700 px-3 py-1 rounded text-sm hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors;
+  }
+  
+  /* Responsive grid utilities */
+  .responsive-grid {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6;
+  }
+  
+  /* Responsive text utilities */
+  .responsive-heading-1 {
+    @apply text-3xl sm:text-4xl md:text-5xl font-bold;
+  }
+  
+  .responsive-heading-2 {
+    @apply text-2xl sm:text-3xl font-bold;
+  }
+  
+  .responsive-heading-3 {
+    @apply text-xl sm:text-2xl font-bold;
+  }
+  
+  .responsive-paragraph {
+    @apply text-sm sm:text-base;
   }
 } 
