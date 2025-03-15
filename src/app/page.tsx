@@ -84,8 +84,11 @@ export default function Home() {
               <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
                 Soplang
               </h1>
+              <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
+                Dhis Software Adigoo Adeegsanaya Afkaaga Hooyo!
+              </h2>
               <p className="text-xl mb-6">
-                A modern, intuitive programming language inspired by Python, designed for simplicity and performance.
+                Dhis Software Adigoo Adeegsanaya Afkaaga Hooyo!
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link href="/downloads" className="bg-white text-[var(--primary-color)] font-bold px-6 py-3 rounded hover:bg-gray-100 transition-colors">
@@ -110,30 +113,33 @@ export default function Home() {
             {/* Main Content Area */}
             <div className="lg:w-2/3">
               {/* Introduction */}
-              <div className="python-box">
-                <h2 className="python-header">What is Soplang?</h2>
+              <div className="soplang-box">
+                <h2 className="soplang-header">What is Soplang?</h2>
                 <p className="mb-4">
-                  Soplang is a high-level, general-purpose programming language designed with a focus on code readability and developer productivity. It takes inspiration from Python's clean syntax while introducing performance optimizations and modern language features.
+                  Soplang is the first Somali programming language, designed with a focus on code readability and developer productivity. By using Somali keywords and syntax, it makes programming accessible to Somali speakers worldwide who may face language barriers with traditional programming languages.
+                </p>
+                <p className="mb-4">
+                  Whether you're a beginner or an experienced developer, Soplang provides a clean and intuitive syntax that makes it easy to express concepts in fewer lines of code while using your native language.
                 </p>
                 <p>
-                  Whether you're a beginner or an experienced developer, Soplang provides a clean and intuitive syntax that makes it easy to express concepts in fewer lines of code than would be possible in languages like C++ or Java.
+                  With Soplang, you can "Dhis Software Adigoo Adeegsanaya Afkaaga Hooyo!" (Build software using your mother tongue!)
                 </p>
               </div>
 
               {/* Features */}
-              <div className="python-box">
-                <h2 className="python-header">Key Features</h2>
+              <div className="soplang-box">
+                <h2 className="soplang-header">Key Features</h2>
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
-                    <h3 className="font-bold text-gray-900 dark:text-white mb-2">Clean, Readable Syntax</h3>
+                    <h3 className="font-bold text-gray-900 dark:text-white mb-2">Somali Keywords & Syntax</h3>
                     <p className="text-gray-700 dark:text-gray-300 mb-4">
-                      Soplang uses indentation to define code blocks, making your code clean and consistent.
+                      Program using familiar Somali words like "door" (function), "qor" (print), and "haddii" (if), making coding intuitive for Somali speakers.
                     </p>
                   </div>
                   <div>
-                    <h3 className="font-bold text-gray-900 dark:text-white mb-2">Performance Optimized</h3>
+                    <h3 className="font-bold text-gray-900 dark:text-white mb-2">Bilingual Documentation</h3>
                     <p className="text-gray-700 dark:text-gray-300 mb-4">
-                      Built with a just-in-time compiler that provides significant performance improvements.
+                      Comprehensive documentation available in both Somali and English, ensuring accessibility for all users.
                     </p>
                   </div>
                   <div>
@@ -143,43 +149,43 @@ export default function Home() {
                     </p>
                   </div>
                   <div>
-                    <h3 className="font-bold text-gray-900 dark:text-white mb-2">Rich Ecosystem</h3>
+                    <h3 className="font-bold text-gray-900 dark:text-white mb-2">Cultural Integration</h3>
                     <p className="text-gray-700 dark:text-gray-300 mb-4">
-                      Access a growing library of packages and tools to enhance your development experience.
+                      Examples and tutorials incorporate Somali cultural contexts, making learning more relevant and engaging.
                     </p>
                   </div>
                 </div>
                 <div className="mt-4">
-                  <Link href="/about/features" className="python-link">
+                  <Link href="/about/features" className="soplang-link">
                     Learn more about Soplang features →
                   </Link>
                 </div>
               </div>
 
               {/* Getting Started */}
-              <div className="python-box">
-                <h2 className="python-header">Getting Started</h2>
+              <div className="soplang-box">
+                <h2 className="soplang-header">Getting Started</h2>
                 <p className="mb-4">
                   Ready to dive in? Here's how to get started with Soplang:
                 </p>
                 <ol className="list-decimal list-inside space-y-2 mb-4">
                   <li>
-                    <Link href="/downloads" className="python-link">
+                    <Link href="/downloads" className="soplang-link">
                       Download and install Soplang
                     </Link>
                   </li>
                   <li>
-                    <Link href="/docs/tutorial" className="python-link">
+                    <Link href="/docs/tutorial" className="soplang-link">
                       Follow the beginner's tutorial
                     </Link>
                   </li>
                   <li>
-                    <Link href="/docs/reference" className="python-link">
+                    <Link href="/docs/reference" className="soplang-link">
                       Explore the language reference
                     </Link>
                   </li>
                   <li>
-                    <Link href="/community" className="python-link">
+                    <Link href="/community" className="soplang-link">
                       Join the community
                     </Link>
                   </li>
@@ -198,8 +204,8 @@ $ curl -sSL https://install.soplang.org | bash
               </div>
 
               {/* Success Stories */}
-              <div className="python-box">
-                <h2 className="python-header">Success Stories</h2>
+              <div className="soplang-box">
+                <h2 className="soplang-header">Success Stories</h2>
                 <div className="space-y-4">
                   {successStories.map((story, index) => (
                     <div key={index} className="bg-gray-50 dark:bg-gray-800 p-4 rounded">
@@ -208,7 +214,7 @@ $ curl -sSL https://install.soplang.org | bash
                         <p className="font-medium text-gray-900 dark:text-white">
                           {story.author}, {story.company}
                         </p>
-                        <Link href={story.url} className="python-link text-sm">
+                        <Link href={story.url} className="soplang-link text-sm">
                           Read more
                         </Link>
                       </div>
@@ -216,7 +222,7 @@ $ curl -sSL https://install.soplang.org | bash
                   ))}
                 </div>
                 <div className="mt-4">
-                  <Link href="/success-stories" className="python-link">
+                  <Link href="/success-stories" className="soplang-link">
                     View all success stories →
                   </Link>
                 </div>
@@ -226,7 +232,7 @@ $ curl -sSL https://install.soplang.org | bash
             {/* Sidebar */}
             <div className="lg:w-1/3">
               {/* Latest Version */}
-              <div className="python-box">
+              <div className="soplang-box">
                 <h2 className="sidebar-header">Latest Version</h2>
                 <div className="mb-4">
                   <div className="text-2xl font-bold text-[var(--primary-color)]">Soplang 1.2.0</div>
@@ -236,14 +242,14 @@ $ curl -sSL https://install.soplang.org | bash
                   Download Now
                 </Link>
                 <div className="mt-2 text-center">
-                  <Link href="/blog/release-notes-v1.2.0" className="text-sm python-link">
+                  <Link href="/blog/release-notes-v1.2.0" className="text-sm soplang-link">
                     Release Notes
                   </Link>
                 </div>
               </div>
 
               {/* Latest News */}
-              <div className="python-box">
+              <div className="soplang-box">
                 <h2 className="sidebar-header">Latest News</h2>
                 <ul className="sidebar-list">
                   {latestNews.map((item, index) => (
@@ -257,13 +263,13 @@ $ curl -sSL https://install.soplang.org | bash
                     </li>
                   ))}
                 </ul>
-                <Link href="/blog" className="python-link text-sm">
+                <Link href="/blog" className="soplang-link text-sm">
                   More news →
                 </Link>
               </div>
 
               {/* Upcoming Events */}
-              <div className="python-box">
+              <div className="soplang-box">
                 <h2 className="sidebar-header">Upcoming Events</h2>
                 <ul className="sidebar-list">
                   {upcomingEvents.map((event, index) => (
@@ -277,35 +283,35 @@ $ curl -sSL https://install.soplang.org | bash
                     </li>
                   ))}
                 </ul>
-                <Link href="/events" className="python-link text-sm">
+                <Link href="/events" className="soplang-link text-sm">
                   All events →
                 </Link>
               </div>
 
               {/* Community */}
-              <div className="python-box">
+              <div className="soplang-box">
                 <h2 className="sidebar-header">Join the Community</h2>
                 <p className="mb-4 text-sm">
                   Connect with other Soplang developers and get involved in the community.
                 </p>
                 <ul className="space-y-2">
                   <li>
-                    <a href="https://github.com/soplang" className="python-link" target="_blank" rel="noopener noreferrer">
+                    <a href="https://github.com/soplang" className="soplang-link" target="_blank" rel="noopener noreferrer">
                       GitHub
                     </a>
                   </li>
                   <li>
-                    <a href="https://discord.gg/soplang" className="python-link" target="_blank" rel="noopener noreferrer">
+                    <a href="https://discord.gg/soplang" className="soplang-link" target="_blank" rel="noopener noreferrer">
                       Discord
                     </a>
                   </li>
                   <li>
-                    <Link href="/community/forums" className="python-link">
+                    <Link href="/community/forums" className="soplang-link">
                       Forums
                     </Link>
                   </li>
                   <li>
-                    <Link href="/community/mailing-lists" className="python-link">
+                    <Link href="/community/mailing-lists" className="soplang-link">
                       Mailing Lists
                     </Link>
                   </li>
