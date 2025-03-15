@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export const metadata = {
   title: 'Soplang Documentation - Introduction',
-  description: 'Introduction to Soplang, a Python-inspired programming language designed for simplicity and performance.',
+  description: 'Introduction to Soplang, the first Somali programming language designed for simplicity and performance.',
 };
 
 export default function DocsPage() {
@@ -11,18 +11,17 @@ export default function DocsPage() {
       <h1>Introduction to Soplang</h1>
       
       <p>
-        Welcome to the official documentation for Soplang, a modern programming
-        language inspired by Python that combines simplicity, readability, and
-        performance.
+        Welcome to the official documentation for Soplang, a modern Somali programming
+        language that combines simplicity, readability, and performance.
       </p>
 
       <div className="bg-blue-50 dark:bg-blue-900/30 p-4 rounded-md my-6">
         <h3 className="text-primary dark:text-blue-400 mt-0">What is Soplang?</h3>
         <p className="mb-0">
           Soplang is a high-level, general-purpose programming language designed
-          with a focus on code readability and developer productivity. It takes
-          inspiration from Python's clean syntax while introducing performance
-          optimizations and modern language features.
+          with a focus on code readability and developer productivity. It's the first
+          programming language developed with Somali developers in mind, featuring intuitive
+          syntax and powerful language features.
         </p>
       </div>
 
@@ -53,6 +52,10 @@ export default function DocsPage() {
         <li>
           <strong>Cross-Platform</strong>: Runs on Windows, macOS, Linux, and
           more.
+        </li>
+        <li>
+          <strong>Somali-Focused Documentation</strong>: Available in both English and Somali
+          to make programming more accessible to Somali speakers.
         </li>
       </ul>
 
@@ -110,6 +113,10 @@ print(alice.describe())`}</code>
         <li>
           <strong>Performance matters</strong>: While maintaining readability,
           Soplang is designed with performance in mind.
+        </li>
+        <li>
+          <strong>Accessibility for all</strong>: Soplang aims to make programming
+          more accessible to Somali speakers worldwide.
         </li>
       </ol>
 

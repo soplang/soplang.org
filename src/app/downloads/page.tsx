@@ -80,10 +80,6 @@ const downloads = [
 // Package manager installation commands
 const packageManagers = [
   {
-    name: "pip (Python)",
-    command: "pip install soplang",
-  },
-  {
     name: "npm (Node.js)",
     command: "npm install -g soplang",
   },
@@ -96,14 +92,18 @@ const packageManagers = [
     command: "choco install soplang",
   },
   {
+    name: "APT (Debian/Ubuntu)",
+    command: "sudo apt install soplang",
+  },
+  {
     name: "Docker",
     command: "docker pull soplang/soplang:latest",
   },
 ];
 
 export const metadata = {
-  title: 'Download Soplang - A Python-inspired Programming Language',
-  description: 'Download Soplang for Windows, macOS, or Linux. Get started with the Python-inspired programming language designed for simplicity and performance.',
+  title: 'Download Soplang - The Somali Programming Language',
+  description: 'Download Soplang for Windows, macOS, or Linux. Get started with the first Somali programming language designed for simplicity and performance.',
 };
 
 export default function DownloadsPage() {

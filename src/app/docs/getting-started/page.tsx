@@ -54,10 +54,10 @@ export default function GettingStartedPage() {
               </p>
               
               <div className="mb-4">
-                <h4 className="font-semibold mb-2">Using pip (Python Package Manager):</h4>
-                <div className="bg-gray-800 text-white p-4 rounded-md">
-                  <p className="font-mono text-sm">pip install soplang</p>
-                </div>
+                <h4 className="font-semibold mb-2">Using npm (Node.js Package Manager):</h4>
+                <pre className="bg-gray-100 dark:bg-gray-800 p-4 rounded-md overflow-x-auto">
+                  <code>npm install -g soplang</code>
+                </pre>
               </div>
               
               <div className="mb-4">
@@ -159,7 +159,7 @@ pi = 3.14159
 is_awesome = True
 
 # List
-languages = ["Python", "JavaScript", "Soplang"]
+languages = ["Somali", "JavaScript", "Soplang"]
 
 # Dictionary
 features = {
@@ -174,7 +174,7 @@ features = {
               <div>
                 <h3 className="text-xl font-semibold mb-2">Control Flow</h3>
                 <p>
-                  Soplang uses indentation (like Python) to define code blocks in control structures:
+                  Soplang uses indentation to define code blocks in control structures:
                 </p>
                 <div className="bg-gray-800 text-white p-4 rounded-md mt-2">
                   <pre className="font-mono text-sm">
@@ -188,7 +188,7 @@ else:
     print("You are a senior")
 
 # For loop
-for language in ["Python", "JavaScript", "Soplang"]:
+for language in ["Somali", "JavaScript", "Soplang"]:
     print(f"I like {language}")
 
 # While loop

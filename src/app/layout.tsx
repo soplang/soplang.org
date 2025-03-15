@@ -13,13 +13,13 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: 'Soplang - A Python-inspired Programming Language',
-  description: 'Soplang is a modern, intuitive programming language inspired by Python, designed for simplicity and usability.',
-  keywords: ['Soplang', 'programming language', 'Python-inspired', 'coding', 'development'],
+  title: 'Soplang - The First Somali Programming Language',
+  description: 'Dhis Software Adigoo Adeegsanaya Afkaaga Hooyo! Soplang is the first Somali programming language designed for simplicity, usability, and accessibility for Somali speakers worldwide.',
+  keywords: ['Soplang', 'programming language', 'Somali', 'coding', 'development', 'afka hooyo', 'software development'],
   metadataBase: new URL('https://soplang.org'),
   openGraph: {
-    title: 'Soplang - A Python-inspired Programming Language',
-    description: 'Soplang is a modern, intuitive programming language inspired by Python, designed for simplicity and usability.',
+    title: 'Soplang - The First Somali Programming Language',
+    description: 'Dhis Software Adigoo Adeegsanaya Afkaaga Hooyo! Soplang is the first Somali programming language designed for simplicity, usability, and accessibility for Somali speakers worldwide.',
     url: 'https://soplang.org',
     siteName: 'Soplang',
     images: [
@@ -35,8 +35,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Soplang - A Python-inspired Programming Language',
-    description: 'Soplang is a modern, intuitive programming language inspired by Python, designed for simplicity and usability.',
+    title: 'Soplang - The First Somali Programming Language',
+    description: 'Dhis Software Adigoo Adeegsanaya Afkaaga Hooyo! Soplang is the first Somali programming language designed for simplicity, usability, and accessibility for Somali speakers worldwide.',
     images: ['/images/twitter-image.png'],
   },
 };

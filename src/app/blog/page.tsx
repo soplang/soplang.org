@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export const metadata = {
   title: 'Soplang Blog - News, Updates, and Tutorials',
-  description: 'Stay up-to-date with the latest news, updates, and tutorials for Soplang, the Python-inspired programming language.',
+  description: 'Stay up-to-date with the latest news, updates, and tutorials for Soplang, the first Somali programming language.',
 };
 
 // Blog posts data
@@ -48,17 +48,17 @@ const blogPosts = [
     imageAlt: "Building Web Applications with Soplang",
   },
   {
-    id: "soplang-vs-python",
-    title: "Soplang vs. Python: A Detailed Comparison",
+    id: "soplang-features",
+    title: "Unique Features of Soplang: A Comprehensive Overview",
     excerpt:
-      "How does Soplang compare to Python? This article explores the similarities, differences, and when to choose one over the other.",
+      "Explore the unique features that make Soplang stand out as the first Somali programming language designed for simplicity and performance.",
     date: "August 30, 2023",
     author: "Mr Sharafdin",
     authorRole: "Lead Developer",
-    category: "Comparison",
+    category: "Features",
     readTime: "8 min read",
-    image: "/images/blog/soplang-vs-python.jpg",
-    imageAlt: "Soplang vs Python Comparison",
+    image: "/images/blog/soplang-features.jpg",
+    imageAlt: "Soplang Features Overview",
   },
   {
     id: "performance-optimization-tips",

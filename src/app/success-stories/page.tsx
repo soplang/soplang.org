@@ -16,7 +16,7 @@ const successStories = [
     company: 'TechInnovate',
     image: '/images/testimonials/mrsharafdin.svg',
     quote: 'Soplang has transformed how our team approaches rapid prototyping. The intuitive syntax and powerful features allow us to build and test ideas faster than ever before.',
-    story: 'Our team was struggling with development bottlenecks when building new features. After adopting Soplang, we reduced our prototype development time by 40%. The seamless integration with our existing Python codebase made the transition incredibly smooth.',
+    story: 'Our team was struggling with development bottlenecks when building new features. After adopting Soplang, we reduced our prototype development time by 40%. The clean syntax and excellent documentation in both English and Somali made the transition incredibly smooth for our diverse team.',
   },
   {
     id: 2,

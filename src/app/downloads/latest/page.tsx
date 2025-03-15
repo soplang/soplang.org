@@ -5,8 +5,8 @@ import CodeWindow from "../../../components/CodeWindow";
 import Footer from "../../../components/Footer";
 
 export const metadata: Metadata = {
-  title: 'Download Latest Version of Soplang',
-  description: 'Download the latest version of Soplang programming language for your platform.',
+  title: 'Download Latest Version of Soplang - The Somali Programming Language',
+  description: 'Download the latest version of Soplang, the first Somali programming language, for your platform.',
 };
 
 export default function DownloadLatestPage() {
@@ -125,8 +125,8 @@ export default function DownloadLatestPage() {
               <h3 className="font-semibold mb-2">Package Managers</h3>
               <div className="space-y-4">
                 <CodeWindow 
-                  code={`pip install soplang==${latestVersion}`} 
-                  title="Python (pip)" 
+                  code={`npm install -g soplang@${latestVersion}`} 
+                  title="Node.js (npm)" 
                   className="shadow-lg"
                 />
                 <CodeWindow 

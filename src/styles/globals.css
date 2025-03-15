@@ -56,21 +56,24 @@ body {
     @apply bg-[var(--nav-hover)] text-white px-3 py-2 rounded;
   }
 
-  .python-box {
+  .soplang-box {
     @apply border border-[var(--border-color)] rounded p-4 mb-4 bg-white dark:bg-gray-800;
   }
 
-  .python-header {
+  .soplang-header {
     @apply text-xl font-bold text-primary mb-2;
   }
 
-  .python-list {
+  .soplang-list {
     @apply list-disc list-inside ml-4 space-y-1;
   }
 
-  .python-link {
+  .soplang-link {
     @apply text-[var(--link-color)] hover:underline;
   }
+
+  /* Note: Python-related classes have been removed as Soplang is a standalone 
+     Somali programming language with its own identity */
 
   .main-content {
     @apply py-8;

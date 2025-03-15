@@ -4,7 +4,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Soplang News - Latest Announcements and Updates",
-  description: "Stay up-to-date with the latest news, announcements, and updates about Soplang, the Python-inspired programming language.",
+  description: "Stay up-to-date with the latest news, announcements, and updates about Soplang, the first Somali programming language.",
 };
 
 // News data

@@ -5,12 +5,12 @@ import Link from 'next/link';
 const commonQuestions = [
   {
     question: "How do I install Soplang?",
-    answer: "You can install Soplang using package managers like pip (Python) or brew (macOS). Visit our installation guide for detailed instructions.",
+    answer: "You can install Soplang using package managers like npm (Node.js) or brew (macOS). Visit our installation guide for detailed instructions.",
     link: "/docs/installation"
   },
   {
     question: "Where can I find documentation?",
-    answer: "Our comprehensive documentation includes tutorials, API reference, and best practices.",
+    answer: "Our comprehensive documentation includes tutorials, API reference, and best practices in both English and Somali.",
     link: "/docs"
   },
   {
@@ -20,7 +20,7 @@ const commonQuestions = [
   },
   {
     question: "Where can I get community support?",
-    answer: "Join our Discord server or visit our community forums to connect with other developers.",
+    answer: "Join our Discord server or visit our community forums to connect with other Somali developers and Soplang users.",
     link: "/community"
   }
 ];

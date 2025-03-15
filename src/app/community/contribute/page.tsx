@@ -172,10 +172,10 @@ git clone https://github.com/soplang/soplang.git
 cd soplang
 
 # Install dependencies
-pip install -r requirements-dev.txt
+npm install
 
 # Run tests to make sure everything is working
-python -m pytest`}</code>
+npm test`}</code>
                 </pre>
               </div>
               <p className="text-gray-700 dark:text-gray-300">
@@ -226,7 +226,7 @@ python -m pytest`}</code>
             <div>
               <h3 className="text-lg font-semibold mb-2">Code Style</h3>
               <p className="text-gray-600 dark:text-gray-400">
-                We follow PEP 8 with some modifications. Please ensure your code adheres to our style guide.
+                We follow ESLint and Prettier standards. Please ensure your code adheres to our style guide.
                 Use the provided linters and formatters to check your code before submitting.
               </p>
             </div>
@@ -234,7 +234,7 @@ python -m pytest`}</code>
             <div>
               <h3 className="text-lg font-semibold mb-2">Testing</h3>
               <p className="text-gray-600 dark:text-gray-400">
-                All code contributions should include appropriate tests. We use pytest for our test suite.
+                All code contributions should include appropriate tests. We use Jest for our test suite.
                 Make sure all tests pass before submitting your pull request.
               </p>
             </div>

@@ -10,7 +10,7 @@ const faqData = {
     questions: [
       {
         question: "What is Soplang?",
-        answer: "Soplang is a modern, Python-inspired programming language designed for simplicity, readability, and performance. It combines the ease of use found in Python with performance optimizations that make it suitable for a wide range of applications."
+        answer: "Soplang is a modern Somali programming language designed for simplicity, readability, and performance. It's the first programming language developed with Somali developers in mind, offering intuitive syntax and powerful features for a wide range of applications."
       },
       {
         question: "Is Soplang free to use?",
@@ -18,11 +18,11 @@ const faqData = {
       },
       {
         question: "Who created Soplang?",
-        answer: "Soplang was created by a team of developers who wanted to combine the readability of Python with improved performance. The Soplang Software Foundation now maintains and develops the language."
+        answer: "Soplang was created by a team of Somali developers who wanted to create a programming language that reflects Somali thinking patterns and problem-solving approaches. The Soplang Software Foundation now maintains and develops the language."
       },
       {
         question: "What makes Soplang different from other programming languages?",
-        answer: "Soplang offers a unique combination of Python-like syntax for readability, strong performance optimizations, built-in concurrency support, and a comprehensive standard library. It's designed to be easy to learn while still being powerful enough for professional use."
+        answer: "Soplang offers a unique combination of intuitive syntax inspired by Somali language patterns, strong performance optimizations, built-in concurrency support, and a comprehensive standard library. It's designed to be easy to learn while still being powerful enough for professional use."
       }
     ]
   },
@@ -31,7 +31,7 @@ const faqData = {
     questions: [
       {
         question: "How do I install Soplang?",
-        answer: "Soplang can be installed through various methods depending on your operating system. For Windows, macOS, and Linux, you can download the installer from our downloads page. You can also use package managers like pip (Python), npm (Node.js), Homebrew (macOS), or Chocolatey (Windows)."
+        answer: "Soplang can be installed through various methods depending on your operating system. For Windows, macOS, and Linux, you can download the installer from our downloads page. You can also use package managers like npm (Node.js), Homebrew (macOS), or Chocolatey (Windows)."
       },
       {
         question: "What are the system requirements for Soplang?",
@@ -39,11 +39,11 @@ const faqData = {
       },
       {
         question: "How do I update Soplang to the latest version?",
-        answer: "If you installed Soplang using a package manager, you can update it using the same tool (e.g., 'pip install --upgrade soplang'). If you installed it manually, you can download the latest version from our website and run the installer."
+        answer: "If you installed Soplang using a package manager, you can update it using the same tool (e.g., 'npm update -g soplang'). If you installed it manually, you can download the latest version from our website and run the installer."
       },
       {
         question: "Can I have multiple versions of Soplang installed?",
-        answer: "Yes, Soplang supports multiple installations through version management tools. You can use tools like 'sopenv' (similar to Python's virtualenv) to manage different Soplang versions for different projects."
+        answer: "Yes, Soplang supports multiple installations through version management tools. You can use tools like 'sopenv' to manage different Soplang versions for different projects."
       }
     ]
   },
@@ -52,7 +52,7 @@ const faqData = {
     questions: [
       {
         question: "Is Soplang statically or dynamically typed?",
-        answer: "Soplang uses a dynamic type system with optional static type hints, similar to Python's type annotations. This gives you the flexibility of dynamic typing with the benefits of static type checking when needed."
+        answer: "Soplang uses a dynamic type system with optional static type hints. This gives you the flexibility of dynamic typing with the benefits of static type checking when needed."
       },
       {
         question: "Does Soplang support object-oriented programming?",
@@ -60,7 +60,7 @@ const faqData = {
       },
       {
         question: "How does Soplang handle concurrency?",
-        answer: "Soplang has built-in support for concurrency through async/await syntax, similar to modern JavaScript or Python. It also includes a lightweight threading model and support for parallel processing."
+        answer: "Soplang has built-in support for concurrency through async/await syntax. It also includes a lightweight threading model and support for parallel processing."
       },
       {
         question: "What paradigms does Soplang support?",
@@ -73,7 +73,7 @@ const faqData = {
     questions: [
       {
         question: "What package manager does Soplang use?",
-        answer: "Soplang uses 'sop' as its official package manager, similar to npm for Node.js or pip for Python. It allows you to easily install, update, and manage dependencies for your projects."
+        answer: "Soplang uses 'sop' as its official package manager. It allows you to easily install, update, and manage dependencies for your projects."
       },
       {
         question: "Are there many libraries available for Soplang?",
@@ -81,7 +81,7 @@ const faqData = {
       },
       {
         question: "Can I use libraries from other languages with Soplang?",
-        answer: "Soplang has excellent interoperability with C, C++, and Python. You can use libraries from these languages through Soplang's foreign function interface (FFI) or through dedicated bindings."
+        answer: "Soplang has excellent interoperability with C, C++, and JavaScript. You can use libraries from these languages through Soplang's foreign function interface (FFI) or through dedicated bindings."
       },
       {
         question: "How do I publish my own Soplang package?",
@@ -94,7 +94,7 @@ const faqData = {
     questions: [
       {
         question: "How does Soplang's performance compare to other languages?",
-        answer: "Soplang typically offers better performance than interpreted languages like Python while maintaining similar syntax. It's not as fast as low-level languages like C or Rust, but it provides a good balance between development speed and runtime performance."
+        answer: "Soplang typically offers better performance than many interpreted languages while maintaining an intuitive syntax. It provides a good balance between development speed and runtime performance."
       },
       {
         question: "Does Soplang have a JIT compiler?",

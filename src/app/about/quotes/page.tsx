@@ -37,7 +37,7 @@ const featuredQuotes = [
     link: "https://techdaily.com/soplang-review"
   },
   {
-    text: "A game-changer in the programming world. Soplang combines the best of Python's simplicity with C's performance.",
+    text: "A game-changer in the programming world. Soplang combines simplicity with powerful performance, making it accessible to Somali developers worldwide.",
     source: "CodeMagazine",
     link: "https://codemagazine.com/soplang"
   }

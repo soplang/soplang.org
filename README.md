@@ -7,11 +7,11 @@
 
 ## About Soplang
 
-Soplang is an innovative educational platform designed to make programming language learning accessible, engaging, and effective. Inspired by Python's readability and modern pedagogical approaches, Soplang creates a seamless bridge between theoretical computer science concepts and practical coding skills.
+Soplang is an innovative educational platform designed to make programming language learning accessible, engaging, and effective. As the first Somali programming language, Soplang creates a seamless bridge between theoretical computer science concepts and practical coding skills, with a focus on making programming accessible to Somali speakers worldwide.
 
 ### Our Mission
 
-To democratize programming education by providing a structured, intuitive learning path that adapts to individual learning styles while maintaining academic rigor and industry relevance.
+To democratize programming education by providing a structured, intuitive learning path that adapts to individual learning styles while maintaining academic rigor and industry relevance, with special emphasis on accessibility for Somali speakers.
 
 ## Platform Features
 
