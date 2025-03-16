@@ -3,8 +3,23 @@
 import { useState } from 'react';
 import Link from 'next/link';
 
+// Define TypeScript interfaces
+interface Question {
+  question: string;
+  answer: string;
+}
+
+interface CategoryData {
+  title: string;
+  questions: Question[];
+}
+
+interface FAQData {
+  [key: string]: CategoryData;
+}
+
 // FAQ data organized by categories
-const faqData = {
+const faqData: FAQData = {
   general: {
     title: "General",
     questions: [
@@ -137,8 +152,13 @@ export default function FAQPage() {
   const [searchQuery, setSearchQuery] = useState('');
   const [activeCategory, setActiveCategory] = useState('all');
 
+  // Add type for filtered questions
+  interface FilteredQuestion extends Question {
+    category: keyof typeof faqData;
+  }
+
   // Filter questions based on search query and active category
-  const filteredQuestions = Object.entries(faqData).flatMap(([category, data]) => {
+  const filteredQuestions: FilteredQuestion[] = Object.entries(faqData).flatMap(([category, data]) => {
     return data.questions
       .filter(q => 
         (activeCategory === 'all' || activeCategory === category) &&
