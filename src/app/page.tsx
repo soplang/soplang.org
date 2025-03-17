@@ -77,98 +77,102 @@ export default function Home() {
   return (
     <div className="bg-white dark:bg-gray-900" suppressHydrationWarning>
       {/* Hero Section */}
-      <section className="bg-[var(--primary-color)] text-white py-12">
-        <div className="container-custom">
-          <div className="flex flex-col lg:flex-row items-center">
-            <div className="lg:w-1/2 lg:pr-12">
-              <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
+      <section className="bg-[var(--primary-color)] text-white py-8 sm:py-12 lg:py-16">
+        <div className="container-custom px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
+            <div className="w-full lg:w-1/2">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-4">
                 Soplang
               </h1>
-              <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
+              <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-4">
                 Dhis Software Adigoo Adeegsanaya Afkaaga Hooyo!
               </h2>
-              <p className="text-xl mb-6">
+              <p className="text-lg sm:text-xl mb-6 text-white/90">
                 Dhis Software Adigoo Adeegsanaya Afkaaga Hooyo!
               </p>
-              <div className="flex flex-wrap gap-4">
-                <Link href="/downloads" className="bg-white text-[var(--primary-color)] font-bold px-6 py-3 rounded hover:bg-gray-100 transition-colors">
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link href="/downloads" className="bg-white text-[var(--primary-color)] font-bold px-6 py-3 rounded-md hover:bg-gray-100 transition-colors text-center">
                   Download Soplang
                 </Link>
-                <Link href="/docs/getting-started" className="bg-[var(--secondary-color)] text-gray-900 font-bold px-6 py-3 rounded hover:bg-opacity-90 transition-colors">
+                <Link href="/docs/getting-started" className="bg-[var(--secondary-color)] text-gray-900 font-bold px-6 py-3 rounded-md hover:bg-opacity-90 transition-colors text-center">
                   Get Started
                 </Link>
               </div>
             </div>
-            <div className="lg:w-1/2 mt-8 lg:mt-0">
-              <CodeWindow code={codeSnippet} title="main.so" />
+            <div className="w-full lg:w-1/2">
+              <div className="max-w-xl mx-auto lg:max-w-none">
+                <CodeWindow code={codeSnippet} title="main.so" />
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Main Content */}
-      <section className="py-8">
-        <div className="container-custom">
+      <section className="py-8 sm:py-12">
+        <div className="container-custom px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row gap-8">
             {/* Main Content Area */}
-            <div className="lg:w-2/3">
+            <div className="w-full lg:w-2/3">
               {/* Introduction */}
-              <div className="soplang-box">
-                <h2 className="soplang-header">What is Soplang?</h2>
-                <p className="mb-4">
-                  Soplang is the first Somali programming language, designed with a focus on code readability and developer productivity. By using Somali keywords and syntax, it makes programming accessible to Somali speakers worldwide who may face language barriers with traditional programming languages.
-                </p>
-                <p className="mb-4">
-                  Whether you're a beginner or an experienced developer, Soplang provides a clean and intuitive syntax that makes it easy to express concepts in fewer lines of code while using your native language.
-                </p>
-                <p>
-                  With Soplang, you can "Dhis Software Adigoo Adeegsanaya Afkaaga Hooyo!" (Build software using your mother tongue!)
-                </p>
+              <div className="soplang-box p-6 sm:p-8">
+                <h2 className="soplang-header text-2xl sm:text-3xl mb-6">What is Soplang?</h2>
+                <div className="space-y-4 text-base sm:text-lg">
+                  <p>
+                    Soplang is the first Somali programming language, designed with a focus on code readability and developer productivity. By using Somali keywords and syntax, it makes programming accessible to Somali speakers worldwide who may face language barriers with traditional programming languages.
+                  </p>
+                  <p>
+                    Whether you're a beginner or an experienced developer, Soplang provides a clean and intuitive syntax that makes it easy to express concepts in fewer lines of code while using your native language.
+                  </p>
+                  <p>
+                    With Soplang, you can "Dhis Software Adigoo Adeegsanaya Afkaaga Hooyo!" (Build software using your mother tongue!)
+                  </p>
+                </div>
               </div>
 
               {/* Features */}
-              <div className="soplang-box">
-                <h2 className="soplang-header">Key Features</h2>
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <h3 className="font-bold text-gray-900 dark:text-white mb-2">Somali Keywords & Syntax</h3>
-                    <p className="text-gray-700 dark:text-gray-300 mb-4">
+              <div className="soplang-box p-6 sm:p-8 mt-8">
+                <h2 className="soplang-header text-2xl sm:text-3xl mb-6">Key Features</h2>
+                <div className="grid sm:grid-cols-2 gap-6">
+                  <div className="feature-card">
+                    <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-3">Somali Keywords & Syntax</h3>
+                    <p className="text-gray-700 dark:text-gray-300">
                       Program using familiar Somali words like "door" (function), "qor" (print), and "haddii" (if), making coding intuitive for Somali speakers.
                     </p>
                   </div>
-                  <div>
-                    <h3 className="font-bold text-gray-900 dark:text-white mb-2">Bilingual Documentation</h3>
-                    <p className="text-gray-700 dark:text-gray-300 mb-4">
+                  <div className="feature-card">
+                    <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-3">Bilingual Documentation</h3>
+                    <p className="text-gray-700 dark:text-gray-300">
                       Comprehensive documentation available in both Somali and English, ensuring accessibility for all users.
                     </p>
                   </div>
-                  <div>
-                    <h3 className="font-bold text-gray-900 dark:text-white mb-2">Cross-Platform</h3>
-                    <p className="text-gray-700 dark:text-gray-300 mb-4">
+                  <div className="feature-card">
+                    <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-3">Cross-Platform</h3>
+                    <p className="text-gray-700 dark:text-gray-300">
                       Runs on Windows, macOS, Linux, and more with consistent behavior across platforms.
                     </p>
                   </div>
-                  <div>
-                    <h3 className="font-bold text-gray-900 dark:text-white mb-2">Cultural Integration</h3>
-                    <p className="text-gray-700 dark:text-gray-300 mb-4">
+                  <div className="feature-card">
+                    <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-3">Cultural Integration</h3>
+                    <p className="text-gray-700 dark:text-gray-300">
                       Examples and tutorials incorporate Somali cultural contexts, making learning more relevant and engaging.
                     </p>
                   </div>
                 </div>
-                <div className="mt-4">
-                  <Link href="/about/features" className="soplang-link">
-                    Learn more about Soplang features →
+                <div className="mt-6">
+                  <Link href="/about/features" className="soplang-link inline-flex items-center">
+                    Learn more about Soplang features <span className="ml-2">→</span>
                   </Link>
                 </div>
               </div>
 
               {/* Getting Started */}
-              <div className="soplang-box">
-                <h2 className="soplang-header">Getting Started</h2>
-                <p className="mb-4">
+              <div className="soplang-box p-6 sm:p-8 mt-8">
+                <h2 className="soplang-header text-2xl sm:text-3xl mb-6">Getting Started</h2>
+                <p className="text-base sm:text-lg mb-4">
                   Ready to dive in? Here's how to get started with Soplang:
                 </p>
-                <ol className="list-decimal list-inside space-y-2 mb-4">
+                <ol className="list-decimal list-inside space-y-3 mb-6 text-base sm:text-lg">
                   <li>
                     <Link href="/downloads" className="soplang-link">
                       Download and install Soplang
@@ -190,8 +194,8 @@ export default function Home() {
                     </Link>
                   </li>
                 </ol>
-                <div className="bg-gray-100 dark:bg-gray-800 p-4 rounded">
-                  <h3 className="font-bold text-gray-900 dark:text-white mb-2">Quick Installation</h3>
+                <div className="bg-gray-100 dark:bg-gray-800 p-4 sm:p-6 rounded-lg">
+                  <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-4">Quick Installation</h3>
                   <CodeWindow 
                     code={`# On macOS/Linux
 $ curl -sSL https://install.soplang.org | bash
@@ -204,53 +208,53 @@ $ curl -sSL https://install.soplang.org | bash
               </div>
 
               {/* Success Stories */}
-              <div className="soplang-box">
-                <h2 className="soplang-header">Success Stories</h2>
-                <div className="space-y-4">
+              <div className="soplang-box p-6 sm:p-8 mt-8">
+                <h2 className="soplang-header text-2xl sm:text-3xl mb-6">Success Stories</h2>
+                <div className="space-y-6">
                   {successStories.map((story, index) => (
-                    <div key={index} className="bg-gray-50 dark:bg-gray-800 p-4 rounded">
-                      <p className="italic mb-2">"{story.quote}"</p>
-                      <div className="flex justify-between items-center">
+                    <div key={index} className="bg-gray-50 dark:bg-gray-800 p-4 sm:p-6 rounded-lg">
+                      <p className="italic mb-4 text-base sm:text-lg">"{story.quote}"</p>
+                      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
                         <p className="font-medium text-gray-900 dark:text-white">
                           {story.author}, {story.company}
                         </p>
-                        <Link href={story.url} className="soplang-link text-sm">
-                          Read more
+                        <Link href={story.url} className="soplang-link text-sm sm:text-base inline-flex items-center">
+                          Read more <span className="ml-2">→</span>
                         </Link>
                       </div>
                     </div>
                   ))}
                 </div>
-                <div className="mt-4">
-                  <Link href="/success-stories" className="soplang-link">
-                    View all success stories →
+                <div className="mt-6">
+                  <Link href="/success-stories" className="soplang-link inline-flex items-center">
+                    View all success stories <span className="ml-2">→</span>
                   </Link>
                 </div>
               </div>
             </div>
 
             {/* Sidebar */}
-            <div className="lg:w-1/3">
+            <div className="w-full lg:w-1/3">
               {/* Latest Version */}
-              <div className="soplang-box">
-                <h2 className="sidebar-header">Latest Version</h2>
-                <div className="mb-4">
-                  <div className="text-2xl font-bold text-[var(--primary-color)]">Soplang 1.2.0</div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">Released: October 15, 2023</div>
+              <div className="soplang-box p-6 sm:p-8 sticky top-24">
+                <h2 className="sidebar-header text-xl sm:text-2xl mb-4">Latest Version</h2>
+                <div className="mb-6">
+                  <div className="text-2xl sm:text-3xl font-bold text-[var(--primary-color)]">Soplang 1.2.0</div>
+                  <div className="text-sm sm:text-base text-gray-600 dark:text-gray-400 mt-1">Released: October 15, 2023</div>
                 </div>
-                <Link href="/downloads" className="btn-primary w-full text-center block">
+                <Link href="/downloads" className="btn-primary w-full text-center block py-3 px-6 rounded-md text-base sm:text-lg font-semibold">
                   Download Now
                 </Link>
-                <div className="mt-2 text-center">
-                  <Link href="/blog/release-notes-v1.2.0" className="text-sm soplang-link">
-                    Release Notes
+                <div className="mt-4 text-center">
+                  <Link href="/blog/release-notes-v1.2.0" className="soplang-link text-sm sm:text-base inline-flex items-center justify-center">
+                    Release Notes <span className="ml-2">→</span>
                   </Link>
                 </div>
               </div>
 
               {/* Latest News */}
-              <div className="soplang-box">
-                <h2 className="sidebar-header">Latest News</h2>
+              <div className="soplang-box p-6 sm:p-8 mt-8">
+                <h2 className="sidebar-header text-xl sm:text-2xl mb-4">Latest News</h2>
                 <ul className="sidebar-list">
                   {latestNews.map((item, index) => (
                     <li key={index}>
@@ -269,8 +273,8 @@ $ curl -sSL https://install.soplang.org | bash
               </div>
 
               {/* Upcoming Events */}
-              <div className="soplang-box">
-                <h2 className="sidebar-header">Upcoming Events</h2>
+              <div className="soplang-box p-6 sm:p-8 mt-8">
+                <h2 className="sidebar-header text-xl sm:text-2xl mb-4">Upcoming Events</h2>
                 <ul className="sidebar-list">
                   {upcomingEvents.map((event, index) => (
                     <li key={index}>
@@ -289,8 +293,8 @@ $ curl -sSL https://install.soplang.org | bash
               </div>
 
               {/* Community */}
-              <div className="soplang-box">
-                <h2 className="sidebar-header">Join the Community</h2>
+              <div className="soplang-box p-6 sm:p-8 mt-8">
+                <h2 className="sidebar-header text-xl sm:text-2xl mb-4">Join the Community</h2>
                 <p className="mb-4 text-sm">
                   Connect with other Soplang developers and get involved in the community.
                 </p>

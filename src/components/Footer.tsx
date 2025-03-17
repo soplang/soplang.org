@@ -109,19 +109,19 @@ export default function Footer() {
   
   return (
     <footer className="bg-[var(--footer-bg)] border-t border-[var(--border-color)]">
-      <div className="container-custom py-12">
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+      <div className="container-custom px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
+        <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:grid-cols-5">
           {footerLinks.map((group) => (
-            <div key={group.title}>
+            <div key={group.title} className="col-span-1">
               <h3 className="text-sm font-bold text-gray-900 dark:text-white uppercase tracking-wider mb-4">
                 {group.title}
               </h3>
-              <ul className="space-y-2">
+              <ul className="space-y-2.5">
                 {group.links.map((link) => (
                   <li key={link.name}>
                     <Link
                       href={link.href}
-                      className="text-sm text-[var(--link-color)] hover:underline"
+                      className="text-sm text-[var(--link-color)] hover:text-[var(--primary-color)] hover:underline transition-colors duration-200"
                     >
                       {link.name}
                     </Link>
@@ -133,27 +133,27 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 pt-8 border-t border-[var(--border-color)]">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="flex items-center space-x-2 mb-4 md:mb-0">
-              <div className="relative w-8 h-8 flex items-center justify-center bg-[var(--primary-color)] rounded-full">
-                <span className="text-white font-bold text-xs">S</span>
+          <div className="flex flex-col items-center space-y-6 sm:space-y-8 lg:flex-row lg:justify-between lg:space-y-0">
+            <div className="flex flex-col sm:flex-row items-center sm:space-x-4 text-center sm:text-left">
+              <div className="relative w-10 h-10 flex items-center justify-center bg-[var(--primary-color)] rounded-full mb-4 sm:mb-0">
+                <span className="text-white font-bold text-sm">S</span>
               </div>
-              <div>
+              <div className="max-w-sm">
                 <p className="text-sm text-gray-600 dark:text-gray-400">
                   Copyright ©{currentYear} Soplang Software Foundation
                 </p>
-                <p className="text-xs text-gray-500 dark:text-gray-500 mt-1">
+                <p className="text-xs text-gray-500 dark:text-gray-500 mt-2">
                   Soplang is an open-source programming language that lets you work quickly and integrate systems effectively.
                 </p>
               </div>
             </div>
             
-            <div className="flex space-x-4">
+            <div className="flex items-center space-x-6">
               {socialLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
-                  className="text-gray-500 hover:text-[var(--primary-color)] dark:text-gray-400 dark:hover:text-[var(--primary-color)]"
+                  className="text-gray-500 hover:text-[var(--primary-color)] dark:text-gray-400 dark:hover:text-[var(--primary-color)] transition-colors duration-200"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={link.name}
@@ -164,13 +164,21 @@ export default function Footer() {
             </div>
           </div>
           
-          <div className="mt-8 text-center text-xs text-gray-500 dark:text-gray-500">
-            <p>
-              <Link href="/privacy" className="hover:underline">Privacy Policy</Link> | 
-              <Link href="/terms" className="hover:underline ml-2">Terms of Use</Link> | 
-              <Link href="/trademarks" className="hover:underline ml-2">Trademarks</Link> | 
-              <Link href="/sitemap" className="hover:underline ml-2">Sitemap</Link>
-            </p>
+          <div className="mt-8 pt-4 border-t border-[var(--border-color)] text-center">
+            <nav className="flex flex-wrap justify-center gap-x-4 gap-y-2 text-xs text-gray-500 dark:text-gray-500">
+              <Link href="/privacy" className="hover:text-[var(--primary-color)] hover:underline transition-colors duration-200">
+                Privacy Policy
+              </Link>
+              <Link href="/terms" className="hover:text-[var(--primary-color)] hover:underline transition-colors duration-200">
+                Terms of Use
+              </Link>
+              <Link href="/trademarks" className="hover:text-[var(--primary-color)] hover:underline transition-colors duration-200">
+                Trademarks
+              </Link>
+              <Link href="/sitemap" className="hover:text-[var(--primary-color)] hover:underline transition-colors duration-200">
+                Sitemap
+              </Link>
+            </nav>
           </div>
         </div>
       </div>
