@@ -48,22 +48,24 @@ export default function Navbar() {
           <div className="flex items-center justify-between h-16 md:h-20" suppressHydrationWarning>
             {/* Logo */}
             <Link href="/" className="flex items-center shrink-0">
-              <div className="flex items-center bg-transparent">
+              <div className="flex items-center">
                 <Image
-                  src="/images/logo/logo-light.jpg"
+                  src="/images/logo/logo-light.png"
                   width={120}
-                  height={48}
+                  height={30}
                   alt="Soplang Logo"
-                  className="hidden dark:block w-auto h-6 md:h-8 bg-transparent"
+                  className="hidden dark:inline-block w-auto h-5 md:h-7"
                   priority
+                  style={{ objectFit: 'contain' }}
                 />
                 <Image
                   src="/images/logo/logo-dark.png"
                   width={120}
-                  height={48}
+                  height={30}
                   alt="Soplang Logo"
-                  className="block dark:hidden w-auto h-6 md:h-8 bg-transparent"
+                  className="inline-block dark:hidden w-auto h-5 md:h-7"
                   priority
+                  style={{ objectFit: 'contain' }}
                 />
               </div>
             </Link>

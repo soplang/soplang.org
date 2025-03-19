@@ -137,22 +137,24 @@ export default function Footer() {
           <div className="flex flex-col items-center space-y-6 sm:space-y-8 lg:flex-row lg:justify-between lg:space-y-0">
             <div className="flex flex-col sm:flex-row items-center sm:space-x-4 text-center sm:text-left">
               <div className="mb-4 sm:mb-0">
-                <div className="flex items-center bg-transparent">
+                <div className="flex items-center">
                   <Image
-                    src="/images/logo/logo-light.jpg"
+                    src="/images/logo/logo-light.png"
                     width={120}
-                    height={48}
+                    height={30}
                     alt="Soplang Logo"
-                    className="hidden dark:block w-auto h-6 md:h-8 bg-transparent"
+                    className="hidden dark:inline-block w-auto h-5 md:h-7"
                     priority
+                    style={{ objectFit: 'contain' }}
                   />
                   <Image
                     src="/images/logo/logo-dark.png"
                     width={120}
-                    height={48}
+                    height={30}
                     alt="Soplang Logo"
-                    className="block dark:hidden w-auto h-6 md:h-8 bg-transparent"
+                    className="inline-block dark:hidden w-auto h-5 md:h-7"
                     priority
+                    style={{ objectFit: 'contain' }}
                   />
                 </div>
               </div>
