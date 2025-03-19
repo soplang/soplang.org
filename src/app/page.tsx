@@ -101,7 +101,7 @@ export default function Home() {
             </div>
             <div className="w-full lg:w-1/2">
               <div className="max-w-xl mx-auto lg:max-w-none">
-                <CodeWindow code={codeSnippet} title="main.so" />
+              <CodeWindow code={codeSnippet} title="main.so" />
               </div>
             </div>
           </div>
@@ -119,14 +119,14 @@ export default function Home() {
                 <h2 className="soplang-header text-2xl sm:text-3xl mb-6">What is Soplang?</h2>
                 <div className="space-y-4 text-base sm:text-lg">
                   <p>
-                    Soplang is the first Somali programming language, designed with a focus on code readability and developer productivity. By using Somali keywords and syntax, it makes programming accessible to Somali speakers worldwide who may face language barriers with traditional programming languages.
-                  </p>
+                  Soplang is the first Somali programming language, designed with a focus on code readability and developer productivity. By using Somali keywords and syntax, it makes programming accessible to Somali speakers worldwide who may face language barriers with traditional programming languages.
+                </p>
                   <p>
-                    Whether you're a beginner or an experienced developer, Soplang provides a clean and intuitive syntax that makes it easy to express concepts in fewer lines of code while using your native language.
-                  </p>
-                  <p>
-                    With Soplang, you can "Dhis Software Adigoo Adeegsanaya Afkaaga Hooyo!" (Build software using your mother tongue!)
-                  </p>
+                  Whether you're a beginner or an experienced developer, Soplang provides a clean and intuitive syntax that makes it easy to express concepts in fewer lines of code while using your native language.
+                </p>
+                <p>
+                  With Soplang, you can "Dhis Software Adigoo Adeegsanaya Afkaaga Hooyo!" (Build software using your mother tongue!)
+                </p>
                 </div>
               </div>
 
