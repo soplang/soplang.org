@@ -14,7 +14,20 @@ const roboto = Roboto({
 
 export const metadata: Metadata = {
   title: 'Soplang - Luuqada Programinka ee Soomaaliga | The First Somali Programming Language',
-  description: 'Dhis Software Adigoo Adeegsanaya Afkaaga Hooyo! Soplang waa luuqada programinka ee ugu horeysa ee loogu talagalay dadka Soomaalida ah. Waxay u fududeysaa barashada iyo horumarinta software-ka. Build software using your mother tongue with Soplang!',
+  description: 'Dhis Software Adigoo Adeegsanaya Afkaaga Hooyo! Soplang waa luuqada programming ee ugu horeysa ee loogu talagalay dadka Soomaalida ah. Waxay u fududeysaa barashada iyo horumarinta software-ka. Build software using your mother tongue with Soplang!',
+  applicationName: 'Soplang',
+  authors: [
+    { name: 'Mr Sharafdin' },
+    { name: 'Omar Tood' },
+    { name: 'Ismail Ainte' }
+  ],
+  creator: 'Soplang Team',
+  publisher: 'Soplang Software Foundation',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
   keywords: [
     // Somali Keywords
     'barnaamijyada soomaali',
@@ -27,6 +40,10 @@ export const metadata: Metadata = {
     'barashada kumbuyutarka',
     'software development soomaali',
     'coding soomaali',
+    'soplang tutorial',
+    'barashada soplang',
+    'tusaale soplang',
+    'casharo soplang',
     // English Keywords
     'Soplang',
     'Somali programming language',
@@ -37,7 +54,10 @@ export const metadata: Metadata = {
     'Somali developers',
     'Somali tech community',
     'learn to code in Somali',
-    'programming education'
+    'programming education',
+    'Soplang examples',
+    'Soplang tutorials',
+    'Somali code learning'
   ],
   metadataBase: new URL('https://soplang.org'),
   alternates: {
@@ -45,6 +65,7 @@ export const metadata: Metadata = {
       'so-SO': '/so',
       'en-US': '/en',
     },
+    canonical: 'https://soplang.org',
   },
   openGraph: {
     title: 'Soplang - Luuqada Programinka ee Soomaaliga | The First Somali Programming Language',
@@ -58,22 +79,40 @@ export const metadata: Metadata = {
         height: 630,
         alt: 'Soplang - Luuqada Programinka ee Soomaaliga',
       },
+      {
+        url: '/images/og-image-square.png',
+        width: 600,
+        height: 600,
+        alt: 'Soplang Logo',
+      }
     ],
     locale: 'so_SO',
     alternateLocale: ['en_US'],
     type: 'website',
+    countryName: 'Somalia',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Soplang - Luuqada Programinka ee Soomaaliga',
     description: 'Dhis Software Adigoo Adeegsanaya Afkaaga Hooyo! Soplang waa luuqada programinka ee ugu horeysa ee loogu talagalay dadka Soomaalida ah. Waxay u fududeysaa barashada iyo horumarinta software-ka.',
-    images: ['/images/twitter-image.png'],
+    site: '@xsoplang',
+    creator: '@xsoplang',
+    images: [
+      {
+        url: '/images/twitter-image.png',
+        alt: 'Soplang - The First Somali Programming Language',
+      }
+    ],
   },
   other: {
     'google-site-verification': 'your-verification-code',
     'baidu-site-verification': 'your-verification-code',
     'yandex-verification': 'your-verification-code',
+    'msvalidate.01': 'your-bing-verification-code',
+    'facebook-domain-verification': 'your-facebook-verification-code',
   },
+  category: 'technology',
+  classification: 'Programming Language, Education, Software Development',
 };
 
 export default function RootLayout({
@@ -82,7 +121,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="so" suppressHydrationWarning className={roboto.variable}>
+    <html 
+      lang="so" 
+      suppressHydrationWarning 
+      className={roboto.variable}
+      dir="ltr"
+    >
+      <head>
+        <link rel="alternate" hrefLang="so-SO" href="https://soplang.org/so" />
+        <link rel="alternate" hrefLang="en-US" href="https://soplang.org/en" />
+        <link rel="alternate" hrefLang="x-default" href="https://soplang.org" />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+      </head>
       <body className={roboto.className} suppressHydrationWarning>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Navbar />
