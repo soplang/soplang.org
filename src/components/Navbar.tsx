@@ -213,11 +213,36 @@ export default function Navbar() {
         <div className="bg-gray-100 dark:bg-gray-800 border-b border-[var(--border-color)] overflow-x-auto">
           <div className="container-custom py-2 px-4">
             <div className="flex space-x-4 md:space-x-6 whitespace-nowrap">
-              <Link href="/downloads/latest" className="quick-link text-sm md:text-base">Download Latest</Link>
-              <Link href="/docs/getting-started" className="quick-link text-sm md:text-base">Get Started</Link>
-              <Link href="/docs/reference" className="quick-link text-sm md:text-base">Reference</Link>
-              <Link href="/community/forums" className="quick-link text-sm md:text-base">Forums</Link>
-              <Link href="/community/contribute" className="quick-link text-sm md:text-base">Contribute</Link>
+              <Link 
+                href="/downloads/latest" 
+                className="text-gray-700 dark:text-gray-300 hover:text-[var(--primary-color)] dark:hover:text-[var(--primary-color)] text-sm md:text-base font-medium transition-colors duration-200"
+              >
+                Download Latest
+              </Link>
+              <Link 
+                href="/docs/getting-started" 
+                className="text-gray-700 dark:text-gray-300 hover:text-[var(--primary-color)] dark:hover:text-[var(--primary-color)] text-sm md:text-base font-medium transition-colors duration-200"
+              >
+                Get Started
+              </Link>
+              <Link 
+                href="/docs/reference" 
+                className="text-gray-700 dark:text-gray-300 hover:text-[var(--primary-color)] dark:hover:text-[var(--primary-color)] text-sm md:text-base font-medium transition-colors duration-200"
+              >
+                Reference
+              </Link>
+              <Link 
+                href="/community/forums" 
+                className="text-gray-700 dark:text-gray-300 hover:text-[var(--primary-color)] dark:hover:text-[var(--primary-color)] text-sm md:text-base font-medium transition-colors duration-200"
+              >
+                Forums
+              </Link>
+              <Link 
+                href="/community/contribute" 
+                className="text-gray-700 dark:text-gray-300 hover:text-[var(--primary-color)] dark:hover:text-[var(--primary-color)] text-sm md:text-base font-medium transition-colors duration-200"
+              >
+                Contribute
+              </Link>
             </div>
           </div>
         </div>
