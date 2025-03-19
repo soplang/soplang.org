@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { getCurrentYear } from "@/utils/formatDate";
 
 const footerLinks = [
@@ -135,8 +136,23 @@ export default function Footer() {
         <div className="mt-12 pt-8 border-t border-[var(--border-color)]">
           <div className="flex flex-col items-center space-y-6 sm:space-y-8 lg:flex-row lg:justify-between lg:space-y-0">
             <div className="flex flex-col sm:flex-row items-center sm:space-x-4 text-center sm:text-left">
-              <div className="relative w-10 h-10 flex items-center justify-center bg-[var(--primary-color)] rounded-full mb-4 sm:mb-0">
-                <span className="text-white font-bold text-sm">S</span>
+              <div className="mb-4 sm:mb-0">
+                <Image
+                  src="/images/logo/logo-light.jpg"
+                  width={120}
+                  height={48}
+                  alt="Soplang Logo"
+                  className="hidden dark:block w-auto h-8"
+                  priority
+                />
+                <Image
+                  src="/images/logo/logo-dark.png"
+                  width={120}
+                  height={48}
+                  alt="Soplang Logo"
+                  className="block dark:hidden w-auto h-8"
+                  priority
+                />
               </div>
               <div className="max-w-sm">
                 <p className="text-sm text-gray-600 dark:text-gray-400">

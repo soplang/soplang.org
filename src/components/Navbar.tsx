@@ -47,15 +47,29 @@ export default function Navbar() {
         <div className="container-custom px-4 sm:px-6 lg:px-8" suppressHydrationWarning>
           <div className="flex items-center justify-between h-16 md:h-20" suppressHydrationWarning>
             {/* Logo */}
-            <Link href="/" className="flex items-center space-x-2 shrink-0">
-              <div className="relative w-8 h-8 md:w-10 md:h-10 flex items-center justify-center bg-white rounded-full" suppressHydrationWarning>
-                <span className="text-[var(--primary-color)] font-bold text-lg md:text-xl">S</span>
+            <Link href="/" className="flex items-center shrink-0 mr-8">
+              <div className="flex items-center">
+                <Image
+                  src="/images/logo/logo-light.jpg"
+                  width={120}
+                  height={48}
+                  alt="Soplang Logo"
+                  className="hidden dark:block w-auto h-6 md:h-8"
+                  priority
+                />
+                <Image
+                  src="/images/logo/logo-dark.png"
+                  width={120}
+                  height={48}
+                  alt="Soplang Logo"
+                  className="block dark:hidden w-auto h-6 md:h-8"
+                  priority
+                />
               </div>
-              <span className="text-lg md:text-xl font-bold text-white">Soplang</span>
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex md:items-center md:space-x-2 lg:space-x-4" suppressHydrationWarning>
+            <div className="hidden md:flex md:items-center md:space-x-6 lg:space-x-8" suppressHydrationWarning>
               {navLinks.map((link) => (
                 <Link
                   key={link.path}

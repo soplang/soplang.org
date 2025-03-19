@@ -1,7 +1,7 @@
 # Soplang | The First Somali Programming Language
 
 <div align="center">
-  <img src="public/logo.png" alt="Soplang Logo" width="200"/>
+  <img src="public/images/logo/logo-dark.png" alt="Soplang Logo" width="200"/>
   <p><em>Dhis Software Adigoo Adeegsanaya Afkaaga Hooyo!</em></p>
   <p><em>(Build software using your mother tongue!)</em></p>
 </div>
