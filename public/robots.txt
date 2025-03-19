@@ -1,0 +1,20 @@
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://soplang.org/sitemap.xml
+
+# Prevent crawling of development/test environments
+User-agent: *
+Disallow: /api/
+Disallow: /admin/
+Disallow: /dev/
+Disallow: /test/
+
+# Rate limiting for heavy crawlers
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10 

@@ -13,13 +13,42 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: 'Soplang - The First Somali Programming Language',
-  description: 'Dhis Software Adigoo Adeegsanaya Afkaaga Hooyo! Soplang is the first Somali programming language designed for simplicity, usability, and accessibility for Somali speakers worldwide.',
-  keywords: ['Soplang', 'programming language', 'Somali', 'coding', 'development', 'afka hooyo', 'software development'],
+  title: 'Soplang - Luuqada Programinka ee Soomaaliga | The First Somali Programming Language',
+  description: 'Dhis Software Adigoo Adeegsanaya Afkaaga Hooyo! Soplang waa luuqada programinka ee ugu horeysa ee loogu talagalay dadka Soomaalida ah. Waxay u fududeysaa barashada iyo horumarinta software-ka. Build software using your mother tongue with Soplang!',
+  keywords: [
+    // Somali Keywords
+    'barnaamijyada soomaali',
+    'dhis software soomaali',
+    'barashada programinka',
+    'horumarinta software',
+    'luuqada programinka soomaali',
+    'afka hooyo',
+    'waxbarashada teknolojiyada',
+    'barashada kumbuyutarka',
+    'software development soomaali',
+    'coding soomaali',
+    // English Keywords
+    'Soplang',
+    'Somali programming language',
+    'learn coding in Somali',
+    'software development in Somali',
+    'programming for Somalis',
+    'mother tongue programming',
+    'Somali developers',
+    'Somali tech community',
+    'learn to code in Somali',
+    'programming education'
+  ],
   metadataBase: new URL('https://soplang.org'),
+  alternates: {
+    languages: {
+      'so-SO': '/so',
+      'en-US': '/en',
+    },
+  },
   openGraph: {
-    title: 'Soplang - The First Somali Programming Language',
-    description: 'Dhis Software Adigoo Adeegsanaya Afkaaga Hooyo! Soplang is the first Somali programming language designed for simplicity, usability, and accessibility for Somali speakers worldwide.',
+    title: 'Soplang - Luuqada Programinka ee Soomaaliga | The First Somali Programming Language',
+    description: 'Dhis Software Adigoo Adeegsanaya Afkaaga Hooyo! Soplang waa luuqada programinka ee ugu horeysa ee loogu talagalay dadka Soomaalida ah. Waxay u fududeysaa barashada iyo horumarinta software-ka.',
     url: 'https://soplang.org',
     siteName: 'Soplang',
     images: [
@@ -27,17 +56,23 @@ export const metadata: Metadata = {
         url: '/images/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Soplang Programming Language',
+        alt: 'Soplang - Luuqada Programinka ee Soomaaliga',
       },
     ],
-    locale: 'en_US',
+    locale: 'so_SO',
+    alternateLocale: ['en_US'],
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Soplang - The First Somali Programming Language',
-    description: 'Dhis Software Adigoo Adeegsanaya Afkaaga Hooyo! Soplang is the first Somali programming language designed for simplicity, usability, and accessibility for Somali speakers worldwide.',
+    title: 'Soplang - Luuqada Programinka ee Soomaaliga',
+    description: 'Dhis Software Adigoo Adeegsanaya Afkaaga Hooyo! Soplang waa luuqada programinka ee ugu horeysa ee loogu talagalay dadka Soomaalida ah. Waxay u fududeysaa barashada iyo horumarinta software-ka.',
     images: ['/images/twitter-image.png'],
+  },
+  other: {
+    'google-site-verification': 'your-verification-code',
+    'baidu-site-verification': 'your-verification-code',
+    'yandex-verification': 'your-verification-code',
   },
 };
 
@@ -47,7 +82,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning className={roboto.variable}>
+    <html lang="so" suppressHydrationWarning className={roboto.variable}>
       <body className={roboto.className} suppressHydrationWarning>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Navbar />
