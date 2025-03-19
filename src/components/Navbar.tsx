@@ -47,14 +47,14 @@ export default function Navbar() {
         <div className="container-custom px-4 sm:px-6 lg:px-8" suppressHydrationWarning>
           <div className="flex items-center justify-between h-16 md:h-20" suppressHydrationWarning>
             {/* Logo */}
-            <Link href="/" className="flex items-center shrink-0 mr-8">
-              <div className="flex items-center">
+            <Link href="/" className="flex items-center shrink-0">
+              <div className="flex items-center bg-transparent">
                 <Image
                   src="/images/logo/logo-light.jpg"
                   width={120}
                   height={48}
                   alt="Soplang Logo"
-                  className="hidden dark:block w-auto h-6 md:h-8"
+                  className="hidden dark:block w-auto h-6 md:h-8 bg-transparent"
                   priority
                 />
                 <Image
@@ -62,7 +62,7 @@ export default function Navbar() {
                   width={120}
                   height={48}
                   alt="Soplang Logo"
-                  className="block dark:hidden w-auto h-6 md:h-8"
+                  className="block dark:hidden w-auto h-6 md:h-8 bg-transparent"
                   priority
                 />
               </div>
