@@ -4,98 +4,23 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Soplang News - Latest Announcements and Updates",
-  description: "Stay up-to-date with the latest news, announcements, and updates about Soplang, the first Somali programming language.",
+  description:
+    "Stay up-to-date with the latest news, announcements, and updates about Soplang, the first Somali programming language.",
 };
 
 // News data
 const newsItems = [
   {
-    id: "soplang-2.0-announcement",
-    title: "Announcing Soplang 2.0: The Future of Intuitive Programming",
+    id: "Soplang-2.0-Is-Almost-Here-A-Somali-first-Programming-Language-Nears-Major-Release",
+    title:
+      "Soplang 2.0 Is Almost Here — A Somali-first Programming Language Nears Major Release",
     excerpt:
-      "We're thrilled to announce that Soplang 2.0 is in development, bringing revolutionary features that will transform how you code.",
-    date: "March 5, 2024",
+      "Soplang 2.0 brings a native Somali programming language into the modern era, with powerful tooling, expanded libraries, and a growing ecosystem.",
+    date: "May 15, 2024",
     category: "Announcement",
     image: "/images/blog/soplang-2.0.svg",
     imageAlt: "Soplang 2.0 Announcement",
     featured: true,
-  },
-  {
-    id: "community-milestone",
-    title: "Soplang Community Reaches 100,000 Members",
-    excerpt:
-      "We're celebrating a major milestone as the Soplang community surpasses 100,000 members worldwide. Thank you for your support!",
-    date: "February 28, 2024",
-    category: "Community",
-    image: "/images/blog/community-milestone.svg",
-    imageAlt: "Soplang Community Milestone",
-    featured: false,
-  },
-  {
-    id: "university-adoption",
-    title: "Major Universities Adopt Soplang for Computer Science Education",
-    excerpt:
-      "Leading universities around the world are now using Soplang in their computer science curricula, citing its intuitive syntax and powerful features.",
-    date: "February 15, 2024",
-    category: "Education",
-    image: "/images/blog/university-adoption.svg",
-    imageAlt: "University Adoption of Soplang",
-    featured: false,
-  },
-  {
-    id: "hackathon-winners",
-    title: "Soplang Hackathon Winners Announced",
-    excerpt:
-      "After an exciting weekend of coding, we're proud to announce the winners of the first global Soplang Hackathon.",
-    date: "February 10, 2024",
-    category: "Events",
-    image: "/images/blog/hackathon.svg",
-    imageAlt: "Soplang Hackathon Winners",
-    featured: false,
-  },
-  {
-    id: "release-notes-v1.5.0",
-    title: "Soplang 1.5.0 Released with Enhanced Performance",
-    excerpt:
-      "The latest version of Soplang brings significant performance improvements and new features to enhance your development experience.",
-    date: "January 25, 2024",
-    category: "Release",
-    image: "/images/blog/release-1.5.0.svg",
-    imageAlt: "Soplang 1.5.0 Release",
-    featured: false,
-  },
-  {
-    id: "enterprise-adoption",
-    title: "Fortune 500 Companies Embrace Soplang for Enterprise Applications",
-    excerpt:
-      "Major corporations are increasingly adopting Soplang for enterprise applications, citing its efficiency and developer productivity benefits.",
-    date: "January 15, 2024",
-    category: "Industry",
-    image: "/images/blog/enterprise-adoption.svg",
-    imageAlt: "Enterprise Adoption of Soplang",
-    featured: false,
-  },
-  {
-    id: "new-learning-resources",
-    title: "New Learning Resources Available for Soplang Developers",
-    excerpt:
-      "We've launched a comprehensive set of learning resources to help developers of all skill levels master Soplang.",
-    date: "January 5, 2024",
-    category: "Resources",
-    image: "/images/blog/learning-resources.svg",
-    imageAlt: "Soplang Learning Resources",
-    featured: false,
-  },
-  {
-    id: "community-contributions",
-    title: "Community Contributions Drive Soplang Ecosystem Growth",
-    excerpt:
-      "The Soplang ecosystem is thriving thanks to the incredible contributions from our community members.",
-    date: "December 20, 2023",
-    category: "Community",
-    image: "/images/blog/community-contributions.svg",
-    imageAlt: "Soplang Community Contributions",
-    featured: false,
   },
 ];
 
@@ -124,7 +49,8 @@ export default function NewsPage() {
         <div className="container-custom">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Soplang News</h1>
           <p className="text-xl max-w-3xl">
-            Stay up-to-date with the latest announcements, releases, and updates from the Soplang team and community.
+            Stay up-to-date with the latest announcements, releases, and updates
+            from the Soplang team and community.
           </p>
         </div>
       </section>
@@ -137,7 +63,9 @@ export default function NewsPage() {
             {/* Featured News */}
             {featuredNews && (
               <div className="mb-12">
-                <h2 className="text-2xl font-bold mb-6 text-primary">Featured News</h2>
+                <h2 className="text-2xl font-bold mb-6 text-primary">
+                  Featured News
+                </h2>
                 <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
                   <div className="relative h-80 w-full">
                     <Image
@@ -174,81 +102,55 @@ export default function NewsPage() {
 
             {/* Latest News */}
             <div>
-              <h2 className="text-2xl font-bold mb-6 text-primary">Latest News</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {regularNews.map((news) => (
-                  <div
-                    key={news.id}
-                    className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden flex flex-col h-full"
-                  >
-                    <div className="relative h-48">
-                      <Image
-                        src={news.image}
-                        alt={news.imageAlt}
-                        fill
-                        className="object-cover"
-                        sizes="(max-width: 768px) 100vw, 50vw"
-                      />
-                      <div className="absolute top-3 left-3">
-                        <span className="bg-primary text-white px-2 py-1 rounded-full text-xs font-medium">
-                          {news.category}
-                        </span>
+              <h2 className="text-2xl font-bold mb-6 text-primary">
+                News Archive
+              </h2>
+              {regularNews.length > 0 ? (
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {regularNews.map((news) => (
+                    <div
+                      key={news.id}
+                      className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden flex flex-col h-full"
+                    >
+                      <div className="relative h-48">
+                        <Image
+                          src={news.image}
+                          alt={news.imageAlt}
+                          fill
+                          className="object-cover"
+                          sizes="(max-width: 768px) 100vw, 50vw"
+                        />
+                        <div className="absolute top-3 left-3">
+                          <span className="bg-primary text-white px-2 py-1 rounded-full text-xs font-medium">
+                            {news.category}
+                          </span>
+                        </div>
+                      </div>
+                      <div className="p-5 flex-grow">
+                        <div className="text-sm text-gray-500 dark:text-gray-400 mb-2">
+                          {news.date}
+                        </div>
+                        <h3 className="text-xl font-bold mb-2 text-primary">
+                          {news.title}
+                        </h3>
+                        <p className="mb-4 text-sm">{news.excerpt}</p>
+                        <Link
+                          href={`/news/${news.id}`}
+                          className="text-primary hover:underline text-sm font-medium"
+                        >
+                          Read more →
+                        </Link>
                       </div>
                     </div>
-                    <div className="p-5 flex-grow">
-                      <div className="text-sm text-gray-500 dark:text-gray-400 mb-2">
-                        {news.date}
-                      </div>
-                      <h3 className="text-xl font-bold mb-2 text-primary">
-                        {news.title}
-                      </h3>
-                      <p className="mb-4 text-sm">{news.excerpt}</p>
-                      <Link
-                        href={`/news/${news.id}`}
-                        className="text-primary hover:underline text-sm font-medium"
-                      >
-                        Read more →
-                      </Link>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Pagination */}
-            <div className="mt-12 flex justify-center">
-              <nav className="inline-flex rounded-md shadow">
-                <a
-                  href="#"
-                  className="px-4 py-2 rounded-l-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700"
-                >
-                  Previous
-                </a>
-                <a
-                  href="#"
-                  className="px-4 py-2 border-t border-b border-gray-300 dark:border-gray-600 bg-primary text-white text-sm font-medium"
-                >
-                  1
-                </a>
-                <a
-                  href="#"
-                  className="px-4 py-2 border-t border-b border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700"
-                >
-                  2
-                </a>
-                <a
-                  href="#"
-                  className="px-4 py-2 border-t border-b border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700"
-                >
-                  3
-                </a>
-                <a
-                  href="#"
-                  className="px-4 py-2 rounded-r-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700"
-                >
-                  Next
-                </a>
-              </nav>
+                  ))}
+                </div>
+              ) : (
+                <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-8 text-center">
+                  <p className="text-gray-600 dark:text-gray-400">
+                    More news articles coming soon!
+                  </p>
+                </div>
+              )}
             </div>
           </div>
 
@@ -256,7 +158,9 @@ export default function NewsPage() {
           <div className="lg:w-1/4">
             {/* Categories */}
             <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-6">
-              <h3 className="text-lg font-bold mb-4 text-primary">Categories</h3>
+              <h3 className="text-lg font-bold mb-4 text-primary">
+                Categories
+              </h3>
               <div className="space-y-2">
                 {categories.map((category) => (
                   <a
@@ -280,7 +184,8 @@ export default function NewsPage() {
                 Stay Updated
               </h3>
               <p className="mb-4 text-sm">
-                Follow us on X (Twitter) to receive the latest news and updates about Soplang.
+                Follow us on X (Twitter) to receive the latest news and updates
+                about Soplang.
               </p>
               <a
                 href="https://x.com/xsoplang"
@@ -302,9 +207,7 @@ export default function NewsPage() {
 
             {/* Social Media */}
             <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
-              <h3 className="text-lg font-bold mb-4 text-primary">
-                Follow Us
-              </h3>
+              <h3 className="text-lg font-bold mb-4 text-primary">Follow Us</h3>
               <div className="flex space-x-4">
                 <a
                   href="#"
@@ -365,4 +268,4 @@ export default function NewsPage() {
       </section>
     </div>
   );
-} 
+}
