@@ -27,17 +27,20 @@ const nextConfig = {
       },
       {
         source: "/contribute",
-        destination: "/",
+        destination:
+          "https://github.com/soplang/soplang/blob/main/docs/CONTRIBUTING.md",
         permanent: false,
       },
       {
         source: "/contribute/:path*",
-        destination: "/",
+        destination:
+          "https://github.com/soplang/soplang/blob/main/docs/CONTRIBUTING.md",
         permanent: false,
       },
       {
         source: "/community/contribute",
-        destination: "/community",
+        destination:
+          "https://github.com/soplang/soplang/blob/main/docs/CONTRIBUTING.md",
         permanent: false,
       },
       // Redirect forums to GitHub Discussions

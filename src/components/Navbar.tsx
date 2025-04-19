@@ -255,6 +255,14 @@ export default function Navbar() {
               >
                 Discussion
               </a>
+              <a
+                href="https://github.com/soplang/soplang/blob/main/docs/CONTRIBUTING.md"
+                className="text-gray-700 dark:text-gray-300 hover:text-[var(--primary-color)] dark:hover:text-[var(--primary-color)] text-sm md:text-base font-medium transition-colors duration-200"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Contributing
+              </a>
             </div>
           </div>
         </div>

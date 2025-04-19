@@ -43,6 +43,10 @@ const footerLinks = [
         name: "Discussion",
         href: "https://github.com/orgs/soplang/discussions",
       },
+      {
+        name: "Contributing",
+        href: "https://github.com/soplang/soplang/blob/main/docs/CONTRIBUTING.md",
+      },
       { name: "Workshops", href: "/community/workshops" },
       { name: "Mailing Lists", href: "/community/mailing-lists" },
     ],
