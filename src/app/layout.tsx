@@ -14,7 +14,7 @@ const roboto = Roboto({
 
 export const metadata: Metadata = {
   title: 'Soplang - Luuqada Programinka ee Soomaaliga | The First Somali Programming Language',
-  description: 'Dhis Software Adigoo Adeegsanaya Afkaaga Hooyo! Soplang waa luuqada programming ee ugu horeysa ee loogu talagalay dadka Soomaalida ah. Waxay u fududeysaa barashada iyo horumarinta software-ka. Build software using your mother tongue with Soplang!',
+  description: 'Dhis Software Adigoo Adeegsanaya Afkaaga Hooyo! Soplang waa luuqada programming ee ugu horeysa ee loogu talagalay dadka Soomaalida ah iyo kuwa ku hadla afka Soomaaliga. Waxay u fududeysaa barashada iyo horumarinta software-ka. Build software in your mother tongue - the first programming language designed for Somali speakers worldwide.',
   applicationName: 'Soplang',
   authors: [
     { name: 'Mr Sharafdin' },
@@ -44,6 +44,12 @@ export const metadata: Metadata = {
     'barashada soplang',
     'tusaale soplang',
     'casharo soplang',
+    'teknoolojiyada Soomaaliya',
+    'horumarka casriga Soomaaliya',
+    'waxbarashada casriga soomaali',
+    'fursadaha teknoolojiyada',
+    'xalinta dhibaatooyinka barnaamijyada',
+    'guruubka horumarinta software soomaali',
     // English Keywords
     'Soplang',
     'Somali programming language',
@@ -57,7 +63,14 @@ export const metadata: Metadata = {
     'programming education',
     'Soplang examples',
     'Soplang tutorials',
-    'Somali code learning'
+    'Somali code learning',
+    'technology in Somalia',
+    'tech development Somalia',
+    'coding for Somali diaspora',
+    'Somali language software',
+    'accessible programming Somali',
+    'Somali tech innovation',
+    'Horn of Africa tech'
   ],
   metadataBase: new URL('https://soplang.org'),
   alternates: {
@@ -131,8 +144,42 @@ export default function RootLayout({
         <link rel="alternate" hrefLang="so-SO" href="https://soplang.org/so" />
         <link rel="alternate" hrefLang="en-US" href="https://soplang.org/en" />
         <link rel="alternate" hrefLang="x-default" href="https://soplang.org" />
-        <meta name="robots" content="index, follow" />
+        <meta name="robots" content="index, follow, max-image-preview:large" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+        
+        {/* Schema.org JSON-LD structured data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "name": "Soplang - The First Somali Programming Language",
+              "url": "https://soplang.org",
+              "description": "Soplang is the first programming language designed for Somali speakers, enabling software development in the Somali language.",
+              "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://soplang.org/search?q={search_term_string}",
+                "query-input": "required name=search_term_string"
+              },
+              "keywords": "Somalia programming, Somali coding, Soplang, software development, technology education",
+              "inLanguage": ["so-SO", "en-US"],
+              "audience": {
+                "@type": "Audience",
+                "geographicArea": {
+                  "@type": "Country",
+                  "name": "Somalia"
+                }
+              },
+              "creator": {
+                "@type": "Organization",
+                "name": "Soplang Software Foundation",
+                "url": "https://soplang.org",
+                "logo": "https://soplang.org/images/soplang-logo.png"
+              }
+            })
+          }}
+        />
       </head>
       <body className={roboto.className} suppressHydrationWarning>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
