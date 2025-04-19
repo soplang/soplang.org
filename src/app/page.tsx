@@ -3,7 +3,7 @@ import Image from "next/image";
 import CodeWindow from "../components/CodeWindow";
 
 // Sample code snippet for the hero section
-const codeSnippet = `# Soplang example
+const codeSnippet = `// Soplang example
 
 door x = 10
 
@@ -109,7 +109,7 @@ export default function Home() {
             </div>
             <div className="w-full lg:w-1/2">
               <div className="max-w-xl mx-auto lg:max-w-none">
-                <CodeWindow code={codeSnippet} title="main.so" />
+                <CodeWindow code={codeSnippet} title="main.sop" />
               </div>
             </div>
           </div>
