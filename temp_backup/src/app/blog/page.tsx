@@ -2,8 +2,9 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata = {
-  title: 'Soplang Blog - News, Updates, and Tutorials',
-  description: 'Stay up-to-date with the latest news, updates, and tutorials for Soplang, the Python-inspired programming language.',
+  title: "Soplang Blog - News, Updates, and Tutorials",
+  description:
+    "Stay up-to-date with the latest news, updates, and tutorials for Soplang, the Python-inspired programming language.",
 };
 
 // Blog posts data
@@ -15,7 +16,7 @@ const blogPosts = [
       "We're excited to announce the release of Soplang 1.2.0, which includes new language features, performance improvements, and bug fixes.",
     date: "October 15, 2023",
     author: "Mr Sharafdin",
-    authorRole: "Lead Developer",
+    authorRole: "Soplang Creator",
     category: "Release",
     readTime: "5 min read",
     image: "/images/blog/release-1.2.0.jpg",
@@ -54,7 +55,7 @@ const blogPosts = [
       "How does Soplang compare to Python? This article explores the similarities, differences, and when to choose one over the other.",
     date: "August 30, 2023",
     author: "Mr Sharafdin",
-    authorRole: "Lead Developer",
+    authorRole: "Soplang Creator",
     category: "Comparison",
     readTime: "8 min read",
     image: "/images/blog/soplang-vs-python.jpg",
@@ -300,4 +301,4 @@ export default function BlogPage() {
       </div>
     </div>
   );
-} 
+}

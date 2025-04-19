@@ -2,16 +2,17 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata = {
-  title: 'About Soplang - Our Story, Mission, and Team',
-  description: 'Learn about Soplang, our mission to create the first modern Somali programming language, and the team behind it.',
+  title: "About Soplang - Our Story, Mission, and Team",
+  description:
+    "Learn about Soplang, our mission to create the first modern Somali programming language, and the team behind it.",
 };
 
 // Team members data
 const teamMembers = [
   {
     name: "Mr Sharafdin",
-    role: "Lead Developer",
-    bio: "Mr Sharafdin is the creator and lead developer of Soplang. With over 15 years of experience in programming language design, he leads the core development team and sets the technical direction for Soplang.",
+    role: "Soplang Creator",
+    bio: "Mr Sharafdin is the creator and Soplang Creator of Soplang. With over 15 years of experience in programming language design, he leads the core development team and sets the technical direction for Soplang.",
     image: "/images/team/sharafdin.jpg",
     social: {
       github: "https://github.com/sharafdin",
@@ -96,8 +97,9 @@ export default function AboutPage() {
                 <div className="prose prose-lg dark:prose-invert">
                   <p>
                     At Soplang, our mission is to create a programming language
-                    that makes coding accessible to Somali speakers worldwide while providing
-                    modern performance features and language constructs.
+                    that makes coding accessible to Somali speakers worldwide
+                    while providing modern performance features and language
+                    constructs.
                   </p>
                   <p>
                     We believe that programming should be accessible, enjoyable,
@@ -386,4 +388,4 @@ export default function AboutPage() {
       </div>
     </div>
   );
-} 
+}
