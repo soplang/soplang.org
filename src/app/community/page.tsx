@@ -1,8 +1,9 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: 'Soplang Community - Join the Conversation',
-  description: 'Join the Soplang community. Connect with other developers, contribute to the project, and get help with your Soplang projects.',
+  title: "Soplang Community - Join the Conversation",
+  description:
+    "Join the Soplang community. Connect with other developers, contribute to the project, and get help with your Soplang projects.",
 };
 
 // Community platforms data
@@ -143,8 +144,8 @@ export default function CommunityPage() {
             Join the Soplang Community
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Connect with other Soplang developers, contribute to the project, and
-            get help with your Soplang projects.
+            Connect with other Soplang developers, contribute to the project,
+            and get help with your Soplang projects.
           </p>
         </div>
 
@@ -332,9 +333,7 @@ export default function CommunityPage() {
         <section className="mb-20">
           <div className="bg-primary rounded-lg p-8 md:p-12 shadow-lg text-white">
             <div className="text-center mb-8">
-              <h2 className="text-3xl font-bold mb-4">
-                Contribute to Soplang
-              </h2>
+              <h2 className="text-3xl font-bold mb-4">Contribute to Soplang</h2>
               <p className="text-xl text-blue-100 max-w-3xl mx-auto">
                 Soplang is an open-source project that thrives on community
                 contributions. There are many ways to get involved and help make
@@ -350,7 +349,7 @@ export default function CommunityPage() {
                   implementing new features.
                 </p>
                 <a
-                  href="https://github.com/soplang/soplang/blob/main/CONTRIBUTING.md"
+                  href="https://github.com/soplang/soplang/blob/main/docs/CONTRIBUTING.md"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-white hover:underline inline-flex items-center"
@@ -377,7 +376,7 @@ export default function CommunityPage() {
                   examples, or writing tutorials.
                 </p>
                 <a
-                  href="https://github.com/soplang/docs"
+                  href="https://github.com/soplang/soplang.org/tree/main/src/app/docs"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-white hover:underline inline-flex items-center"
@@ -436,33 +435,32 @@ export default function CommunityPage() {
                 Stay Updated
               </h2>
               <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-                Subscribe to our newsletter to receive the latest news, updates,
+                Follow us on X (Twitter) to receive the latest news, updates,
                 and announcements about Soplang.
               </p>
             </div>
 
-            <form className="max-w-md mx-auto">
-              <div className="flex flex-col sm:flex-row gap-4">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="flex-grow px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary"
-                  required
-                />
-                <button
-                  type="submit"
-                  className="btn-primary whitespace-nowrap"
+            <div className="max-w-md mx-auto flex justify-center">
+              <a
+                href="https://x.com/xsoplang"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary flex items-center space-x-2 px-6 py-3"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
                 >
-                  Subscribe
-                </button>
-              </div>
-              <p className="text-sm text-gray-500 dark:text-gray-400 mt-2 text-center">
-                We respect your privacy. Unsubscribe at any time.
-              </p>
-            </form>
+                  <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+                </svg>
+                <span>Follow @xsoplang</span>
+              </a>
+            </div>
           </div>
         </section>
       </div>
     </div>
   );
-} 
+}

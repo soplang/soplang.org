@@ -1,6 +1,5 @@
 import Link from "next/link";
 import CodeWindow from "../../components/CodeWindow";
-import Footer from "../../components/Footer";
 
 // OS-specific download data
 const downloads = [
@@ -102,216 +101,218 @@ const packageManagers = [
 ];
 
 export const metadata = {
-  title: 'Download Soplang - The Somali Programming Language',
-  description: 'Download Soplang for Windows, macOS, or Linux. Get started with the first Somali programming language designed for simplicity and performance.',
+  title: "Download Soplang - The Somali Programming Language",
+  description:
+    "Download Soplang for Windows, macOS, or Linux. Get started with the first Somali programming language designed for simplicity and performance.",
 };
 
 export default function DownloadsPage() {
   return (
-    <>
-      <div className="py-12">
-        <div className="container-custom">
-          {/* Header */}
-          <div className="text-center mb-16">
-            <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              Download Soplang
-            </h1>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Get the latest version of Soplang for your operating system and start
-              coding today.
-            </p>
-          </div>
+    <div className="py-12">
+      <div className="container-custom">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            Download Soplang
+          </h1>
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            Get the latest version of Soplang for your operating system and
+            start coding today.
+          </p>
+        </div>
 
-          {/* Latest Version Info */}
-          <div className="bg-primary/10 dark:bg-primary/20 rounded-lg p-6 mb-12">
-            <div className="flex flex-col md:flex-row justify-between items-center">
-              <div>
-                <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
-                  Latest Release: v1.2.0
-                </h2>
-                <p className="text-gray-600 dark:text-gray-300 mt-2">
-                  Released on October 15, 2023 | 
-                  <Link href="/blog/release-notes-v1.2.0" className="text-primary ml-1 hover:underline">
-                    View Release Notes
-                  </Link>
-                </p>
-              </div>
-              <Link
-                href="#download-options"
-                className="btn-primary mt-4 md:mt-0"
-              >
-                Download Now
-              </Link>
-            </div>
-          </div>
-
-          {/* Download Options */}
-          <div id="download-options" className="mb-16">
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-8">
-              Choose Your Platform
-            </h2>
-
-            <div className="grid md:grid-cols-3 gap-8">
-              {downloads.map((download) => (
-                <div
-                  key={download.os}
-                  className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden"
+        {/* Latest Version Info */}
+        <div className="bg-primary/10 dark:bg-primary/20 rounded-lg p-6 mb-12">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <div>
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+                Latest Release: v1.2.0
+              </h2>
+              <p className="text-gray-600 dark:text-gray-300 mt-2">
+                Released on October 15, 2023 |
+                <Link
+                  href="/blog/release-notes-v1.2.0"
+                  className="text-primary ml-1 hover:underline"
                 >
-                  <div className="p-6 border-b border-gray-200 dark:border-gray-700">
-                    <div className="flex items-center space-x-4">
-                      <div className="text-primary dark:text-blue-400">
-                        {download.icon}
-                      </div>
-                      <div>
-                        <h3 className="text-xl font-bold text-gray-900 dark:text-white">
-                          {download.os}
-                        </h3>
-                        <p className="text-gray-500 dark:text-gray-400">
-                          Version {download.version} ({download.size})
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="p-6">
-                    <h4 className="font-semibold text-gray-900 dark:text-white mb-3">
-                      Installation Instructions:
-                    </h4>
-                    <ol className="list-decimal list-inside space-y-2 text-gray-600 dark:text-gray-300 mb-6">
-                      {download.instructions.map((instruction, index) => (
-                        <li key={index}>{instruction}</li>
-                      ))}
-                    </ol>
-                    <Link
-                      href={download.downloadUrl}
-                      className="btn-primary w-full text-center"
-                    >
-                      Download for {download.os}
-                    </Link>
-                  </div>
-                </div>
-              ))}
+                  View Release Notes
+                </Link>
+              </p>
             </div>
+            <Link href="#download-options" className="btn-primary mt-4 md:mt-0">
+              Download Now
+            </Link>
           </div>
+        </div>
 
-          {/* Package Managers */}
-          <div className="mb-16">
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-8">
-              Install via Package Managers
-            </h2>
+        {/* Download Options */}
+        <div id="download-options" className="mb-16">
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-8">
+            Choose Your Platform
+          </h2>
 
-            <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
-              <div className="p-6">
-                <p className="text-gray-600 dark:text-gray-300 mb-6">
-                  Soplang can also be installed using various package managers:
-                </p>
-
-                <div className="space-y-6">
-                  {packageManagers.map((pm) => (
-                    <div
-                      key={pm.name}
-                      className="bg-gray-50 dark:bg-gray-700 rounded-md p-4"
-                    >
-                      <div className="font-semibold text-gray-900 dark:text-white mb-3">
-                        {pm.name}
-                      </div>
-                      <CodeWindow 
-                        code={pm.command} 
-                        title="Terminal" 
-                        className="shadow-lg"
-                      />
+          <div className="grid md:grid-cols-3 gap-8">
+            {downloads.map((download) => (
+              <div
+                key={download.os}
+                className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden"
+              >
+                <div className="p-6 border-b border-gray-200 dark:border-gray-700">
+                  <div className="flex items-center space-x-4">
+                    <div className="text-primary dark:text-blue-400">
+                      {download.icon}
                     </div>
-                  ))}
+                    <div>
+                      <h3 className="text-xl font-bold text-gray-900 dark:text-white">
+                        {download.os}
+                      </h3>
+                      <p className="text-gray-500 dark:text-gray-400">
+                        Version {download.version} ({download.size})
+                      </p>
+                    </div>
+                  </div>
                 </div>
+
+                <div className="p-6">
+                  <h4 className="font-semibold text-gray-900 dark:text-white mb-3">
+                    Installation Instructions:
+                  </h4>
+                  <ol className="list-decimal list-inside space-y-2 text-gray-600 dark:text-gray-300 mb-6">
+                    {download.instructions.map((instruction, index) => (
+                      <li key={index}>{instruction}</li>
+                    ))}
+                  </ol>
+                  <Link
+                    href={download.downloadUrl}
+                    className="btn-primary w-full text-center"
+                  >
+                    Download for {download.os}
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Package Managers */}
+        <div className="mb-16">
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-8">
+            Install via Package Managers
+          </h2>
+
+          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
+            <div className="p-6">
+              <p className="text-gray-600 dark:text-gray-300 mb-6">
+                Soplang can also be installed using various package managers:
+              </p>
+
+              <div className="space-y-6">
+                {packageManagers.map((pm) => (
+                  <div
+                    key={pm.name}
+                    className="bg-gray-50 dark:bg-gray-700 rounded-md p-4"
+                  >
+                    <div className="font-semibold text-gray-900 dark:text-white mb-3">
+                      {pm.name}
+                    </div>
+                    <CodeWindow
+                      code={pm.command}
+                      title="Terminal"
+                      className="shadow-lg"
+                    />
+                  </div>
+                ))}
               </div>
             </div>
           </div>
+        </div>
 
-          {/* Source Code */}
-          <div className="mb-16">
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-8">
-              Source Code
-            </h2>
+        {/* Source Code */}
+        <div className="mb-16">
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-8">
+            Source Code
+          </h2>
 
-            <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
-              <div className="p-6">
-                <p className="text-gray-600 dark:text-gray-300 mb-6">
-                  Soplang is open source. You can access the source code on GitHub:
-                </p>
+          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
+            <div className="p-6">
+              <p className="text-gray-600 dark:text-gray-300 mb-6">
+                Soplang is open source. You can access the source code on
+                GitHub:
+              </p>
 
-                <div className="bg-gray-50 dark:bg-gray-700 rounded-md p-4">
-                  <div className="flex justify-between items-center mb-3">
-                    <div className="font-semibold text-gray-900 dark:text-white">
-                      GitHub Repository
-                    </div>
-                    <a
-                      href="https://github.com/soplang/soplang"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-primary hover:underline"
-                    >
-                      View on GitHub
-                    </a>
+              <div className="bg-gray-50 dark:bg-gray-700 rounded-md p-4">
+                <div className="flex justify-between items-center mb-3">
+                  <div className="font-semibold text-gray-900 dark:text-white">
+                    GitHub Repository
                   </div>
-                  <CodeWindow 
-                    code="git clone https://github.com/soplang/soplang.git" 
-                    title="Terminal" 
-                    className="shadow-lg"
-                  />
+                  <a
+                    href="https://github.com/soplang/soplang"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary hover:underline"
+                  >
+                    View on GitHub
+                  </a>
                 </div>
+                <CodeWindow
+                  code="git clone https://github.com/soplang/soplang.git"
+                  title="Terminal"
+                  className="shadow-lg"
+                />
               </div>
             </div>
           </div>
+        </div>
 
-          {/* System Requirements */}
-          <div>
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-8">
-              System Requirements
-            </h2>
+        {/* System Requirements */}
+        <div>
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-8">
+            System Requirements
+          </h2>
 
-            <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
-              <div className="p-6">
-                <div className="grid md:grid-cols-3 gap-6">
-                  <div>
-                    <h3 className="font-semibold text-gray-900 dark:text-white mb-3">
-                      Windows
-                    </h3>
-                    <ul className="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-300">
-                      <li>Windows 10 or later (64-bit)</li>
-                      <li>4GB RAM minimum</li>
-                      <li>500MB disk space</li>
-                      <li>Internet connection for package installation</li>
-                    </ul>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900 dark:text-white mb-3">
-                      macOS
-                    </h3>
-                    <ul className="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-300">
-                      <li>macOS 10.15 (Catalina) or later</li>
-                      <li>4GB RAM minimum</li>
-                      <li>500MB disk space</li>
-                      <li>Internet connection for package installation</li>
-                    </ul>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900 dark:text-white mb-3">
-                      Linux
-                    </h3>
-                    <ul className="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-300">
-                      <li>Modern Linux distribution (Ubuntu 20.04+, Fedora 34+, etc.)</li>
-                      <li>4GB RAM minimum</li>
-                      <li>500MB disk space</li>
-                      <li>Internet connection for package installation</li>
-                    </ul>
-                  </div>
+          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
+            <div className="p-6">
+              <div className="grid md:grid-cols-3 gap-6">
+                <div>
+                  <h3 className="font-semibold text-gray-900 dark:text-white mb-3">
+                    Windows
+                  </h3>
+                  <ul className="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-300">
+                    <li>Windows 10 or later (64-bit)</li>
+                    <li>4GB RAM minimum</li>
+                    <li>500MB disk space</li>
+                    <li>Internet connection for package installation</li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-gray-900 dark:text-white mb-3">
+                    macOS
+                  </h3>
+                  <ul className="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-300">
+                    <li>macOS 10.15 (Catalina) or later</li>
+                    <li>4GB RAM minimum</li>
+                    <li>500MB disk space</li>
+                    <li>Internet connection for package installation</li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-gray-900 dark:text-white mb-3">
+                    Linux
+                  </h3>
+                  <ul className="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-300">
+                    <li>
+                      Modern Linux distribution (Ubuntu 20.04+, Fedora 34+,
+                      etc.)
+                    </li>
+                    <li>4GB RAM minimum</li>
+                    <li>500MB disk space</li>
+                    <li>Internet connection for package installation</li>
+                  </ul>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <Footer />
-    </>
+    </div>
   );
-} 
+}

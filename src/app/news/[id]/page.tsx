@@ -1,6 +1,6 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import { notFound } from 'next/navigation';
+import Image from "next/image";
+import Link from "next/link";
+import { notFound } from "next/navigation";
 
 // This would typically come from a database or API
 const newsItems = [
@@ -63,12 +63,12 @@ const newsItems = [
 
 // Generate metadata for the page
 export async function generateMetadata({ params }: { params: { id: string } }) {
-  const newsItem = newsItems.find(item => item.id === params.id);
+  const newsItem = newsItems.find((item) => item.id === params.id);
   
   if (!newsItem) {
     return {
-      title: 'News Article Not Found - Soplang',
-      description: 'The requested news article could not be found.',
+      title: "News Article Not Found - Soplang",
+      description: "The requested news article could not be found.",
     };
   }
   
@@ -79,7 +79,7 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
 }
 
 export default function NewsDetail({ params }: { params: { id: string } }) {
-  const newsItem = newsItems.find(item => item.id === params.id);
+  const newsItem = newsItems.find((item) => item.id === params.id);
   
   // If the news item doesn't exist, show a 404 page
   if (!newsItem) {
@@ -93,13 +93,18 @@ export default function NewsDetail({ params }: { params: { id: string } }) {
         <div className="container-custom">
           <div className="max-w-3xl">
             <div className="mb-2 flex items-center space-x-2">
-              <Link href="/news" className="text-white/80 hover:text-white transition-colors">
+              <Link
+                href="/news"
+                className="text-white/80 hover:text-white transition-colors"
+              >
                 News
               </Link>
               <span className="text-white/60">›</span>
               <span className="text-white/80">{newsItem.category}</span>
             </div>
-            <h1 className="text-3xl md:text-4xl font-bold mb-4">{newsItem.title}</h1>
+            <h1 className="text-3xl md:text-4xl font-bold mb-4">
+              {newsItem.title}
+            </h1>
             <div className="flex items-center space-x-4 text-sm">
               <span>{newsItem.date}</span>
               <span className="bg-white/20 px-2 py-1 rounded-full">
@@ -137,7 +142,9 @@ export default function NewsDetail({ params }: { params: { id: string } }) {
                     </div>
                     <div>
                       <div className="font-bold">{newsItem.author}</div>
-                      <div className="text-sm text-gray-600 dark:text-gray-400">{newsItem.authorRole}</div>
+                      <div className="text-sm text-gray-600 dark:text-gray-400">
+                        {newsItem.authorRole}
+                      </div>
                     </div>
                   </div>
                 )}
@@ -151,14 +158,25 @@ export default function NewsDetail({ params }: { params: { id: string } }) {
                 {/* Tags */}
                 <div className="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700">
                   <div className="flex flex-wrap gap-2">
-                    <span className="text-sm text-gray-600 dark:text-gray-400">Tags:</span>
-                    <a href="#" className="text-sm bg-gray-100 dark:bg-gray-700 px-3 py-1 rounded-full hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
+                    <span className="text-sm text-gray-600 dark:text-gray-400">
+                      Tags:
+                    </span>
+                    <a
+                      href="#"
+                      className="text-sm bg-gray-100 dark:bg-gray-700 px-3 py-1 rounded-full hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
+                    >
                       Soplang 2.0
                     </a>
-                    <a href="#" className="text-sm bg-gray-100 dark:bg-gray-700 px-3 py-1 rounded-full hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
+                    <a
+                      href="#"
+                      className="text-sm bg-gray-100 dark:bg-gray-700 px-3 py-1 rounded-full hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
+                    >
                       Announcement
                     </a>
-                    <a href="#" className="text-sm bg-gray-100 dark:bg-gray-700 px-3 py-1 rounded-full hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
+                    <a
+                      href="#"
+                      className="text-sm bg-gray-100 dark:bg-gray-700 px-3 py-1 rounded-full hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
+                    >
                       Future
                     </a>
                   </div>
@@ -166,20 +184,46 @@ export default function NewsDetail({ params }: { params: { id: string } }) {
                 
                 {/* Share */}
                 <div className="mt-6">
-                  <div className="text-sm text-gray-600 dark:text-gray-400 mb-2">Share this article:</div>
+                  <div className="text-sm text-gray-600 dark:text-gray-400 mb-2">
+                    Share this article:
+                  </div>
                   <div className="flex space-x-3">
-                    <a href="#" className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                    <a
+                      href="#"
+                      className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-5 w-5"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
                         <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
                       </svg>
                     </a>
-                    <a href="#" className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                    <a
+                      href="#"
+                      className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-5 w-5"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
                         <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
                       </svg>
                     </a>
-                    <a href="#" className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                    <a
+                      href="#"
+                      className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-5 w-5"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
                         <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
                       </svg>
                     </a>
@@ -194,8 +238,17 @@ export default function NewsDetail({ params }: { params: { id: string } }) {
                 href="/news" 
                 className="flex items-center text-primary hover:underline"
               >
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clipRule="evenodd" />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5 mr-1"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z"
+                    clipRule="evenodd"
+                  />
                 </svg>
                 Back to News
               </Link>
@@ -206,46 +259,71 @@ export default function NewsDetail({ params }: { params: { id: string } }) {
           <div className="lg:w-1/4">
             {/* Related Articles */}
             <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-6">
-              <h3 className="text-lg font-bold mb-4 text-primary">Related News</h3>
+              <h3 className="text-lg font-bold mb-4 text-primary">
+                Related News
+              </h3>
               <div className="space-y-4">
-                <a href="#" className="block hover:bg-gray-50 dark:hover:bg-gray-700 p-2 rounded transition-colors">
-                  <div className="text-sm text-gray-500 dark:text-gray-400 mb-1">January 25, 2024</div>
-                  <div className="font-medium">Soplang 1.5.0 Released with Enhanced Performance</div>
+                <a
+                  href="#"
+                  className="block hover:bg-gray-50 dark:hover:bg-gray-700 p-2 rounded transition-colors"
+                >
+                  <div className="text-sm text-gray-500 dark:text-gray-400 mb-1">
+                    January 25, 2024
+                  </div>
+                  <div className="font-medium">
+                    Soplang 1.5.0 Released with Enhanced Performance
+                  </div>
                 </a>
-                <a href="#" className="block hover:bg-gray-50 dark:hover:bg-gray-700 p-2 rounded transition-colors">
-                  <div className="text-sm text-gray-500 dark:text-gray-400 mb-1">January 5, 2024</div>
-                  <div className="font-medium">New Learning Resources Available for Soplang Developers</div>
+                <a
+                  href="#"
+                  className="block hover:bg-gray-50 dark:hover:bg-gray-700 p-2 rounded transition-colors"
+                >
+                  <div className="text-sm text-gray-500 dark:text-gray-400 mb-1">
+                    January 5, 2024
+                  </div>
+                  <div className="font-medium">
+                    New Learning Resources Available for Soplang Developers
+                  </div>
                 </a>
-                <a href="#" className="block hover:bg-gray-50 dark:hover:bg-gray-700 p-2 rounded transition-colors">
-                  <div className="text-sm text-gray-500 dark:text-gray-400 mb-1">December 20, 2023</div>
-                  <div className="font-medium">Community Contributions Drive Soplang Ecosystem Growth</div>
+                <a
+                  href="#"
+                  className="block hover:bg-gray-50 dark:hover:bg-gray-700 p-2 rounded transition-colors"
+                >
+                  <div className="text-sm text-gray-500 dark:text-gray-400 mb-1">
+                    December 20, 2023
+                  </div>
+                  <div className="font-medium">
+                    Community Contributions Drive Soplang Ecosystem Growth
+                  </div>
                 </a>
               </div>
             </div>
             
-            {/* Newsletter Signup */}
+            {/* Stay Updated */}
             <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
               <h3 className="text-lg font-bold mb-4 text-primary">
                 Stay Updated
               </h3>
               <p className="mb-4 text-sm">
-                Subscribe to our newsletter to receive the latest news and updates about Soplang.
+                Follow us on X (Twitter) to receive the latest news and updates
+                about Soplang.
               </p>
-              <form className="space-y-3">
-                <div>
-                  <input
-                    type="email"
-                    placeholder="Your email address"
-                    className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-1 focus:ring-primary"
-                  />
-                </div>
-                <button
-                  type="submit"
-                  className="w-full btn-primary"
+              <a
+                href="https://x.com/xsoplang"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary flex items-center space-x-2 w-full justify-center"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
                 >
-                  Subscribe
-                </button>
-              </form>
+                  <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+                </svg>
+                <span>Follow @xsoplang</span>
+              </a>
             </div>
           </div>
         </div>

@@ -1,8 +1,9 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: 'Soplang Community - Join the Conversation',
-  description: 'Join the Soplang community. Connect with other developers, contribute to the project, and get help with your Soplang projects.',
+  title: "Soplang Community - Join the Conversation",
+  description:
+    "Join the Soplang community. Connect with other developers, contribute to the project, and get help with your Soplang projects.",
 };
 
 // Community platforms data
@@ -143,8 +144,8 @@ export default function CommunityPage() {
             Join the Soplang Community
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Connect with other Soplang developers, contribute to the project, and
-            get help with your Soplang projects.
+            Connect with other Soplang developers, contribute to the project,
+            and get help with your Soplang projects.
           </p>
         </div>
 
@@ -332,9 +333,7 @@ export default function CommunityPage() {
         <section className="mb-20">
           <div className="bg-primary rounded-lg p-8 md:p-12 shadow-lg text-white">
             <div className="text-center mb-8">
-              <h2 className="text-3xl font-bold mb-4">
-                Contribute to Soplang
-              </h2>
+              <h2 className="text-3xl font-bold mb-4">Contribute to Soplang</h2>
               <p className="text-xl text-blue-100 max-w-3xl mx-auto">
                 Soplang is an open-source project that thrives on community
                 contributions. There are many ways to get involved and help make
@@ -350,7 +349,7 @@ export default function CommunityPage() {
                   implementing new features.
                 </p>
                 <a
-                  href="https://github.com/soplang/soplang/blob/main/CONTRIBUTING.md"
+                  href="https://github.com/soplang/soplang/blob/main/docs/CONTRIBUTING.md"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-white hover:underline inline-flex items-center"
@@ -377,7 +376,7 @@ export default function CommunityPage() {
                   examples, or writing tutorials.
                 </p>
                 <a
-                  href="https://github.com/soplang/docs"
+                  href="https://github.com/soplang/soplang.org/tree/main/src/app/docs"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-white hover:underline inline-flex items-center"
@@ -449,10 +448,7 @@ export default function CommunityPage() {
                   className="flex-grow px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary"
                   required
                 />
-                <button
-                  type="submit"
-                  className="btn-primary whitespace-nowrap"
-                >
+                <button type="submit" className="btn-primary whitespace-nowrap">
                   Subscribe
                 </button>
               </div>
@@ -465,4 +461,4 @@ export default function CommunityPage() {
       </div>
     </div>
   );
-} 
+}
