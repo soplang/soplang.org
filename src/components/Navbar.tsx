@@ -11,7 +11,6 @@ const navLinks = [
   { name: "Downloads", path: "/downloads" },
   { name: "Documentation", path: "/docs" },
   { name: "Community", path: "/community" },
-  { name: "Success Stories", path: "/success-stories" },
   { name: "News", path: "/news" },
   { name: "About", path: "/about" },
 ];
@@ -44,10 +43,19 @@ export default function Navbar() {
         className="bg-[var(--header-bg)] text-white sticky top-0 z-50"
         suppressHydrationWarning
       >
-        <div className="container-custom px-4 sm:px-6 lg:px-8" suppressHydrationWarning>
-          <div className="flex items-center justify-between h-16 md:h-20" suppressHydrationWarning>
+        <div
+          className="container-custom px-4 sm:px-6 lg:px-8"
+          suppressHydrationWarning
+        >
+          <div
+            className="flex items-center justify-between h-16 md:h-20"
+            suppressHydrationWarning
+          >
             {/* Logo */}
-            <Link href="/" className="flex items-center shrink-0 mr-12 lg:mr-16">
+            <Link
+              href="/"
+              className="flex items-center shrink-0 mr-12 lg:mr-16"
+            >
               <div className="flex items-center">
                 <Image
                   src="/images/logo/logo-light.png"
@@ -56,7 +64,7 @@ export default function Navbar() {
                   alt="Soplang Logo"
                   className="hidden dark:inline-block w-auto h-8 md:h-10"
                   priority
-                  style={{ objectFit: 'contain' }}
+                  style={{ objectFit: "contain" }}
                 />
                 <Image
                   src="/images/logo/logo-dark.png"
@@ -65,13 +73,16 @@ export default function Navbar() {
                   alt="Soplang Logo"
                   className="inline-block dark:hidden w-auto h-8 md:h-10"
                   priority
-                  style={{ objectFit: 'contain' }}
+                  style={{ objectFit: "contain" }}
                 />
               </div>
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex md:items-center md:space-x-8 lg:space-x-10" suppressHydrationWarning>
+            <div
+              className="hidden md:flex md:items-center md:space-x-8 lg:space-x-10"
+              suppressHydrationWarning
+            >
               {navLinks.map((link) => (
                 <Link
                   key={link.path}
@@ -86,7 +97,10 @@ export default function Navbar() {
             </div>
 
             {/* Search and Mobile Menu Button */}
-            <div className="flex items-center space-x-2 md:space-x-4" suppressHydrationWarning>
+            <div
+              className="flex items-center space-x-2 md:space-x-4"
+              suppressHydrationWarning
+            >
               <div className="hidden md:block">
                 <div className="relative">
                   <input
@@ -112,9 +126,9 @@ export default function Navbar() {
                   </button>
                 </div>
               </div>
-              
+
               <ThemeToggle />
-              
+
               {/* Mobile Menu Button */}
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -158,10 +172,12 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Navigation */}
-        <div 
+        <div
           className={`md:hidden transition-all duration-300 ease-in-out ${
-            isMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0 overflow-hidden'
-          }`} 
+            isMenuOpen
+              ? "max-h-screen opacity-100"
+              : "max-h-0 opacity-0 overflow-hidden"
+          }`}
           suppressHydrationWarning
         >
           <div className="container-custom px-4 py-2">
@@ -171,8 +187,8 @@ export default function Navbar() {
                   key={link.path}
                   href={link.path}
                   className={`${
-                    pathname === link.path 
-                      ? "bg-[var(--primary-color)] text-white" 
+                    pathname === link.path
+                      ? "bg-[var(--primary-color)] text-white"
                       : "text-white hover:bg-[var(--nav-hover)]"
                   } py-3 px-4 rounded-md transition-colors duration-200`}
                   onClick={() => setIsMenuOpen(false)}
@@ -213,40 +229,36 @@ export default function Navbar() {
         <div className="bg-gray-100 dark:bg-gray-800 border-b border-[var(--border-color)] overflow-x-auto">
           <div className="container-custom py-2 px-4">
             <div className="flex space-x-4 md:space-x-6 whitespace-nowrap">
-              <Link 
-                href="/downloads/latest" 
+              <Link
+                href="/downloads/latest"
                 className="text-gray-700 dark:text-gray-300 hover:text-[var(--primary-color)] dark:hover:text-[var(--primary-color)] text-sm md:text-base font-medium transition-colors duration-200"
               >
                 Download Latest
               </Link>
-              <Link 
-                href="/docs/getting-started" 
+              <Link
+                href="/docs/getting-started"
                 className="text-gray-700 dark:text-gray-300 hover:text-[var(--primary-color)] dark:hover:text-[var(--primary-color)] text-sm md:text-base font-medium transition-colors duration-200"
               >
                 Get Started
               </Link>
-              <Link 
-                href="/docs/reference" 
+              <Link
+                href="/docs/reference"
                 className="text-gray-700 dark:text-gray-300 hover:text-[var(--primary-color)] dark:hover:text-[var(--primary-color)] text-sm md:text-base font-medium transition-colors duration-200"
               >
                 Reference
               </Link>
-              <Link 
-                href="/community/forums" 
+              <a
+                href="https://github.com/orgs/soplang/discussions"
                 className="text-gray-700 dark:text-gray-300 hover:text-[var(--primary-color)] dark:hover:text-[var(--primary-color)] text-sm md:text-base font-medium transition-colors duration-200"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                Forums
-              </Link>
-              <Link 
-                href="/community/contribute" 
-                className="text-gray-700 dark:text-gray-300 hover:text-[var(--primary-color)] dark:hover:text-[var(--primary-color)] text-sm md:text-base font-medium transition-colors duration-200"
-              >
-                Contribute
-              </Link>
+                Discussion
+              </a>
             </div>
           </div>
         </div>
       </nav>
     </header>
   );
-} 
+}

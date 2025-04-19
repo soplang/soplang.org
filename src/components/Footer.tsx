@@ -39,18 +39,12 @@ const footerLinks = [
     links: [
       { name: "Community Home", href: "/community" },
       { name: "Discord", href: "https://discord.gg/n296G4dd7x" },
-      { name: "Forums", href: "/community/forums" },
+      {
+        name: "Discussion",
+        href: "https://github.com/orgs/soplang/discussions",
+      },
       { name: "Workshops", href: "/community/workshops" },
       { name: "Mailing Lists", href: "/community/mailing-lists" },
-    ],
-  },
-  {
-    title: "Contribute",
-    links: [
-      { name: "Core Development", href: "/contribute/core" },
-      { name: "Documentation", href: "/contribute/documentation" },
-      { name: "Bug Tracker", href: "https://github.com/soplang/soplang/issues" },
-      { name: "Report a Security Issue", href: "/contribute/security" },
     ],
   },
 ];
@@ -107,7 +101,7 @@ const socialLinks = [
 export default function Footer() {
   // Get the current year using our utility function
   const currentYear = getCurrentYear();
-  
+
   return (
     <footer className="bg-[var(--footer-bg)] border-t border-[var(--border-color)]">
       <div className="container-custom px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
@@ -145,7 +139,7 @@ export default function Footer() {
                     alt="Soplang Logo"
                     className="hidden dark:inline-block w-auto h-8 md:h-10"
                     priority
-                    style={{ objectFit: 'contain' }}
+                    style={{ objectFit: "contain" }}
                   />
                   <Image
                     src="/images/logo/logo-dark.png"
@@ -154,7 +148,7 @@ export default function Footer() {
                     alt="Soplang Logo"
                     className="inline-block dark:hidden w-auto h-8 md:h-10"
                     priority
-                    style={{ objectFit: 'contain' }}
+                    style={{ objectFit: "contain" }}
                   />
                 </div>
               </div>
@@ -163,11 +157,12 @@ export default function Footer() {
                   Copyright ©{currentYear} Soplang Software Foundation
                 </p>
                 <p className="text-xs text-gray-500 dark:text-gray-500 mt-2">
-                  Soplang is an open-source programming language that lets you work quickly and integrate systems effectively.
+                  Soplang is an open-source programming language that lets you
+                  work quickly and integrate systems effectively.
                 </p>
               </div>
             </div>
-            
+
             <div className="flex items-center space-x-6">
               {socialLinks.map((link) => (
                 <a
@@ -183,19 +178,31 @@ export default function Footer() {
               ))}
             </div>
           </div>
-          
+
           <div className="mt-8 pt-4 border-t border-[var(--border-color)] text-center">
             <nav className="flex flex-wrap justify-center gap-x-4 gap-y-2 text-xs text-gray-500 dark:text-gray-500">
-              <Link href="/privacy" className="hover:text-[var(--primary-color)] hover:underline transition-colors duration-200">
+              <Link
+                href="/privacy"
+                className="hover:text-[var(--primary-color)] hover:underline transition-colors duration-200"
+              >
                 Privacy Policy
               </Link>
-              <Link href="/terms" className="hover:text-[var(--primary-color)] hover:underline transition-colors duration-200">
+              <Link
+                href="/terms"
+                className="hover:text-[var(--primary-color)] hover:underline transition-colors duration-200"
+              >
                 Terms of Use
               </Link>
-              <Link href="/trademarks" className="hover:text-[var(--primary-color)] hover:underline transition-colors duration-200">
+              <Link
+                href="/trademarks"
+                className="hover:text-[var(--primary-color)] hover:underline transition-colors duration-200"
+              >
                 Trademarks
               </Link>
-              <Link href="/sitemap" className="hover:text-[var(--primary-color)] hover:underline transition-colors duration-200">
+              <Link
+                href="/sitemap"
+                className="hover:text-[var(--primary-color)] hover:underline transition-colors duration-200"
+              >
                 Sitemap
               </Link>
             </nav>
@@ -204,4 +211,4 @@ export default function Footer() {
       </div>
     </footer>
   );
-} 
+}
