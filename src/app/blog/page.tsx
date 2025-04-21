@@ -17,7 +17,7 @@ const blogPosts = [
       "Soplang 2.0 Is Almost Here — A Somali-first Programming Language Nears Major Release",
     excerpt:
       "Soplang 2.0 brings a native Somali programming language into the modern era, with powerful tooling, expanded libraries, and a growing ecosystem.",
-    date: "May 15, 2024",
+    date: "April 18, 2025",
     category: "Announcement",
     image: "/images/blog/soplang-2.0.svg",
     imageAlt: "Soplang 2.0 Announcement",
