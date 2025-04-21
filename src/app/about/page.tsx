@@ -6,30 +6,6 @@ export const metadata = {
     "Learn about Soplang, a modern programming language designed for Somali speakers with powerful features and an accessible syntax.",
 };
 
-// Applications of Soplang
-const applications = [
-  {
-    title: "Web Development",
-    description:
-      "Build responsive web applications with Soplang's modern web frameworks and libraries.",
-  },
-  {
-    title: "Data Analysis",
-    description:
-      "Process and analyze data efficiently with Soplang's powerful data handling capabilities.",
-  },
-  {
-    title: "Education",
-    description:
-      "Learn programming concepts in Somali, making coding accessible to Somali speakers worldwide.",
-  },
-  {
-    title: "Scientific Computing",
-    description:
-      "Perform complex calculations and simulations with Soplang's mathematical libraries.",
-  },
-];
-
 export default function AboutPage() {
   return (
     <div className="py-12">
@@ -90,45 +66,6 @@ export default function AboutPage() {
                   </Link>
                 </li>
               </ul>
-            </div>
-          </div>
-        </section>
-
-        {/* Open Source */}
-        <section className="mb-16">
-          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
-            <div className="p-8">
-              <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                Open Source
-              </h2>
-              <p className="text-gray-600 dark:text-gray-300 mb-6">
-                Soplang is developed under an OSI-approved open source license,
-                making it freely usable and distributable, even for commercial
-                use. Soplang's license is administered by the Soplang Software
-                Foundation.
-              </p>
-              <div className="space-y-4">
-                <Link
-                  href="/about/license"
-                  className="block text-primary hover:underline"
-                >
-                  Learn more about the license
-                </Link>
-                <Link
-                  href="https://github.com/soplang/soplang"
-                  className="block text-primary hover:underline"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  GitHub Repository
-                </Link>
-                <Link
-                  href="/about/foundation"
-                  className="block text-primary hover:underline"
-                >
-                  Learn more about the Soplang Foundation
-                </Link>
-              </div>
             </div>
           </div>
         </section>

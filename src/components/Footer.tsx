@@ -8,8 +8,6 @@ const footerLinks = [
     links: [
       { name: "About Soplang", href: "/about" },
       { name: "Getting Started", href: "/docs/getting-started" },
-      { name: "Applications", href: "/about/applications" },
-      { name: "Quotes", href: "/about/quotes" },
       { name: "Help", href: "/about/help" },
     ],
   },
