@@ -27,18 +27,50 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://soplang.org/success-stories</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://soplang.org/news</loc>
-    <changefreq>daily</changefreq>
+    <loc>https://soplang.org/blog</loc>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://soplang.org/about</loc>
     <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://soplang.org/about/help</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://soplang.org/contribute</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Downloads -->
+  <url>
+    <loc>https://soplang.org/downloads/latest</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://soplang.org/downloads/windows</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://soplang.org/downloads/macos</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://soplang.org/downloads/linux</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://soplang.org/downloads/source</loc>
+    <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
 
@@ -63,17 +95,22 @@
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
-
-  <!-- Community sections -->
   <url>
-    <loc>https://soplang.org/community/forums</loc>
-    <changefreq>daily</changefreq>
+    <loc>https://soplang.org/docs/language</loc>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://soplang.org/community/contribute</loc>
+    <loc>https://soplang.org/docs/extending</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+  </url>
+
+  <!-- Blog sections -->
+  <url>
+    <loc>https://soplang.org/blog/Soplang-2.0-Is-Almost-Here-A-Somali-first-Programming-Language-Nears-Major-Release</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 
   <!-- Legal pages -->
@@ -89,6 +126,13 @@
   </url>
   <url>
     <loc>https://soplang.org/trademarks</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <!-- Sitemap -->
+  <url>
+    <loc>https://soplang.org/sitemap</loc>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>

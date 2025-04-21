@@ -1,9 +1,9 @@
-import { Metadata } from 'next';
-import Link from 'next/link';
+import { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: 'Sitemap - Soplang',
-  description: 'Complete sitemap of Soplang programming language website.',
+  title: "Sitemap - Soplang",
+  description: "Complete sitemap of Soplang programming language website.",
 };
 
 const siteStructure = [
@@ -24,6 +24,7 @@ const siteStructure = [
       { name: "Windows", href: "/downloads/windows" },
       { name: "macOS", href: "/downloads/macos" },
       { name: "Linux", href: "/downloads/linux" },
+      { name: "Source Code", href: "/downloads/source" },
     ],
   },
   {
@@ -34,34 +35,39 @@ const siteStructure = [
       { name: "API Reference", href: "/docs/api" },
       { name: "Best Practices", href: "/docs/best-practices" },
       { name: "Examples", href: "/docs/examples" },
+      { name: "Tutorials", href: "/docs/tutorials" },
+      { name: "FAQs", href: "/docs/faq" },
+      { name: "Extending Soplang", href: "/docs/extending" },
     ],
   },
   {
     title: "Community",
     links: [
-      { name: "Forums", href: "/community/forums" },
-      { name: "Discord", href: "https://discord.gg/soplang" },
+      { name: "Community Home", href: "/community" },
+      { name: "Discord", href: "https://discord.gg/n296G4dd7x" },
       { name: "GitHub", href: "https://github.com/soplang" },
-      { name: "Blog", href: "/blog" },
-      { name: "Events", href: "/community/events" },
+      {
+        name: "Discussions",
+        href: "https://github.com/orgs/soplang/discussions",
+      },
+      { name: "Contributing", href: "/contribute" },
     ],
   },
   {
-    title: "Support",
+    title: "Blog",
     links: [
-      { name: "FAQs", href: "/docs/faq" },
-      { name: "Help Center", href: "/support" },
-      { name: "Bug Reports", href: "/support/bugs" },
-      { name: "Contact Us", href: "/contact" },
+      { name: "Blog Home", href: "/blog" },
+      {
+        name: "Soplang 2.0",
+        href: "/blog/Soplang-2.0-Is-Almost-Here-A-Somali-first-Programming-Language-Nears-Major-Release",
+      },
     ],
   },
   {
     title: "About",
     links: [
       { name: "About Soplang", href: "/about" },
-      { name: "Team", href: "/about/team" },
-      { name: "Careers", href: "/about/careers" },
-      { name: "Press Kit", href: "/about/press" },
+      { name: "Help", href: "/about/help" },
     ],
   },
   {
@@ -70,7 +76,6 @@ const siteStructure = [
       { name: "Privacy Policy", href: "/privacy" },
       { name: "Terms of Use", href: "/terms" },
       { name: "Trademarks", href: "/trademarks" },
-      { name: "License", href: "/license" },
     ],
   },
 ];
@@ -107,10 +112,13 @@ export default function SitemapPage() {
 
         <div className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
           <p className="text-sm text-gray-500 dark:text-gray-400">
-            Can't find what you're looking for? <Link href="/contact" className="text-primary hover:underline">Contact us</Link>
+            Can't find what you're looking for?{" "}
+            <Link href="/contact" className="text-primary hover:underline">
+              Contact us
+            </Link>
           </p>
         </div>
       </div>
     </div>
   );
-} 
+}
