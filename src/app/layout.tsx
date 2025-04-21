@@ -108,8 +108,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Soplang - Luuqada Programinka ee Soomaaliga',
     description: 'Dhis Software Adigoo Adeegsanaya Afkaaga Hooyo! Soplang waa luuqada programinka ee ugu horeysa ee loogu talagalay dadka Soomaalida ah. Waxay u fududeysaa barashada iyo horumarinta software-ka.',
-    site: '@xsoplang',
-    creator: '@xsoplang',
+    site: '@soplangorg',
+    creator: '@soplangorg',
     images: [
       {
         url: '/images/twitter-image.png',

@@ -74,7 +74,7 @@ const socialLinks = [
   },
   {
     name: "Twitter",
-    href: "https://x.com/xsoplang",
+    href: "https://x.com/soplangorg",
     icon: (
       <svg
         className="h-5 w-5"
