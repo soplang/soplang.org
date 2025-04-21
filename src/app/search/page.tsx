@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 
 // Define different types of searchable content
-type SearchResultType = "documentation" | "blog" | "news" | "page";
+type SearchResultType = "documentation" | "blog" | "page";
 
 interface SearchResult {
   id: string;
@@ -67,15 +67,6 @@ export default function SearchPage() {
           relevance: 0.85,
         },
         {
-          id: "news-1",
-          title: "Soplang 2.0 Release Announcement",
-          excerpt:
-            "Announcing the release of Soplang 2.0 with new features and improvements.",
-          url: "/news/Soplang-2.0-Is-Almost-Here-A-Somali-first-Programming-Language-Nears-Major-Release",
-          type: "news",
-          relevance: 0.88,
-        },
-        {
           id: "page-1",
           title: "About Soplang",
           excerpt:
@@ -114,7 +105,6 @@ export default function SearchPage() {
     documentation: searchResults.filter((r) => r.type === "documentation")
       .length,
     blog: searchResults.filter((r) => r.type === "blog").length,
-    news: searchResults.filter((r) => r.type === "news").length,
     page: searchResults.filter((r) => r.type === "page").length,
   };
 
@@ -200,16 +190,6 @@ export default function SearchPage() {
                   Blog ({resultCounts.blog})
                 </button>
                 <button
-                  onClick={() => setActiveFilter("news")}
-                  className={`w-full text-left px-3 py-2 rounded-md ${
-                    activeFilter === "news"
-                      ? "bg-primary text-white"
-                      : "hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300"
-                  }`}
-                >
-                  News ({resultCounts.news})
-                </button>
-                <button
                   onClick={() => setActiveFilter("page")}
                   className={`w-full text-left px-3 py-2 rounded-md ${
                     activeFilter === "page"
@@ -246,8 +226,6 @@ export default function SearchPage() {
                             ? "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300"
                             : result.type === "blog"
                             ? "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300"
-                            : result.type === "news"
-                            ? "bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-300"
                             : "bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300"
                         }`}
                       >
