@@ -47,8 +47,16 @@ const footerLinks = [
         name: "Contributing",
         href: "https://github.com/soplang/soplang/blob/main/docs/CONTRIBUTING.md",
       },
-      { name: "Workshops", href: "/community/workshops" },
-      { name: "Mailing Lists", href: "/community/mailing-lists" },
+    ],
+  },
+  {
+    title: "Blog",
+    links: [
+      { name: "Blog Home", href: "/blog" },
+      {
+        name: "Soplang 2.0",
+        href: "/blog/Soplang-2.0-Is-Almost-Here-A-Somali-first-Programming-Language-Nears-Major-Release",
+      },
     ],
   },
 ];

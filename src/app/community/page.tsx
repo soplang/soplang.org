@@ -1,9 +1,11 @@
+import React from "react";
 import Link from "next/link";
+import { Metadata } from "next";
 
-export const metadata = {
-  title: "Soplang Community - Join the Conversation",
+export const metadata: Metadata = {
+  title: "Community - Soplang",
   description:
-    "Join the Soplang community. Connect with other developers, contribute to the project, and get help with your Soplang projects.",
+    "Join the Soplang community to connect with other developers, find resources, and contribute to the project.",
 };
 
 // Community platforms data
@@ -11,7 +13,7 @@ const platforms = [
   {
     name: "GitHub",
     description:
-      "Contribute to Soplang's development, report issues, or explore the source code.",
+      "Contribute to Soplang's development, report issues, and explore the source code.",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -23,12 +25,12 @@ const platforms = [
       </svg>
     ),
     url: "https://github.com/soplang/soplang",
-    buttonText: "View on GitHub",
+    buttonText: "Join on GitHub",
   },
   {
     name: "Discord",
     description:
-      "Join our Discord server to chat with other Soplang developers, get help, and share your projects.",
+      "Chat with other Soplang users and developers, get help, and share your work.",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -39,13 +41,13 @@ const platforms = [
         <path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z" />
       </svg>
     ),
-    url: "https://discord.gg/n296G4dd7x",
+    url: "https://discord.gg/soplang",
     buttonText: "Join Discord",
   },
   {
     name: "Twitter",
     description:
-      "Follow Soplang on Twitter for the latest news, updates, and community highlights.",
+      "Follow Soplang for the latest news, updates, and announcements.",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -53,16 +55,15 @@ const platforms = [
         fill="currentColor"
         viewBox="0 0 24 24"
       >
-        <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+        <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
       </svg>
     ),
-    url: "https://twitter.com/soplangorg",
-    buttonText: "Follow on Twitter",
+    url: "https://twitter.com/SoplangOrg",
+    buttonText: "Follow Us",
   },
   {
     name: "Stack Overflow",
-    description:
-      "Ask and answer questions about Soplang on Stack Overflow using the 'soplang' tag.",
+    description: "Ask and answer questions about Soplang programming.",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -70,39 +71,11 @@ const platforms = [
         fill="currentColor"
         viewBox="0 0 24 24"
       >
-        <path d="M18.986 21.865v-6.404h2.134V24H1.844v-8.539h2.13v6.404h15.012zM6.111 19.731H16.85v-2.137H6.111v2.137zm.259-4.852l10.48 2.189.451-2.07-10.478-2.187-.453 2.068zm1.359-5.056l9.705 4.53.903-1.95-9.706-4.53-.902 1.936v.014zm2.715-4.785l8.217 6.855 1.359-1.62-8.216-6.853-1.35 1.617-.01.001zM15.751 0l-1.746 1.294 6.405 8.604 1.746-1.294L15.749 0h.002z" />
+        <path d="M15 21h-10v-2h10v2zm6-11.665l-1.621-9.335-1.993.346 1.62 9.335 1.994-.346zm-5.964 6.937l-9.746-.975-.186 2.016 9.755.879.177-1.92zm.538-2.587l-9.276-2.608-.526 1.954 9.306 2.5.496-1.846zm1.204-2.413l-8.297-4.864-1.029 1.743 8.298 4.865 1.028-1.744zm1.866-1.467l-5.339-7.829-1.672 1.14 5.339 7.829 1.672-1.14zm-2.644 4.195v8h-12v-8h-2v10h16v-10h-2z" />
       </svg>
     ),
     url: "https://stackoverflow.com/questions/tagged/soplang",
     buttonText: "View Questions",
-  },
-];
-
-// Community events data
-const events = [
-  {
-    title: "Soplang Conference 2023",
-    date: "November 15-17, 2023",
-    location: "Virtual Event",
-    description:
-      "Join us for the annual Soplang Conference featuring talks, workshops, and networking opportunities with the Soplang community.",
-    url: "/events/soplang-conference-2023",
-  },
-  {
-    title: "Monthly Community Call",
-    date: "Last Thursday of every month",
-    location: "Discord",
-    description:
-      "Join our monthly community call to discuss the latest developments, roadmap, and community initiatives.",
-    url: "/events/monthly-community-call",
-  },
-  {
-    title: "Soplang Hackathon",
-    date: "January 20-22, 2024",
-    location: "Virtual Event",
-    description:
-      "Participate in our upcoming hackathon and build amazing projects with Soplang. Prizes for the best submissions!",
-    url: "/events/soplang-hackathon-2024",
   },
 ];
 
@@ -183,97 +156,6 @@ export default function CommunityPage() {
           </div>
         </section>
 
-        {/* Community Events */}
-        <section className="mb-20">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-8">
-            Upcoming Events
-          </h2>
-
-          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
-            {events.map((event, index) => (
-              <div
-                key={event.title}
-                className={`p-6 ${
-                  index !== events.length - 1
-                    ? "border-b border-gray-200 dark:border-gray-700"
-                    : ""
-                }`}
-              >
-                <div className="flex flex-col md:flex-row md:items-center justify-between">
-                  <div>
-                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
-                      {event.title}
-                    </h3>
-                    <div className="text-gray-600 dark:text-gray-300 mb-4">
-                      <div className="flex items-center mb-1">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="h-5 w-5 mr-2 text-primary"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                          />
-                        </svg>
-                        {event.date}
-                      </div>
-                      <div className="flex items-center">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="h-5 w-5 mr-2 text-primary"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                          />
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                          />
-                        </svg>
-                        {event.location}
-                      </div>
-                    </div>
-                    <p className="text-gray-600 dark:text-gray-300">
-                      {event.description}
-                    </p>
-                  </div>
-                  <Link
-                    href={event.url}
-                    className="mt-4 md:mt-0 inline-flex items-center text-primary hover:underline"
-                  >
-                    Learn More
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-5 w-5 ml-1"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
         {/* Featured Community Projects */}
         <section className="mb-20">
           <div className="flex justify-between items-center mb-8">
@@ -348,11 +230,11 @@ export default function CommunityPage() {
                   Help improve Soplang by contributing code, fixing bugs, or
                   implementing new features.
                 </p>
-                <a
-                  href="https://github.com/soplang/soplang/blob/main/docs/CONTRIBUTING.md"
+                <Link
+                  href="https://github.com/soplang/soplang/blob/main/CONTRIBUTING.md"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-white hover:underline inline-flex items-center"
+                  className="text-white font-medium hover:underline inline-flex items-center"
                 >
                   Contribution Guidelines
                   <svg
@@ -363,23 +245,23 @@ export default function CommunityPage() {
                   >
                     <path
                       fillRule="evenodd"
-                      d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                      d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
                       clipRule="evenodd"
                     />
                   </svg>
-                </a>
+                </Link>
               </div>
               <div className="bg-white/10 rounded-lg p-6">
                 <h3 className="text-xl font-bold mb-3">Documentation</h3>
                 <p className="mb-4">
-                  Help improve Soplang's documentation by fixing errors, adding
-                  examples, or writing tutorials.
+                  Improve Soplang&apos;s documentation, write tutorials, or
+                  create learning resources.
                 </p>
-                <a
-                  href="https://github.com/soplang/soplang.org/tree/main/src/app/docs"
+                <Link
+                  href="https://github.com/soplang/docs"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-white hover:underline inline-flex items-center"
+                  className="text-white font-medium hover:underline inline-flex items-center"
                 >
                   Documentation Repository
                   <svg
@@ -390,25 +272,25 @@ export default function CommunityPage() {
                   >
                     <path
                       fillRule="evenodd"
-                      d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                      d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
                       clipRule="evenodd"
                     />
                   </svg>
-                </a>
+                </Link>
               </div>
               <div className="bg-white/10 rounded-lg p-6">
                 <h3 className="text-xl font-bold mb-3">Community Support</h3>
                 <p className="mb-4">
-                  Help other Soplang users by answering questions on Discord,
-                  Stack Overflow, or the forums.
+                  Help other Soplang users by answering questions on forums or
+                  reporting bugs.
                 </p>
-                <a
-                  href="https://discord.gg/n296G4dd7x"
+                <Link
+                  href="https://stackoverflow.com/questions/tagged/soplang"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-white hover:underline inline-flex items-center"
+                  className="text-white font-medium hover:underline inline-flex items-center"
                 >
-                  Join Discord
+                  Stack Overflow
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-5 w-5 ml-1"
@@ -417,46 +299,93 @@ export default function CommunityPage() {
                   >
                     <path
                       fillRule="evenodd"
-                      d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                      d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
                       clipRule="evenodd"
                     />
                   </svg>
-                </a>
+                </Link>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Newsletter Section */}
+        {/* FAQ Section */}
         <section>
-          <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-8 md:p-12 shadow-md">
-            <div className="text-center mb-8">
-              <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
-                Stay Updated
-              </h2>
-              <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-                Follow us on X (Twitter) to receive the latest news, updates,
-                and announcements about Soplang.
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-8">
+            Frequently Asked Questions
+          </h2>
+
+          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md divide-y divide-gray-200 dark:divide-gray-700">
+            <div className="p-6">
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">
+                How can I get started with Soplang?
+              </h3>
+              <p className="text-gray-600 dark:text-gray-300">
+                You can get started by{" "}
+                <Link
+                  href="/downloads"
+                  className="text-primary hover:underline"
+                >
+                  downloading Soplang
+                </Link>{" "}
+                and following our{" "}
+                <Link
+                  href="/docs/beginners-guide"
+                  className="text-primary hover:underline"
+                >
+                  beginner&apos;s guide
+                </Link>
+                . We recommend starting with simple programs to get familiar
+                with the language.
               </p>
             </div>
-
-            <div className="max-w-md mx-auto flex justify-center">
-              <a
-                href="https://x.com/soplangorg"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-primary flex items-center space-x-2 px-6 py-3"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
+            <div className="p-6">
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">
+                Where can I find documentation?
+              </h3>
+              <p className="text-gray-600 dark:text-gray-300">
+                Comprehensive documentation is available in our{" "}
+                <Link href="/docs" className="text-primary hover:underline">
+                  documentation section
+                </Link>
+                , including tutorials, examples, and API references.
+              </p>
+            </div>
+            <div className="p-6">
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">
+                How do I report a bug or request a feature?
+              </h3>
+              <p className="text-gray-600 dark:text-gray-300">
+                You can report bugs or request features on our{" "}
+                <a
+                  href="https://github.com/soplang/soplang/issues"
+                  className="text-primary hover:underline"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
-                </svg>
-                <span>Follow @soplangorg</span>
-              </a>
+                  GitHub issues page
+                </a>
+                . Please check if the issue has already been reported before
+                creating a new one.
+              </p>
+            </div>
+            <div className="p-6">
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">
+                How can I contribute to Soplang?
+              </h3>
+              <p className="text-gray-600 dark:text-gray-300">
+                We welcome contributions! Check out our{" "}
+                <a
+                  href="https://github.com/soplang/soplang/blob/main/CONTRIBUTING.md"
+                  className="text-primary hover:underline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  contribution guidelines
+                </a>{" "}
+                to get started. You can contribute code, documentation,
+                translations, or help with community support.
+              </p>
             </div>
           </div>
         </section>

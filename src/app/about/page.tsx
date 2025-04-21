@@ -172,31 +172,15 @@ export default function AboutPage() {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
-                    News
+                    Updates
                   </h3>
                   <ul className="space-y-2">
-                    <li>
-                      <Link
-                        href="/news"
-                        className="text-primary hover:underline"
-                      >
-                        Latest Announcements
-                      </Link>
-                    </li>
                     <li>
                       <Link
                         href="/blog"
                         className="text-primary hover:underline"
                       >
                         Blog
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        href="/news/releases"
-                        className="text-primary hover:underline"
-                      >
-                        Release Notes
                       </Link>
                     </li>
                   </ul>

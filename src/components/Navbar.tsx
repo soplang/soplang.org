@@ -11,7 +11,7 @@ const navLinks = [
   { name: "Downloads", path: "/downloads" },
   { name: "Documentation", path: "/docs" },
   { name: "Community", path: "/community" },
-  { name: "News", path: "/news" },
+  { name: "Blog", path: "/blog" },
   { name: "About", path: "/about" },
 ];
 
@@ -29,7 +29,7 @@ const mockSuggestions = [
   {
     id: "news-1",
     title: "Soplang 2.0 Release Announcement",
-    url: "/news/Soplang-2.0-Is-Almost-Here-A-Somali-first-Programming-Language-Nears-Major-Release",
+    url: "/blog/Soplang-2.0-Is-Almost-Here-A-Somali-first-Programming-Language-Nears-Major-Release",
   },
   {
     id: "blog-1",

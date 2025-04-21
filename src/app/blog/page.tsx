@@ -108,37 +108,6 @@ export default function BlogPage() {
           </div>
         </div>
 
-        {/* Subscribe Section */}
-        <div className="bg-gradient-to-r from-primary to-primary-dark text-white rounded-lg p-8 mb-12">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-2xl font-bold mb-4">
-              Subscribe to our Newsletter
-            </h2>
-            <p className="mb-6">
-              Stay up-to-date with the latest Soplang news, updates, and
-              tutorials. We&apos;ll send you information about new releases,
-              tutorials, and events.
-            </p>
-            <form className="flex flex-col md:flex-row gap-4 max-w-lg mx-auto">
-              <input
-                type="email"
-                placeholder="Your email address"
-                className="px-4 py-3 rounded-lg flex-grow text-gray-900 focus:outline-none focus:ring-2 focus:ring-white"
-                required
-              />
-              <button
-                type="submit"
-                className="px-6 py-3 bg-white text-primary font-medium rounded-lg hover:bg-gray-100 transition-colors"
-              >
-                Subscribe
-              </button>
-            </form>
-            <p className="mt-4 text-sm text-white/80">
-              We respect your privacy. Unsubscribe at any time.
-            </p>
-          </div>
-        </div>
-
         {/* Blog Categories */}
         <div className="mb-16">
           <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
