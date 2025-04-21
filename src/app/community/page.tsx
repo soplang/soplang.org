@@ -56,7 +56,7 @@ const platforms = [
         <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
       </svg>
     ),
-    url: "https://twitter.com/xsoplang",
+    url: "https://twitter.com/soplangorg",
     buttonText: "Follow on Twitter",
   },
   {
@@ -442,7 +442,7 @@ export default function CommunityPage() {
 
             <div className="max-w-md mx-auto flex justify-center">
               <a
-                href="https://x.com/xsoplang"
+                href="https://x.com/soplangorg"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary flex items-center space-x-2 px-6 py-3"
@@ -455,7 +455,7 @@ export default function CommunityPage() {
                 >
                   <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
                 </svg>
-                <span>Follow @xsoplang</span>
+                <span>Follow @soplangorg</span>
               </a>
             </div>
           </div>
