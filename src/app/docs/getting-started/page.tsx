@@ -233,8 +233,8 @@ def add(a: int, b: int) -> int:
             
             <ul className="list-disc list-inside space-y-2">
               <li>
-                <Link href="/docs/reference" className="text-primary hover:underline">
-                  Language Reference
+                <Link href="/docs/syntax-basics" className="text-primary hover:underline">
+                  Syntax Basics
                 </Link> - Comprehensive documentation of Soplang's syntax and features
               </li>
               <li>

@@ -29,8 +29,6 @@ const websiteSections = [
     links: [
       { name: "Documentation", href: "/docs" },
       { name: "Tutorial", href: "/docs/tutorial" },
-      { name: "Language Reference", href: "/docs/language" },
-      { name: "API Reference", href: "/docs/reference" },
       { name: "Examples", href: "/docs/examples" },
     ],
   },
@@ -265,8 +263,8 @@ export default function Home() {
                     </Link>
                   </li>
                   <li>
-                    <Link href="/docs/reference" className="soplang-link">
-                      Explore the language reference
+                    <Link href="/docs/examples" className="soplang-link">
+                      Explore example projects
                     </Link>
                   </li>
                   <li>

@@ -103,8 +103,7 @@ export const metadata: Metadata = {
     canonical: "https://soplang.org",
   },
   openGraph: {
-    title:
-      "Soplang - The First Somali Programming Language",
+    title: "Soplang - The First Somali Programming Language",
     description:
       "Soplang is a modern Somali programming language created by Mr Sharafdin, first released in October 2023. It makes coding intuitive and accessible with native Somali syntax. Dhis Software Adigoo Adeegsanaya Afkaaga Hooyo!",
     url: "https://soplang.org",
@@ -142,8 +141,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title:
-      "Soplang - The First Somali Programming Language",
+    title: "Soplang - The First Somali Programming Language",
     description:
       "Soplang is a modern Somali programming language created by Mr Sharafdin. It makes coding intuitive and accessible with native Somali syntax. Dhis Software Adigoo Adeegsanaya Afkaaga Hooyo!",
     site: "@soplangorg",

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import CodeWindow from "@/components/CodeWindow";
 
 export const metadata = {
   title: "Soplang Documentation - Introduction",
@@ -134,30 +135,30 @@ export default function DocsPage() {
         Example Code
       </h2>
 
-      <pre className="bg-gray-100 dark:bg-gray-800 p-4 sm:p-6 rounded-lg overflow-x-auto text-sm sm:text-base">
-        <code>{`// Hello World
-qor("Salaan, Adduunka!")
+      <CodeWindow
+        code={`// Hello World
+qor("Hello, World!")
 
 // Variables
-door magac = 'Sharafdin'
-qoraal cinwaan = "Soplang Developer"
-tiro da = 10
+door name = "Faarax"
+qoraal title = "Soplang Developer"
+tiro age = 10
 
-qor("Magaca: " + magac)
-qor("Cinwaanka: " + cinwaan)
-qor("Da'da: " + qoraal(da))
+qor("Name: " + name)
+qor("Title: " + title)
+qor("Age: " + qoraal(age))
 
 // Function
-howl salaanta(qofka) {
-    soo_celi "Salaan, " + qofka + "!"
+howl greet(person) {
+    soo_celi "Hello, " + person + "!"
 }
-qor(salaanta(magac))
+qor(greet(name))
 
 // If/Else
-haddii (da > 18) {
-    qor("Waa qof weyn")
+haddii (age > 18) {
+    qor("You are an adult")
 } haddii_kalena {
-    qor("Waa qof yar")
+    qor("You are underage")
 }
 
 // For Loop
@@ -166,14 +167,15 @@ ku_celi i min 1 ilaa 5 {
 }
 
 // While Loop
-tiro j = 5
-inta_ay (j > 0) {
-    qor(j)
-    j = j - 1
+tiro counter = 5
+inta_ay (counter > 0) {
+    qor(counter)
+    counter = counter - 1
 }
 
-qor("Dhammaad!")`}</code>
-      </pre>
+qor("Done!")`}
+        title="example.sop"
+      />
 
       <h2 className="text-2xl sm:text-3xl font-bold mt-12 mb-6">Tooling</h2>
 

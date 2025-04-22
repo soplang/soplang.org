@@ -86,22 +86,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://soplang.org/docs/reference</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://soplang.org/docs/faq</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://soplang.org/docs/language</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://soplang.org/docs/extending</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>

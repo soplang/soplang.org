@@ -26,9 +26,6 @@ const footerLinks = [
     links: [
       { name: "Docs Home", href: "/docs" },
       { name: "Tutorial", href: "/docs/tutorial" },
-      { name: "Library Reference", href: "/docs/reference" },
-      { name: "Language Reference", href: "/docs/language" },
-      { name: "Extending Soplang", href: "/docs/extending" },
       { name: "FAQs", href: "/docs/faq" },
     ],
   },

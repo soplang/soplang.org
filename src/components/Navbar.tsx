@@ -25,7 +25,6 @@ const mockSuggestions = [
     url: "/docs/getting-started",
   },
   { id: "doc-2", title: "Installation Guide", url: "/docs/installation" },
-  { id: "doc-3", title: "Soplang Syntax Reference", url: "/docs/reference" },
   {
     id: "news-1",
     title: "Soplang 2.0 Release Announcement",
@@ -37,21 +36,6 @@ const mockSuggestions = [
     url: "/blog/why-soplang-matters",
   },
   { id: "page-1", title: "About Soplang", url: "/about" },
-  {
-    id: "feature-1",
-    title: "Variables and Data Types",
-    url: "/docs/reference#variables",
-  },
-  {
-    id: "feature-2",
-    title: "Control Flow Statements",
-    url: "/docs/reference#control-flow",
-  },
-  {
-    id: "feature-3",
-    title: "Functions and Methods",
-    url: "/docs/reference#functions",
-  },
 ];
 
 export default function Navbar() {
@@ -442,24 +426,10 @@ export default function Navbar() {
                 Get Started
               </Link>
               <Link
-                href="/docs/reference"
+                href="/community"
                 className="text-gray-700 dark:text-gray-300 hover:text-[var(--primary-color)] dark:hover:text-[var(--primary-color)] text-sm md:text-base font-medium transition-colors duration-200"
               >
-                Reference
-              </Link>
-              <a
-                href="https://github.com/orgs/soplang/discussions"
-                className="text-gray-700 dark:text-gray-300 hover:text-[var(--primary-color)] dark:hover:text-[var(--primary-color)] text-sm md:text-base font-medium transition-colors duration-200"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Discussion
-              </a>
-              <Link
-                href="/contribute"
-                className="text-gray-700 dark:text-gray-300 hover:text-[var(--primary-color)] dark:hover:text-[var(--primary-color)] text-sm md:text-base font-medium transition-colors duration-200"
-              >
-                Contributing
+                Community
               </Link>
             </div>
           </div>
