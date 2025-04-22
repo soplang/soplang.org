@@ -212,6 +212,7 @@ function tokenizeSoplangCode(code: string): Token[] {
 
 interface SoplangHighlighterProps {
   code: string;
+  title?: string;
 }
 
 export default function SoplangHighlighter({ code }: SoplangHighlighterProps) {
