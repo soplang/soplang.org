@@ -157,7 +157,7 @@ export default function Navbar() {
             >
               <div className="flex items-center">
                 <Image
-                  src="/images/logo/logo-light.png"
+                  src="/images/logo/logo.svg"
                   width={160}
                   height={40}
                   alt="Soplang Logo"
@@ -166,7 +166,7 @@ export default function Navbar() {
                   style={{ objectFit: "contain" }}
                 />
                 <Image
-                  src="/images/logo/logo-dark.png"
+                  src="/images/logo/logo.svg"
                   width={160}
                   height={40}
                   alt="Soplang Logo"

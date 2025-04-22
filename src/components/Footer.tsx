@@ -143,7 +143,7 @@ export default function Footer() {
               <div className="mb-4 sm:mb-0">
                 <div className="flex items-center">
                   <Image
-                    src="/images/logo/logo-light.png"
+                    src="/images/logo/logo.svg"
                     width={160}
                     height={40}
                     alt="Soplang Logo"
@@ -152,7 +152,7 @@ export default function Footer() {
                     style={{ objectFit: "contain" }}
                   />
                   <Image
-                    src="/images/logo/logo-dark.png"
+                    src="/images/logo/logo.svg"
                     width={160}
                     height={40}
                     alt="Soplang Logo"
