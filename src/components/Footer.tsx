@@ -43,7 +43,7 @@ const footerLinks = [
       },
       {
         name: "Contributing",
-        href: "https://github.com/soplang/soplang/blob/main/docs/CONTRIBUTING.md",
+        href: "/contribute",
       },
     ],
   },
@@ -208,6 +208,12 @@ export default function Footer() {
                 className="hover:text-[var(--primary-color)] hover:underline transition-colors duration-200"
               >
                 Trademarks
+              </Link>
+              <Link
+                href="/contribute/security"
+                className="hover:text-[var(--primary-color)] hover:underline transition-colors duration-200"
+              >
+                Security
               </Link>
               <Link
                 href="/sitemap"

@@ -12,7 +12,7 @@ const nextConfig = {
     // Improve client-side rendering performance
     optimizeServerReact: true,
   },
-  // Redirect routes for success-stories and contribute to prevent access
+  // Redirect routes for success-stories to prevent access
   async redirects() {
     return [
       {
@@ -23,24 +23,6 @@ const nextConfig = {
       {
         source: "/success-stories/:path*",
         destination: "/",
-        permanent: false,
-      },
-      {
-        source: "/contribute",
-        destination:
-          "https://github.com/soplang/soplang/blob/main/docs/CONTRIBUTING.md",
-        permanent: false,
-      },
-      {
-        source: "/contribute/:path*",
-        destination:
-          "https://github.com/soplang/soplang/blob/main/docs/CONTRIBUTING.md",
-        permanent: false,
-      },
-      {
-        source: "/community/contribute",
-        destination:
-          "https://github.com/soplang/soplang/blob/main/docs/CONTRIBUTING.md",
         permanent: false,
       },
       // Redirect forums to GitHub Discussions

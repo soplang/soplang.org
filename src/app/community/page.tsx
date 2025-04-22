@@ -105,6 +105,14 @@ const projects = [
     stars: 215,
     url: "https://github.com/soplang/game-engine",
   },
+  {
+    title: "Soplang Compiler",
+    author: "Shiine",
+    description:
+      "A Rust-based compiler for Soplang that improves performance and provides better error messages.",
+    stars: 195,
+    url: "https://github.com/soplang/compiler",
+  },
 ];
 
 export default function CommunityPage() {
@@ -231,9 +239,7 @@ export default function CommunityPage() {
                   implementing new features.
                 </p>
                 <Link
-                  href="https://github.com/soplang/soplang/blob/main/CONTRIBUTING.md"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/contribute"
                   className="text-white font-medium hover:underline inline-flex items-center"
                 >
                   Contribution Guidelines
@@ -375,14 +381,12 @@ export default function CommunityPage() {
               </h3>
               <p className="text-gray-600 dark:text-gray-300">
                 We welcome contributions! Check out our{" "}
-                <a
-                  href="https://github.com/soplang/soplang/blob/main/CONTRIBUTING.md"
+                <Link
+                  href="/contribute"
                   className="text-primary hover:underline"
-                  target="_blank"
-                  rel="noopener noreferrer"
                 >
                   contribution guidelines
-                </a>{" "}
+                </Link>{" "}
                 to get started. You can contribute code, documentation,
                 translations, or help with community support.
               </p>

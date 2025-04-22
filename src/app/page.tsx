@@ -2,76 +2,114 @@ import Link from "next/link";
 import Image from "next/image";
 import CodeWindow from "../components/CodeWindow";
 
-// Sample code snippet for the hero section
-const codeSnippet = `// Soplang example
+// Sample code snippet for the hero section - back to Hello World
+const codeSnippet = `// Hello World
+qor("Salaan, Adduunka!")
 
-door x = 10
+// Variables
+door magac = 'Sharafdin'
+qoraal cinwaan = "Soplang Developer"
+tiro da = 10
 
-haddii (x > 5) {
-    qor("X waa weyn yahay!")
-} haddii_kale (x == 5) {
-    qor("X waa shan!")
-} haddii_kalena {
-    qor("X waa yar yahay!")
+qor("Magaca: " + magac)
+qor("Cinwaanka: " + cinwaan)
+qor("Da'da: " + qoraal(da))
+
+// Function
+howl salaan(qofka) {
+    soo_celi "Salaan, " + qofka + "!"
 }
-
-howl salaam(magac) {
-    qor("Salaan, " + magac)
-}
-
-salaam("Sharafdin")
+qor(salaan(magac))
 `;
 
-// Latest news items
-const latestNews = [
+// Website sections for the sidebar
+const websiteSections = [
   {
-    title: "Soplang 1.2.0 Released",
-    date: "October 15, 2023",
-    url: "/blog/release-notes-v1.2.0",
+    title: "Learn",
+    links: [
+      { name: "Documentation", href: "/docs" },
+      { name: "Tutorial", href: "/docs/tutorial" },
+      { name: "Language Reference", href: "/docs/language" },
+      { name: "API Reference", href: "/docs/reference" },
+      { name: "Examples", href: "/docs/examples" },
+    ],
   },
   {
-    title: "Soplang Developer Survey Results",
-    date: "September 28, 2023",
-    url: "/blog/developer-survey-results",
+    title: "Download",
+    links: [
+      { name: "Latest Version", href: "/downloads/latest" },
+      { name: "All Releases", href: "/downloads" },
+      { name: "Source Code", href: "https://github.com/soplang/soplang" },
+    ],
   },
   {
-    title: "Upcoming Soplang Conference 2023",
-    date: "September 15, 2023",
-    url: "/events/soplang-conference-2023",
+    title: "Community",
+    links: [
+      { name: "Community Home", href: "/community" },
+      { name: "Contribute", href: "/contribute" },
+      { name: "Security", href: "/contribute/security" },
+      {
+        name: "Report Issues",
+        href: "https://github.com/soplang/soplang/issues",
+      },
+    ],
+  },
+  {
+    title: "About",
+    links: [
+      { name: "About Soplang", href: "/about" },
+      { name: "Blog", href: "/blog" },
+    ],
   },
 ];
 
-// Upcoming events
-const upcomingEvents = [
+// Social media links
+const socialLinks = [
   {
-    title: "Soplang Conference 2023",
-    date: "November 15-17, 2023",
-    location: "Virtual Event",
-    url: "/events/soplang-conference-2023",
+    name: "GitHub",
+    href: "https://github.com/soplang",
+    icon: (
+      <svg
+        className="h-5 w-5"
+        fill="currentColor"
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+      >
+        <path
+          fillRule="evenodd"
+          d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+          clipRule="evenodd"
+        />
+      </svg>
+    ),
   },
   {
-    title: "Monthly Community Call",
-    date: "October 26, 2023",
-    location: "Discord",
-    url: "/events/monthly-community-call",
-  },
-];
-
-// Success stories
-const successStories = [
-  {
-    company: "TechInnovate",
-    quote:
-      "Soplang has transformed our data processing pipeline, reducing processing time by 30%.",
-    author: "Ismail Ainte, CTO",
-    url: "/success-stories/techinnovate",
+    name: "Twitter",
+    href: "https://x.com/soplangorg",
+    icon: (
+      <svg
+        className="h-5 w-5"
+        fill="currentColor"
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+      >
+        <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+      </svg>
+    ),
   },
   {
-    company: "EduTech Solutions",
-    quote:
-      "We use Soplang to teach programming concepts. Its clean syntax makes it perfect for beginners.",
-    author: "Omar Tood, Lead Instructor",
-    url: "/success-stories/edutech",
+    name: "Discord",
+    href: "https://discord.gg/n296G4dd7x",
+    icon: (
+      <svg
+        className="h-5 w-5"
+        fill="currentColor"
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+      >
+        <path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z" />
+      </svg>
+    ),
   },
 ];
 
@@ -87,7 +125,7 @@ export default function Home() {
                 Soplang
               </h1>
               <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-4">
-                The Somali Programming Language
+                Somali-first programming language
               </h2>
               <p className="text-lg sm:text-xl mb-6 text-white/90">
                 Dhis Software Adigoo Adeegsanaya Afkaaga Hooyo!
@@ -129,17 +167,19 @@ export default function Home() {
                 </h2>
                 <div className="space-y-4 text-base sm:text-lg">
                   <p>
-                    Soplang is the first Somali programming language, designed
-                    with a focus on code readability and developer productivity.
-                    By using Somali keywords and syntax, it makes programming
-                    accessible to Somali speakers worldwide who may face
-                    language barriers with traditional programming languages.
+                    <strong>Soplang</strong> (short for{" "}
+                    <em>Somali Programming Language</em>) is a culturally-rooted
+                    programming language designed and developed by{" "}
+                    <strong>Mr Sharafdin</strong> (Sharafdin Yusuf Sharafdin).
+                    It allows developers to write code in{" "}
+                    <strong>native Somali syntax</strong> using familiar
+                    keywords, expressions, and structures — making programming
+                    feel natural and accessible.
                   </p>
                   <p>
-                    Whether you're a beginner or an experienced developer,
-                    Soplang provides a clean and intuitive syntax that makes it
-                    easy to express concepts in fewer lines of code while using
-                    your native language.
+                    Soplang is a Somali-first programming language that makes
+                    coding intuitive, inclusive, and accessible for Somali
+                    peoples.
                   </p>
                   <p>
                     With Soplang, you can "Dhis Software Adigoo Adeegsanaya
@@ -156,39 +196,41 @@ export default function Home() {
                 <div className="grid sm:grid-cols-2 gap-6">
                   <div className="feature-card">
                     <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-3">
-                      Somali Keywords & Syntax
+                      Dual Typing System
                     </h3>
                     <p className="text-gray-700 dark:text-gray-300">
-                      Program using familiar Somali words like "door"
-                      (function), "qor" (print), and "haddii" (if), making
-                      coding intuitive for Somali speakers.
+                      Use <code>door</code> for dynamic typing, or{" "}
+                      <code>tiro</code>, <code>qoraal</code>, etc. for static
+                      typing flexibility.
                     </p>
                   </div>
                   <div className="feature-card">
                     <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-3">
-                      Bilingual Documentation
+                      Object-Oriented Programming
                     </h3>
                     <p className="text-gray-700 dark:text-gray-300">
-                      Comprehensive documentation available in both Somali and
-                      English, ensuring accessibility for all users.
+                      Full support for OOP with <code>fasalka</code>,{" "}
+                      <code>ka_dhaxal</code>, <code>cusub</code>, and{" "}
+                      <code>nafta</code>.
                     </p>
                   </div>
                   <div className="feature-card">
                     <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-3">
-                      Cross-Platform
+                      Intuitive Control Flow
                     </h3>
                     <p className="text-gray-700 dark:text-gray-300">
-                      Runs on Windows, macOS, Linux, and more with consistent
-                      behavior across platforms.
+                      Clean syntax for conditionals (<code>haddii</code>,{" "}
+                      <code>haddii_kale</code>) and loops (<code>ku_celi</code>,{" "}
+                      <code>inta_ay</code>).
                     </p>
                   </div>
                   <div className="feature-card">
                     <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-3">
-                      Cultural Integration
+                      Integrated Tooling
                     </h3>
                     <p className="text-gray-700 dark:text-gray-300">
-                      Examples and tutorials incorporate Somali cultural
-                      contexts, making learning more relevant and engaging.
+                      VS Code extension, CLI tool (<code>sop</code>), REPL, and
+                      browser runtime (sopScript).
                     </p>
                   </div>
                 </div>
@@ -247,165 +289,62 @@ $ curl -sSL https://install.soplang.org | bash
                   />
                 </div>
               </div>
-
-              {/* Success Stories */}
-              <div className="soplang-box p-6 sm:p-8 mt-8">
-                <h2 className="soplang-header text-2xl sm:text-3xl mb-6">
-                  Success Stories
-                </h2>
-                <div className="space-y-6">
-                  {successStories.map((story, index) => (
-                    <div
-                      key={index}
-                      className="bg-gray-50 dark:bg-gray-800 p-4 sm:p-6 rounded-lg"
-                    >
-                      <p className="italic mb-4 text-base sm:text-lg">
-                        "{story.quote}"
-                      </p>
-                      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-                        <p className="font-medium text-gray-900 dark:text-white">
-                          {story.author}, {story.company}
-                        </p>
-                        <Link
-                          href={story.url}
-                          className="soplang-link text-sm sm:text-base inline-flex items-center"
-                        >
-                          Read more <span className="ml-2">→</span>
-                        </Link>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-                <div className="mt-6">
-                  <Link
-                    href="/success-stories"
-                    className="soplang-link inline-flex items-center"
-                  >
-                    View all success stories <span className="ml-2">→</span>
-                  </Link>
-                </div>
-              </div>
             </div>
 
-            {/* Sidebar */}
+            {/* Sidebar Content */}
             <div className="w-full lg:w-1/3">
-              {/* Latest Version */}
-              <div className="soplang-box p-6 sm:p-8 sticky top-24">
-                <h2 className="sidebar-header text-xl sm:text-2xl mb-4">
-                  Latest Version
-                </h2>
-                <div className="mb-6">
-                  <div className="text-2xl sm:text-3xl font-bold text-[var(--primary-color)]">
-                    Soplang 1.2.0
-                  </div>
-                  <div className="text-sm sm:text-base text-gray-600 dark:text-gray-400 mt-1">
-                    Released: October 15, 2023
-                  </div>
-                </div>
-                <Link
-                  href="/downloads"
-                  className="btn-primary w-full text-center block py-3 px-6 rounded-md text-base sm:text-lg font-semibold"
-                >
-                  Download Now
-                </Link>
-                <div className="mt-4 text-center">
-                  <Link
-                    href="/blog/release-notes-v1.2.0"
-                    className="soplang-link text-sm sm:text-base inline-flex items-center justify-center"
+              {/* Site Navigation */}
+              <div className="sticky top-24">
+                {websiteSections.map((section) => (
+                  <div
+                    className="soplang-sidebar-box p-6 mb-6"
+                    key={section.title}
                   >
-                    Release Notes <span className="ml-2">→</span>
-                  </Link>
+                    <h3 className="text-xl font-bold mb-4">{section.title}</h3>
+                    <ul className="space-y-2">
+                      {section.links.map((link, index) => (
+                        <li key={index}>
+                          <Link
+                            href={link.href}
+                            className="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors"
+                            target={
+                              link.href.startsWith("http")
+                                ? "_blank"
+                                : undefined
+                            }
+                            rel={
+                              link.href.startsWith("http")
+                                ? "noopener noreferrer"
+                                : undefined
+                            }
+                          >
+                            {link.name}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+
+                {/* Social Media Links */}
+                <div className="soplang-sidebar-box p-6 mb-6">
+                  <h3 className="text-xl font-bold mb-4">Connect</h3>
+                  <div className="flex space-x-4">
+                    {socialLinks.map((link) => (
+                      <a
+                        key={link.name}
+                        href={link.href}
+                        className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={link.name}
+                        title={link.name}
+                      >
+                        {link.icon}
+                      </a>
+                    ))}
+                  </div>
                 </div>
-              </div>
-
-              {/* Latest News */}
-              <div className="soplang-box p-6 sm:p-8 mt-8">
-                <h2 className="sidebar-header text-xl sm:text-2xl mb-4">
-                  Latest News
-                </h2>
-                <ul className="sidebar-list">
-                  {latestNews.map((item, index) => (
-                    <li key={index}>
-                      <Link href={item.url} className="sidebar-item">
-                        {item.title}
-                      </Link>
-                      <div className="text-xs text-gray-500 dark:text-gray-500">
-                        {item.date}
-                      </div>
-                    </li>
-                  ))}
-                </ul>
-                <Link href="/blog" className="soplang-link text-sm">
-                  More news →
-                </Link>
-              </div>
-
-              {/* Upcoming Events */}
-              <div className="soplang-box p-6 sm:p-8 mt-8">
-                <h2 className="sidebar-header text-xl sm:text-2xl mb-4">
-                  Upcoming Events
-                </h2>
-                <ul className="sidebar-list">
-                  {upcomingEvents.map((event, index) => (
-                    <li key={index}>
-                      <Link href={event.url} className="sidebar-item">
-                        {event.title}
-                      </Link>
-                      <div className="text-xs text-gray-500 dark:text-gray-500">
-                        {event.date} • {event.location}
-                      </div>
-                    </li>
-                  ))}
-                </ul>
-                <Link href="/events" className="soplang-link text-sm">
-                  All events →
-                </Link>
-              </div>
-
-              {/* Community */}
-              <div className="soplang-box p-6 sm:p-8 mt-8">
-                <h2 className="sidebar-header text-xl sm:text-2xl mb-4">
-                  Join the Community
-                </h2>
-                <p className="mb-4 text-sm">
-                  Connect with other Soplang developers and get involved in the
-                  community.
-                </p>
-                <ul className="space-y-2">
-                  <li>
-                    <a
-                      href="https://github.com/soplang"
-                      className="soplang-link"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      GitHub
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://discord.gg/soplang"
-                      className="soplang-link"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Discord
-                    </a>
-                  </li>
-                  <li>
-                    <Link href="/community/forums" className="soplang-link">
-                      Forums
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/community/mailing-lists"
-                      className="soplang-link"
-                    >
-                      Mailing Lists
-                    </Link>
-                  </li>
-                </ul>
               </div>
             </div>
           </div>
