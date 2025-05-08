@@ -33,3 +33,6 @@ yarn-error.log*
 next-env.d.ts
 .cursorrules
 .qodo
+
+# format files
+.prettierrc
