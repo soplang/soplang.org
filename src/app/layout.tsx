@@ -1,9 +1,10 @@
-import "@/styles/globals.css";
-import type { Metadata } from "next";
-import { Inter, Roboto } from "next/font/google";
-import { ThemeProvider } from "@/components/ThemeProvider";
-import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
+import "@/styles/globals.css";
+import { ThemeProvider } from "next-themes";
+
+import type { Metadata } from "next";
+import { Roboto } from "next/font/google";
 
 const roboto = Roboto({
   weight: ["400", "500", "700"],
@@ -721,7 +722,12 @@ export default function RootLayout({
         />
       </head>
       <body className={roboto.className} suppressHydrationWarning>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          themes={["dark", "light"]}
+          enableSystem
+        >
           <Navbar />
           <main className="flex-grow">{children}</main>
           <Footer />
