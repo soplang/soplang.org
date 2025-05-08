@@ -1,29 +1,29 @@
-import Image from "next/image";
-import Link from "next/link";
-import { Metadata } from "next";
+import { Metadata } from 'next';
+import Image from 'next/image';
+import Link from 'next/link';
 
 // Define metadata for the page
 export const metadata: Metadata = {
-  title: "Blog - Soplang",
+  title: 'Blog - Soplang',
   description:
-    "News, updates, tutorials, and insights about Soplang - the Somali-first programming language.",
+    'News, updates, tutorials, and insights about Soplang - the Somali-first programming language.',
 };
 
 // Our single blog post
 const blogPosts = [
   {
-    id: "Soplang-2.0-Is-Almost-Here-A-Somali-first-Programming-Language-Nears-Major-Release",
+    id: 'Soplang-2.0-Is-Almost-Here-A-Somali-first-Programming-Language-Nears-Major-Release',
     title:
-      "Soplang 2.0 Is Almost Here — A Somali-first Programming Language Nears Major Release",
+      'Soplang 2.0 Is Almost Here — A Somali-first Programming Language Nears Major Release',
     excerpt:
-      "Soplang 2.0 brings a native Somali programming language into the modern era, with powerful tooling, expanded libraries, and a growing ecosystem.",
-    date: "April 18, 2025",
-    category: "Announcement",
-    image: "/images/blog/soplang-2.0.svg",
-    imageAlt: "Soplang 2.0 Announcement",
-    author: "Mr Sharafdin",
-    authorRole: "Soplang Creator",
-    readTime: "7 min read",
+      'Soplang 2.0 brings a native Somali programming language into the modern era, with powerful tooling, expanded libraries, and a growing ecosystem.',
+    date: 'April 18, 2025',
+    category: 'Announcement',
+    image: '/images/blog/soplang-2.0.svg',
+    imageAlt: 'Soplang 2.0 Announcement',
+    author: 'Mr Sharafdin',
+    authorRole: 'Soplang Creator',
+    readTime: '7 min read',
   },
 ];
 

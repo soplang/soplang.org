@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { useTheme } from "@/components/ThemeProvider";
-import { useState, useEffect } from "react";
+import { useTheme } from 'next-themes';
+import { useEffect, useState } from 'react';
 
 export default function ThemeToggle() {
   const { theme, setTheme } = useTheme();
@@ -18,12 +18,12 @@ export default function ThemeToggle() {
 
   return (
     <button
-      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+      onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
       className="p-2 rounded hover:bg-[var(--nav-hover)] focus:outline-none"
-      aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+      aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
       suppressHydrationWarning
     >
-      {theme === "dark" ? (
+      {theme === 'dark' ? (
         // Sun icon for dark mode
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -60,4 +60,4 @@ export default function ThemeToggle() {
       )}
     </button>
   );
-} 
+}

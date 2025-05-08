@@ -1,22 +1,22 @@
-import Image from "next/image";
-import Link from "next/link";
-import { notFound } from "next/navigation";
+import Image from 'next/image';
+import Link from 'next/link';
+import { notFound } from 'next/navigation';
 
 // This would typically come from a database or API
 const blogPosts = [
   {
-    id: "Soplang-2.0-Is-Almost-Here-A-Somali-first-Programming-Language-Nears-Major-Release",
+    id: 'Soplang-2.0-Is-Almost-Here-A-Somali-first-Programming-Language-Nears-Major-Release',
     title:
-      "Soplang 2.0 Is Almost Here — A Somali-first Programming Language Nears Major Release",
+      'Soplang 2.0 Is Almost Here — A Somali-first Programming Language Nears Major Release',
     excerpt:
-      "Soplang 2.0 brings a native Somali programming language into the modern era, with powerful tooling, expanded libraries, and a growing ecosystem.",
-    date: "April 18, 2025",
-    category: "Announcement",
-    image: "/images/blog/soplang-2.0.svg",
-    imageAlt: "Soplang 2.0 Announcement",
-    author: "Mr Sharafdin",
-    authorRole: "Soplang Creator",
-    readTime: "7 min read",
+      'Soplang 2.0 brings a native Somali programming language into the modern era, with powerful tooling, expanded libraries, and a growing ecosystem.',
+    date: 'April 18, 2025',
+    category: 'Announcement',
+    image: '/images/blog/soplang-2.0.svg',
+    imageAlt: 'Soplang 2.0 Announcement',
+    author: 'Mr Sharafdin',
+    authorRole: 'Soplang Creator',
+    readTime: '7 min read',
     content: `
       <p class="mb-4">The programming language landscape is about to welcome a fresh and culturally grounded addition: <strong>Soplang</strong>, a Somali-first programming language, is preparing to launch its long-awaited 2.0 release. Designed with native Somali syntax, dual typing, and full developer tooling, Soplang 2.0 is shaping up to be more than just a language — it's an ecosystem.</p>
       
@@ -103,8 +103,8 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
 
   if (!blogPost) {
     return {
-      title: "Blog Post Not Found - Soplang",
-      description: "The requested blog post could not be found.",
+      title: 'Blog Post Not Found - Soplang',
+      description: 'The requested blog post could not be found.',
     };
   }
 
