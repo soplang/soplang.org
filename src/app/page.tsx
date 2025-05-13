@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import CodeWindow from "../components/CodeWindow";
 
 // Sample code snippet for the hero section - back to Hello World
@@ -116,13 +115,13 @@ export default function Home() {
               <div className="flex flex-col gap-4 sm:flex-row">
                 <Link
                   href="/downloads"
-                  className="bg-white text-[var(--primary-color)] font-bold px-6 py-3 rounded-md hover:bg-gray-100 transition-colors text-center"
+                  className="bg-white text-[var(--primary-color)] font-bold px-6 py-3 rounded-md hover:bg-gray-100  text-center"
                 >
                   Download Soplang
                 </Link>
                 <Link
                   href="/docs/getting-started"
-                  className="bg-[var(--secondary-color)] text-gray-900 font-bold px-6 py-3 rounded-md hover:bg-opacity-90 transition-colors text-center"
+                  className="bg-[var(--secondary-color)] text-gray-900 font-bold px-6 py-3 rounded-md hover:bg-opacity-90  text-center"
                 >
                   Get Started
                 </Link>
@@ -246,10 +245,10 @@ export default function Home() {
                     Quick Installation
                   </h3>
                   <CodeWindow
-                    code={`# On macOS/Linux
+                    code={`// On macOS/Linux
 $ curl -sSL https://install.soplang.org | bash
 
-# On Windows (PowerShell)
+// On Windows (PowerShell)
 > iwr -useb https://install.soplang.org/win | iex`}
                     title="terminal"
                   />
@@ -269,7 +268,7 @@ $ curl -sSL https://install.soplang.org | bash
                         <li key={index}>
                           <Link
                             href={link.href}
-                            className="text-gray-700 transition-colors dark:text-gray-300 hover:text-primary dark:hover:text-primary"
+                            className="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary"
                             target={link.href.startsWith("http") ? "_blank" : undefined}
                             rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
                           >
