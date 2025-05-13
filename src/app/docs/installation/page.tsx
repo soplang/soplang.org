@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { FaWindows, FaApple, FaLinux, FaDocker } from 'react-icons/fa';
 import { BiPackage } from 'react-icons/bi';
 import { VscTerminalBash } from 'react-icons/vsc';
+import CodeSnippet from '@/components/CodeSnippet';
 
 export const metadata = {
   title: 'Soplang Installation Guide - Documentation',
@@ -84,9 +85,7 @@ export default function InstallationPage() {
           </span>
           <div>
             To verify the installation, open Command Prompt or PowerShell and run:
-            <pre className="p-4 my-4 overflow-x-auto bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-800 dark:border-gray-700">
-              <code>soplang --version</code>
-            </pre>
+            <CodeSnippet code="soplang --version" />
           </div>
         </li>
       </ol>
@@ -98,9 +97,7 @@ export default function InstallationPage() {
         <span className="font-bold">Soplang</span> with the following command:
       </p>
 
-      <pre className="p-4 my-4 mt-5 overflow-x-auto bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-800 dark:border-gray-700">
-        <code>choco install soplang</code>
-      </pre>
+      <CodeSnippet code="choco install soplang" className="mt-5" />
 
       <h2 id="macos" className="flex items-center mt-12 mb-6 text-2xl font-bold sm:text-3xl">
         <FaApple className="mr-3 text-primary dark:text-blue-400" /> macOS Installation
@@ -139,9 +136,7 @@ export default function InstallationPage() {
           </span>
           <div>
             To verify the installation, open Terminal and run:
-            <pre className="p-4 my-4 overflow-x-auto bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-800 dark:border-gray-700">
-              <code>soplang --version</code>
-            </pre>
+            <CodeSnippet code="soplang --version" />
           </div>
         </li>
       </ol>
@@ -153,9 +148,7 @@ export default function InstallationPage() {
         <span className="font-bold">Soplang</span> with the following command:
       </p>
 
-      <pre className="p-4 my-4 overflow-x-auto bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-800 dark:border-gray-700">
-        <code>brew install soplang</code>
-      </pre>
+      <CodeSnippet code="brew install soplang" />
 
       <h2 id="linux" className="flex items-center mt-12 mb-6 text-2xl font-bold sm:text-3xl">
         <FaLinux className="mr-3 text-primary dark:text-blue-400" /> Linux Installation
@@ -163,21 +156,18 @@ export default function InstallationPage() {
 
       <h3 className="mb-4 text-xl font-semibold sm:text-2xl">Debian/Ubuntu</h3>
 
-      <pre className="p-4 my-4 overflow-x-auto bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-800 dark:border-gray-700">
-        <code>sudo apt-get update sudo apt-get install soplang</code>
-      </pre>
+      <CodeSnippet
+        code="sudo apt-get update
+sudo apt-get install soplang"
+      />
 
       <h3 className="mt-6 mb-4 text-xl font-semibold sm:text-2xl">Fedora</h3>
 
-      <pre className="p-4 my-4 overflow-x-auto bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-800 dark:border-gray-700">
-        <code>sudo dnf install soplang</code>
-      </pre>
+      <CodeSnippet code="sudo dnf install soplang" />
 
       <h3 className="mt-6 mb-4 text-xl font-semibold sm:text-2xl">Arch Linux</h3>
 
-      <pre className="p-4 my-4 overflow-x-auto bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-800 dark:border-gray-700">
-        <code>sudo pacman -S soplang</code>
-      </pre>
+      <CodeSnippet code="sudo pacman -S soplang" />
 
       <h3 className="mt-8 mb-4 text-xl font-semibold sm:text-2xl">Using the Tarball</h3>
 
@@ -191,27 +181,23 @@ export default function InstallationPage() {
         </li>
         <li>
           Extract the tarball:
-          <pre className="p-4 my-4 overflow-x-auto bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-800 dark:border-gray-700">
-            <code>tar -xzf soplang-1.2.0-linux-x86_64.tar.gz</code>
-          </pre>
+          <CodeSnippet code="tar -xzf soplang-1.2.0-linux-x86_64.tar.gz" />
         </li>
         <li>
           Navigate to the extracted directory:
-          <pre className="p-4 my-4 overflow-x-auto bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-800 dark:border-gray-700">
-            <code>cd soplang-1.2.0</code>
-          </pre>
+          <CodeSnippet code="cd soplang-1.2.0" />
         </li>
         <li>
           Run the installation script:
-          <pre className="p-4 my-4 overflow-x-auto bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-800 dark:border-gray-700">
-            <code>./configure make sudo make install</code>
-          </pre>
+          <CodeSnippet
+            code="./configure
+make
+sudo make install"
+          />
         </li>
         <li>
           To verify the installation, run:
-          <pre className="p-4 my-4 overflow-x-auto bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-800 dark:border-gray-700">
-            <code>soplang --version</code>
-          </pre>
+          <CodeSnippet code="soplang --version" />
         </li>
       </ol>
 
@@ -224,17 +210,13 @@ export default function InstallationPage() {
         the latest image with:
       </p>
 
-      <pre className="p-4 my-4 overflow-x-auto bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-800 dark:border-gray-700">
-        <code>docker pull soplang/soplang:latest</code>
-      </pre>
+      <CodeSnippet code="docker pull soplang/soplang:latest" />
 
       <p className="text-base text-gray-700 sm:text-lg dark:text-gray-300">
         To run <span className="font-bold">Soplang</span> in a Docker container:
       </p>
 
-      <pre className="p-4 my-4 overflow-x-auto bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-800 dark:border-gray-700">
-        <code>docker run -it --rm soplang/soplang</code>
-      </pre>
+      <CodeSnippet code="docker run -it --rm soplang/soplang" title="docker" />
 
       <h2
         id="virtual-environments"
@@ -252,9 +234,7 @@ export default function InstallationPage() {
         Creating a Virtual Environment
       </h3>
 
-      <pre className="p-4 my-4 overflow-x-auto bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-800 dark:border-gray-700">
-        <code>soplang -m venv myenv</code>
-      </pre>
+      <CodeSnippet code="soplang -m venv myenv" title="terminal" />
 
       <h3 className="mt-6 mb-4 text-xl font-semibold sm:text-2xl">
         Activating the Virtual Environment
@@ -264,17 +244,13 @@ export default function InstallationPage() {
         On Windows:
       </p>
 
-      <pre className="p-4 my-4 overflow-x-auto bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-800 dark:border-gray-700">
-        <code>myenv\Scripts\activate</code>
-      </pre>
+      <CodeSnippet code="myenv\Scripts\activate" title="cmd.exe" />
 
       <p className="text-base font-medium text-gray-700 sm:text-lg dark:text-gray-300">
         On macOS and Linux:
       </p>
 
-      <pre className="p-4 my-4 overflow-x-auto bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-800 dark:border-gray-700">
-        <code>source myenv/bin/activate</code>
-      </pre>
+      <CodeSnippet code="source myenv/bin/activate" title="bash" />
 
       <h2
         id="troubleshooting"
@@ -305,9 +281,7 @@ export default function InstallationPage() {
             On Linux and macOS, you might need to add execute permissions to the
             <span className="font-bold">Soplang</span> binary:
           </p>
-          <pre className="p-4 my-4 overflow-x-auto bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-800 dark:border-gray-700">
-            <code>chmod +x /path/to/soplang</code>
-          </pre>
+          <CodeSnippet code="chmod +x /path/to/soplang" title="bash" />
         </div>
 
         <div className="p-4 my-4 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
