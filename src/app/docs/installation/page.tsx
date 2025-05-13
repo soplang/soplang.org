@@ -1,13 +1,14 @@
-import Link from 'next/link';
-import { FaWindows, FaApple, FaLinux, FaDocker } from 'react-icons/fa';
-import { BiPackage } from 'react-icons/bi';
-import { VscTerminalBash } from 'react-icons/vsc';
-import CodeSnippet from '@/components/CodeSnippet';
+import Link from "next/link";
+import { FaWindows, FaApple, FaLinux, FaDocker } from "react-icons/fa";
+import { BiPackage } from "react-icons/bi";
+import { VscTerminalBash } from "react-icons/vsc";
+import CodeSnippet from "@/components/CodeSnippet";
+import DocNavigation from "@/components/DocNavigation";
 
 export const metadata = {
-  title: 'Soplang Installation Guide - Documentation',
+  title: "Soplang Installation Guide - Documentation",
   description:
-    'Learn how to install Soplang on Windows, macOS, and Linux. Step-by-step instructions for getting started with Soplang.',
+    "Learn how to install Soplang on Windows, macOS, and Linux. Step-by-step instructions for getting started with Soplang.",
 };
 
 export default function InstallationPage() {
@@ -16,8 +17,8 @@ export default function InstallationPage() {
       <h1 className="mb-6 text-3xl font-bold sm:text-4xl lg:text-5xl">Installing Soplang</h1>
 
       <p className="mb-8 text-lg text-gray-700 sm:text-xl dark:text-gray-300">
-        This guide will walk you through the process of installing{' '}
-        <span className="font-bold">Soplang</span> on your system.{' '}
+        This guide will walk you through the process of installing{" "}
+        <span className="font-bold">Soplang</span> on your system.{" "}
         <span className="font-bold">Soplang</span> is available for Windows, macOS, and Linux.
       </p>
 
@@ -49,7 +50,7 @@ export default function InstallationPage() {
             1
           </span>
           <div>
-            Download the latest Windows installer (.msi file) from the{' '}
+            Download the latest Windows installer (.msi file) from the{" "}
             <Link href="/downloads" className="font-medium text-primary hover:underline">
               downloads page
             </Link>
@@ -93,7 +94,7 @@ export default function InstallationPage() {
       <h3 className="mt-8 mb-4 text-xl font-semibold sm:text-2xl">Using Chocolatey</h3>
 
       <p className="text-base text-gray-700 sm:text-lg dark:text-gray-300">
-        If you use Chocolatey package manager, you can install{' '}
+        If you use Chocolatey package manager, you can install{" "}
         <span className="font-bold">Soplang</span> with the following command:
       </p>
 
@@ -111,7 +112,7 @@ export default function InstallationPage() {
             1
           </span>
           <div>
-            Download the latest macOS installer (.pkg file) from the{' '}
+            Download the latest macOS installer (.pkg file) from the{" "}
             <Link href="/downloads" className="font-medium text-primary hover:underline">
               downloads page
             </Link>
@@ -144,7 +145,7 @@ export default function InstallationPage() {
       <h3 className="mt-8 mb-4 text-xl font-semibold sm:text-2xl">Using Homebrew</h3>
 
       <p className="text-base text-gray-700 sm:text-lg dark:text-gray-300">
-        If you use Homebrew package manager, you can install{' '}
+        If you use Homebrew package manager, you can install{" "}
         <span className="font-bold">Soplang</span> with the following command:
       </p>
 
@@ -173,7 +174,7 @@ sudo apt-get install soplang"
 
       <ol>
         <li>
-          Download the latest Linux tarball (.tar.gz file) from the{' '}
+          Download the latest Linux tarball (.tar.gz file) from the{" "}
           <Link href="/downloads" className="text-primary hover:underline">
             downloads page
           </Link>
@@ -226,7 +227,7 @@ sudo make install"
       </h2>
 
       <p className="text-base text-gray-700 sm:text-lg dark:text-gray-300">
-        It's recommended to use virtual environments for <span className="font-bold">Soplang</span>{' '}
+        It's recommended to use virtual environments for <span className="font-bold">Soplang</span>{" "}
         projects to manage dependencies and isolate your project environment.
       </p>
 
@@ -267,7 +268,7 @@ sudo make install"
             Command not found error
           </h4>
           <p className="text-gray-700 dark:text-gray-300">
-            If you get a "command not found" error when trying to run{' '}
+            If you get a "command not found" error when trying to run{" "}
             <span className="font-bold">Soplang</span>, ensure that the installation directory is in
             your PATH environment variable.
           </p>
@@ -289,91 +290,28 @@ sudo make install"
             Dependency issues
           </h4>
           <p className="text-gray-700 dark:text-gray-300">
-            If you encounter dependency issues, try reinstalling{' '}
-            <span className="font-bold">Soplang</span> or check the{' '}
+            If you encounter dependency issues, try reinstalling{" "}
+            <span className="font-bold">Soplang</span> or check the{" "}
             <Link href="/community" className="text-primary hover:underline">
               community forums
-            </Link>{' '}
+            </Link>{" "}
             for help.
           </p>
         </div>
       </div>
 
-      <h2 id="next-steps" className="mt-12 mb-6 text-2xl font-bold sm:text-3xl">
-        Next Steps
-      </h2>
-
-      <p className="mb-6 text-base text-gray-700 sm:text-lg dark:text-gray-300">
-        Now that you have <span className="font-bold">Soplang</span> installed, you can start
-        learning the basics and writing your first program:
-      </p>
-
-      <div className="grid grid-cols-1 gap-6 my-8 md:grid-cols-2">
-        <Link
-          href="/docs/quick-start"
-          className="block p-6 transition-all bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 hover:shadow-md hover:border-primary dark:hover:border-blue-400 dark:border-gray-700"
-        >
-          <h3 className="mt-0 mb-2 text-xl font-bold text-primary dark:text-blue-400">
-            Quick Start
-          </h3>
-          <p className="mb-0 text-gray-600 dark:text-gray-300">
-            Write your first <span className="font-bold">Soplang</span> program and learn the
-            basics.
-          </p>
-        </Link>
-        <Link
-          href="/docs/syntax-basics"
-          className="block p-6 transition-all bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 hover:shadow-md hover:border-primary dark:hover:border-blue-400 dark:border-gray-700"
-        >
-          <h3 className="mt-0 mb-2 text-xl font-bold text-primary dark:text-blue-400">
-            Syntax Basics
-          </h3>
-          <p className="mb-0 text-gray-600 dark:text-gray-300">
-            Learn the fundamental syntax of <span className="font-bold">Soplang</span>.
-          </p>
-        </Link>
-      </div>
-
-      <div className="pt-8 mt-16 border-t border-gray-200 dark:border-gray-700">
-        {/* <div className="flex items-center justify-between">
-          <Link
-            href="/docs"
-            className="inline-flex items-center font-medium transition-colors text-primary hover:underline hover:text-primary/80"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="w-5 h-5 mr-1"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path
-                fillRule="evenodd"
-                d="M7.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l2.293 2.293a1 1 0 010 1.414z"
-                clipRule="evenodd"
-              />
-            </svg>
-            Previous: Introduction
-          </Link>
-          <Link
-            href="/docs/quick-start"
-            className="inline-flex items-center font-medium transition-colors text-primary hover:underline hover:text-primary/80"
-          >
-            Next: Quick Start
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="w-5 h-5 ml-1"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path
-                fillRule="evenodd"
-                d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
-                clipRule="evenodd"
-              />
-            </svg>
-          </Link>
-        </div> */}
-      </div>
+      <DocNavigation
+        prevPage={{
+          href: "/docs",
+          title: "Introduction",
+          description: "Return to the Soplang introduction",
+        }}
+        nextPage={{
+          href: "/docs/syntax-basics",
+          title: "Syntax Basics",
+          description: "Return to the fundamental syntax of Soplang",
+        }}
+      />
     </div>
   );
 }

@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import CodeWindow from "@/components/CodeWindow";
+import DocNavigation from "@/components/DocNavigation";
 
 export const metadata = {
   title: "Soplang Syntax Basics",
@@ -11,21 +12,20 @@ export const metadata = {
 export default function SyntaxBasicsPage() {
   return (
     <div className="prose prose-lg dark:prose-invert max-w-none">
-      <h1 className="text-3xl font-bold mb-6">Soplang Syntax Basics</h1>
+      <h1 className="mb-6 text-3xl font-bold">Soplang Syntax Basics</h1>
 
-      <p className="lead text-xl mb-6">
-        Understanding the basic syntax elements of Soplang is the first step to
-        becoming proficient with the language. This guide covers the fundamental
-        building blocks of Soplang code.
+      <p className="mb-6 text-xl lead">
+        Understanding the basic syntax elements of Soplang is the first step to becoming proficient
+        with the language. This guide covers the fundamental building blocks of Soplang code.
       </p>
 
       <div className="mb-12">
-        <h2 className="text-2xl font-bold mb-4" id="comments">
+        <h2 className="mb-4 text-2xl font-bold" id="comments">
           Comments
         </h2>
         <p className="mb-4">
-          Comments allow you to add notes to your code that are ignored by the
-          interpreter. Soplang supports single-line and multi-line comments:
+          Comments allow you to add notes to your code that are ignored by the interpreter. Soplang
+          supports single-line and multi-line comments:
         </p>
 
         <CodeWindow
@@ -41,13 +41,12 @@ qor("Soplang") // You can also place comments at the end of a line`}
       </div>
 
       <div className="mb-12">
-        <h2 className="text-2xl font-bold mb-4" id="statements">
+        <h2 className="mb-4 text-2xl font-bold" id="statements">
           Statements and Blocks
         </h2>
         <p className="mb-4">
-          A statement in Soplang is a complete instruction. Statements are
-          typically separated by newlines or semicolons. Blocks of code are
-          enclosed in curly braces <code>{}</code>:
+          A statement in Soplang is a complete instruction. Statements are typically separated by
+          newlines or semicolons. Blocks of code are enclosed in curly braces <code>{}</code>:
         </p>
 
         <CodeWindow
@@ -71,24 +70,22 @@ haddii (a > b) {
       </div>
 
       <div className="mb-12">
-        <h2 className="text-2xl font-bold mb-4" id="identifiers">
+        <h2 className="mb-4 text-2xl font-bold" id="identifiers">
           Identifiers and Naming Conventions
         </h2>
         <p className="mb-4">
-          Identifiers are names used for variables, functions, classes, etc. In
-          Soplang:
+          Identifiers are names used for variables, functions, classes, etc. In Soplang:
         </p>
 
-        <ul className="list-disc list-inside mb-4">
+        <ul className="mb-4 list-disc list-inside">
           <li>Identifiers can contain letters, digits, and underscores</li>
           <li>Identifiers cannot start with a digit</li>
           <li>
-            Identifiers are case-sensitive (<code>magac</code> and{" "}
-            <code>Magac</code> are different)
+            Identifiers are case-sensitive (<code>magac</code> and <code>Magac</code> are different)
           </li>
           <li>
-            Reserved keywords (like <code>door</code>, <code>haddii</code>,
-            etc.) cannot be used as identifiers
+            Reserved keywords (like <code>door</code>, <code>haddii</code>, etc.) cannot be used as
+            identifiers
           </li>
         </ul>
 
@@ -106,15 +103,14 @@ door magac1 = "Caasha"
       </div>
 
       <div className="mb-12">
-        <h2 className="text-2xl font-bold mb-4" id="operators">
+        <h2 className="mb-4 text-2xl font-bold" id="operators">
           Basic Operators
         </h2>
         <p className="mb-4">
-          Soplang provides a variety of operators for performing operations on
-          values:
+          Soplang provides a variety of operators for performing operations on values:
         </p>
 
-        <h3 className="text-xl font-semibold mb-2">Arithmetic Operators</h3>
+        <h3 className="mb-2 text-xl font-semibold">Arithmetic Operators</h3>
         <CodeWindow
           code={`door a = 10
 door b = 3
@@ -128,9 +124,7 @@ qor(a ^ b)    // Exponentiation: 1000`}
           title="arithmetic.sop"
         />
 
-        <h3 className="text-xl font-semibold mb-2 mt-6">
-          Comparison Operators
-        </h3>
+        <h3 className="mt-6 mb-2 text-xl font-semibold">Comparison Operators</h3>
         <CodeWindow
           code={`door a = 10
 door b = 3
@@ -144,7 +138,7 @@ qor(a <= b)    // Less than or equal to: false`}
           title="comparison.sop"
         />
 
-        <h3 className="text-xl font-semibold mb-2 mt-6">Logical Operators</h3>
+        <h3 className="mt-6 mb-2 text-xl font-semibold">Logical Operators</h3>
         <CodeWindow
           code={`door run = true
 door been = false
@@ -158,9 +152,7 @@ qor(!been)          // Logical NOT: true`}
           title="logical.sop"
         />
 
-        <h3 className="text-xl font-semibold mb-2 mt-6">
-          Assignment Operators
-        </h3>
+        <h3 className="mt-6 mb-2 text-xl font-semibold">Assignment Operators</h3>
         <CodeWindow
           code={`door a = 10     // Basic assignment
 
@@ -183,73 +175,52 @@ qor(a)         // 2`}
       </div>
 
       <div className="mb-12">
-        <h2 className="text-2xl font-bold mb-4" id="keywords">
+        <h2 className="mb-4 text-2xl font-bold" id="keywords">
           Reserved Keywords
         </h2>
         <p className="mb-4">
-          Soplang has several reserved keywords that have special meaning in the
-          language:
+          Soplang has several reserved keywords that have special meaning in the language:
         </p>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-2 mb-4">
-          <div className="bg-gray-100 dark:bg-gray-700 p-2 rounded">door</div>
-          <div className="bg-gray-100 dark:bg-gray-700 p-2 rounded">tiro</div>
-          <div className="bg-gray-100 dark:bg-gray-700 p-2 rounded">qoraal</div>
-          <div className="bg-gray-100 dark:bg-gray-700 p-2 rounded">
-            labadaran
-          </div>
-          <div className="bg-gray-100 dark:bg-gray-700 p-2 rounded">haddii</div>
-          <div className="bg-gray-100 dark:bg-gray-700 p-2 rounded">
-            haddii_kale
-          </div>
-          <div className="bg-gray-100 dark:bg-gray-700 p-2 rounded">
-            haddii_kalena
-          </div>
-          <div className="bg-gray-100 dark:bg-gray-700 p-2 rounded">
-            ku_celi
-          </div>
-          <div className="bg-gray-100 dark:bg-gray-700 p-2 rounded">
-            inta_ay
-          </div>
-          <div className="bg-gray-100 dark:bg-gray-700 p-2 rounded">jooji</div>
-          <div className="bg-gray-100 dark:bg-gray-700 p-2 rounded">
-            sii_wad
-          </div>
-          <div className="bg-gray-100 dark:bg-gray-700 p-2 rounded">min</div>
-          <div className="bg-gray-100 dark:bg-gray-700 p-2 rounded">ilaa</div>
-          <div className="bg-gray-100 dark:bg-gray-700 p-2 rounded">howl</div>
-          <div className="bg-gray-100 dark:bg-gray-700 p-2 rounded">
-            soo_celi
-          </div>
-          <div className="bg-gray-100 dark:bg-gray-700 p-2 rounded">
-            isku_day
-          </div>
-          <div className="bg-gray-100 dark:bg-gray-700 p-2 rounded">qabo</div>
-          <div className="bg-gray-100 dark:bg-gray-700 p-2 rounded">
-            fasalka
-          </div>
-          <div className="bg-gray-100 dark:bg-gray-700 p-2 rounded">nafta</div>
-          <div className="bg-gray-100 dark:bg-gray-700 p-2 rounded">
-            ka_dhaxal
-          </div>
-          <div className="bg-gray-100 dark:bg-gray-700 p-2 rounded">cusub</div>
-          <div className="bg-gray-100 dark:bg-gray-700 p-2 rounded">qor</div>
-          <div className="bg-gray-100 dark:bg-gray-700 p-2 rounded">akhri</div>
-          <div className="bg-gray-100 dark:bg-gray-700 p-2 rounded">shey</div>
-          <div className="bg-gray-100 dark:bg-gray-700 p-2 rounded">liis</div>
-          <div className="bg-gray-100 dark:bg-gray-700 p-2 rounded">run</div>
-          <div className="bg-gray-100 dark:bg-gray-700 p-2 rounded">been</div>
-          <div className="bg-gray-100 dark:bg-gray-700 p-2 rounded">waxba</div>
+        <div className="grid grid-cols-2 gap-2 mb-4 md:grid-cols-3">
+          <div className="p-2 bg-gray-100 rounded dark:bg-gray-700">door</div>
+          <div className="p-2 bg-gray-100 rounded dark:bg-gray-700">tiro</div>
+          <div className="p-2 bg-gray-100 rounded dark:bg-gray-700">qoraal</div>
+          <div className="p-2 bg-gray-100 rounded dark:bg-gray-700">labadaran</div>
+          <div className="p-2 bg-gray-100 rounded dark:bg-gray-700">haddii</div>
+          <div className="p-2 bg-gray-100 rounded dark:bg-gray-700">haddii_kale</div>
+          <div className="p-2 bg-gray-100 rounded dark:bg-gray-700">haddii_kalena</div>
+          <div className="p-2 bg-gray-100 rounded dark:bg-gray-700">ku_celi</div>
+          <div className="p-2 bg-gray-100 rounded dark:bg-gray-700">inta_ay</div>
+          <div className="p-2 bg-gray-100 rounded dark:bg-gray-700">jooji</div>
+          <div className="p-2 bg-gray-100 rounded dark:bg-gray-700">sii_wad</div>
+          <div className="p-2 bg-gray-100 rounded dark:bg-gray-700">min</div>
+          <div className="p-2 bg-gray-100 rounded dark:bg-gray-700">ilaa</div>
+          <div className="p-2 bg-gray-100 rounded dark:bg-gray-700">howl</div>
+          <div className="p-2 bg-gray-100 rounded dark:bg-gray-700">soo_celi</div>
+          <div className="p-2 bg-gray-100 rounded dark:bg-gray-700">isku_day</div>
+          <div className="p-2 bg-gray-100 rounded dark:bg-gray-700">qabo</div>
+          <div className="p-2 bg-gray-100 rounded dark:bg-gray-700">fasalka</div>
+          <div className="p-2 bg-gray-100 rounded dark:bg-gray-700">nafta</div>
+          <div className="p-2 bg-gray-100 rounded dark:bg-gray-700">ka_dhaxal</div>
+          <div className="p-2 bg-gray-100 rounded dark:bg-gray-700">cusub</div>
+          <div className="p-2 bg-gray-100 rounded dark:bg-gray-700">qor</div>
+          <div className="p-2 bg-gray-100 rounded dark:bg-gray-700">akhri</div>
+          <div className="p-2 bg-gray-100 rounded dark:bg-gray-700">shey</div>
+          <div className="p-2 bg-gray-100 rounded dark:bg-gray-700">liis</div>
+          <div className="p-2 bg-gray-100 rounded dark:bg-gray-700">run</div>
+          <div className="p-2 bg-gray-100 rounded dark:bg-gray-700">been</div>
+          <div className="p-2 bg-gray-100 rounded dark:bg-gray-700">waxba</div>
         </div>
       </div>
 
       <div className="mb-12">
-        <h2 className="text-2xl font-bold mb-4" id="semicolons">
+        <h2 className="mb-4 text-2xl font-bold" id="semicolons">
           Semicolons
         </h2>
         <p className="mb-4">
-          In Soplang, semicolons are optional at the end of statements but
-          required when placing multiple statements on a single line:
+          In Soplang, semicolons are optional at the end of statements but required when placing
+          multiple statements on a single line:
         </p>
 
         <CodeWindow
@@ -265,12 +236,12 @@ door x = 1; door y = 2; qor(x + y)`}
       </div>
 
       <div className="mb-12">
-        <h2 className="text-2xl font-bold mb-4" id="case-sensitivity">
+        <h2 className="mb-4 text-2xl font-bold" id="case-sensitivity">
           Case Sensitivity
         </h2>
         <p className="mb-4">
-          Soplang is a case-sensitive language, which means identifiers with
-          different casing are treated as distinct:
+          Soplang is a case-sensitive language, which means identifiers with different casing are
+          treated as distinct:
         </p>
 
         <CodeWindow
@@ -287,16 +258,16 @@ qor(Magac)  // Outputs: Hodan
         />
       </div>
 
-      <div className="mt-10 p-6 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
-        <h2 className="text-xl font-bold mb-3">Next Steps</h2>
+      {/* <div className="p-6 mt-10 rounded-lg bg-blue-50 dark:bg-blue-900/20">
+        <h2 className="mb-3 text-xl font-bold">Next Steps</h2>
         <p className="mb-4">
-          Now that you understand the basic syntax of Soplang, you can explore
-          more specific aspects of the language:
+          Now that you understand the basic syntax of Soplang, you can explore more specific aspects
+          of the language:
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           <Link
             href="/docs/data-types"
-            className="block p-4 bg-white dark:bg-gray-800 rounded-md shadow-sm hover:shadow-md transition-shadow"
+            className="block p-4 transition-shadow bg-white rounded-md shadow-sm dark:bg-gray-800 hover:shadow-md"
           >
             <h3 className="font-semibold text-primary">Data Types →</h3>
             <p className="text-sm text-gray-600 dark:text-gray-300">
@@ -305,7 +276,7 @@ qor(Magac)  // Outputs: Hodan
           </Link>
           <Link
             href="/docs/variables"
-            className="block p-4 bg-white dark:bg-gray-800 rounded-md shadow-sm hover:shadow-md transition-shadow"
+            className="block p-4 transition-shadow bg-white rounded-md shadow-sm dark:bg-gray-800 hover:shadow-md"
           >
             <h3 className="font-semibold text-primary">Variables →</h3>
             <p className="text-sm text-gray-600 dark:text-gray-300">
@@ -314,7 +285,7 @@ qor(Magac)  // Outputs: Hodan
           </Link>
           <Link
             href="/docs/control-flow"
-            className="block p-4 bg-white dark:bg-gray-800 rounded-md shadow-sm hover:shadow-md transition-shadow"
+            className="block p-4 transition-shadow bg-white rounded-md shadow-sm dark:bg-gray-800 hover:shadow-md"
           >
             <h3 className="font-semibold text-primary">Control Flow →</h3>
             <p className="text-sm text-gray-600 dark:text-gray-300">
@@ -323,7 +294,7 @@ qor(Magac)  // Outputs: Hodan
           </Link>
           <Link
             href="/docs/functions"
-            className="block p-4 bg-white dark:bg-gray-800 rounded-md shadow-sm hover:shadow-md transition-shadow"
+            className="block p-4 transition-shadow bg-white rounded-md shadow-sm dark:bg-gray-800 hover:shadow-md"
           >
             <h3 className="font-semibold text-primary">Functions →</h3>
             <p className="text-sm text-gray-600 dark:text-gray-300">
@@ -331,7 +302,21 @@ qor(Magac)  // Outputs: Hodan
             </p>
           </Link>
         </div>
-      </div>
+      </div> */}
+      {/* <div className="pt-8 mt-16 border-t border-gray-200 dark:border-gray-700"></div> */}
+      <DocNavigation
+        className="mt-10"
+        prevPage={{
+          href: "/docs/getting-started",
+          title: "Getting Started",
+          description: "Return to the introduction and setup guide",
+        }}
+        nextPage={{
+          href: "/docs/data-types",
+          title: "Data Types",
+          description: "Learn about variables and the different data types in Soplang",
+        }}
+      />
     </div>
   );
 }

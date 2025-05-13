@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import CodeWindow from "@/components/CodeWindow";
+import DocNavigation from "@/components/DocNavigation";
 
 export const metadata = {
   title: "Control Flow in Soplang",
@@ -11,12 +12,12 @@ export const metadata = {
 export default function ControlFlowPage() {
   return (
     <div className="prose prose-lg dark:prose-invert max-w-none">
-      <h1 className="text-3xl font-bold mb-6">Control Flow in Soplang</h1>
+      <h1 className="mb-6 text-3xl font-bold">Control Flow in Soplang</h1>
 
-      <p className="lead text-xl mb-6">
-        Control flow structures allow you to control the execution path of your
-        program based on conditions and to repeat code execution. Soplang
-        provides intuitive control flow mechanisms using the Somali language.
+      <p className="mb-6 text-xl lead">
+        Control flow structures allow you to control the execution path of your program based on
+        conditions and to repeat code execution. Soplang provides intuitive control flow mechanisms
+        using the Somali language.
       </p>
 
       <CodeWindow
@@ -31,14 +32,11 @@ haddii (age >= 18) {
         title="basic_conditional.sop"
       />
 
-      <nav className="my-8 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
-        <h2 className="text-lg font-semibold mb-3">On This Page</h2>
+      <nav className="p-4 my-8 rounded-lg bg-gray-50 dark:bg-gray-800">
+        <h2 className="mb-3 text-lg font-semibold">On This Page</h2>
         <ul className="space-y-1">
           <li>
-            <a
-              href="#conditional-statements"
-              className="text-primary hover:underline"
-            >
+            <a href="#conditional-statements" className="text-primary hover:underline">
               Conditional Statements
             </a>
           </li>
@@ -66,17 +64,17 @@ haddii (age >= 18) {
       </nav>
 
       <div className="mb-12">
-        <h2 className="text-2xl font-bold mb-4" id="conditional-statements">
+        <h2 className="mb-4 text-2xl font-bold" id="conditional-statements">
           Conditional Statements
         </h2>
         <p className="mb-4">
-          Conditional statements allow your program to make decisions based on
-          certain conditions. Soplang provides
+          Conditional statements allow your program to make decisions based on certain conditions.
+          Soplang provides
           <code>haddii</code> (if), <code>haddii_kale</code> (else if), and{" "}
           <code>haddii_kalena</code> (else) keywords for this purpose.
         </p>
 
-        <h3 className="text-xl font-semibold mb-3">Basic If-Else</h3>
+        <h3 className="mb-3 text-xl font-semibold">Basic If-Else</h3>
         <CodeWindow
           code={`// If-Else statement
 door temperature = 25
@@ -89,7 +87,7 @@ haddii (temperature > 30) {
           title="if_else.sop"
         />
 
-        <h3 className="text-xl font-semibold mb-3 mt-6">Multiple Conditions</h3>
+        <h3 className="mt-6 mb-3 text-xl font-semibold">Multiple Conditions</h3>
         <CodeWindow
           code={`// If-Else If-Else statement
 door age = 25
@@ -107,7 +105,7 @@ haddii (age < 13) {
           title="multiple_conditions.sop"
         />
 
-        <h3 className="text-xl font-semibold mb-3 mt-6">Nested Conditionals</h3>
+        <h3 className="mt-6 mb-3 text-xl font-semibold">Nested Conditionals</h3>
         <CodeWindow
           code={`// Nested conditional statements
 door score = 85
@@ -133,10 +131,10 @@ haddii (isRegistered) {
           title="nested_conditionals.sop"
         />
 
-        <h3 className="text-xl font-semibold mb-3 mt-6">Ternary Operator</h3>
+        <h3 className="mt-6 mb-3 text-xl font-semibold">Ternary Operator</h3>
         <p className="mb-4">
-          For simple conditions, you can use the ternary operator as a shorthand
-          way of writing an if-else statement:
+          For simple conditions, you can use the ternary operator as a shorthand way of writing an
+          if-else statement:
         </p>
         <CodeWindow
           code={`// Ternary operator
@@ -158,18 +156,17 @@ qor("Xaliimo is an " + message)  // Outputs: "Xaliimo is an adult"`}
       </div>
 
       <div className="mb-12">
-        <h2 className="text-2xl font-bold mb-4" id="loops">
+        <h2 className="mb-4 text-2xl font-bold" id="loops">
           Loops
         </h2>
         <p className="mb-4">
-          Loops allow you to execute code repeatedly. Soplang offers several
-          types of loops to handle different scenarios.
+          Loops allow you to execute code repeatedly. Soplang offers several types of loops to
+          handle different scenarios.
         </p>
 
-        <h3 className="text-xl font-semibold mb-3">For Loops</h3>
+        <h3 className="mb-3 text-xl font-semibold">For Loops</h3>
         <p className="mb-4">
-          For loops in Soplang use the <code>ku_celi</code> keyword and come in
-          multiple forms:
+          For loops in Soplang use the <code>ku_celi</code> keyword and come in multiple forms:
         </p>
         <CodeWindow
           code={`// Basic for loop with range
@@ -185,10 +182,10 @@ ku_celi magac ku dhex jira magacyada {
           title="for_loops.sop"
         />
 
-        <h3 className="text-xl font-semibold mb-3 mt-6">While Loops</h3>
+        <h3 className="mt-6 mb-3 text-xl font-semibold">While Loops</h3>
         <p className="mb-4">
-          While loops use the <code>inta_ay</code> keyword and continue
-          executing as long as a condition is true:
+          While loops use the <code>inta_ay</code> keyword and continue executing as long as a
+          condition is true:
         </p>
         <CodeWindow
           code={`// Basic while loop
@@ -213,10 +210,10 @@ inta_ay (userInput != "exit" && attempts < 5) {
           title="while_loops.sop"
         />
 
-        <h3 className="text-xl font-semibold mb-3 mt-6">Do-While Loops</h3>
+        <h3 className="mt-6 mb-3 text-xl font-semibold">Do-While Loops</h3>
         <p className="mb-4">
-          Do-While loops use the <code>samee</code> and <code>inta_ay</code>{" "}
-          keywords and execute at least once before checking the condition:
+          Do-While loops use the <code>samee</code> and <code>inta_ay</code> keywords and execute at
+          least once before checking the condition:
         </p>
         <CodeWindow
           code={`// Do-while loop
@@ -237,14 +234,12 @@ samee {
       </div>
 
       <div className="mb-12">
-        <h2 className="text-2xl font-bold mb-4" id="loop-control">
+        <h2 className="mb-4 text-2xl font-bold" id="loop-control">
           Loop Control
         </h2>
-        <p className="mb-4">
-          Soplang provides special statements to control the flow of loops:
-        </p>
+        <p className="mb-4">Soplang provides special statements to control the flow of loops:</p>
 
-        <h3 className="text-xl font-semibold mb-3">Break</h3>
+        <h3 className="mb-3 text-xl font-semibold">Break</h3>
         <p className="mb-4">
           The <code>jooji</code> keyword is used to exit a loop prematurely:
         </p>
@@ -272,10 +267,10 @@ inta_ay (true) {  // Infinite loop
           title="break_statement.sop"
         />
 
-        <h3 className="text-xl font-semibold mb-3 mt-6">Continue</h3>
+        <h3 className="mt-6 mb-3 text-xl font-semibold">Continue</h3>
         <p className="mb-4">
-          The <code>sii_wad</code> keyword is used to skip the rest of the
-          current iteration and move to the next one:
+          The <code>sii_wad</code> keyword is used to skip the rest of the current iteration and
+          move to the next one:
         </p>
         <CodeWindow
           code={`// Continue in a for loop - skip even numbers
@@ -302,12 +297,12 @@ inta_ay (counter < 10) {
       </div>
 
       <div className="mb-12">
-        <h2 className="text-2xl font-bold mb-4" id="switch-case">
+        <h2 className="mb-4 text-2xl font-bold" id="switch-case">
           Switch-Case Statements
         </h2>
         <p className="mb-4">
-          Switch-case statements provide a cleaner way to handle multiple
-          conditions. In Soplang, they use the <code>doorka</code> keyword:
+          Switch-case statements provide a cleaner way to handle multiple conditions. In Soplang,
+          they use the <code>doorka</code> keyword:
         </p>
         <CodeWindow
           code={`// Switch-case statement
@@ -371,13 +366,12 @@ doorka (grade) {
       </div>
 
       <div className="mb-12">
-        <h2 className="text-2xl font-bold mb-4" id="error-handling">
+        <h2 className="mb-4 text-2xl font-bold" id="error-handling">
           Error Handling
         </h2>
         <p className="mb-4">
-          Error handling is an important aspect of control flow. Soplang
-          provides try-catch blocks using <code>isku_day</code> and{" "}
-          <code>qabo</code> keywords:
+          Error handling is an important aspect of control flow. Soplang provides try-catch blocks
+          using <code>isku_day</code> and <code>qabo</code> keywords:
         </p>
         <CodeWindow
           code={`// Basic error handling
@@ -414,101 +408,67 @@ isku_day {
         />
       </div>
 
-      <div className="mt-10 p-6 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
-        <h2 className="text-xl font-bold mb-3">
-          Best Practices for Control Flow
-        </h2>
+      <div className="p-6 mt-10 rounded-lg bg-blue-50 dark:bg-blue-900/20">
+        <h2 className="mb-3 text-xl font-bold">Best Practices for Control Flow</h2>
         <ul className="space-y-2">
           <li className="flex items-start">
-            <span className="text-primary mr-2">•</span>
+            <span className="mr-2 text-primary">•</span>
             <p>
-              <strong>Keep Conditions Simple:</strong> For better readability,
-              avoid overly complex conditions.
+              <strong>Keep Conditions Simple:</strong> For better readability, avoid overly complex
+              conditions.
             </p>
           </li>
           <li className="flex items-start">
-            <span className="text-primary mr-2">•</span>
+            <span className="mr-2 text-primary">•</span>
             <p>
-              <strong>Limit Nesting:</strong> Too many levels of nested
-              conditionals can make code hard to follow.
+              <strong>Limit Nesting:</strong> Too many levels of nested conditionals can make code
+              hard to follow.
             </p>
           </li>
           <li className="flex items-start">
-            <span className="text-primary mr-2">•</span>
+            <span className="mr-2 text-primary">•</span>
             <p>
-              <strong>Consider Early Returns:</strong> In functions, return
-              early to avoid deep nesting.
+              <strong>Consider Early Returns:</strong> In functions, return early to avoid deep
+              nesting.
             </p>
           </li>
           <li className="flex items-start">
-            <span className="text-primary mr-2">•</span>
+            <span className="mr-2 text-primary">•</span>
             <p>
-              <strong>Use Loop Variables Meaningfully:</strong> Choose
-              descriptive names for loop variables.
+              <strong>Use Loop Variables Meaningfully:</strong> Choose descriptive names for loop
+              variables.
             </p>
           </li>
           <li className="flex items-start">
-            <span className="text-primary mr-2">•</span>
+            <span className="mr-2 text-primary">•</span>
             <p>
-              <strong>Be Careful with Infinite Loops:</strong> Always ensure
-              there's a way to exit any loop.
+              <strong>Be Careful with Infinite Loops:</strong> Always ensure there's a way to exit
+              any loop.
             </p>
           </li>
           <li className="flex items-start">
-            <span className="text-primary mr-2">•</span>
+            <span className="mr-2 text-primary">•</span>
             <p>
-              <strong>Handle All Error Cases:</strong> Account for all possible
-              error conditions in try-catch blocks.
+              <strong>Handle All Error Cases:</strong> Account for all possible error conditions in
+              try-catch blocks.
             </p>
           </li>
         </ul>
       </div>
 
-      <div className="mt-10 p-6 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
-        <h2 className="text-xl font-bold mb-3">Next Steps</h2>
-        <p className="mb-4">
-          Now that you understand control flow in Soplang, you can explore these
-          related topics:
-        </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <Link
-            href="/docs/functions"
-            className="block p-4 bg-white dark:bg-gray-800 rounded-md shadow-sm hover:shadow-md transition-shadow"
-          >
-            <h3 className="font-semibold text-primary">Functions →</h3>
-            <p className="text-sm text-gray-600 dark:text-gray-300">
-              Learn about defining and using functions
-            </p>
-          </Link>
-          <Link
-            href="/docs/error-handling"
-            className="block p-4 bg-white dark:bg-gray-800 rounded-md shadow-sm hover:shadow-md transition-shadow"
-          >
-            <h3 className="font-semibold text-primary">Error Handling →</h3>
-            <p className="text-sm text-gray-600 dark:text-gray-300">
-              Dive deeper into error handling techniques
-            </p>
-          </Link>
-          <Link
-            href="/docs/classes-objects"
-            className="block p-4 bg-white dark:bg-gray-800 rounded-md shadow-sm hover:shadow-md transition-shadow"
-          >
-            <h3 className="font-semibold text-primary">Classes & Objects →</h3>
-            <p className="text-sm text-gray-600 dark:text-gray-300">
-              Explore object-oriented programming in Soplang
-            </p>
-          </Link>
-          <Link
-            href="/docs/algorithms"
-            className="block p-4 bg-white dark:bg-gray-800 rounded-md shadow-sm hover:shadow-md transition-shadow"
-          >
-            <h3 className="font-semibold text-primary">Algorithms →</h3>
-            <p className="text-sm text-gray-600 dark:text-gray-300">
-              Implement common algorithms using Soplang control structures
-            </p>
-          </Link>
-        </div>
-      </div>
+      <DocNavigation
+        className="mt-10"
+        prevPage={{
+          href: "/docs/functions",
+          title: "Functions",
+          description: "Return to defining and using functions",
+        }}
+        // nextPage={{
+        //   href: "/docs/classes-objects",
+        //   title: "Classes & Objects",
+        //   description: "Explore object-oriented programming in Soplang",
+        // }}
+      />
     </div>
   );
 }

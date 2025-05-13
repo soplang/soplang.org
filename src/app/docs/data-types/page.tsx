@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import CodeWindow from "@/components/CodeWindow";
+import DocNavigation from "@/components/DocNavigation";
 
 export const metadata = {
   title: "Soplang Data Types",
@@ -11,16 +12,15 @@ export const metadata = {
 export default function DataTypesPage() {
   return (
     <div className="prose prose-lg dark:prose-invert max-w-none">
-      <h1 className="text-3xl font-bold mb-6">Data Types in Soplang</h1>
+      <h1 className="mb-6 text-3xl font-bold">Data Types in Soplang</h1>
 
-      <p className="lead text-xl mb-6">
-        Soplang provides a rich set of data types to represent different kinds
-        of values. This guide covers all the built-in data types available in
-        Soplang and how to use them effectively.
+      <p className="mb-6 text-xl lead">
+        Soplang provides a rich set of data types to represent different kinds of values. This guide
+        covers all the built-in data types available in Soplang and how to use them effectively.
       </p>
 
-      <nav className="my-8 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
-        <h2 className="text-lg font-semibold mb-3">On This Page</h2>
+      <nav className="p-4 my-8 rounded-lg bg-gray-50 dark:bg-gray-800">
+        <h2 className="mb-3 text-lg font-semibold">On This Page</h2>
         <ul className="space-y-1">
           <li>
             <a href="#primitive-types" className="text-primary hover:underline">
@@ -28,10 +28,7 @@ export default function DataTypesPage() {
             </a>
           </li>
           <li>
-            <a
-              href="#collection-types"
-              className="text-primary hover:underline"
-            >
+            <a href="#collection-types" className="text-primary hover:underline">
               Collection Types
             </a>
           </li>
@@ -54,22 +51,21 @@ export default function DataTypesPage() {
       </nav>
 
       <div className="mb-12">
-        <h2 className="text-2xl font-bold mb-4" id="primitive-types">
+        <h2 className="mb-4 text-2xl font-bold" id="primitive-types">
           Primitive Types
         </h2>
         <p className="mb-4">
-          Primitive types are the most basic data types in Soplang. They
-          represent simple values and are the building blocks for more complex
-          types.
+          Primitive types are the most basic data types in Soplang. They represent simple values and
+          are the building blocks for more complex types.
         </p>
 
-        <h3 className="text-xl font-semibold mb-3" id="numbers">
+        <h3 className="mb-3 text-xl font-semibold" id="numbers">
           Numbers
         </h3>
         <p className="mb-4">
-          Soplang supports both integers and floating-point numbers. You can
-          define a number variable using either the dynamic <code>door</code>{" "}
-          keyword or the static <code>tiro</code> keyword:
+          Soplang supports both integers and floating-point numbers. You can define a number
+          variable using either the dynamic <code>door</code> keyword or the static{" "}
+          <code>tiro</code> keyword:
         </p>
 
         <CodeWindow
@@ -92,13 +88,12 @@ qor(badan)`}
           title="numbers.sop"
         />
 
-        <h3 className="text-xl font-semibold mb-3 mt-8" id="strings">
+        <h3 className="mt-8 mb-3 text-xl font-semibold" id="strings">
           Strings
         </h3>
         <p className="mb-4">
-          Strings in Soplang are sequences of characters. You can define strings
-          using either single or double quotes and manipulate them with various
-          operations:
+          Strings in Soplang are sequences of characters. You can define strings using either single
+          or double quotes and manipulate them with various operations:
         </p>
 
         <CodeWindow
@@ -126,13 +121,13 @@ qor(f"{magac1} v{version}")  // Outputs: Soplang v2.0`}
           title="strings.sop"
         />
 
-        <h3 className="text-xl font-semibold mb-3 mt-8" id="booleans">
+        <h3 className="mt-8 mb-3 text-xl font-semibold" id="booleans">
           Booleans
         </h3>
         <p className="mb-4">
-          Boolean values represent truth values with two possible states:{" "}
-          <code>run</code> (true) or <code>been</code> (false). You can define
-          boolean variables using <code>door</code> or <code>labadaran</code>:
+          Boolean values represent truth values with two possible states: <code>run</code> (true) or{" "}
+          <code>been</code> (false). You can define boolean variables using <code>door</code> or{" "}
+          <code>labadaran</code>:
         </p>
 
         <CodeWindow
@@ -161,21 +156,20 @@ qor(x != y)  // true`}
       </div>
 
       <div className="mb-12">
-        <h2 className="text-2xl font-bold mb-4" id="collection-types">
+        <h2 className="mb-4 text-2xl font-bold" id="collection-types">
           Collection Types
         </h2>
         <p className="mb-4">
-          Collection types allow you to group multiple values together. Soplang
-          provides several collection types for different use cases.
+          Collection types allow you to group multiple values together. Soplang provides several
+          collection types for different use cases.
         </p>
 
-        <h3 className="text-xl font-semibold mb-3" id="lists">
+        <h3 className="mb-3 text-xl font-semibold" id="lists">
           Lists
         </h3>
         <p className="mb-4">
-          Lists are ordered collections of items that can be of any type. You
-          can define a list using the <code>liis</code> keyword or use{" "}
-          <code>door</code> with square brackets:
+          Lists are ordered collections of items that can be of any type. You can define a list
+          using the <code>liis</code> keyword or use <code>door</code> with square brackets:
         </p>
 
         <CodeWindow
@@ -210,13 +204,13 @@ qor("Xasan" ku dhex jira magacyada)  // Outputs: true`}
           title="lists.sop"
         />
 
-        <h3 className="text-xl font-semibold mb-3 mt-8" id="dictionaries">
+        <h3 className="mt-8 mb-3 text-xl font-semibold" id="dictionaries">
           Dictionaries
         </h3>
         <p className="mb-4">
-          Dictionaries are collections of key-value pairs where each key must be
-          unique. You can define a dictionary using <code>door</code> with curly
-          braces or using the <code>shey</code> keyword:
+          Dictionaries are collections of key-value pairs where each key must be unique. You can
+          define a dictionary using <code>door</code> with curly braces or using the{" "}
+          <code>shey</code> keyword:
         </p>
 
         <CodeWindow
@@ -258,12 +252,12 @@ qor(luuqad.dherer())  // Outputs: 4`}
           title="dictionaries.sop"
         />
 
-        <h3 className="text-xl font-semibold mb-3 mt-8" id="tuples">
+        <h3 className="mt-8 mb-3 text-xl font-semibold" id="tuples">
           Tuples
         </h3>
         <p className="mb-4">
-          Tuples are similar to lists but are immutable (cannot be changed after
-          creation). They are defined using parentheses:
+          Tuples are similar to lists but are immutable (cannot be changed after creation). They are
+          defined using parentheses:
         </p>
 
         <CodeWindow
@@ -293,12 +287,12 @@ qor(seddexjoog.dherer())  // Outputs: 3`}
           title="tuples.sop"
         />
 
-        <h3 className="text-xl font-semibold mb-3 mt-8" id="sets">
+        <h3 className="mt-8 mb-3 text-xl font-semibold" id="sets">
           Sets
         </h3>
         <p className="mb-4">
-          Sets are unordered collections of unique items. They are useful for
-          membership testing and eliminating duplicate entries:
+          Sets are unordered collections of unique items. They are useful for membership testing and
+          eliminating duplicate entries:
         </p>
 
         <CodeWindow
@@ -332,14 +326,12 @@ qor(8 ku dhex jira urur1)  // Outputs: false`}
       </div>
 
       <div className="mb-12">
-        <h2 className="text-2xl font-bold mb-4" id="special-types">
+        <h2 className="mb-4 text-2xl font-bold" id="special-types">
           Special Types
         </h2>
-        <p className="mb-4">
-          Soplang also provides a few special types for specific use cases.
-        </p>
+        <p className="mb-4">Soplang also provides a few special types for specific use cases.</p>
 
-        <h3 className="text-xl font-semibold mb-3" id="null">
+        <h3 className="mb-3 text-xl font-semibold" id="null">
           Null Type
         </h3>
         <p className="mb-4">
@@ -364,12 +356,10 @@ qor(magac ?? "Aan la aqoon")  // Outputs: "Aan la aqoon"`}
           title="null_type.sop"
         />
 
-        <h3 className="text-xl font-semibold mb-3 mt-8" id="date-time">
+        <h3 className="mt-8 mb-3 text-xl font-semibold" id="date-time">
           Date and Time
         </h3>
-        <p className="mb-4">
-          Soplang has built-in support for date and time operations:
-        </p>
+        <p className="mb-4">Soplang has built-in support for date and time operations:</p>
 
         <CodeWindow
           code={`// Current date and time
@@ -396,12 +386,10 @@ qor(farqi.maalmo())  // Outputs: 1`}
           title="date_time.sop"
         />
 
-        <h3 className="text-xl font-semibold mb-3 mt-8" id="enums">
+        <h3 className="mt-8 mb-3 text-xl font-semibold" id="enums">
           Enumerations
         </h3>
-        <p className="mb-4">
-          Enumerations allow you to define a set of named constants:
-        </p>
+        <p className="mb-4">Enumerations allow you to define a set of named constants:</p>
 
         <CodeWindow
           code={`// Defining an enumeration
@@ -436,12 +424,10 @@ qor(Midabada.Guduud)  // Outputs: #FF0000`}
       </div>
 
       <div className="mb-12">
-        <h2 className="text-2xl font-bold mb-4" id="type-conversion">
+        <h2 className="mb-4 text-2xl font-bold" id="type-conversion">
           Type Conversion
         </h2>
-        <p className="mb-4">
-          Soplang provides functions to convert between different data types:
-        </p>
+        <p className="mb-4">Soplang provides functions to convert between different data types:</p>
 
         <CodeWindow
           code={`// String to number
@@ -478,12 +464,10 @@ qor(tiro(a) + b)  // Outputs: 30 (numeric addition)`}
       </div>
 
       <div className="mb-12">
-        <h2 className="text-2xl font-bold mb-4" id="type-checking">
+        <h2 className="mb-4 text-2xl font-bold" id="type-checking">
           Type Checking
         </h2>
-        <p className="mb-4">
-          Soplang provides functions to check the type of a value at runtime:
-        </p>
+        <p className="mb-4">Soplang provides functions to check the type of a value at runtime:</p>
 
         <CodeWindow
           code={`// Checking the type of a value
@@ -517,16 +501,16 @@ qor(qof1 ka_tirsan Qof)  // Outputs: true`}
         />
       </div>
 
-      <div className="mt-10 p-6 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
-        <h2 className="text-xl font-bold mb-3">Next Steps</h2>
+      {/* <div className="p-6 mt-10 rounded-lg bg-blue-50 dark:bg-blue-900/20">
+        <h2 className="mb-3 text-xl font-bold">Next Steps</h2>
         <p className="mb-4">
           Now that you understand the data types in Soplang, you can explore
           other aspects of the language:
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           <Link
             href="/docs/variables"
-            className="block p-4 bg-white dark:bg-gray-800 rounded-md shadow-sm hover:shadow-md transition-shadow"
+            className="block p-4 transition-shadow bg-white rounded-md shadow-sm dark:bg-gray-800 hover:shadow-md"
           >
             <h3 className="font-semibold text-primary">Variables →</h3>
             <p className="text-sm text-gray-600 dark:text-gray-300">
@@ -535,7 +519,7 @@ qor(qof1 ka_tirsan Qof)  // Outputs: true`}
           </Link>
           <Link
             href="/docs/functions"
-            className="block p-4 bg-white dark:bg-gray-800 rounded-md shadow-sm hover:shadow-md transition-shadow"
+            className="block p-4 transition-shadow bg-white rounded-md shadow-sm dark:bg-gray-800 hover:shadow-md"
           >
             <h3 className="font-semibold text-primary">Functions →</h3>
             <p className="text-sm text-gray-600 dark:text-gray-300">
@@ -544,7 +528,7 @@ qor(qof1 ka_tirsan Qof)  // Outputs: true`}
           </Link>
           <Link
             href="/docs/control-flow"
-            className="block p-4 bg-white dark:bg-gray-800 rounded-md shadow-sm hover:shadow-md transition-shadow"
+            className="block p-4 transition-shadow bg-white rounded-md shadow-sm dark:bg-gray-800 hover:shadow-md"
           >
             <h3 className="font-semibold text-primary">Control Flow →</h3>
             <p className="text-sm text-gray-600 dark:text-gray-300">
@@ -553,7 +537,7 @@ qor(qof1 ka_tirsan Qof)  // Outputs: true`}
           </Link>
           <Link
             href="/docs/classes-objects"
-            className="block p-4 bg-white dark:bg-gray-800 rounded-md shadow-sm hover:shadow-md transition-shadow"
+            className="block p-4 transition-shadow bg-white rounded-md shadow-sm dark:bg-gray-800 hover:shadow-md"
           >
             <h3 className="font-semibold text-primary">Classes & Objects →</h3>
             <p className="text-sm text-gray-600 dark:text-gray-300">
@@ -561,7 +545,20 @@ qor(qof1 ka_tirsan Qof)  // Outputs: true`}
             </p>
           </Link>
         </div>
-      </div>
+      </div> */}
+      <DocNavigation
+        className="mt-10"
+        prevPage={{
+          href: "/docs/syntax-basics",
+          title: "Syntax Basics",
+          description: "Return to the fundamental syntax of Soplang",
+        }}
+        nextPage={{
+          href: "/docs/variables",
+          title: "Variables",
+          description: "Learn more about variable declaration and scope",
+        }}
+      />
     </div>
   );
 }
