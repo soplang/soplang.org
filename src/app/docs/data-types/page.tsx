@@ -12,7 +12,7 @@ export const metadata = {
 export default function DataTypesPage() {
   return (
     <div className="prose prose-lg dark:prose-invert max-w-none">
-      <h1 className="mb-6 text-3xl font-bold">Data Types in Soplang</h1>
+      <h1 className="mb-6 text-3xl font-bold text-primary">Data Types in Soplang</h1>
 
       <p className="mb-6 text-xl lead">
         Soplang provides a rich set of data types to represent different kinds of values. This guide

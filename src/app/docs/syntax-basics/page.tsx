@@ -12,7 +12,7 @@ export const metadata = {
 export default function SyntaxBasicsPage() {
   return (
     <div className="prose prose-lg dark:prose-invert max-w-none">
-      <h1 className="mb-6 text-3xl font-bold">Soplang Syntax Basics</h1>
+      <h1 className="mb-6 text-3xl font-bold text-primary">Soplang Syntax Basics</h1>
 
       <p className="mb-6 text-xl lead">
         Understanding the basic syntax elements of Soplang is the first step to becoming proficient

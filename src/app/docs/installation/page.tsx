@@ -13,8 +13,10 @@ export const metadata = {
 
 export default function InstallationPage() {
   return (
-    <div className="px-4 py-8 prose prose-lg dark:prose-invert max-w-none sm:px-6 lg:px-8 sm:py-12">
-      <h1 className="mb-6 text-3xl font-bold sm:text-4xl lg:text-5xl">Installing Soplang</h1>
+    <div className="px-4 py-8 prose prose-lg lg:py-4 dark:prose-invert max-w-none sm:px-6 lg:px-4 sm:py-12">
+      <h1 className="mb-6 text-3xl font-bold sm:text-4xl lg:text-4xl text-primary">
+        Installing Soplang
+      </h1>
 
       <p className="mb-8 text-lg text-gray-700 sm:text-xl dark:text-gray-300">
         This guide will walk you through the process of installing{" "}
@@ -302,9 +304,9 @@ sudo make install"
 
       <DocNavigation
         prevPage={{
-          href: "/docs",
-          title: "Introduction",
-          description: "Return to the Soplang introduction",
+          href: "/docs/getting-started",
+          title: "Quick Start",
+          description: "Write your first Soplang program and learn the basics",
         }}
         nextPage={{
           href: "/docs/syntax-basics",

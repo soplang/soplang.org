@@ -12,7 +12,7 @@ export const metadata = {
 export default function FunctionsPage() {
   return (
     <div className="prose prose-lg dark:prose-invert max-w-none">
-      <h1 className="mb-6 text-3xl font-bold">Functions in Soplang</h1>
+      <h1 className="mb-6 text-3xl font-bold text-primary">Functions in Soplang</h1>
 
       <p className="mb-6 text-xl lead">
         Functions are reusable blocks of code that perform specific tasks. In Soplang, functions are

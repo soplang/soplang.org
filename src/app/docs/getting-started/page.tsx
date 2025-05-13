@@ -1,23 +1,16 @@
 import React from "react";
 import Link from "next/link";
-import { Metadata } from "next";
-import { FaWindows, FaApple, FaLinux } from "react-icons/fa";
 import CodeSnippet from "@/components/CodeSnippet";
 import DocNavigation from "@/components/DocNavigation";
 import SoplangCodeWindow from "@/components/SoplangCodeWindow";
-import CodeWindow from "@/components/CodeWindow";
-
-export const metadata: Metadata = {
-  title: "Get Started with Soplang",
-  description:
-    "Learn how to get started with Soplang programming language - installation, first program, and basic concepts.",
-};
+import TerminalCard from "@/components/TerminalCard";
 
 export default function GettingStartedPage() {
   return (
-    <div className="py-12 container-custom">
+    // <div className="py-12 container-custom">
+    <div className="px-4 py-8 prose prose-lg lg:py-4 dark:prose-invert max-w-none sm:px-6 lg:px-4 sm:py-12">
       <div className="max-w-4xl mx-auto">
-        <h1 className="mb-8 text-3xl font-bold md:text-4xl text-primary">
+        <h1 className="mb-8 text-3xl font-bold md:text-4xl lg:text-4xl text-primary">
           Getting Started with Soplang
         </h1>
 
@@ -36,45 +29,24 @@ export default function GettingStartedPage() {
               Choose the installation method that works best for you:
             </p>
 
-            <div className="bg-white dark:bg-gray-800 rounded-lg border border-[var(--border-color)] p-6 mb-6">
-              <h3 className="mb-4 text-xl font-semibold">Option 1: Download the Installer</h3>
-              <p className="mb-4">
-                The easiest way to get started is to download the installer for your operating
-                system:
-              </p>
-              <div className="flex flex-wrap gap-3 mb-4">
-                <Link href="/downloads/latest" className="flex items-center gap-2 btn-primary">
-                  <FaWindows /> Download for Windows
-                </Link>
-                <Link href="/downloads/latest" className="flex items-center gap-2 btn-primary">
-                  <FaApple /> Download for macOS
-                </Link>
-                <Link href="/downloads/latest" className="flex items-center gap-2 btn-primary">
-                  <FaLinux /> Download for Linux
-                </Link>
-              </div>
-              <p>After downloading, run the installer and follow the on-screen instructions.</p>
-            </div>
+            <h3 className="mb-4 text-xl font-semibold">Option 1: Direct Download</h3>
+            <TerminalCard
+              className="mb-8"
+              type="os"
+              title="soplang-installer"
+              command="soplang --install"
+              introText="Welcome to the Soplang installer. Please select your operating system:"
+              footerText="After downloading, run the installer and follow the on-screen instructions. For advanced installation options, use soplang --install --help"
+            />
 
-            <div className="bg-white dark:bg-gray-800 rounded-lg border border-[var(--border-color)] p-6">
-              <h3 className="mb-4 text-xl font-semibold">Option 2: Using Package Managers</h3>
-              <p className="mb-4">You can also install Soplang using package managers:</p>
-
-              <div className="mb-4">
-                <h4 className="mb-2 font-semibold">Using npm (Node.js Package Manager):</h4>
-                <SoplangCodeWindow code="npm install -g soplang" title="terminal" />
-              </div>
-
-              <div className="mb-4">
-                <h4 className="mb-2 font-semibold">Using Homebrew (macOS):</h4>
-                <SoplangCodeWindow code="brew install soplang" title="terminal" />
-              </div>
-
-              <div>
-                <h4 className="mb-2 font-semibold">Using apt (Ubuntu/Debian):</h4>
-                <SoplangCodeWindow code="sudo apt-get install soplang" title="terminal" />
-              </div>
-            </div>
+            <h3 className="mb-4 text-xl font-semibold">Option 2: Package Managers</h3>
+            <TerminalCard
+              type="package"
+              title="package-manager-install"
+              command="soplang --package-manager"
+              introText="Choose your preferred package manager to install Soplang:"
+              footerText="After installation, verify by running soplang --version in your terminal"
+            />
 
             <p className="mt-4">
               For more detailed installation instructions, check out our{" "}
@@ -238,54 +210,17 @@ def add(a: int, b: int) -> int:
             </div>
           </div>
 
-          <div className="mb-8">
-            <h2 className="mb-4 text-2xl font-bold" id="next-steps">
-              4. Next Steps
-            </h2>
-            <p className="mb-4">
-              Now that you've learned the basics, here are some resources to continue your Soplang
-              journey:
-            </p>
-
-            <ul className="space-y-2 list-disc list-inside">
-              <li>
-                <Link href="/docs/syntax-basics" className="text-primary hover:underline">
-                  Syntax Basics
-                </Link>{" "}
-                - Comprehensive documentation of Soplang's syntax and features
-              </li>
-              <li>
-                <Link href="/docs/tutorials" className="text-primary hover:underline">
-                  Tutorials
-                </Link>{" "}
-                - Step-by-step guides for common programming tasks
-              </li>
-              <li>
-                <Link href="/community/forums" className="text-primary hover:underline">
-                  Community Forums
-                </Link>{" "}
-                - Connect with other Soplang developers
-              </li>
-              <li>
-                <Link href="/docs/examples" className="text-primary hover:underline">
-                  Example Projects
-                </Link>{" "}
-                - Real-world applications built with Soplang
-              </li>
-            </ul>
-          </div>
-
           <DocNavigation
             className="mt-12"
             prevPage={{
               href: "/docs",
-              title: "Documentation Home",
+              title: "Introduction",
               description: "Overview of Soplang documentation",
             }}
             nextPage={{
               href: "/docs/installation",
-              title: "Installation Guide",
-              description: "Detailed installation instructions for all platforms",
+              title: "Installation",
+              description: "How to install Soplang on your system",
             }}
           />
         </div>

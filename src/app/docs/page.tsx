@@ -10,8 +10,10 @@ export const metadata = {
 
 export default function DocsPage() {
   return (
-    <div className="px-4 py-8 prose prose-lg dark:prose-invert max-w-none sm:px-6 lg:px-8 sm:py-12">
-      <h1 className="mb-6 text-3xl font-bold sm:text-4xl lg:text-5xl">Introduction to Soplang</h1>
+    <div className="px-4 py-8 prose prose-lg lg:py-4 dark:prose-invert max-w-none sm:px-6 lg:px-2 sm:py-12">
+      <h1 className="mb-6 text-3xl font-bold sm:text-4xl lg:text-4xl text-primary">
+        Introduction to Soplang
+      </h1>
 
       <p className="text-lg text-gray-700 sm:text-xl dark:text-gray-300">
         Welcome to the official documentation for Soplang, a Somali-first programming language that
@@ -274,19 +276,17 @@ qor("Done!")`}
         </Link>
       </div>
 
-      <div className="pt-8 mt-16 border-t border-gray-200 dark:border-gray-700">
-        <DocNavigation
-          prevPage={{
-            href: "/docs",
-            hidden: true, // Hide the previous link on the main docs page
-          }}
-          nextPage={{
-            href: "/docs/installation",
-            title: "Installation",
-            description: "Learn how to install Soplang on your system",
-          }}
-        />
-      </div>
+      <DocNavigation
+        prevPage={{
+          href: "/docs",
+          hidden: true, // Hide the previous link on the main docs page
+        }}
+        nextPage={{
+          href: "/docs/getting-started",
+          title: "Quick Start",
+          description: "Write your first Soplang program and learn the basics",
+        }}
+      />
     </div>
   );
 }

@@ -12,7 +12,7 @@ export const metadata = {
 export default function ControlFlowPage() {
   return (
     <div className="prose prose-lg dark:prose-invert max-w-none">
-      <h1 className="mb-6 text-3xl font-bold">Control Flow in Soplang</h1>
+      <h1 className="mb-6 text-3xl font-bold text-primary">Control Flow in Soplang</h1>
 
       <p className="mb-6 text-xl lead">
         Control flow structures allow you to control the execution path of your program based on
