@@ -36,5 +36,8 @@
     "react-syntax-highlighter": "^15.6.1",
     "tailwindcss": "^3.3.1",
     "typescript": "^5.0.4"
+  },
+  "devDependencies": {
+    "prettier": "3.5.3"
   }
 }
