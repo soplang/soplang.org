@@ -4,18 +4,30 @@ import '@/styles/globals.css';
 import { ThemeProvider } from 'next-themes';
 
 import type { Metadata } from 'next';
-import { Roboto } from 'next/font/google';
-
+import { Roboto, Inter } from 'next/font/google';
 const roboto = Roboto({
   weight: ['400', '500', '700'],
   subsets: ['latin'],
-  display: 'swap',
+  display: 'block', // Changed from 'swap' to 'block' to prevent FOUT
   variable: '--font-roboto',
+  preload: true,
+  fallback: [
+    'system-ui',
+    '-apple-system',
+    'BlinkMacSystemFont',
+    'Segoe UI',
+    'Roboto',
+    'Arial',
+    'sans-serif',
+  ],
 });
 
-import { Inter } from 'next/font/google';
-
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'block',
+  preload: true,
+  fallback: ['system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Arial', 'sans-serif'],
+});
 export const metadata: Metadata = {
   title: 'Soplang | First Somali Programming Language',
   description:
@@ -283,46 +295,34 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html
-      lang="so"
-      suppressHydrationWarning
-      className={roboto.variable}
-      dir="ltr"
-    >
+    <html lang="so" suppressHydrationWarning className={`${roboto.variable} antialiased`} dir="ltr">
       <head>
+        {/* Prevent theme flash */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+          (function() {
+            try {
+              const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+              const theme = localStorage.getItem('theme') || systemTheme;
+              if (theme === 'dark') document.documentElement.classList.add('dark');
+            } catch (e) {}
+          })()
+        `,
+          }}
+        />
         <link rel="alternate" hrefLang="so-SO" href="https://soplang.org/so" />
         <link rel="alternate" hrefLang="en-US" href="https://soplang.org/en" />
         <link rel="alternate" hrefLang="x-default" href="https://soplang.org" />
         <meta name="robots" content="index, follow, max-image-preview:large" />
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1, maximum-scale=5"
-        />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
 
         {/* Favicons */}
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/favicon/apple-touch-icon.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/favicon/favicon-32x32.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="/favicon/favicon-16x16.png"
-        />
+        <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
         <link rel="manifest" href="/site.webmanifest" />
         <meta name="msapplication-TileColor" content="#1e3a8a" />
         <meta name="theme-color" content="#ffffff" />
@@ -338,25 +338,16 @@ export default function RootLayout({
 
         {/* LinkedIn specific meta tags */}
         <meta property="linkedin:card" content="summary_large_image" />
-        <meta
-          property="linkedin:title"
-          content="Soplang - The First Somali Programming Language"
-        />
+        <meta property="linkedin:title" content="Soplang - The First Somali Programming Language" />
         <meta
           property="linkedin:description"
           content="Soplang is a modern Somali programming language created by Mr Sharafdin, first released in October 2023. It makes coding intuitive and accessible with native Somali syntax."
         />
-        <meta
-          property="linkedin:image"
-          content="https://soplang.org/images/logo/logo-512.png"
-        />
+        <meta property="linkedin:image" content="https://soplang.org/images/logo/logo-512.png" />
 
         {/* Mobile app specific */}
         <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta
-          name="apple-mobile-web-app-status-bar-style"
-          content="black-translucent"
-        />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta name="apple-mobile-web-app-title" content="Soplang" />
         <meta name="application-name" content="Soplang" />
         <meta name="format-detection" content="telephone=no" />
@@ -658,8 +649,7 @@ export default function RootLayout({
                 startDate: '2023-12-01T09:00:00+03:00',
                 endDate: '2023-12-01T18:00:00+03:00',
                 eventStatus: 'https://schema.org/EventScheduled',
-                eventAttendanceMode:
-                  'https://schema.org/OnlineEventAttendanceMode',
+                eventAttendanceMode: 'https://schema.org/OnlineEventAttendanceMode',
                 location: {
                   '@type': 'VirtualLocation',
                   url: 'https://discord.gg/n296G4dd7x',
@@ -717,22 +707,22 @@ export default function RootLayout({
                 },
                 articleSection: 'About',
                 wordCount: 1200,
-                keywords:
-                  'Soplang, Somali programming language, coding education',
+                keywords: 'Soplang, Somali programming language, coding education',
               },
             ]),
           }}
         />
       </head>
       <body
-        className={`${roboto.className} ${inter.className}`}
+        className={`${roboto.className} ${inter.className} font-sans antialiased`}
         suppressHydrationWarning
       >
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           themes={['dark', 'light']}
-          enableSystem
+          enableSystem={true}
+          disableTransitionOnChange
         >
           <Navbar />
           <main className="flex-grow">{children}</main>

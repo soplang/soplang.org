@@ -3,17 +3,39 @@
 @tailwind utilities;
 @import './soplang-syntax.css';
 
+/* Prevent theme flash and ensure smooth transitions */
+html {
+  color-scheme: light;
+  --bg: #f9f7f7;
+}
+
+html.dark {
+  color-scheme: dark;
+  --bg: #1a202c;
+}
+
+body {
+  background-color: var(--bg);
+}
+
+/* Smooth theme transitions */
+*,
+*::before,
+*::after {
+  transition: background-color 0.2s ease-out;
+}
+
 :root {
-  --primary-color: #3F72AF; /* Soft blue - easier on eyes */
-  --secondary-color: #5E9A78; /* Soft green - math education friendly */
-  --background-color: #F9F7F7; /* Very light gray with slight warmth */
+  --primary-color: #3f72af; /* Soft blue - easier on eyes */
+  --secondary-color: #5e9a78; /* Soft green - math education friendly */
+  --background-color: #f9f7f7; /* Very light gray with slight warmth */
   --text-color: #333333; /* Dark gray but not pure black */
-  --link-color: #3F72AF; /* Matching primary */
-  --header-bg: #3F72AF; /* Header background */
-  --footer-bg: #F2F2F2; /* Light gray */
-  --nav-hover: #5085C1; /* Slightly lighter blue for hover */
-  --border-color: #DBE2EF; /* Light blue-gray */
-  
+  --link-color: #3f72af; /* Matching primary */
+  --header-bg: #3f72af; /* Header background */
+  --footer-bg: #f2f2f2; /* Light gray */
+  --nav-hover: #5085c1; /* Slightly lighter blue for hover */
+  --border-color: #dbe2ef; /* Light blue-gray */
+
   /* Responsive spacing variables */
   --container-padding-mobile: 1rem;
   --container-padding-tablet: 1.5rem;
@@ -23,15 +45,15 @@
 }
 
 .dark {
-  --primary-color: #5085C1; /* Lighter blue for dark mode */
-  --secondary-color: #6BAA88; /* Lighter green for dark mode */
-  --background-color: #1A202C; /* Dark blue-gray, not pure black */
-  --text-color: #E2E8F0; /* Off-white, not pure white */
-  --link-color: #5085C1; /* Matching dark mode primary */
-  --header-bg: #2D3748; /* Slightly lighter than background */
-  --footer-bg: #2D3748; /* Matching header */
-  --nav-hover: #5085C1; /* Same as primary */
-  --border-color: #4A5568; /* Medium gray */
+  --primary-color: #5085c1; /* Lighter blue for dark mode */
+  --secondary-color: #6baa88; /* Lighter green for dark mode */
+  --background-color: #1a202c; /* Dark blue-gray, not pure black */
+  --text-color: #e2e8f0; /* Off-white, not pure white */
+  --link-color: #5085c1; /* Matching dark mode primary */
+  --header-bg: #2d3748; /* Slightly lighter than background */
+  --footer-bg: #2d3748; /* Matching header */
+  --nav-hover: #5085c1; /* Same as primary */
+  --border-color: #4a5568; /* Medium gray */
 }
 
 /* Base responsive typography */
@@ -48,7 +70,9 @@ html {
 body {
   background-color: var(--background-color);
   color: var(--text-color);
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
   font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
   line-height: 1.5;
   overflow-x: hidden; /* Prevent horizontal scroll on mobile */
@@ -62,21 +86,21 @@ img {
 
 @layer components {
   .container-custom {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    @apply px-4 mx-auto max-w-7xl sm:px-6 lg:px-8;
   }
-  
+
   .btn-primary {
-    @apply bg-primary text-white px-4 py-2 rounded hover:opacity-90 transition-opacity text-sm sm:text-base;
+    @apply px-4 py-2 text-sm text-white transition-opacity rounded bg-primary hover:opacity-90 sm:text-base;
   }
-  
+
   .btn-secondary {
-    @apply bg-secondary text-gray-800 px-4 py-2 rounded hover:opacity-90 transition-opacity text-sm sm:text-base;
+    @apply px-4 py-2 text-sm text-gray-800 transition-opacity rounded bg-secondary hover:opacity-90 sm:text-base;
   }
-  
+
   .nav-link {
     @apply text-white hover:bg-[var(--nav-hover)] px-3 py-2 rounded transition-colors;
   }
-  
+
   .nav-link-active {
     @apply bg-[var(--nav-hover)] text-white px-3 py-2 rounded;
   }
@@ -86,11 +110,11 @@ img {
   }
 
   .soplang-header {
-    @apply text-xl font-bold text-primary mb-2;
+    @apply mb-2 text-xl font-bold text-primary;
   }
 
   .soplang-list {
-    @apply list-disc list-inside ml-4 space-y-1;
+    @apply ml-4 space-y-1 list-disc list-inside;
   }
 
   .soplang-link {
@@ -109,11 +133,11 @@ img {
   }
 
   .sidebar-header {
-    @apply text-lg font-bold mb-3 text-primary;
+    @apply mb-3 text-lg font-bold text-primary;
   }
 
   .sidebar-list {
-    @apply space-y-2 mb-6;
+    @apply mb-6 space-y-2;
   }
 
   .sidebar-item {
@@ -125,28 +149,28 @@ img {
   }
 
   .quick-link {
-    @apply bg-gray-100 dark:bg-gray-700 px-3 py-1 rounded text-sm hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors;
+    @apply px-3 py-1 text-sm transition-colors bg-gray-100 rounded dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600;
   }
-  
+
   /* Responsive grid utilities */
   .responsive-grid {
-    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6;
+    @apply grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 sm:gap-6;
   }
-  
+
   /* Responsive text utilities */
   .responsive-heading-1 {
-    @apply text-3xl sm:text-4xl md:text-5xl font-bold;
+    @apply text-3xl font-bold sm:text-4xl md:text-5xl;
   }
-  
+
   .responsive-heading-2 {
-    @apply text-2xl sm:text-3xl font-bold;
+    @apply text-2xl font-bold sm:text-3xl;
   }
-  
+
   .responsive-heading-3 {
-    @apply text-xl sm:text-2xl font-bold;
+    @apply text-xl font-bold sm:text-2xl;
   }
-  
+
   .responsive-paragraph {
     @apply text-sm sm:text-base;
   }
-} 
+}
