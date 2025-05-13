@@ -59,6 +59,8 @@ body {
 /* Base responsive typography */
 html {
   font-size: 16px;
+  overflow-y: scroll; /* Always show scrollbar to prevent layout shifts */
+  scrollbar-gutter: stable; /* Reserves space for scrollbar even when not visible */
 }
 
 @media (max-width: 640px) {
