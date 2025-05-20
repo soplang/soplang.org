@@ -1,0 +1,39 @@
+// Test: Static Typing
+// This test checks if static typing works properly
+
+qor("Testing static typing:")
+
+// Integer (abn)
+abn integer_var = 42
+qor("  Integer (abn): " + integer_var)
+
+// Decimal (jajab)
+jajab decimal_var = 3.14159
+qor("  Decimal (jajab): " + decimal_var)
+
+// String (qoraal)
+qoraal string_var = "Soplang waa luqad wacan"
+qor("  String (qoraal): " + string_var)
+// Boolean (bool)
+bool bool_var = been
+qor("  Boolean (bool): " + bool_var)
+
+// List (teed)
+teed list_var = [1, 2, 3, "afar", been]
+qor("  List (teed): " + list_var)
+
+// Object (walax)
+walax object_var = {
+    magac: "Ahmed",
+    da: 25,
+    miisaan: 72.5
+}
+qor("  Object (walax): " + object_var)
+
+// Try to assign incompatible types (should fail)
+// Uncomment these lines to test type enforcement
+// integer_var = "this should fail"
+// integer_var = 3.14  // should fail (no implicit conversion)
+// decimal_var = "not a number"
+// string_var = 123
+// bool_var = "not a boolean"

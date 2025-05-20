@@ -1,0 +1,85 @@
+// Test: Type Conversion
+// This test checks if type conversion functions work properly
+
+qor("Testing type conversion:")
+
+// Integer to string conversion
+abn int_value = 42
+qoraal int_str = qoraal(int_value)
+qor("  Integer to string: " + int_str + " (Type: " + nooc(int_str) + ")")
+
+// Decimal to string conversion
+jajab decimal_value = 3.14159
+qoraal decimal_str = qoraal(decimal_value)
+qor("  Decimal to string: " + decimal_str + " (Type: " + nooc(decimal_str) + ")")
+
+// String to integer conversion
+qoraal int_string = "123"
+abn converted_int = abn(int_string)
+qor("  String to integer: " + converted_int + " (Type: " + nooc(converted_int) + ")")
+
+// String to decimal conversion
+qoraal decimal_string = "3.14159"
+jajab converted_decimal = jajab(decimal_string)
+qor("  String to decimal: " + converted_decimal + " (Type: " + nooc(converted_decimal) + ")")
+
+// Integer to decimal conversion
+abn int_num = 42
+jajab decimal_from_int = jajab(int_num)
+qor("  Integer to decimal: " + decimal_from_int + " (Type: " + nooc(decimal_from_int) + ")")
+
+// Decimal to integer conversion (truncation)
+jajab decimal_num = 42.75
+abn int_from_decimal = abn(decimal_num)
+qor("  Decimal to integer (truncation): " + int_from_decimal + " (Type: " + nooc(int_from_decimal) + ")")
+
+// Boolean to number conversion
+abn bool_int_f = abn(been)
+abn bool_int_t = abn(run)
+qor("  Boolean (been) to integer: " + bool_int_f)
+qor("  Boolean (run) to integer: " + bool_int_t)
+
+jajab bool_decimal_f = jajab(been)
+jajab bool_decimal_t = jajab(run)
+qor("  Boolean (been) to decimal: " + bool_decimal_f)
+qor("  Boolean (run) to decimal: " + bool_decimal_t)
+
+// String to boolean conversion
+bool str_bool_t = bool("been")
+bool str_bool_f = bool("run")
+qor("  String 'been' to boolean: " + str_bool_t)
+qor("  String 'run' to boolean: " + str_bool_f)
+
+// Number to boolean conversion
+bool int_bool_0 = bool(0)
+bool int_bool_1 = bool(1)
+bool int_bool_42 = bool(42)
+qor("  Integer 0 to boolean: " + int_bool_0)
+qor("  Integer 1 to boolean: " + int_bool_1)
+qor("  Integer 42 to boolean: " + int_bool_42)
+
+bool decimal_bool_0 = bool(0.0)
+bool decimal_bool_1 = bool(1.5)
+qor("  Decimal 0.0 to boolean: " + decimal_bool_0)
+qor("  Decimal 1.5 to boolean: " + decimal_bool_1)
+
+// Boolean to string conversion
+qoraal bool_str_t = qoraal(been)
+qoraal bool_str_f = qoraal(run)
+qor("  Boolean (been) to string: " + bool_str_t)
+qor("  Boolean (run) to string: " + bool_str_f)
+
+// List to string conversion
+teed test_list = [1, 2, 3, 4.5]
+qoraal list_str = qoraal(test_list)
+qor("  List to string: " + list_str)
+
+// Object to string conversion
+walax test_obj = {name: "Test", int_value: 42, decimal_value: 3.14}
+qoraal obj_str = qoraal(test_obj)
+qor("  Object to string: " + obj_str)
+
+// Invalid conversions (these should fail or return defaults)
+// qor("  Invalid string to integer: " + abn("not a number"))
+// qor("  Invalid string to decimal: " + jajab("not a number"))
+// qor("  Invalid string to boolean: " + bool("not a boolean"))

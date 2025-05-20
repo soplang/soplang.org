@@ -1,0 +1,55 @@
+// Test: List Sort
+// This test checks if the habee() method correctly sorts lists in-place
+
+qor("Testing list sort (habee) method:")
+
+// Simple list sorting (numbers)
+teed abnooyin = [5, 1, 3, 4, 2]
+qor("  Original number list: " + abnooyin)
+abnooyin.habee()
+qor("  After habee(): " + abnooyin)  // Should output: [1, 2, 3, 4, 5]
+
+// Sorting strings (alphabetical order)
+teed magacyo = ["Zaynab", "Cabdi", "Faadumo", "Axmed", "Xaliimo"]
+qor("  Original name list: " + magacyo)
+magacyo.habee()
+qor("  After habee(): " + magacyo)  // Should output sorted alphabetically
+
+// Verify the list is mutated (same reference)
+teed original = [30, 10, 20]
+qor("  Original list: " + original)
+door reference = original
+reference.habee()
+qor("  After habee() via reference: " + original)  // Should show the sorted list
+qor("  Proving it's the same reference: " + reference)  // Should be identical to original
+
+// Empty list
+teed empty = []
+qor("  Empty list: " + empty)
+empty.habee()
+qor("  After habee() on empty list: " + empty)  // Should still be empty
+
+// Single element list
+teed single = ["Solo"]
+qor("  Single element list: " + single)
+single.habee()
+qor("  After habee() on single element list: " + single)  // Should be unchanged
+
+// Method chaining
+teed chain = [3, 1, 2]
+qor("  Method chaining:")
+qor("  Original list: " + chain)
+chain.habee().kudar(4)
+qor("  After habee().kudar(4): " + chain)  // Should be [1, 2, 3, 4]
+
+// Mixed types list - should raise error when uncommented
+// teed mixed = [5, "a", 3, "b"]
+// mixed.habee()  // This would cause a runtime error
+
+// List with decimal numbers
+teed decimals = [3.14, 1.5, 2.71, 0.99]
+qor("  Decimal numbers list: " + decimals)
+decimals.habee()
+qor("  After habee(): " + decimals)  // Should output sorted decimal numbers
+
+qor("List sort (habee) tests completed!")

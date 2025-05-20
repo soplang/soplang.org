@@ -1,0 +1,95 @@
+// Test: Universal Length Function (dherer)
+// This test demonstrates dherer() to get length of different data types
+
+qor("Testing universal length function (dherer):")
+
+// Example from task specification
+door l = [1, 2, 3]
+door t = "Soplang"
+door o = {magac: "Cali"}
+
+qor("Basic examples:")
+qor("  dherer([1, 2, 3]): " + dherer(l))  // 3
+qor("  dherer('Soplang'): " + dherer(t))  // 7
+qor("  dherer(object o): " + dherer(o))  // 1
+
+qor("")
+qor("More list examples:")
+// Empty list
+door emptyList = []
+qor("  Empty list length: " + dherer(emptyList))  // 0
+
+// Nested list
+door nestedList = [1, [2, 3], 4]
+qor("  Nested list length: " + dherer(nestedList))  // 3 (counts top-level items only)
+
+// List with different types
+door mixedList = [1, "two", [3, 4], {five: 5}]
+qor("  Mixed list length: " + dherer(mixedList))  // 4
+
+qor("")
+qor("More string examples:")
+// Empty string
+door emptyString = ""
+qor("  Empty string length: " + dherer(emptyString))  // 0
+
+// String with spaces
+door stringWithSpaces = "Hello world"
+qor("  String with spaces length: " + dherer(stringWithSpaces))  // 11
+
+// String with special characters
+door specialChars = "Waa^&*123"
+qor("  String with special chars length: " + dherer(specialChars))  // 10
+
+qor("")
+qor("More object examples:")
+// Empty object
+door emptyObject = {}
+qor("  Empty object length: " + dherer(emptyObject))  // 0
+
+// Object with multiple properties
+door person = {magac: "Ahmed", da: 30, magaalada: "Mogadishu"}
+qor("  Object with multiple properties: " + dherer(person))  // 3
+
+// Nested object (only counts top-level properties)
+door nestedObject = {info: {x: 1, y: 2}, value: 42}
+qor("  Nested object length: " + dherer(nestedObject))  // 2
+
+qor("")
+qor("Practical applications:")
+
+// Using dherer in a loop
+teed numbers = [10, 20, 30, 40, 50]
+abn sum = 0
+kuceli (i 0 ilaa dherer(numbers) - 1) {
+    sum = sum + numbers[i]
+}
+qor("  Sum of numbers using loop and dherer(): " + sum)  // 150
+
+// String truncation
+door longString = "Soplang waa luqad cusub oo waxtar leh"
+door maxLength = 20
+door truncated = ""
+
+haddii (dherer(longString) > maxLength) {
+    truncated = longString.jar(0, maxLength) + "..."
+} ugudambeyn {
+    truncated = longString
+}
+qor("  Truncated string: " + truncated)  // "Soplang waa luqad cu..."
+
+// Object property count check
+door config = {debug: run, verbose: been, logLevel: "info"}
+haddii (dherer(config) > 0) {
+    qor("  Config has " + dherer(config) + " settings")
+} ugudambeyn {
+    qor("  Config is empty")
+}
+
+qor("")
+qor("Error handling test:")
+qor("  Note: The following line would cause an error if uncommented:")
+qor("  // dherer(123) - Would throw error as numbers are not supported")
+
+qor("")
+qor("Universal length function tests completed!")

@@ -1,0 +1,85 @@
+// Test: String Replace Method (beddel)
+// This test demonstrates the beddel() method which replaces part of a string with another substring
+
+qor("Testing string replace method (beddel):")
+
+// Basic example from task definition
+door text = "Soplang waa fudud"
+door natiijo = text.beddel("fudud", "xoogan")
+
+qor("")
+qor("Basic example:")
+qor("  Original: " + text)
+qor("  After replacing 'fudud' with 'xoogan': " + natiijo)  // Should be "Soplang waa xoogan"
+
+// Test when the target doesn't exist
+door text1 = "Hello World"
+door result1 = text1.beddel("Universe", "Galaxy")
+qor("")
+qor("Target doesn't exist:")
+qor("  Original: " + text1)
+qor("  After replacing 'Universe' with 'Galaxy': " + result1)  // Should remain unchanged "Hello World"
+
+// Test case sensitivity
+door text2 = "Hello world, hello everyone"
+door result2 = text2.beddel("hello", "Howdy")
+qor("")
+qor("Case sensitivity:")
+qor("  Original: " + text2)
+qor("  After replacing 'hello' with 'Howdy': " + result2)  // Should replace second "hello" -> "Hello world, Howdy everyone"
+
+// Test replacing only first occurrence
+door text3 = "la la la, la la la"
+door result3 = text3.beddel("la", "ba")
+qor("")
+qor("Replace only first occurrence:")
+qor("  Original: " + text3)
+qor("  After replacing first 'la' with 'ba': " + result3)  // Should be "ba la la, la la la"
+
+// Test with empty strings
+door text4 = "Empty test"
+door result4a = text4.beddel("", "Something")
+door result4b = text4.beddel("Empty", "")
+qor("")
+qor("Empty string tests:")
+qor("  Original: " + text4)
+qor("  Replace empty string with 'Something': " + result4a)  // Behavior may vary, but likely unchanged
+qor("  Replace 'Empty' with empty string: " + result4b)  // Should be " test"
+
+// Practical examples
+qor("")
+qor("Practical examples:")
+
+// URL path manipulation
+door url = "https://example.com/oldpath/page.html"
+door newUrl = url.beddel("/oldpath/", "/newpath/")
+qor("  URL path update:")
+qor("  Original: " + url)
+qor("  Updated: " + newUrl)  // Should be "https://example.com/newpath/page.html"
+
+// Formatting numbers
+door number = "1000000"
+door formatted = number.beddel("000", ",000")
+qor("")
+qor("  Number formatting:")
+qor("  Original: " + number)
+qor("  Formatted: " + formatted)  // Should be "1,000000" (only first occurrence)
+
+// Censoring content
+door message = "This password is secret123, don't share it"
+door censored = message.beddel("secret123", "********")
+qor("")
+qor("  Censoring sensitive data:")
+qor("  Original: " + message)
+qor("  Censored: " + censored)  // Should be "This password is ********, don't share it"
+
+// Correcting typos
+door typo = "Salaan, Aduunka!"
+door corrected = typo.beddel("Aduunka", "Adduunka")
+qor("")
+qor("  Correcting typos:")
+qor("  Original: " + typo)
+qor("  Corrected: " + corrected)  // Should be "Salaan, Adduunka!"
+
+qor("")
+qor("String replace tests completed!")

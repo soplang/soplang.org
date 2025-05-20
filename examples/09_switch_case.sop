@@ -1,0 +1,132 @@
+// Example 9: Switch-Case Statements
+// This example demonstrates the usage of dooro (switch) and xaalad (case) statements
+
+qor("=====================================")
+qor("Switch-Case Statements (dooro/xaalad)")
+qor("=====================================")
+
+// Example 1: Basic switch with integer
+qor("\n1. Basic switch with integer:")
+abn number = 2
+qor("Testing with number = " + number)
+
+dooro (number) {
+  xaalad 1 {
+    qor("Hal (One)")
+  }
+  xaalad 2 {
+    qor("Laba (Two)")
+  }
+  xaalad 3 {
+    qor("Saddex (Three)")
+  }
+  ugudambeyn {
+    qor("abn kale (Another number)")
+  }
+}
+
+// Example 2: Switch with strings
+qor("\n2. Switch with strings:")
+qoraal language = "Somali"
+qor("Testing with language = " + language)
+
+dooro (language) {
+  xaalad "English" {
+    qor("Hello, World!")
+  }
+  xaalad "Somali" {
+    qor("Salaan, Adduunka!")
+  }
+  xaalad "Spanish" {
+    qor("¡Hola, Mundo!")
+  }
+  ugudambeyn {
+    qor("Language not recognized")
+  }
+}
+
+// Example 3: Switch with expressions
+qor("\n3. Switch with expressions:")
+abn x = 10
+abn y = 20
+qor("Testing with x = " + x + " and y = " + y)
+
+dooro (x + y) {
+  xaalad 10 {
+    qor("Sum is 10")
+  }
+  xaalad 30 {
+    qor("Sum is 30")
+  }
+  xaalad 50 {
+    qor("Sum is 50")
+  }
+  ugudambeyn {
+    qor("Sum is " + (x + y))
+  }
+}
+
+// Example 4: Switch with decimal values
+qor("\n4. Switch with decimal values:")
+jajab price = 19.99
+qor("Testing with price = " + price)
+
+dooro (price) {
+  xaalad 9.99 {
+    qor("Budget item")
+  }
+  xaalad 19.99 {
+    qor("Standard item")
+  }
+  xaalad 29.99 {
+    qor("Premium item")
+  }
+  ugudambeyn {
+    qor("Custom priced item")
+  }
+}
+
+// Example 5: Nested switch statements
+qor("\n5. Nested switch statements:")
+abn department = 1
+abn level = 2
+qor("Testing with department = " + department + " and level = " + level)
+
+dooro (department) {
+  xaalad 1 {
+    qor("Engineering Department")
+    dooro (level) {
+      xaalad 1 {
+        qor("- Junior Engineer")
+      }
+      xaalad 2 {
+        qor("- Senior Engineer")
+      }
+      ugudambeyn {
+        qor("- Management Level")
+      }
+    }
+  }
+  xaalad 2 {
+    qor("Marketing Department")
+  }
+  ugudambeyn {
+    qor("Other Department")
+  }
+}
+
+// Example 6: Switch with boolean expression
+qor("\n6. Switch with boolean expression:")
+abn score = 85
+qor("Testing with score = " + score)
+
+dooro (score >= 80) {
+  xaalad run {
+    qor("High score achieved!")
+  }
+  xaalad been {
+    qor("Keep practicing")
+  }
+}
+
+qor("\nSwitch-case demonstration completed!")

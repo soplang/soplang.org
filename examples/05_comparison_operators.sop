@@ -1,0 +1,37 @@
+// Test: Comparison Operators
+// This test checks if comparison operators work properly
+
+qor("Testing comparison operators:")
+
+// Integer comparisons
+abn a = 15
+abn b = 5
+abn c = 15
+qor("  a = " + a + ", b = " + b + ", c = " + c)
+
+qor("Integer comparisons:")
+qor("  Equal (a == c): " + (a == c))
+qor("  Not equal (a != b): " + (a != b))
+qor("  Greater than (a > b): " + (a > b))
+qor("  Less than (a < b): " + (a < b))
+qor("  Greater than or equal (a >= c): " + (a >= c))
+qor("  Less than or equal (a <= c): " + (a <= c))
+
+// Decimal comparisons
+jajab x = 15.5
+jajab y = 5.25
+jajab z = 15.5
+qor("\nDecimal comparisons:")
+qor("  x = " + x + ", y = " + y + ", z = " + z)
+qor("  Equal (x == z): " + (x == z))
+qor("  Not equal (x != y): " + (x != y))
+qor("  Greater than (x > y): " + (x > y))
+qor("  Less than (x < y): " + (x < y))
+qor("  Greater than or equal (x >= z): " + (x >= z))
+qor("  Less than or equal (x <= z): " + (x <= z))
+
+// Mixed type comparisons
+qor("\nMixed type comparisons:")
+qor("  Integer vs. Decimal (a == x): " + (a == x))
+qor("  Integer vs. Decimal (a < x): " + (a < x))
+qor("  Integer vs. Decimal (b <= y): " + (b <= y))
