@@ -1,53 +1,53 @@
-'use client';
+"use client";
 
-import { useState, useEffect, useRef } from 'react';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import ThemeToggle from './ThemeToggle';
-import Image from 'next/image';
+import { useState, useEffect, useRef } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import ThemeToggle from "./ThemeToggle";
+import Image from "next/image";
 
 const navLinks = [
-  { name: 'Home', path: '/' },
-  { name: 'Downloads', path: '/downloads' },
-  { name: 'Documentation', path: '/docs' },
-  { name: 'Community', path: '/community' },
-  { name: 'Blog', path: '/blog' },
-  { name: 'About', path: '/about' },
+  { name: "Home", path: "/" },
+  { name: "Downloads", path: "/downloads" },
+  { name: "Documentation", path: "/docs" },
+  { name: "Community", path: "/community" },
+  { name: "Blog", path: "/blog" },
+  { name: "About", path: "/about" },
 ];
 
-const searchPlaceholder = 'Search Soplang';
+const searchPlaceholder = "Search Soplang";
 
 // Mock suggestions data - in a real app, this would come from an API
 const mockSuggestions = [
   {
-    id: 'doc-1',
-    title: 'Getting Started with Soplang',
-    url: '/docs/getting-started',
+    id: "doc-1",
+    title: "Getting Started with Soplang",
+    url: "/docs/getting-started",
   },
-  { id: 'doc-2', title: 'Installation Guide', url: '/docs/installation' },
+  { id: "doc-2", title: "Installation Guide", url: "/docs/installation" },
   {
-    id: 'news-1',
-    title: 'Soplang 2.0 Release Announcement',
-    url: '/blog/Soplang-2.0-Is-Almost-Here-A-Somali-first-Programming-Language-Nears-Major-Release',
+    id: "news-1",
+    title: "Soplang 2.0 Release Announcement",
+    url: "/blog/Soplang-2.0-Is-Almost-Here-A-Somali-first-Programming-Language-Nears-Major-Release",
   },
   {
-    id: 'blog-1',
-    title: 'Why Soplang Matters',
-    url: '/blog/why-soplang-matters',
+    id: "blog-1",
+    title: "Why Soplang Matters",
+    url: "/blog/why-soplang-matters",
   },
-  { id: 'page-1', title: 'About Soplang', url: '/about' },
+  { id: "page-1", title: "About Soplang", url: "/about" },
 ];
 
 export default function Navbar() {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(() => {
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
       return window.scrollY > 10;
     }
     return false;
   });
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
   const [suggestions, setSuggestions] = useState<typeof mockSuggestions>([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
   const desktopSearchRef = useRef<HTMLDivElement>(null);
@@ -63,8 +63,8 @@ export default function Navbar() {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   // Handle click outside to close suggestions
@@ -80,15 +80,15 @@ export default function Navbar() {
       }
     }
 
-    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
 
   // Filter suggestions based on search term
   useEffect(() => {
-    if (searchTerm.trim() === '') {
+    if (searchTerm.trim() === "") {
       setSuggestions([]);
       return;
     }
@@ -101,7 +101,7 @@ export default function Navbar() {
 
   // Search functionality
   const handleSearch = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === 'Enter') {
+    if (e.key === "Enter") {
       const input = e.target as HTMLInputElement;
       const query = input.value.trim();
       if (query) {
@@ -114,14 +114,14 @@ export default function Navbar() {
   // Handle search input change
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(e.target.value);
-    setShowSuggestions(e.target.value.trim() !== '');
+    setShowSuggestions(e.target.value.trim() !== "");
   };
 
   // Handle suggestion click
   const handleSuggestionClick = (url: string) => {
     window.location.href = url;
     setShowSuggestions(false);
-    setSearchTerm('');
+    setSearchTerm("");
   };
 
   return (
@@ -140,7 +140,7 @@ export default function Navbar() {
                   alt="Soplang Logo"
                   className="hidden w-auto h-8 dark:inline-block md:h-10"
                   priority
-                  style={{ objectFit: 'contain' }}
+                  style={{ objectFit: "contain" }}
                 />
                 <Image
                   src="/images/logo/logo.svg"
@@ -149,7 +149,7 @@ export default function Navbar() {
                   alt="Soplang Logo"
                   className="inline-block w-auto h-8 dark:hidden md:h-10"
                   priority
-                  style={{ objectFit: 'contain' }}
+                  style={{ objectFit: "contain" }}
                 />
               </div>
             </Link>
@@ -164,7 +164,7 @@ export default function Navbar() {
                   key={link.path}
                   href={link.path}
                   className={`${
-                    pathname === link.path ? 'nav-link-active' : 'nav-link'
+                    pathname === link.path ? "nav-link-active" : "nav-link"
                   } text-sm lg:text-base font-medium px-3 py-2 rounded-md transition-colors duration-200`}
                 >
                   {link.name}
@@ -183,7 +183,7 @@ export default function Navbar() {
                     value={searchTerm}
                     onChange={handleSearchChange}
                     onKeyDown={handleSearch}
-                    onFocus={() => searchTerm.trim() !== '' && setShowSuggestions(true)}
+                    onFocus={() => searchTerm.trim() !== "" && setShowSuggestions(true)}
                   />
                   <button
                     className="absolute transform -translate-y-1/2 right-3 top-1/2"
@@ -288,7 +288,7 @@ export default function Navbar() {
         {/* Mobile Navigation */}
         <div
           className={`md:hidden transition-all duration-300 ease-in-out ${
-            isMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0 overflow-hidden'
+            isMenuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0 overflow-hidden"
           }`}
           suppressHydrationWarning
         >
@@ -300,8 +300,8 @@ export default function Navbar() {
                   href={link.path}
                   className={`${
                     pathname === link.path
-                      ? 'bg-[var(--primary-color)] text-white'
-                      : 'text-white hover:bg-[var(--nav-hover)]'
+                      ? "bg-[var(--primary-color)] text-white"
+                      : "text-white hover:bg-[var(--nav-hover)]"
                   } py-3 px-4 rounded-md transition-colors duration-200`}
                   onClick={() => setIsMenuOpen(false)}
                 >
@@ -317,7 +317,7 @@ export default function Navbar() {
                     value={searchTerm}
                     onChange={handleSearchChange}
                     onKeyDown={handleSearch}
-                    onFocus={() => searchTerm.trim() !== '' && setShowSuggestions(true)}
+                    onFocus={() => searchTerm.trim() !== "" && setShowSuggestions(true)}
                   />
                   <button
                     className="absolute transform -translate-y-1/2 right-3 top-1/2"
@@ -379,32 +379,6 @@ export default function Navbar() {
                   )}
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Secondary navigation - Quick access links */}
-        <div className="bg-gray-100 dark:bg-gray-800 border-b border-[var(--border-color)] overflow-x-auto">
-          <div className="px-4 py-2 container-custom">
-            <div className="flex space-x-4 md:space-x-6 whitespace-nowrap">
-              <Link
-                href="/downloads/latest"
-                className="text-gray-700 dark:text-gray-300 hover:text-[var(--primary-color)] dark:hover:text-[var(--primary-color)] text-sm md:text-base font-medium transition-colors duration-200"
-              >
-                Download Latest
-              </Link>
-              <Link
-                href="/docs/getting-started"
-                className="text-gray-700 dark:text-gray-300 hover:text-[var(--primary-color)] dark:hover:text-[var(--primary-color)] text-sm md:text-base font-medium transition-colors duration-200"
-              >
-                Get Started
-              </Link>
-              <Link
-                href="/community"
-                className="text-gray-700 dark:text-gray-300 hover:text-[var(--primary-color)] dark:hover:text-[var(--primary-color)] text-sm md:text-base font-medium transition-colors duration-200"
-              >
-                Community
-              </Link>
             </div>
           </div>
         </div>
