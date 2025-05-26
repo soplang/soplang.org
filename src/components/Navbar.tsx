@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import ThemeToggle from "./ThemeToggle";
 import Image from "next/image";
+import { FaArrowRight } from "react-icons/fa";
 
 const navLinks = [
   { name: "Home", path: "/" },
@@ -131,6 +132,10 @@ export default function Navbar() {
         <p className="text-white">
           Waxaan qoraynaa oon dib uhabeyn ku wadnaa docs oo af-soomaali ku qoran, ka qeybqaadasho
           raac lifaaqaan...
+          <Link href="https://www.soplang.org/contribute" className="text-blue-500 ml-2">
+            Contribution guidelines
+            <FaArrowRight className="w-3 h-3 ml-1 inline-block" />
+          </Link>
         </p>
       </div>
 
