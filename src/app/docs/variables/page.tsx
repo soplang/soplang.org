@@ -91,7 +91,6 @@ door grades = [85, 90, 78, 92]  // List/Array`}
 tiro count = 10           // Integer 
 qoraal message = "Hello"  // String
 labadaran active = true   // Boolean
-toban price = 29.99       // Float/Decimal
 
 // Type mismatch will cause an error
 // tiro wrong = "text"  // Error: Cannot assign string to tiro`}

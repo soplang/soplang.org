@@ -102,7 +102,7 @@ door magac1 = "Caasha"
         />
       </div>
 
-      <div className="mb-12">
+      {/* <div className="mb-12">
         <h2 className="mb-4 text-2xl font-bold" id="operators">
           Basic Operators
         </h2>
@@ -172,7 +172,7 @@ a %= 4         // Modulus and assign: a = a % 4
 qor(a)         // 2`}
           title="assignment.sop"
         />
-      </div>
+      </div> */}
 
       <div className="mb-12">
         <h2 className="mb-4 text-2xl font-bold" id="keywords">
