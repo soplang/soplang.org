@@ -254,6 +254,24 @@ $ curl -sSL https://install.soplang.org | bash
                   />
                 </div>
               </div>
+
+              {/* Sponsors */}
+              <div className="p-6 mt-8 soplang-box sm:p-8 text-center">
+                <h2 className="mb-6 text-2xl soplang-header sm:text-3xl">Our Sponsors</h2>
+                <p className="mb-6 text-base sm:text-lg">
+                  Soplang is proudly supported by these amazing organizations:
+                </p>
+                <div className="flex justify-center items-center">
+                  <a href="https://www.docker.com" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center p-4 grayscale hover:grayscale-0 transition-all duration-300">
+                    <img src="/images/sponsors/Docker.svg" alt="Docker" className="h-20" />
+                  </a>
+                </div>
+                {/* <div className="mt-6">
+                  <Link href="/sponsors" className="inline-flex items-center soplang-link">
+                    View all sponsors and support Soplang <span className="ml-2">→</span>
+                  </Link>
+                </div> */}
+              </div>
             </div>
 
             {/* Sidebar Content */}
