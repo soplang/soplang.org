@@ -19,15 +19,23 @@ const docsNav = [
     title: "Core Concepts",
     items: [
       { title: "Syntax Basics", href: "/docs/syntax-basics" },
-      { title: "Data Types", href: "/docs/data-types" },
+      { title: "Input & Output", href: "/docs/input-and-output" },
       { title: "Variables", href: "/docs/variables" },
+      { title: "Data Types", href: "/docs/data-types" },
+      { title: "Numbers", href: "/docs/numbers" },
+      { title: "Strings", href: "/docs/strings" },
+      { title: "Operators", href: "/docs/operators" },
+      { title: "Conditional Statements", href: "/docs/conditional-statements" },
+      { title: "Loops", href: "/docs/loops" },
       { title: "Functions", href: "/docs/functions" },
-      { title: "Control Flow", href: "/docs/control-flow" },
+      // { title: "Arrays", href: "/docs/arrays" },
+      // { title: "Objects", href: "/docs/objects" },
+      { title: "Built-in Functions", href: "/docs/objects" },
       // { title: "Error Handling", href: "/docs/error-handling" },
     ],
   },
   {
-    title: "Advanced Topics",
+    // title: "Advanced Topics",
     items: [
       // { title: "Classes & Objects", href: "/docs/classes-objects" },
       // { title: "Modules & Packages", href: "/docs/modules-packages" },
@@ -37,7 +45,7 @@ const docsNav = [
     ],
   },
   {
-    title: "Tutorials",
+    // title: "Tutorials",
     items: [
       // { title: "Building a CLI App", href: "/docs/tutorials/cli-app" },
       // { title: "Web Development", href: "/docs/tutorials/web-development" },
@@ -46,7 +54,7 @@ const docsNav = [
     ],
   },
   {
-    title: "API Reference",
+    // title: "API Reference",
     items: [
       // { title: "Standard Library", href: "/docs/api/standard-library" },
       // { title: "Built-in Functions", href: "/docs/api/built-in-functions" },
