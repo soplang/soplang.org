@@ -126,8 +126,19 @@ export default function Navbar() {
 
   return (
     <header>
+      {/* banner */}
+      <div className="w-full bg-[var(--banner-background-color)] dark:bg-[var(--header-bg)] border border-white/10 dark:border-b dark:border-[var(--border-color)] overflow-x-auto py-2 px-4 text-center text-sm font-medium">
+        <p className="text-white">
+          Waxaan qoraynaa oon dib uhabeyn ku wadnaa docs oo af-soomaali ku qoran, ka qeybqaadasho
+          raac lifaaqaan...
+        </p>
+      </div>
+
       {/* Top navigation bar */}
-      <nav className="bg-[var(--header-bg)] text-white sticky top-0 z-50" suppressHydrationWarning>
+      <nav
+        className="bg-[var(--header-bg)] text-white sticky top-0 z-50 border-b border-white/5 shadow-md"
+        suppressHydrationWarning
+      >
         <div className="px-4 container-custom sm:px-6 lg:px-8" suppressHydrationWarning>
           <div className="flex items-center justify-between h-16 md:h-20" suppressHydrationWarning>
             {/* Logo */}
