@@ -1,56 +1,56 @@
-import Link from "next/link";
-import CodeWindow from "../../components/CodeWindow";
-import { FaWindows, FaApple, FaLinux } from "react-icons/fa";
+import Link from 'next/link';
+import CodeWindow from '../../components/CodeWindow';
+import { FaWindows, FaApple, FaLinux } from 'react-icons/fa';
 
 // Sidebar navigation for downloads section
 const downloadSidebar = [
   {
-    title: "Downloads",
+    title: 'Downloads',
     links: [
       {
-        name: "Latest Version (2.0)",
-        href: "/downloads/latest",
+        name: 'Latest Version (2.0)',
+        href: '/downloads/latest',
         active: false,
       },
-      { name: "Previous Versions", href: "/downloads/archive", active: false },
+      { name: 'Previous Versions', href: '/downloads/archive', active: false },
       {
-        name: "System Requirements",
-        href: "#system-requirements",
+        name: 'System Requirements',
+        href: '#system-requirements',
         active: false,
       },
-      { name: "Installation Guide", href: "/docs/installation", active: false },
+      { name: 'Installation Guide', href: '/docs/installation', active: false },
     ],
   },
   {
-    title: "Package Managers",
+    title: 'Package Managers',
     links: [
-      { name: "npm (Node.js)", href: "#npm", active: false },
-      { name: "Homebrew (macOS)", href: "#homebrew", active: false },
-      { name: "APT (Linux)", href: "#apt", active: false },
-      { name: "Docker", href: "#docker", active: false },
+      { name: 'npm (Node.js)', href: '#npm', active: false },
+      { name: 'Homebrew (macOS)', href: '#homebrew', active: false },
+      { name: 'APT (Linux)', href: '#apt', active: false },
+      { name: 'Docker', href: '#docker', active: false },
     ],
   },
   {
-    title: "Resources",
+    title: 'Resources',
     links: [
       {
-        name: "Getting Started Guide",
-        href: "/docs/getting-started",
+        name: 'Getting Started Guide',
+        href: '/docs/getting-started',
         active: false,
       },
       {
         // name: "Release Notes",
-        href: "/blog/release-notes-v2.0",
+        href: '/blog/release-notes-v2.0',
         active: false,
       },
       {
-        name: "Changelog",
-        href: "https://github.com/soplang/soplang/blob/main/CHANGELOG.md",
+        name: 'Changelog',
+        href: 'https://github.com/soplang/soplang/blob/main/CHANGELOG.md',
         active: false,
       },
       {
-        name: "Source Code",
-        href: "https://github.com/soplang/soplang",
+        name: 'Source Code',
+        href: 'https://github.com/soplang/soplang',
         active: false,
       },
     ],
@@ -60,81 +60,81 @@ const downloadSidebar = [
 // OS-specific download data
 const downloads = [
   {
-    os: "Windows",
-    version: "2.0",
-    size: "28.6 MB",
-    date: "March 15, 2024",
+    os: 'Windows',
+    version: '2.0',
+    size: '28.6 MB',
+    date: 'March 15, 2024',
     icon: <FaWindows className="w-12 h-12" />,
     instructions: [
-      "Download the Windows installer (.msi file)",
-      "Run the installer and follow the on-screen instructions",
-      "Add Soplang to your PATH if not done automatically",
+      'Download the Windows installer (.msi file)',
+      'Run the installer and follow the on-screen instructions',
+      'Add Soplang to your PATH if not done automatically',
       "Open Command Prompt or PowerShell and type 'soplang --version' to verify installation",
     ],
-    downloadUrl: "/downloads/soplang-2.0-win64.msi",
+    downloadUrl: 'https://github.com/soplang/soplang/releases/download/v2.0.0/soplang-setup.exe',
   },
   {
-    os: "macOS",
-    version: "2.0",
-    size: "26.2 MB",
-    date: "March 15, 2024",
+    os: 'macOS',
+    version: '2.0',
+    size: '26.2 MB',
+    date: 'March 15, 2024',
     icon: <FaApple className="w-12 h-12" />,
     instructions: [
-      "Download the macOS installer (.pkg file)",
-      "Open the installer package and follow the installation wizard",
-      "Alternatively, use Homebrew: brew install soplang",
+      'Download the macOS installer (.pkg file)',
+      'Open the installer package and follow the installation wizard',
+      'Alternatively, use Homebrew: brew install soplang',
       "Open Terminal and type 'soplang --version' to verify installation",
     ],
-    downloadUrl: "/downloads/soplang-2.0-macos.pkg",
+    downloadUrl: 'https://github.com/soplang/soplang/releases/download/v2.0.0/soplang-setup.exe',
   },
   {
-    os: "Linux",
-    version: "2.0",
-    size: "23.8 MB",
-    date: "March 15, 2024",
+    os: 'Linux',
+    version: '2.0',
+    size: '23.8 MB',
+    date: 'March 15, 2024',
     icon: <FaLinux className="w-12 h-12" />,
     instructions: [
-      "For Debian/Ubuntu: sudo apt-get install soplang",
-      "For Fedora: sudo dnf install soplang",
-      "For Arch Linux: sudo pacman -S soplang",
-      "Alternatively, download the tarball and extract it",
+      'For Debian/Ubuntu: sudo apt-get install soplang',
+      'For Fedora: sudo dnf install soplang',
+      'For Arch Linux: sudo pacman -S soplang',
+      'Alternatively, download the tarball and extract it',
       "Run './configure && make && sudo make install' from the extracted directory",
       "Verify installation with 'soplang --version'",
     ],
-    downloadUrl: "/downloads/soplang-2.0-linux-x86_64.tar.gz",
+    downloadUrl: 'https://github.com/soplang/soplang/releases/download/v2.0.0/soplang-setup.exe',
   },
 ];
 
 // Package manager installation commands
 const packageManagers = [
   {
-    name: "npm (Node.js)",
-    id: "npm",
-    command: "npm install -g soplang",
+    name: 'npm (Node.js)',
+    id: 'npm',
+    command: 'npm install -g soplang',
   },
   {
-    name: "Homebrew (macOS)",
-    id: "homebrew",
-    command: "brew install soplang",
+    name: 'Homebrew (macOS)',
+    id: 'homebrew',
+    command: 'brew install soplang',
   },
   {
-    name: "APT (Debian/Ubuntu)",
-    id: "apt",
-    command: "sudo apt install soplang",
+    name: 'APT (Debian/Ubuntu)',
+    id: 'apt',
+    command: 'sudo apt install soplang',
   },
   {
-    name: "Docker",
-    id: "docker",
-    command: "docker pull soplang/soplang:latest",
+    name: 'Docker',
+    id: 'docker',
+    command: 'docker pull soplang/soplang:latest',
   },
 ];
 
 export const metadata = {
-  title: "Download Soplang - The Somali Programming Language",
+  title: 'Download Soplang - The Somali Programming Language',
   description:
-    "Download Soplang 2.0 for Windows, macOS, or Linux. Get started with the first Somali programming language designed for simplicity and performance.",
+    'Download Soplang 2.0 for Windows, macOS, or Linux. Get started with the first Somali programming language designed for simplicity and performance.',
   keywords:
-    "Soplang, download, programming language, Somali language, install, Windows, macOS, Linux",
+    'Soplang, download, programming language, Somali language, install, Windows, macOS, Linux',
 };
 
 export default function DownloadsPage() {
@@ -161,15 +161,15 @@ export default function DownloadsPage() {
                   <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
                     Latest Release: v2.0
                   </h2>
-                  <p className="mt-2 text-gray-600 dark:text-gray-300">
-                    Released on March 15, 2024 |{" "}
+                  {/* <p className="mt-2 text-gray-600 dark:text-gray-300">
+                    Released on March 15, 2024 |{' '}
                     <Link
                       href="/blog/release-notes-v2.0"
                       className="ml-1 text-primary hover:underline"
                     >
                       View Release Notes
                     </Link>
-                  </p>
+                  </p> */}
                 </div>
                 <Link href="#download-options" className="mt-4 btn-primary md:mt-0">
                   Download Now
@@ -436,10 +436,10 @@ export default function DownloadsPage() {
                         <Link
                           href={link.href}
                           className={`text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary ${
-                            link.active ? "text-primary font-semibold" : ""
+                            link.active ? 'text-primary font-semibold' : ''
                           }`}
-                          target={link.href.startsWith("http") ? "_blank" : undefined}
-                          rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                          target={link.href.startsWith('http') ? '_blank' : undefined}
+                          rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                         >
                           {link.name}
                         </Link>
