@@ -30,7 +30,7 @@ const docsNav = [
       { title: "Functions", href: "/docs/functions" },
       // { title: "Arrays", href: "/docs/arrays" },
       // { title: "Objects", href: "/docs/objects" },
-      { title: "Built-in Functions", href: "/docs/objects" },
+      { title: "Built-in Functions", href: "/docs/built-in-functions" },
       // { title: "Error Handling", href: "/docs/error-handling" },
     ],
   },
