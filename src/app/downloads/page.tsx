@@ -188,9 +188,71 @@ export default function DownloadsPage() {
               </div>
             </div>
 
+            {/* System Requirements section title */}
+            <div className="mt-24 mb-12 text-center">
+              <h2 className="mb-4 text-3xl font-bold text-gray-900 dark:text-white">
+                System Requirements
+              </h2>
+              <p className="max-w-3xl mx-auto text-xl text-gray-600 dark:text-gray-300">
+                Check if your system meets the requirements to run Soplang.
+              </p>
+            </div>
+
+            {/* System Requirements */}
+            <div id="system-requirements" className="mb-16">
+              <div className="overflow-hidden transition-all bg-white border border-gray-200 shadow-md dark:bg-gray-800 rounded-xl dark:border-gray-700 hover:shadow-lg">
+                <div className="p-8">
+                  <div className="grid gap-8 md:grid-cols-3">
+                    <div className="space-y-4">
+                      <h3 className="flex items-center text-xl font-bold text-gray-900 dark:text-white">
+                        <svg
+                          className="w-6 h-6 mr-2 text-primary"
+                          fill="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801" />
+                        </svg>
+                        Windows
+                      </h3>
+                      <ul className="pl-4 ml-2 space-y-2 text-gray-600 border-l-2 border-gray-200 dark:text-gray-300 dark:border-gray-700">
+                        <li>Windows 10/11 (64-bit)</li>
+                        <li>4 GB RAM minimum</li>
+                        <li>1 GB disk space</li>
+                        <li>Intel/AMD processor</li>
+                      </ul>
+                    </div>
+                    <div className="space-y-4">
+                      <h3 className="flex items-center text-xl font-bold text-gray-900 dark:text-white">
+                        <FaApple className="w-6 h-6 mr-2 text-primary" />
+                        macOS
+                      </h3>
+                      <ul className="pl-4 ml-2 space-y-2 text-gray-600 border-l-2 border-gray-200 dark:text-gray-300 dark:border-gray-700">
+                        <li>macOS 11.0 (Big Sur) or later</li>
+                        <li>4 GB RAM minimum</li>
+                        <li>1 GB disk space</li>
+                        <li>Intel or Apple Silicon</li>
+                      </ul>
+                    </div>
+                    <div className="space-y-4">
+                      <h3 className="flex items-center text-xl font-bold text-gray-900 dark:text-white">
+                        <FaLinux className="w-6 h-6 mr-2 text-primary" />
+                        Linux
+                      </h3>
+                      <ul className="pl-4 ml-2 space-y-2 text-gray-600 border-l-2 border-gray-200 dark:text-gray-300 dark:border-gray-700">
+                        <li>Ubuntu 20.04 or later</li>
+                        <li>4 GB RAM minimum</li>
+                        <li>1 GB disk space</li>
+                        <li>Intel/AMD 64-bit processor</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             {/* Choose Your Platform */}
             <div id="download-options" className="mb-16">
-              <h2 className="mb-8 text-2xl font-bold text-gray-900 dark:text-white">
+              <h2 className="mb-8 text-2xl font-bold text-center text-gray-900 dark:text-white">
                 Choose Your Platform
               </h2>
 
@@ -354,68 +416,6 @@ export default function DownloadsPage() {
                       title="Terminal"
                       className="shadow-lg"
                     />
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* System Requirements section title */}
-            <div className="mt-24 mb-12 text-center">
-              <h2 className="mb-4 text-3xl font-bold text-gray-900 dark:text-white">
-                System Requirements
-              </h2>
-              <p className="max-w-3xl mx-auto text-xl text-gray-600 dark:text-gray-300">
-                Check if your system meets the requirements to run Soplang.
-              </p>
-            </div>
-
-            {/* System Requirements */}
-            <div id="system-requirements" className="mb-16">
-              <div className="overflow-hidden transition-all bg-white border border-gray-200 shadow-md dark:bg-gray-800 rounded-xl dark:border-gray-700 hover:shadow-lg">
-                <div className="p-8">
-                  <div className="grid gap-8 md:grid-cols-3">
-                    <div className="space-y-4">
-                      <h3 className="flex items-center text-xl font-bold text-gray-900 dark:text-white">
-                        <svg
-                          className="w-6 h-6 mr-2 text-primary"
-                          fill="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801" />
-                        </svg>
-                        Windows
-                      </h3>
-                      <ul className="pl-4 ml-2 space-y-2 text-gray-600 border-l-2 border-gray-200 dark:text-gray-300 dark:border-gray-700">
-                        <li>Windows 10/11 (64-bit)</li>
-                        <li>4 GB RAM minimum</li>
-                        <li>1 GB disk space</li>
-                        <li>Intel/AMD processor</li>
-                      </ul>
-                    </div>
-                    <div className="space-y-4">
-                      <h3 className="flex items-center text-xl font-bold text-gray-900 dark:text-white">
-                        <FaApple className="w-6 h-6 mr-2 text-primary" />
-                        macOS
-                      </h3>
-                      <ul className="pl-4 ml-2 space-y-2 text-gray-600 border-l-2 border-gray-200 dark:text-gray-300 dark:border-gray-700">
-                        <li>macOS 11.0 (Big Sur) or later</li>
-                        <li>4 GB RAM minimum</li>
-                        <li>1 GB disk space</li>
-                        <li>Intel or Apple Silicon</li>
-                      </ul>
-                    </div>
-                    <div className="space-y-4">
-                      <h3 className="flex items-center text-xl font-bold text-gray-900 dark:text-white">
-                        <FaLinux className="w-6 h-6 mr-2 text-primary" />
-                        Linux
-                      </h3>
-                      <ul className="pl-4 ml-2 space-y-2 text-gray-600 border-l-2 border-gray-200 dark:text-gray-300 dark:border-gray-700">
-                        <li>Ubuntu 20.04 or later</li>
-                        <li>4 GB RAM minimum</li>
-                        <li>1 GB disk space</li>
-                        <li>Intel/AMD 64-bit processor</li>
-                      </ul>
-                    </div>
                   </div>
                 </div>
               </div>
