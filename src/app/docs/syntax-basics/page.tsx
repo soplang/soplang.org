@@ -1,12 +1,12 @@
-import React from "react";
-import Link from "next/link";
-import CodeWindow from "@/components/CodeWindow";
-import DocNavigation from "@/components/DocNavigation";
+import React from 'react';
+import Link from 'next/link';
+import CodeWindow from '@/components/CodeWindow';
+import DocNavigation from '@/components/DocNavigation';
 
 export const metadata = {
-  title: "Soplang Syntax Basics",
+  title: 'Soplang Syntax Basics',
   description:
-    "Learn the fundamental syntax of Soplang, including statements, comments, operators, and code structure.",
+    'Learn the fundamental syntax of Soplang, including statements, comments, operators, and code structure.',
 };
 
 export default function SyntaxBasicsPage() {
@@ -16,7 +16,8 @@ export default function SyntaxBasicsPage() {
 
       <p className="mb-6 text-xl lead">
         Understanding the basic syntax elements of Soplang is the first step to becoming proficient
-        with the language. This guide covers the fundamental building blocks of Soplang code.
+        with this Programming language. This guide covers the fundamental building blocks of Soplang
+        code.
       </p>
 
       <div className="mb-12">
@@ -58,12 +59,16 @@ qor(magac)
 door a = 5; door b = 10; qor(a + b)
 
 // Code blocks
-haddii (a > b) {
-    qor("A waa ka weyn yahay B")
-    a = a - b
-} haddii_kalena {
-    qor("B waa ka weyn yahay A")
-    b = b - a
+abn da = 17
+
+haddii (da >= 20) {
+  qor("Waxaad tahay dhallinyaro")
+} 
+haddii_kale (da >= 18) {
+  qor("Waad qaan gaadhay")
+} 
+ugudambeyn {
+  qor("Waad yar tahay")
 }`}
           title="statements.sop"
         />
@@ -96,8 +101,8 @@ door magac_dheer = "Cabdiraxmaan"
 door magac1 = "Caasha"
 
 // Invalid identifiers (would cause errors)
-// door 1magac = "Xasan"     // Cannot start with a digit
-// door door = "Fadumo"      // Cannot use a reserved keyword`}
+door 1magac = "Xasan"     // Cannot start with a digit
+door door = "Fadumo"      // Cannot use a reserved keyword`}
           title="identifiers.sop"
         />
       </div>
@@ -174,6 +179,7 @@ qor(a)         // 2`}
         />
       </div> */}
 
+      {/* Reserved Keywords Goes to the -> /docs/built-in-functions  */}
       <div className="mb-12">
         <h2 className="mb-4 text-2xl font-bold" id="keywords">
           Reserved Keywords
@@ -182,20 +188,20 @@ qor(a)         // 2`}
           Soplang has several reserved keywords that have special meaning in the language:
         </p>
 
-        <div className="grid grid-cols-2 gap-2 mb-4 md:grid-cols-3">
+        <div className="grid grid-cols-2 gap-2 mb-4 font-medium md:grid-cols-4">
           <div className="p-2 bg-gray-100 rounded dark:bg-gray-700">door</div>
-          <div className="p-2 bg-gray-100 rounded dark:bg-gray-700">tiro</div>
+          <div className="p-2 bg-gray-100 rounded dark:bg-gray-700">abn</div>
           <div className="p-2 bg-gray-100 rounded dark:bg-gray-700">qoraal</div>
           <div className="p-2 bg-gray-100 rounded dark:bg-gray-700">labadaran</div>
           <div className="p-2 bg-gray-100 rounded dark:bg-gray-700">haddii</div>
           <div className="p-2 bg-gray-100 rounded dark:bg-gray-700">haddii_kale</div>
-          <div className="p-2 bg-gray-100 rounded dark:bg-gray-700">haddii_kalena</div>
+          <div className="p-2 bg-gray-100 rounded dark:bg-gray-700">ugudambeyn</div>
           <div className="p-2 bg-gray-100 rounded dark:bg-gray-700">ku_celi</div>
           <div className="p-2 bg-gray-100 rounded dark:bg-gray-700">inta_ay</div>
           <div className="p-2 bg-gray-100 rounded dark:bg-gray-700">jooji</div>
           <div className="p-2 bg-gray-100 rounded dark:bg-gray-700">sii_wad</div>
-          <div className="p-2 bg-gray-100 rounded dark:bg-gray-700">min</div>
-          <div className="p-2 bg-gray-100 rounded dark:bg-gray-700">ilaa</div>
+          {/* <div className="p-2 bg-gray-100 rounded dark:bg-gray-700">min</div> */}
+          {/* <div className="p-2 bg-gray-100 rounded dark:bg-gray-700">ilaa</div>
           <div className="p-2 bg-gray-100 rounded dark:bg-gray-700">howl</div>
           <div className="p-2 bg-gray-100 rounded dark:bg-gray-700">soo_celi</div>
           <div className="p-2 bg-gray-100 rounded dark:bg-gray-700">isku_day</div>
@@ -210,7 +216,7 @@ qor(a)         // 2`}
           <div className="p-2 bg-gray-100 rounded dark:bg-gray-700">liis</div>
           <div className="p-2 bg-gray-100 rounded dark:bg-gray-700">run</div>
           <div className="p-2 bg-gray-100 rounded dark:bg-gray-700">been</div>
-          <div className="p-2 bg-gray-100 rounded dark:bg-gray-700">waxba</div>
+          <div className="p-2 bg-gray-100 rounded dark:bg-gray-700">waxba</div> */}
         </div>
       </div>
 
@@ -252,8 +258,8 @@ qor(magac)  // Outputs: Aaden
 qor(Magac)  // Outputs: Hodan
 
 // Keywords must be lowercase
-// DOOR x = 5   // This will cause an error
-// HadDii (true) { }  // This will cause an error`}
+DOOR x = 5   // This will cause an error
+HadDii (true) { }  // This will cause an error`}
           title="case-sensitivity.sop"
         />
       </div>
@@ -307,14 +313,14 @@ qor(Magac)  // Outputs: Hodan
       <DocNavigation
         className="mt-10"
         prevPage={{
-          href: "/docs/getting-started",
-          title: "Getting Started",
-          description: "Return to the introduction and setup guide",
+          href: '/docs/getting-started',
+          title: 'Getting Started',
+          description: 'Return to the introduction and setup guide',
         }}
         nextPage={{
-          href: "/docs/data-types",
-          title: "Data Types",
-          description: "Learn about variables and the different data types in Soplang",
+          href: '/docs/data-types',
+          title: 'Data Types',
+          description: 'Learn about variables and the different data types in Soplang',
         }}
       />
     </div>

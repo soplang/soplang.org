@@ -1,10 +1,10 @@
-import React from "react";
-import CodeWindow from "@/components/CodeWindow";
+import React from 'react';
+import CodeWindow from '@/components/CodeWindow';
 
 export const metadata = {
-  title: "Input and Output in Soplang",
+  title: 'Input and Output in Soplang',
   description:
-    "Learn about reading input from users and displaying output in the Soplang programming language.",
+    'Learn about reading input from users and displaying output in the Soplang programming language.',
 };
 
 export default function InputOutputPage() {
@@ -19,11 +19,11 @@ export default function InputOutputPage() {
 
       {/* Console Output */}
       <section id="console-output">
-
         <h3 className="mt-6 mb-4 text-xl font-bold">Basic Output</h3>
         <p className="mb-4">
-          The <code>qor</code> function is used to display text or values to the console. The name
-          comes from the Somali word "qor" which means "write".
+          The <code className="px-2 rounded-md bg-blue-400/35">qor</code> function is used to
+          display text or values to the console. The name comes from the Somali word "qor" which
+          means "write".
         </p>
 
         <CodeWindow
@@ -45,18 +45,19 @@ qor(name, "is", age, "years old")  // Prints: Ahmed is 25 years old`}
       <section id="console-input" className="mt-12">
         <h3 className="mt-6 mb-4 text-xl font-bold">User Input</h3>
         <p className="mb-4">
-          The <code>gelin()</code> function is used to read input from the user. It prompts the user
-          for input and returns the entered value as a string.
+          The <code className="px-2 rounded-md bg-blue-400/35">gelin()</code> function is used to
+          read input from the user. It prompts the user for input and returns the entered value as a
+          string.
         </p>
 
         <CodeWindow
           code={`// Basic input
-door magaca = gelin("Magacaaga qor: ")
-qor("Waad ku mahadsan tahay, " + magaca)
+door magaca = gelin("Magacaaga qor: ")  // Mohamed
+qor("Mahadsanid, " + magaca + "!")  //  Mahadsanid, Mohamed!
 
 // Converting input to numbers
-door da = abn(gelin("Da'daada qor: "))
-qor("Sannad kaddib waxaad noqon doontaa " + (da + 1))`}
+door da = abn(gelin("Da'daada qor: "))  // da' = 10
+qor("Sannad kaddib waxaad noqon doontaa " + (da + 1))   // da' = 11`}
           title="user_input.sop"
         />
       </section>

@@ -1,12 +1,11 @@
-import React from "react";
-import Link from "next/link";
-import CodeWindow from "@/components/CodeWindow";
-import DocNavigation from "@/components/DocNavigation";
+import React from 'react';
+import CodeWindow from '@/components/CodeWindow';
+import DocNavigation from '@/components/DocNavigation';
 
 export const metadata = {
-  title: "Conditional Statements in Soplang",
+  title: 'Conditional Statements in Soplang',
   description:
-    "Learn about if-else statements and decision making in the Soplang programming language.",
+    'Learn about if-else statements and decision making in the Soplang programming language.',
 };
 
 export default function ConditionalStatementsPage() {
@@ -62,8 +61,9 @@ export default function ConditionalStatementsPage() {
         </h2>
 
         <p className="mb-4">
-          The <code>haddii</code> statement executes a block of code if a specified condition is
-          true. The keyword <code>haddii</code> means "if" in Somali.
+          The <code className="px-1 rounded-md bg-blue-400/35">haddii</code> statement executes a
+          block of code if a specified condition is true. The keyword{' '}
+          <code className="px-1 rounded-md bg-blue-400/35">haddii</code> means "if" in Somali.
         </p>
 
         <CodeWindow
@@ -91,8 +91,9 @@ haddii qiime >= 60 && qiime < 90 {
         </h2>
 
         <p className="mb-4">
-          The <code>haddii-kale</code> statement executes one block of code if a condition is true
-          and another block if the condition is false. The keyword <code>kale</code> means "else" in
+          The <code className="px-1 rounded-md bg-blue-400/35">haddii-kale</code> statement executes
+          one block of code if a condition is true and another block if the condition is false. The
+          keyword <code className="px-1 rounded-md bg-blue-400/35">kale</code> means "else" in
           Somali.
         </p>
 
@@ -125,21 +126,22 @@ haddii xaqiiqo {
         </h2>
 
         <p className="mb-4">
-          The <code>haddii-kale-haddii</code> statement allows you to test multiple conditions in
-          sequence. In Soplang, this is written as <code>haddii ... kale haddii ... kale</code>.
+          The <code className="px-1 rounded-md bg-blue-400/35">haddii-kale-haddii</code> statement
+          allows you to test multiple conditions in sequence. In Soplang, this is written as{' '}
+          <code className="px-1 rounded-md bg-blue-400/35">haddii ... kale haddii ... kale</code>.
         </p>
 
         <CodeWindow
           code={`// Else-if statement
-door calaamad = 78
+door natiijo = 78
 
-haddii calaamad >= 90 {
+haddii natiijo >= 90 {
     qor("Darajada: A")
-} kale haddii calaamad >= 80 {
+} kale haddii natiijo >= 80 {
     qor("Darajada: B")
-} kale haddii calaamad >= 70 {
+} kale haddii natiijo >= 70 {
     qor("Darajada: C")
-} kale haddii calaamad >= 60 {
+} kale haddii natiijo >= 60 {
     qor("Darajada: D")
 } kale {
     qor("Darajada: F")
@@ -155,10 +157,11 @@ haddii calaamad >= 90 {
         </h2>
 
         <p className="mb-4">
-          The <code>doorasho</code> statement evaluates an expression, matching the expression's
-          value to a <code>xaalad</code> (case) clause, and executes the associated code. The
-          keyword
-          <code>doorasho</code> means "choice" in Somali.
+          The <code className="px-1 rounded-md bg-blue-400/35">doorasho</code> statement evaluates
+          an expression, matching the expression's value to a{' '}
+          <code className="px-1 rounded-md bg-blue-400/35">xaalad</code> (case) clause, and executes
+          the associated code. The keyword
+          <code className="px-1 rounded-md bg-blue-400/35">doorasho</code> means "choice" in Somali.
         </p>
 
         <CodeWindow
@@ -166,33 +169,33 @@ haddii calaamad >= 90 {
 door maalin = "Isniin"
 
 doorasho maalin {
-    xaalad "Isniin":
-        qor("Waa maalinta koowaad ee toddobaadka")
-        jebi
-    xaalad "Talaado":
-        qor("Waa maalinta labaad ee toddobaadka")
-        jebi
-    xaalad "Arbaco":
-        qor("Waa maalinta saddexaad ee toddobaadka")
-        jebi
-    xaalad "Khamiis":
-        qor("Waa maalinta afraad ee toddobaadka")
-        jebi
-    xaalad "Jimce":
-        qor("Waa maalinta shanaad ee toddobaadka")
-        jebi
-    xaalad kale:
-        qor("Waa fasax")
+  xaalad "Isniin":
+      qor("Waa maalinta koowaad ee toddobaadka")
+      jebi
+  xaalad "Talaado":
+      qor("Waa maalinta labaad ee toddobaadka")
+      jebi
+  xaalad "Arbaco":
+      qor("Waa maalinta saddexaad ee toddobaadka")
+      jebi
+  xaalad "Khamiis":
+      qor("Waa maalinta afraad ee toddobaadka")
+      jebi
+  xaalad "Jimce":
+      qor("Waa maalinta shanaad ee toddobaadka")
+      jebi
+  xaalad kale:
+      qor("Waa fasax")
 }  // Prints: "Waa maalinta koowaad ee toddobaadka" ("It's the first day of the week")`}
           title="switch_statements.sop"
         />
 
-        <div className="p-4 mb-6 bg-blue-100 rounded-lg dark:bg-blue-900/20">
+        <div className="p-4 my-6 bg-blue-100 rounded-lg dark:bg-blue-900/20">
           <h4 className="mb-2 font-bold">Note</h4>
           <p>
-            The <code>jebi</code> keyword (meaning "break" in Somali) is required to prevent
-            fall-through to the next case. Without it, execution would continue to the next case
-            regardless of whether it matches.
+            The <code className="px-1 rounded-md bg-blue-400/35">jebi</code> keyword (meaning
+            "break" in Somali) is required to prevent fall-through to the next case. Without it,
+            execution would continue to the next case regardless of whether it matches.
           </p>
         </div>
       </section>
@@ -204,7 +207,8 @@ doorasho maalin {
         </h2>
 
         <p className="mb-4">
-          The ternary operator is a shorthand way of writing an if-else statement. It takes three
+          The ternary operator is a shorthand way of writing an{' '}
+          <code className="px-1 rounded-md bg-blue-400/35">if-else</code> statement. It takes three
           operands: a condition, a result for true, and a result for false.
         </p>
 
@@ -244,8 +248,8 @@ haddii xaalad {
 }
 
 // Avoid this
-// haddii xaalad
-//    qor("Waa run")  // Error-prone if more lines are added later`}
+haddii xaalad
+  qor("Waa run")  // Error-prone if more lines are added later`}
               title="braces_practice.sop"
             />
           </li>
@@ -312,14 +316,14 @@ haddii !xaalad3 {
       <DocNavigation
         className="mt-12"
         prevPage={{
-          href: "/docs/operators",
-          title: "Operators",
-          description: "Return to operators in Soplang",
+          href: '/docs/operators',
+          title: 'Operators',
+          description: 'Return to operators in Soplang',
         }}
         nextPage={{
-          href: "/docs/loops",
-          title: "Loops",
-          description: "Learn about loops and iteration in Soplang",
+          href: '/docs/loops',
+          title: 'Loops',
+          description: 'Learn about loops and iteration in Soplang',
         }}
       />
     </div>
