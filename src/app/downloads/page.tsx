@@ -85,7 +85,7 @@ const downloads = [
       'Alternatively, use Homebrew: brew install soplang',
       "Open Terminal and type 'soplang --version' to verify installation",
     ],
-    downloadUrl: 'https://github.com/soplang/soplang/releases/download/v2.0.0/soplang-setup.exe',
+    downloadUrl: '/',
   },
   {
     os: 'Linux',
@@ -101,7 +101,7 @@ const downloads = [
       "Run './configure && make && sudo make install' from the extracted directory",
       "Verify installation with 'soplang --version'",
     ],
-    downloadUrl: 'https://github.com/soplang/soplang/releases/download/v2.0.0/soplang-setup.exe',
+    downloadUrl: '/',
   },
 ];
 
