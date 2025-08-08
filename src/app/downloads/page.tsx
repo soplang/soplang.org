@@ -151,9 +151,9 @@ export default function DownloadsPage() {
           </p>
         </div>
 
-        <div className="flex flex-col gap-8 lg:flex-row">
+        <div className="flex flex-col justify-between gap-8 lg:flex-row">
           {/* Main content */}
-          <div className="w-full lg:w-2/3">
+          <div className="w-full lg:w-[80%]">
             {/* Latest Version Info */}
             <div className="p-6 mb-12 rounded-lg bg-primary/10 dark:bg-primary/20">
               <div className="flex flex-col items-center justify-between md:flex-row">
@@ -176,6 +176,7 @@ export default function DownloadsPage() {
                 </Link>
               </div>
 
+              {/* Real Data - Coming from the GitHub MVP */}
               <div className="pt-6 mt-6 border-t border-primary/20">
                 <h3 className="mb-3 font-semibold">What's New in Soplang 2.0</h3>
                 <ul className="space-y-1 text-gray-700 list-disc list-inside dark:text-gray-300">
@@ -278,35 +279,39 @@ export default function DownloadsPage() {
                       </div>
                     </div>
 
-                    <div className="p-6">
-                      <h4 className="mb-4 font-semibold text-gray-900 dark:text-white">
-                        Installation Instructions:
-                      </h4>
-                      <ol className="mb-6 space-y-3 text-gray-600 list-decimal list-inside dark:text-gray-300">
-                        {download.instructions.map((instruction, index) => (
-                          <li key={index} className="pl-1">
-                            {instruction}
-                          </li>
-                        ))}
-                      </ol>
-                      <Link
-                        href={download.downloadUrl}
-                        className="flex items-center justify-center w-full py-3 text-base font-semibold text-center btn-primary"
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="w-5 h-5 mr-2"
-                          viewBox="0 0 20 20"
-                          fill="currentColor"
+                    <div className="flex flex-col h-full p-6">
+                      <div className="">
+                        <h4 className="mb-4 font-semibold text-gray-900 dark:text-white">
+                          Installation Instructions:
+                        </h4>
+                        <ol className="mb-6 space-y-3 text-gray-600 list-decimal list-inside dark:text-gray-300">
+                          {download.instructions.map((instruction, index) => (
+                            <li key={index} className="pl-1">
+                              {instruction}
+                            </li>
+                          ))}
+                        </ol>
+                      </div>
+                      <div className="">
+                        <Link
+                          href={download.downloadUrl}
+                          className="flex items-center justify-center w-full py-3 text-base font-semibold text-center btn-primary"
                         >
-                          <path
-                            fillRule="evenodd"
-                            d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
-                            clipRule="evenodd"
-                          />
-                        </svg>
-                        Download for {download.os}
-                      </Link>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="w-5 h-5 mr-2"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                          >
+                            <path
+                              fillRule="evenodd"
+                              d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
+                              clipRule="evenodd"
+                            />
+                          </svg>
+                          Download for {download.os}
+                        </Link>
+                      </div>
                     </div>
                   </div>
                 ))}
@@ -423,7 +428,7 @@ export default function DownloadsPage() {
           </div>
 
           {/* Sidebar */}
-          <div className="w-full lg:w-1/3 lg:pl-8">
+          <div className="hidden w-full h-fit md:flex lg:w-1/4 lg:pl-8">
             <div className="sticky top-24">
               {downloadSidebar.map((section, index) => (
                 <div key={index} className="mb-8">
@@ -449,7 +454,7 @@ export default function DownloadsPage() {
                 </div>
               ))}
 
-              <div className="p-6 rounded-lg bg-primary/10 dark:bg-primary/20">
+              <div className="rounded-lg p-y bg-primary/10 dark:bg-primary/20">
                 <h3 className="mb-4 text-lg font-bold text-gray-900 dark:text-white">Need Help?</h3>
                 <p className="mb-4 text-gray-600 dark:text-gray-300">
                   Having trouble with installation or setup? Check out our resources or reach out to
