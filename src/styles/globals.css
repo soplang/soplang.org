@@ -36,6 +36,8 @@ body {
   --footer-bg: #f2f2f2; /* Light gray */
   --nav-hover: #5085c1; /* Slightly lighter blue for hover */
   --border-color: #dbe2ef; /* Light blue-gray */
+  --accent: 0 0% 96.1%;
+  --accent-foreground: 0 0% 9%;
 
   /* Responsive spacing variables */
   --container-padding-mobile: 1rem;
@@ -56,6 +58,8 @@ body {
   --footer-bg: #2d3748; /* Matching header */
   --nav-hover: #5085c1; /* Same as primary */
   --border-color: #4a5568; /* Medium gray */
+  --accent: 0 0% 14.9%;
+  --accent-foreground: 0 0% 98%;
 }
 
 /* Base responsive typography */
@@ -89,6 +93,10 @@ img {
 }
 
 @layer components {
+  .nav-container {
+    @apply px-4 mx-auto sm:px-6 lg:px-8;
+  }
+
   .container-custom {
     @apply px-4 mx-auto max-w-7xl sm:px-6 lg:px-8;
   }

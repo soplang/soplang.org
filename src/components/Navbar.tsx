@@ -3,9 +3,11 @@
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import ThemeToggle from "./ThemeToggle";
 import Image from "next/image";
 import { FaArrowRight } from "react-icons/fa";
+import { ModeSwitcher } from "./ui/mode-switcher";
+import { Separator } from "./ui/separator";
+import { GitHubLink } from "./github-link";
 
 const navLinks = [
   { name: "Home", path: "/" },
@@ -42,17 +44,20 @@ const mockSuggestions = [
 export default function Navbar() {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(() => {
-    if (typeof window !== "undefined") {
-      return window.scrollY > 10;
-    }
-    return false;
-  });
+  const [scrolled, setScrolled] = useState(false); // Always start with false to match SSR
+  // const [mounted, setMounted] = useState(false); // Track if component is mounted
   const [searchTerm, setSearchTerm] = useState("");
   const [suggestions, setSuggestions] = useState<typeof mockSuggestions>([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
   const desktopSearchRef = useRef<HTMLDivElement>(null);
   const mobileSearchRef = useRef<HTMLDivElement>(null);
+
+  // Handle mounting state to prevent hydration mismatches
+  // useEffect(() => {
+  //   setMounted(true);
+  //   // Set initial scroll state after mounting
+  //   setScrolled(window.scrollY > 10);
+  // }, []);
 
   // Handle scroll effect
   useEffect(() => {
@@ -132,9 +137,9 @@ export default function Navbar() {
         <p className="text-white">
           Waxaan qoraynaa oon dib uhabeyn ku wadnaa docs oo af-soomaali ku qoran, ka qeybqaadasho
           raac lifaaqaan...
-          <Link href="https://www.soplang.org/contribute" className="text-blue-500 ml-2">
+          <Link href="https://www.soplang.org/contribute" className="ml-2 text-blue-500">
             Contribution guidelines
-            <FaArrowRight className="w-3 h-3 ml-1 inline-block" />
+            <FaArrowRight className="inline-block w-3 h-3 ml-1" />
           </Link>
         </p>
       </div>
@@ -144,8 +149,8 @@ export default function Navbar() {
         className="bg-[var(--header-bg)] text-white sticky top-0 z-50 border-b border-white/5 shadow-md"
         suppressHydrationWarning
       >
-        <div className="px-4 container-custom sm:px-6 lg:px-8" suppressHydrationWarning>
-          <div className="flex items-center justify-between h-16 md:h-20" suppressHydrationWarning>
+        <div className="container-custom max-w-[1440x] transition-all duration-300">
+          <div className="flex items-center justify-between h-16 md:h-20">
             {/* Logo */}
             <Link href="/" className="flex items-center mr-12 shrink-0 lg:mr-16">
               <div className="flex items-center">
@@ -171,10 +176,7 @@ export default function Navbar() {
             </Link>
 
             {/* Desktop Navigation */}
-            <div
-              className="hidden md:flex md:items-center md:space-x-8 lg:space-x-10"
-              suppressHydrationWarning
-            >
+            <div className="hidden md:flex md:items-center md:space-x-8 lg:space-x-10">
               {navLinks.map((link) => (
                 <Link
                   key={link.path}
@@ -189,13 +191,13 @@ export default function Navbar() {
             </div>
 
             {/* Search and Mobile Menu Button */}
-            <div className="flex items-center space-x-2 md:space-x-4" suppressHydrationWarning>
+            <div className="flex items-center space-x-2 md:space-x-4">
               <div className="hidden md:block" ref={desktopSearchRef}>
                 <div className="relative">
                   <input
                     type="text"
                     placeholder={searchPlaceholder}
-                    className="w-48 px-4 py-2 pr-10 text-sm text-white transition-all duration-200 rounded-md lg:w-64 bg-white/10 placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50"
+                    className="w-48 px-4 py-2 pr-10 text-sm text-white transition-all duration-200 rounded-md lg:w-64 bg-white/10 placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/20"
                     value={searchTerm}
                     onChange={handleSearchChange}
                     onKeyDown={handleSearch}
@@ -257,7 +259,9 @@ export default function Navbar() {
                 </div>
               </div>
 
-              <ThemeToggle />
+              {/* Conditionally render components after mounting to prevent hydration mismatches */}
+
+              <ModeSwitcher />
 
               {/* Mobile Menu Button */}
               <button
@@ -306,10 +310,9 @@ export default function Navbar() {
           className={`md:hidden transition-all duration-300 ease-in-out ${
             isMenuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0 overflow-hidden"
           }`}
-          suppressHydrationWarning
         >
           <div className="px-4 py-2 container-custom">
-            <div className="flex flex-col space-y-2" suppressHydrationWarning>
+            <div className="flex flex-col space-y-2">
               {navLinks.map((link) => (
                 <Link
                   key={link.path}
