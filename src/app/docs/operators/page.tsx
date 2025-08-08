@@ -1,18 +1,18 @@
-import React from 'react';
-import CodeWindow from '@/components/CodeWindow';
-import DocNavigation from '@/components/DocNavigation';
+import React from "react";
+import CodeWindow from "@/components/CodeWindow";
+import DocNavigation from "@/components/DocNavigation";
 
 export const metadata = {
-  title: 'Operators in Soplang',
+  title: "Operators in Soplang",
   description:
-    'Learn about arithmetic, comparison, logical, and other operators in the Soplang programming language.',
+    "Learn about arithmetic, comparison, logical, and other operators in the Soplang programming language.",
 };
 
 export default function OperatorsPage() {
   return (
     <div className="mb-12 prose prose-lg dark:prose-invert max-w-none">
       <h1 className="mb-8 text-3xl font-bold text-primary">Operators in Soplang</h1>
-      <p className="mb-8 text-xl lead">
+      <p className="mb-8 text-lg lead">
         Operators are special symbols that perform operations on variables and values. Soplang
         provides a comprehensive set of operators for arithmetic, comparison, logical operations,
         and more.
@@ -257,14 +257,14 @@ door right_shift = a >> 2 // 15 (00001111)`}
       <DocNavigation
         className="mt-12"
         prevPage={{
-          href: '/docs/strings',
-          title: 'Strings',
-          description: 'Return to string operations and formatting in Soplang',
+          href: "/docs/strings",
+          title: "Strings",
+          description: "Return to string operations and formatting in Soplang",
         }}
         nextPage={{
-          href: '/docs/conditional-statements',
-          title: 'Conditional Statements',
-          description: 'Learn about if-else statements and decision making in Soplang',
+          href: "/docs/conditional-statements",
+          title: "Conditional Statements",
+          description: "Learn about if-else statements and decision making in Soplang",
         }}
       />
     </div>

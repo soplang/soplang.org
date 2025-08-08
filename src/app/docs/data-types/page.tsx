@@ -1,12 +1,12 @@
-import React from 'react';
-import Link from 'next/link';
-import CodeWindow from '@/components/CodeWindow';
-import DocNavigation from '@/components/DocNavigation';
+import React from "react";
+import Link from "next/link";
+import CodeWindow from "@/components/CodeWindow";
+import DocNavigation from "@/components/DocNavigation";
 
 export const metadata = {
-  title: 'Soplang Data Types',
+  title: "Soplang Data Types",
   description:
-    'Learn about all data types available in the Soplang programming language, including primitives, collections, and custom types.',
+    "Learn about all data types available in the Soplang programming language, including primitives, collections, and custom types.",
 };
 
 export default function DataTypesPage() {
@@ -14,7 +14,7 @@ export default function DataTypesPage() {
     <div className="prose prose-lg dark:prose-invert max-w-none">
       <h1 className="mb-6 text-3xl font-bold text-primary">Data Types in Soplang</h1>
 
-      <p className="mb-6 text-xl lead">
+      <p className="mb-6 text-lg lead">
         Soplang provides a rich set of data types to represent different kinds of values. This guide
         covers all the built-in data types available in Soplang and how to use them effectively.
       </p>
@@ -64,8 +64,8 @@ export default function DataTypesPage() {
         </h3>
         <p className="mb-4">
           Soplang supports both integers and floating-point numbers. You can define a number
-          variable using either the dynamic{' '}
-          <code className="px-2 rounded-md bg-blue-400/35">door</code> keyword or the static{' '}
+          variable using either the dynamic{" "}
+          <code className="px-2 rounded-md bg-blue-400/35">door</code> keyword or the static{" "}
           <code className="px-2 rounded-md bg-blue-400/35">abn</code> keyword:
         </p>
 
@@ -90,7 +90,7 @@ qor(lambarka3 / lambarka1)  // Division: 2.38...
           Strings
         </h3>
         <p className="mb-4">
-          Strings in Soplang are sequences of characters. You can define strings using either single{' '}
+          Strings in Soplang are sequences of characters. You can define strings using either single{" "}
           <code className="px-1 mx-1 rounded-md bg-blue-400/35">'</code>
           or double quotes <br />
           <code className="px-1 rounded-md bg-blue-400/35">"</code> and manipulate them with various
@@ -126,10 +126,10 @@ qor(f"{magac1} v{version}")  // Outputs: Soplang v2.0`}
           Booleans
         </h3>
         <p className="mb-4">
-          Boolean values represent truth values with two possible states:{' '}
-          <code className="px-2 rounded-md bg-blue-400/35">run</code> (true) or{' '}
+          Boolean values represent truth values with two possible states:{" "}
+          <code className="px-2 rounded-md bg-blue-400/35">run</code> (true) or{" "}
           <code className="px-2 rounded-md bg-blue-400/35">been</code> (false). You can define
-          boolean variables using <code className="px-2 rounded-md bg-blue-400/35">door</code> or{' '}
+          boolean variables using <code className="px-2 rounded-md bg-blue-400/35">door</code> or{" "}
           <code className="px-1 rounded-md bg-blue-400/35">bool</code>:
         </p>
 
@@ -173,7 +173,7 @@ qor(x != y)  // true`}
         </h3>
         <p className="mb-4">
           Lists are ordered collections of items that can be of any type. You can define a list
-          using the <code className="px-1 rounded-md bg-blue-400/35">liis</code> keyword or use{' '}
+          using the <code className="px-1 rounded-md bg-blue-400/35">liis</code> keyword or use{" "}
           <code className="px-1 rounded-md bg-blue-400/35">door</code> with square brackets:
         </p>
 
@@ -209,7 +209,7 @@ qor(magacyada.dherer())  // Outputs: 4
         </h3>
         <p className="mb-4">
           Dictionaries are collections of key-value pairs where each key must be unique. You can
-          define a dictionary using{' '}
+          define a dictionary using{" "}
           <code className="px-2 mx-1 rounded-md bg-blue-400/35">door</code> with curly braces or
           using the <code className="px-2 mx-1 rounded-md bg-blue-400/35">shey</code> keyword:
         </p>
@@ -258,14 +258,14 @@ qor(luuqad.dherer())  // Outputs: 4`}
       <DocNavigation
         className="mt-10"
         prevPage={{
-          href: '/docs/syntax-basics',
-          title: 'Syntax Basics',
-          description: 'Return to the fundamental syntax of Soplang',
+          href: "/docs/syntax-basics",
+          title: "Syntax Basics",
+          description: "Return to the fundamental syntax of Soplang",
         }}
         nextPage={{
-          href: '/docs/variables',
-          title: 'Variables',
-          description: 'Learn more about variable declaration and scope',
+          href: "/docs/variables",
+          title: "Variables",
+          description: "Learn more about variable declaration and scope",
         }}
       />
     </div>

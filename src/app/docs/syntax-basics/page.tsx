@@ -1,12 +1,12 @@
-import React from 'react';
-import Link from 'next/link';
-import CodeWindow from '@/components/CodeWindow';
-import DocNavigation from '@/components/DocNavigation';
+import React from "react";
+import Link from "next/link";
+import CodeWindow from "@/components/CodeWindow";
+import DocNavigation from "@/components/DocNavigation";
 
 export const metadata = {
-  title: 'Soplang Syntax Basics',
+  title: "Soplang Syntax Basics",
   description:
-    'Learn the fundamental syntax of Soplang, including statements, comments, operators, and code structure.',
+    "Learn the fundamental syntax of Soplang, including statements, comments, operators, and code structure.",
 };
 
 export default function SyntaxBasicsPage() {
@@ -14,7 +14,7 @@ export default function SyntaxBasicsPage() {
     <div className="prose prose-lg dark:prose-invert max-w-none">
       <h1 className="mb-6 text-3xl font-bold text-primary">Soplang Syntax Basics</h1>
 
-      <p className="mb-6 text-xl lead">
+      <p className="mb-6 text-lg lead">
         Understanding the basic syntax elements of Soplang is the first step to becoming proficient
         with this Programming language. This guide covers the fundamental building blocks of Soplang
         code.
@@ -313,14 +313,14 @@ HadDii (true) { }  // This will cause an error`}
       <DocNavigation
         className="mt-10"
         prevPage={{
-          href: '/docs/getting-started',
-          title: 'Getting Started',
-          description: 'Return to the introduction and setup guide',
+          href: "/docs/installation",
+          title: "Installation",
+          description: "How to install Soplang on your system",
         }}
         nextPage={{
-          href: '/docs/data-types',
-          title: 'Data Types',
-          description: 'Learn about variables and the different data types in Soplang',
+          href: "/docs/input-and-output",
+          title: "Input & Output",
+          description: "Input and Outputs in Soplang",
         }}
       />
     </div>

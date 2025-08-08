@@ -1,17 +1,18 @@
-import React from 'react';
-import CodeWindow from '@/components/CodeWindow';
+import React from "react";
+import CodeWindow from "@/components/CodeWindow";
+import DocNavigation from "@/components/DocNavigation";
 
 export const metadata = {
-  title: 'Input and Output in Soplang',
+  title: "Input and Output in Soplang",
   description:
-    'Learn about reading input from users and displaying output in the Soplang programming language.',
+    "Learn about reading input from users and displaying output in the Soplang programming language.",
 };
 
 export default function InputOutputPage() {
   return (
     <div className="mb-12 prose prose-lg dark:prose-invert max-w-none">
       <h1 className="mb-8 text-3xl font-bold text-primary">Input and Output in Soplang</h1>
-      <p className="mb-8 text-xl lead">
+      <p className="mb-8 text-lg lead">
         Input and output operations are fundamental to any programming language. Soplang provides
         simple and intuitive ways to interact with users through the console and handle file
         operations.
@@ -61,6 +62,21 @@ qor("Sannad kaddib waxaad noqon doontaa " + (da + 1))   // da' = 11`}
           title="user_input.sop"
         />
       </section>
+
+      {/* Navigation */}
+      <DocNavigation
+        className="mt-10"
+        prevPage={{
+          href: "/docs/syntax-basics",
+          title: "Syntax Basics",
+          description: "Return to the introduction and setup guide",
+        }}
+        nextPage={{
+          href: "/docs/variables",
+          title: "Variables",
+          description: "Learn about variables and the different data types in Soplang",
+        }}
+      />
     </div>
   );
 }

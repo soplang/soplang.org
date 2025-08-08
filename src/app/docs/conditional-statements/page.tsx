@@ -1,18 +1,18 @@
-import React from 'react';
-import CodeWindow from '@/components/CodeWindow';
-import DocNavigation from '@/components/DocNavigation';
+import React from "react";
+import CodeWindow from "@/components/CodeWindow";
+import DocNavigation from "@/components/DocNavigation";
 
 export const metadata = {
-  title: 'Conditional Statements in Soplang',
+  title: "Conditional Statements in Soplang",
   description:
-    'Learn about if-else statements and decision making in the Soplang programming language.',
+    "Learn about if-else statements and decision making in the Soplang programming language.",
 };
 
 export default function ConditionalStatementsPage() {
   return (
     <div className="mb-12 prose prose-lg dark:prose-invert max-w-none">
       <h1 className="mb-8 text-3xl font-bold text-primary">Conditional Statements in Soplang</h1>
-      <p className="mb-8 text-xl lead">
+      <p className="mb-8 text-lg lead">
         Conditional statements allow your program to make decisions based on conditions. Soplang
         provides intuitive Somali-first keywords for conditional logic.
       </p>
@@ -61,9 +61,9 @@ export default function ConditionalStatementsPage() {
         </h2>
 
         <p className="mb-4">
-          The <code className="px-1 rounded-md bg-blue-400/35">haddii</code> statement executes a
-          block of code if a specified condition is true. The keyword{' '}
-          <code className="px-1 rounded-md bg-blue-400/35">haddii</code> means "if" in Somali.
+          The <code className="px-1 rounded-md bg-blue-400/20">haddii</code> statement executes a
+          block of code if a specified condition is true. The keyword{" "}
+          <code className="px-1 rounded-md bg-blue-400/20">haddii</code> means "if" in Somali.
         </p>
 
         <CodeWindow
@@ -91,9 +91,9 @@ haddii qiime >= 60 && qiime < 90 {
         </h2>
 
         <p className="mb-4">
-          The <code className="px-1 rounded-md bg-blue-400/35">haddii-kale</code> statement executes
+          The <code className="px-1 rounded-md bg-blue-400/20">haddii-kale</code> statement executes
           one block of code if a condition is true and another block if the condition is false. The
-          keyword <code className="px-1 rounded-md bg-blue-400/35">kale</code> means "else" in
+          keyword <code className="px-1 rounded-md bg-blue-400/20">kale</code> means "else" in
           Somali.
         </p>
 
@@ -126,9 +126,9 @@ haddii xaqiiqo {
         </h2>
 
         <p className="mb-4">
-          The <code className="px-1 rounded-md bg-blue-400/35">haddii-kale-haddii</code> statement
-          allows you to test multiple conditions in sequence. In Soplang, this is written as{' '}
-          <code className="px-1 rounded-md bg-blue-400/35">haddii ... kale haddii ... kale</code>.
+          The <code className="px-1 rounded-md bg-blue-400/20">haddii-kale-haddii</code> statement
+          allows you to test multiple conditions in sequence. In Soplang, this is written as{" "}
+          <code className="px-1 rounded-md bg-blue-400/20">haddii ... kale haddii ... kale</code>.
         </p>
 
         <CodeWindow
@@ -157,11 +157,11 @@ haddii natiijo >= 90 {
         </h2>
 
         <p className="mb-4">
-          The <code className="px-1 rounded-md bg-blue-400/35">doorasho</code> statement evaluates
-          an expression, matching the expression's value to a{' '}
-          <code className="px-1 rounded-md bg-blue-400/35">xaalad</code> (case) clause, and executes
+          The <code className="px-1 rounded-md bg-blue-400/20">doorasho</code> statement evaluates
+          an expression, matching the expression's value to a{" "}
+          <code className="px-1 rounded-md bg-blue-400/20">xaalad</code> (case) clause, and executes
           the associated code. The keyword
-          <code className="px-1 rounded-md bg-blue-400/35">doorasho</code> means "choice" in Somali.
+          <code className="px-1 rounded-md bg-blue-400/20">doorasho</code> means "choice" in Somali.
         </p>
 
         <CodeWindow
@@ -193,7 +193,7 @@ doorasho maalin {
         <div className="p-4 my-6 bg-blue-100 rounded-lg dark:bg-blue-900/20">
           <h4 className="mb-2 font-bold">Note</h4>
           <p>
-            The <code className="px-1 rounded-md bg-blue-400/35">jebi</code> keyword (meaning
+            The <code className="px-1 rounded-md bg-blue-400/20">jebi</code> keyword (meaning
             "break" in Somali) is required to prevent fall-through to the next case. Without it,
             execution would continue to the next case regardless of whether it matches.
           </p>
@@ -207,9 +207,11 @@ doorasho maalin {
         </h2>
 
         <p className="mb-4">
-          The ternary operator is a shorthand way of writing an{' '}
-          <code className="px-1 rounded-md bg-blue-400/35">if-else</code> statement. It takes three
-          operands: a condition, a result for true, and a result for false.
+          The ternary operator is a shorthand way of writing an
+          <code className="px-1 rounded-md bg-blue-400/20">if-else</code> statement. It takes three
+          operands :- <br /> <code className="px-1 rounded-md bg-blue-400/20">a condition</code>,
+          <code className="px-2 mx-3 rounded-md bg-blue-400/20">a result for true</code>, and
+          <code className="px-2 mx-3 rounded-md bg-blue-400/20">a result for false</code>.
         </p>
 
         <CodeWindow
@@ -316,14 +318,14 @@ haddii !xaalad3 {
       <DocNavigation
         className="mt-12"
         prevPage={{
-          href: '/docs/operators',
-          title: 'Operators',
-          description: 'Return to operators in Soplang',
+          href: "/docs/operators",
+          title: "Operators",
+          description: "Return to operators in Soplang",
         }}
         nextPage={{
-          href: '/docs/loops',
-          title: 'Loops',
-          description: 'Learn about loops and iteration in Soplang',
+          href: "/docs/loops",
+          title: "Loops",
+          description: "Learn about loops and iteration in Soplang",
         }}
       />
     </div>

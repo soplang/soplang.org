@@ -1,5 +1,4 @@
 import React from "react";
-import Link from "next/link";
 import CodeWindow from "@/components/CodeWindow";
 import DocNavigation from "@/components/DocNavigation";
 
@@ -14,13 +13,13 @@ export default function FunctionsPage() {
     <div className="prose prose-lg dark:prose-invert max-w-none">
       <h1 className="mb-6 text-3xl font-bold text-primary">Functions in Soplang</h1>
 
-      <p className="mb-6 text-xl lead">
+      <p className="mb-6 text-lg lead">
         Functions are reusable blocks of code that perform specific tasks. In Soplang, functions are
         defined using the <code>howl</code> keyword and can take parameters, return values, and be
         composed in various ways.
       </p>
 
-      <CodeWindow
+      {/* <CodeWindow
         code={`// Basic function definition
 howl greet() {
     qor("Hello, World!")
@@ -29,11 +28,11 @@ howl greet() {
 // Calling the function
 greet()  // Outputs: "Hello, World!"`}
         title="basic_function.sop"
-      />
+      /> */}
 
       <nav className="p-4 my-8 rounded-lg bg-gray-50 dark:bg-gray-800">
         <h2 className="mb-3 text-lg font-semibold">On This Page</h2>
-        <ul className="space-y-1">
+        <ul className="space-y-1 list-disc list-inside">
           <li>
             <a href="#function-basics" className="text-primary hover:underline">
               Function Basics
@@ -77,7 +76,8 @@ greet()  // Outputs: "Hello, World!"`}
           Function Basics
         </h2>
         <p className="mb-4">
-          In Soplang, functions are defined using the <code>howl</code> keyword, followed by the
+          In Soplang, functions are defined using the{" "}
+          <code className="px-2 rounded-md bg-blue-400/20">howl</code> keyword, followed by the
           function name, parentheses for parameters, and a block of code enclosed in curly braces:
         </p>
 
@@ -92,9 +92,10 @@ greet()  // Outputs: "Hello, World!"`}
           title="basic_function.sop"
         />
 
-        <p className="mt-4 mb-4">
-          Functions should be named according to what they do, typically using verbs or verb
-          phrases. In Soplang, function names conventionally use camelCase:
+        <p className="mt-8 mb-8">
+          Functions should be named according to what they do, typically using{" "}
+          <strong>verbs</strong> or <strong>verb phrases</strong>. In Soplang, function names
+          conventionally use <code className="px-2 rounded-md bg-blue-400/15">camelCase</code>
         </p>
 
         <CodeWindow
@@ -118,7 +119,7 @@ howl addData(data, section) {
         <h2 className="mb-4 text-2xl font-bold" id="parameters">
           Parameters and Arguments
         </h2>
-        <p className="mb-4">
+        <p className="mb-8">
           Functions can accept parameters, which are variables listed in the function definition.
           When you call a function with specific values, those values are called arguments.
         </p>
@@ -136,7 +137,7 @@ greet("Halima")  // Outputs: "Hello, Halima!"`}
           title="basic_parameters.sop"
         />
 
-        <h3 className="mt-6 mb-3 text-xl font-semibold">Multiple Parameters</h3>
+        <h3 className="mt-8 mb-3 text-xl font-semibold">Multiple Parameters</h3>
         <CodeWindow
           code={`// Function with multiple parameters
 howl add(num1, num2, num3) {
@@ -148,8 +149,8 @@ qor(result)  // Outputs: 60`}
           title="multiple_parameters.sop"
         />
 
-        <h3 className="mt-6 mb-3 text-xl font-semibold">Default Parameter Values</h3>
-        <p className="mb-4">
+        <h3 className="mt-8 mb-3 text-xl font-semibold">Default Parameter Values</h3>
+        <p className="mb-6">
           You can provide default values for parameters, which are used if no argument is provided:
         </p>
 
@@ -165,7 +166,7 @@ qor(calculateTax(1000, 10))  // Uses provided 10%, Outputs: 100`}
           title="default_parameters.sop"
         />
 
-        <h3 className="mt-6 mb-3 text-xl font-semibold">Named Arguments</h3>
+        <h3 className="mt-10 mb-3 text-xl font-semibold">Named Arguments</h3>
         <p className="mb-4">
           For better readability, especially with multiple parameters, you can use named arguments:
         </p>
@@ -200,8 +201,8 @@ door anotherArticle = createArticle(
           title="named_arguments.sop"
         />
 
-        <h3 className="mt-6 mb-3 text-xl font-semibold">Variable Number of Arguments</h3>
-        <p className="mb-4">
+        <h3 className="mt-8 mb-3 text-xl font-semibold">Variable Number of Arguments</h3>
+        <p className="mb-8">
           You can create functions that accept a variable number of arguments using the rest
           parameter syntax (denoted by <code>...</code>):
         </p>
@@ -224,15 +225,17 @@ qor(addAll())  // Outputs: 0`}
       </div>
 
       <div className="mb-12">
-        <h2 className="mb-4 text-2xl font-bold" id="return-values">
+        <h2 className="mb-4 text-xl font-bold" id="return-values">
           Return Values
         </h2>
-        <p className="mb-4">
-          Functions can return values using the <code>soo_celi</code> keyword. If no return
-          statement is specified, the function returns <code>waxba</code> (null) by default.
+        <p className="mb-8">
+          Functions can return values using the{" "}
+          <code className="px-2 rounded-md bg-blue-400/20">soo_celi</code> keyword. If no return
+          statement is specified, the function returns{" "}
+          <code className="px-2 rounded-md bg-blue-400/20">waxba</code> (null) by default.
         </p>
 
-        <h3 className="mb-3 text-xl font-semibold">Basic Return Values</h3>
+        <h3 className="mb-3 text-lg font-semibold">Basic Return Values</h3>
         <CodeWindow
           code={`// Function returning a value
 howl square(num) {
@@ -253,7 +256,7 @@ qor(output)  // Outputs: null`}
           title="return_values.sop"
         />
 
-        <h3 className="mt-6 mb-3 text-xl font-semibold">Early Returns</h3>
+        <h3 className="mt-8 mb-3 text-xl font-semibold">Early Returns</h3>
         <CodeWindow
           code={`// Early return example
 howl getDivision(a, b) {
@@ -331,7 +334,7 @@ qor(functionArea)  // Outputs: 12`}
           title="function_scope.sop"
         />
 
-        <h3 className="mt-6 mb-3 text-xl font-semibold">Closures</h3>
+        {/* <h3 className="mt-6 mb-3 text-xl font-semibold">Closures</h3>
         <p className="mb-4">
           Functions in Soplang can form closures, which means they can remember the environment in
           which they were created:
@@ -360,10 +363,10 @@ qor(counter2())  // Outputs: 6
 qor(counter1())  // Outputs: 13 - counter1 maintained its own state
 qor(counter2())  // Outputs: 7 - counter2 maintained its own state`}
           title="closures.sop"
-        />
+        /> */}
       </div>
 
-      <div className="mb-12">
+      {/* <div className="mb-12">
         <h2 className="mb-4 text-2xl font-bold" id="anonymous-functions">
           Anonymous Functions
         </h2>
@@ -526,9 +529,9 @@ qor(inorder_traverse(root))  // Outputs: [4, 2, 5, 1, 6, 3, 7]`}
           overflow errors. For deep recursion, consider using tail-call optimization or iterative
           approaches.
         </p>
-      </div>
+      </div> */}
 
-      <div className="p-6 mt-10 rounded-lg bg-blue-50 dark:bg-blue-900/20">
+      {/* <div className="p-6 mt-10 rounded-lg bg-blue-50 dark:bg-blue-900/20">
         <h2 className="mb-3 text-xl font-bold">Best Practices for Functions</h2>
         <ul className="space-y-2">
           <li className="flex items-start">
@@ -574,18 +577,18 @@ qor(inorder_traverse(root))  // Outputs: [4, 2, 5, 1, 6, 3, 7]`}
             </p>
           </li>
         </ul>
-      </div>
+      </div> */}
 
       <DocNavigation
         className="mt-10"
         prevPage={{
-          href: "/docs/variables",
-          title: "Variables",
+          href: "/docs/loops",
+          title: "Loops",
           description: "Return to variable declarations and scope",
         }}
         nextPage={{
-          href: "/docs/control-flow",
-          title: "Control Flow",
+          href: "/docs/built-in-functions",
+          title: "Built-in Functions",
           description: "Learn about conditionals and loops for controlling program flow",
         }}
       />

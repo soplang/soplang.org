@@ -1,11 +1,11 @@
-import React from 'react';
-import CodeWindow from '@/components/CodeWindow';
-import DocNavigation from '@/components/DocNavigation';
+import React from "react";
+import CodeWindow from "@/components/CodeWindow";
+import DocNavigation from "@/components/DocNavigation";
 
 export const metadata = {
-  title: 'Variables in Soplang',
+  title: "Variables in Soplang",
   description:
-    'Learn about variable declaration, scoping, naming conventions, and best practices for using variables in the Soplang programming language.',
+    "Learn about variable declaration, scoping, naming conventions, and best practices for using variables in the Soplang programming language.",
 };
 
 export default function VariablesPage() {
@@ -13,7 +13,7 @@ export default function VariablesPage() {
     // <div className="py-12 container-custom">
     <div className="mb-12 prose prose-lg dark:prose-invert max-w-none">
       <h1 className="mb-8 text-3xl font-bold text-primary">Soplang Variables</h1>
-      <p className="mb-8 text-xl lead">
+      <p className="mb-8 text-lg lead">
         Variables in Soplang are containers for storing data values. Soplang offers the flexibility
         of both dynamic and static typing, allowing you to choose the approach that best fits your
         needs while maintaining type safety.
@@ -59,13 +59,13 @@ export default function VariablesPage() {
 
         <h3 className="mt-6 mb-4 text-xl font-bold">Dynamic Typing</h3>
         <p className="mb-4">
-          In Soplang, you can declare variables with dynamic typing using the{' '}
+          In Soplang, you can declare variables with dynamic typing using the{" "}
           <code className="px-2 rounded-md bg-blue-400/35">door</code> keyword. The type of the
           variable is determined by the value assigned to it.
         </p>
 
         <p className="mb-4">
-          The <code className="px-2 rounded-md bg-blue-400/35">door</code> keyword is short for{' '}
+          The <code className="px-2 rounded-md bg-blue-400/35">door</code> keyword is short for{" "}
           <code className="px-2 rounded-md bg-blue-400/35">doorsoome</code>, which means "variable"
           in Somali. This abbreviation was chosen to make the code more concise while preserving its
           Somali roots.
@@ -203,7 +203,7 @@ abn wrong = "text"  // Error: Cannot assign string to abn`}
 
         <p className="mb-4">
           Constants are variables whose values cannot be changed after initialization. In Soplang,
-          you declare constants using the{' '}
+          you declare constants using the{" "}
           <code className="px-2 rounded-md bg-blue-400/35">madoor</code> keyword.
         </p>
 
@@ -230,14 +230,14 @@ qor("Area: " + area)  // Prints "Area: 78.53975"`}
       <DocNavigation
         className="mt-12"
         prevPage={{
-          href: '/docs/data-types',
-          title: 'Data Types',
-          description: 'Return to data types in Soplang',
+          href: "/docs/input-and-output",
+          title: "Functions",
+          description: "Learn about defining and using functions in Soplang",
         }}
         nextPage={{
-          href: '/docs/functions',
-          title: 'Functions',
-          description: 'Learn about defining and using functions in Soplang',
+          href: "/docs/data-types",
+          title: "Data Types",
+          description: "Data types in Soplang",
         }}
       />
     </div>

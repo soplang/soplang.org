@@ -13,7 +13,7 @@ export default function BuiltInFunctionsPage() {
   return (
     <div className="mb-12 prose prose-lg dark:prose-invert max-w-none">
       <h1 className="mb-8 text-3xl font-bold text-primary">Built-in Functions in Soplang</h1>
-      <p className="mb-8 text-xl lead">
+      <p className="mb-8 text-lg lead">
         Soplang provides a rich set of built-in functions that help you perform common tasks without
         having to write the code yourself. These functions are always available and can be called
         directly in your code.
@@ -66,16 +66,14 @@ export default function BuiltInFunctionsPage() {
         <h2 className="text-2xl font-bold mb-6 pb-2 border-b border-[var(--border-color)]">
           Input and Output Functions
         </h2>
-
         <p className="mb-4">
           These functions allow you to interact with the user and display information.
         </p>
-
-        <h3 className="mb-2 text-xl font-semibold">qor() - Print</h3>
-        <p className="mb-4">
-          Displays values to the console without a newline at the end.
-        </p>
-
+        <span className="flex items-center mt-6 mb-4">
+          <code className="px-2 mr-2 text-xl font-semibold rounded-md bg-blue-400/20">qor()</code> -{" "}
+          <h3 className="ml-2 text-xl font-semibold">Print</h3>
+        </span>
+        <p className="mt-4 mb-2">Displays values to the console without a newline at the end.</p>
         <CodeWindow
           code={`// Basic printing
 qor("Hello")      // Displays: Hello
@@ -86,11 +84,8 @@ qor(true)        // Displays: true
 qor("The answer is", 42)  // Displays: The answer is 42`}
           title="print_examples.sop"
         />
-
-        <h3 className="mt-6 mb-2 text-xl font-semibold">qorln() - Print Line</h3>
-        <p className="mb-4">
-          Displays values to the console with a newline at the end.
-        </p>
+        {/* <h3 className="mt-6 mb-2 text-xl font-semibold">qorln() - Print Line</h3>
+        <p className="mb-4">Displays values to the console with a newline at the end.</p>
 
         <CodeWindow
           code={`// Printing with newline
@@ -100,13 +95,15 @@ qorln("World")    // Displays: World (on next line)
 // Multiple values
 qorln("Name:", "Ahmed", "Age:", 25)  // Displays: Name: Ahmed Age: 25 (with newline)`}
           title="println_examples.sop"
-        />
-
-        <h3 className="mt-6 mb-2 text-xl font-semibold">gelin() - Input</h3>
+        /> */}
+        {/* <h3 className="mt-6 mb-2 text-xl font-semibold">gelin() - Input</h3> */}
+        <span className="flex items-center mt-6 mb-4">
+          <code className="px-2 mr-2 text-xl font-semibold rounded-md bg-blue-400/20">gelin()</code>{" "}
+          - <h3 className="ml-2 text-xl font-semibold">Input</h3>
+        </span>
         <p className="mb-4">
           Prompts the user for input and returns the entered value as a string.
         </p>
-
         <CodeWindow
           code={`// Basic input
 door name = gelin("Enter your name: ")
@@ -130,10 +127,14 @@ qorln("In 10 years, you will be", age + 10, "years old")`}
           Soplang provides several built-in functions for manipulating strings.
         </p>
 
-        <h3 className="mb-2 text-xl font-semibold">dherer() - Length</h3>
-        <p className="mb-4">
-          Returns the length of a string or collection.
-        </p>
+        {/* <h3 className="mb-2 text-xl font-semibold">dherer() - Length</h3> */}
+        <span className="flex items-center mt-6 mb-4">
+          <code className="px-2 mr-2 text-xl font-semibold rounded-md bg-blue-400/20">
+            dherer()
+          </code>{" "}
+          - <h3 className="ml-2 text-xl font-semibold">Length</h3>
+        </span>
+        <p className="mb-4">Returns the length of a string or collection.</p>
 
         <CodeWindow
           code={`door greeting = "Hello, World!"
@@ -144,7 +145,7 @@ door count = dherer(numbers)    // 5`}
           title="length_examples.sop"
         />
 
-        <h3 className="mt-6 mb-2 text-xl font-semibold">String Manipulation Functions</h3>
+        <h3 className="mt-10 mb-4 text-xl font-semibold">String Manipulation Functions</h3>
 
         <CodeWindow
           code={`door text = "Soplang Programming"
@@ -217,9 +218,7 @@ door random_range = random_int(1, 10)  // Random integer between 1 and 10`}
           Type Conversion Functions
         </h2>
 
-        <p className="mb-4">
-          These functions allow you to convert between different data types.
-        </p>
+        <p className="mb-4">These functions allow you to convert between different data types.</p>
 
         <CodeWindow
           code={`// String to number conversions
@@ -286,14 +285,12 @@ door count = ku_tiri(fruits, "apple")  // count = 2`}
       </section>
 
       {/* Utility Functions */}
-      <section id="utility-functions" className="mt-12">
+      {/* <section id="utility-functions" className="mt-12">
         <h2 className="text-2xl font-bold mb-6 pb-2 border-b border-[var(--border-color)]">
           Utility Functions
         </h2>
 
-        <p className="mb-4">
-          These functions provide various utility operations in Soplang.
-        </p>
+        <p className="mb-4">These functions provide various utility operations in Soplang.</p>
 
         <CodeWindow
           code={`// Type checking
@@ -317,10 +314,10 @@ door exists = file_jira("/path/to/file.txt")  // Returns true if file exists
 door home_dir = deegaan_hel("HOME")  // Returns value of HOME environment variable`}
           title="utility_functions.sop"
         />
-      </section>
+      </section> */}
 
       {/* Best Practices */}
-      <section id="best-practices" className="mt-12">
+      {/* <section id="best-practices" className="mt-12">
         <h2 className="text-2xl font-bold mb-6 pb-2 border-b border-[var(--border-color)]">
           Best Practices
         </h2>
@@ -346,9 +343,7 @@ haday {
           </li>
           <li className="mt-6">
             <h3 className="mb-2 text-xl font-bold">Function Composition</h3>
-            <p>
-              Combine built-in functions to create more powerful operations.
-            </p>
+            <p>Combine built-in functions to create more powerful operations.</p>
             <CodeWindow
               code={`// Combining functions for more complex operations
 door text = "  Hello, World!  "
@@ -362,9 +357,7 @@ door words = kala_jar(yar_dhig(trim(text)), " ")
           </li>
           <li className="mt-6">
             <h3 className="mb-2 text-xl font-bold">Performance Considerations</h3>
-            <p>
-              Be mindful of performance when using functions in loops or with large data sets.
-            </p>
+            <p>Be mindful of performance when using functions in loops or with large data sets.</p>
             <CodeWindow
               code={`// Less efficient: Computing length inside loop
 door text = "Hello, World!"
@@ -383,7 +376,7 @@ ku_celi i = 0; i < len; i++ {
             />
           </li>
         </ul>
-      </section>
+      </section> */}
 
       {/* Navigation */}
       <DocNavigation
@@ -393,11 +386,11 @@ ku_celi i = 0; i < len; i++ {
           title: "Operators",
           description: "Return to operators in Soplang",
         }}
-        nextPage={{
-          href: "/docs/error-handling",
-          title: "Error Handling",
-          description: "Learn about error handling in Soplang",
-        }}
+        // nextPage={{
+        //   href: "/docs/error-handling",
+        //   title: "Error Handling",
+        //   description: "Learn about error handling in Soplang",
+        // }}
       />
     </div>
   );

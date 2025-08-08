@@ -1,18 +1,18 @@
-import React from 'react';
-import CodeWindow from '@/components/CodeWindow';
-import DocNavigation from '@/components/DocNavigation';
+import React from "react";
+import CodeWindow from "@/components/CodeWindow";
+import DocNavigation from "@/components/DocNavigation";
 
 export const metadata = {
-  title: 'Numbers in Soplang',
+  title: "Numbers in Soplang",
   description:
-    'Learn about numeric data types, operations, and functions in the Soplang programming language.',
+    "Learn about numeric data types, operations, and functions in the Soplang programming language.",
 };
 
 export default function NumbersPage() {
   return (
     <div className="mb-12 prose prose-lg dark:prose-invert max-w-none">
       <h1 className="mb-8 text-3xl font-bold text-primary">Numbers in Soplang</h1>
-      <p className="mb-8 text-xl lead">
+      <p className="mb-8 text-lg lead">
         Soplang supports various numeric types and provides a comprehensive set of operations and
         functions for working with numbers. This guide covers the essential aspects of numeric
         operations in Soplang.
@@ -67,8 +67,8 @@ export default function NumbersPage() {
         </h2>
 
         <p className="mb-4">
-          Soplang supports two main numeric types: integers{' '}
-          <code className="px-1 rounded-md bg-blue-400/35">abn</code> and floating-point numbers{' '}
+          Soplang supports two main numeric types: integers{" "}
+          <code className="px-1 rounded-md bg-blue-400/35">abn</code> and floating-point numbers{" "}
           <code className="px-1 rounded-md bg-blue-400/35">toban</code>. The names come from the
           Somali words "abyoone" (number) and "tobanle" (decimal).
         </p>
@@ -246,14 +246,14 @@ g **= 8             // g = g ** 8, now g is 256`}
       <DocNavigation
         className="mt-12"
         prevPage={{
-          href: '/docs/data-types',
-          title: 'Data Types',
-          description: 'Return to data types in Soplang',
+          href: "/docs/data-types",
+          title: "Data Types",
+          description: "Return to data types in Soplang",
         }}
         nextPage={{
-          href: '/docs/strings',
-          title: 'Strings',
-          description: 'Learn about string operations and formatting in Soplang',
+          href: "/docs/strings",
+          title: "Strings",
+          description: "Learn about string operations and formatting in Soplang",
         }}
       />
     </div>

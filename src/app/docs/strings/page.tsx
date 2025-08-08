@@ -1,18 +1,18 @@
-import React from 'react';
-import CodeWindow from '@/components/CodeWindow';
-import DocNavigation from '@/components/DocNavigation';
+import React from "react";
+import CodeWindow from "@/components/CodeWindow";
+import DocNavigation from "@/components/DocNavigation";
 
 export const metadata = {
-  title: 'Strings in Soplang',
+  title: "Strings in Soplang",
   description:
-    'Learn about string operations, formatting, and manipulation in the Soplang programming language.',
+    "Learn about string operations, formatting, and manipulation in the Soplang programming language.",
 };
 
 export default function StringsPage() {
   return (
     <div className="mb-12 prose prose-lg dark:prose-invert max-w-none">
       <h1 className="mb-8 text-3xl font-bold text-primary">Strings in Soplang</h1>
-      <p className="mb-8 text-xl lead">
+      <p className="mb-8 text-lg lead">
         Strings in Soplang are sequences of characters used to represent text. Soplang provides a
         rich set of operations and methods for working with strings, making text manipulation
         intuitive and powerful.
@@ -62,9 +62,9 @@ export default function StringsPage() {
         </h2>
 
         <p className="mb-4">
-          In Soplang, strings can be created using single{' '}
-          <code className="px-1 rounded-md bg-blue-400/35">'</code> quotes, double{' '}
-          <code className="px-1 rounded-md bg-blue-400/35">"</code> quotes, or triple{' '}
+          In Soplang, strings can be created using single{" "}
+          <code className="px-1 rounded-md bg-blue-400/35">'</code> quotes, double{" "}
+          <code className="px-1 rounded-md bg-blue-400/35">"</code> quotes, or triple{" "}
           <code className="rounded-md px- bg-blue-400/35">'''</code> quotes for multi-line strings.
           The <code className="px-1 rounded-md bg-blue-400/35">qoraal</code> keyword is used for
           static typing of strings, which comes from the Somali word for "text".
@@ -321,14 +321,14 @@ qor(is_upper)  // true`}
       <DocNavigation
         className="mt-12"
         prevPage={{
-          href: '/docs/numbers',
-          title: 'Numbers',
-          description: 'Return to numeric types and operations in Soplang',
+          href: "/docs/numbers",
+          title: "Numbers",
+          description: "Return to numeric types and operations in Soplang",
         }}
         nextPage={{
-          href: '/docs/operators',
-          title: 'Operators',
-          description: 'Learn about operators and expressions in Soplang',
+          href: "/docs/operators",
+          title: "Operators",
+          description: "Learn about operators and expressions in Soplang",
         }}
       />
     </div>
