@@ -5,7 +5,7 @@ import DocNavigation from "@/components/DocNavigation";
 export const metadata = {
   title: "Operators in Soplang",
   description:
-    "Learn about arithmetic, comparison, logical, and other operators in the Soplang programming language.",
+    "Arithmetic, comparison, iyo logical operators ee Soplang—syntax, tusaalooyin, iyo isticmaal caadi ah.",
 };
 
 export default function OperatorsPage() {
@@ -13,258 +13,183 @@ export default function OperatorsPage() {
     <div className="mb-12 prose prose-lg dark:prose-invert max-w-none">
       <h1 className="mb-8 text-3xl font-bold text-primary">Operators in Soplang</h1>
       <p className="mb-8 text-lg lead">
-        Operators are special symbols that perform operations on variables and values. Soplang
-        provides a comprehensive set of operators for arithmetic, comparison, logical operations,
-        and more.
+        Soplang waxa uu taageeraa operators caadi ah oo u eg kuwa luqadaha caanka ah:
+        arithmetic, comparison, iyo logical—si fudud oo akhris-wanaagsan.
       </p>
 
-      {/* Navigation */}
-      <div className="p-6 my-8 rounded-lg bg-primary/10">
-        <h2 className="mb-4 text-xl font-bold">On This Page</h2>
-        <ul className="space-y-2 list-disc list-inside">
-          <li>
-            <a href="#arithmetic-operators" className="text-primary hover:underline">
-              Arithmetic Operators
-            </a>
-          </li>
-          <li>
-            <a href="#comparison-operators" className="text-primary hover:underline">
-              Comparison Operators
-            </a>
-          </li>
-          <li>
-            <a href="#logical-operators" className="text-primary hover:underline">
-              Logical Operators
-            </a>
-          </li>
-          <li>
-            <a href="#assignment-operators" className="text-primary hover:underline">
-              Assignment Operators
-            </a>
-          </li>
-          <li>
-            <a href="#bitwise-operators" className="text-primary hover:underline">
-              Bitwise Operators
-            </a>
-          </li>
-          <li>
-            <a href="#identity-membership" className="text-primary hover:underline">
-              Identity and Membership Operators
-            </a>
-          </li>
-          <li>
-            <a href="#operator-precedence" className="text-primary hover:underline">
-              Operator Precedence
-            </a>
-          </li>
-          <li>
-            <a href="#best-practices" className="text-primary hover:underline">
-              Best Practices
-            </a>
-          </li>
-        </ul>
-      </div>
+      {/* ➕ Arithmetic Operators */}
+      <section id="arithmetic">
+        <h2 className="text-2xl font-bold mb-4">➕ Arithmetic Operators</h2>
+        <p className="mb-4">Waxaa loo adeegsadaa xisaab tirooyin <code>abn</code> ama <code>jajab</code>.</p>
 
-      {/* Arithmetic Operators */}
-      <section id="arithmetic-operators">
-        <h2 className="text-2xl font-bold mb-6 pb-2 border-b border-[var(--border-color)]">
-          Arithmetic Operators
-        </h2>
-
-        <p className="mb-4">
-          Arithmetic operators are used to perform mathematical operations between variables and
-          values.
-        </p>
+        <div className="my-4 overflow-x-auto">
+          <table className="min-w-full border border-collapse border-gray-300 dark:border-gray-700">
+            <thead>
+              <tr className="bg-gray-100 dark:bg-gray-800">
+                <th className="p-3 text-left border border-gray-300 dark:border-gray-700">Operator</th>
+                <th className="p-3 text-left border border-gray-300 dark:border-gray-700">Meaning</th>
+                <th className="p-3 text-left border border-gray-300 dark:border-gray-700">Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td className="p-3 border border-gray-300 dark:border-gray-700"><code>+</code></td>
+                <td className="p-3 border border-gray-300 dark:border-gray-700">Addition</td>
+                <td className="p-3 border border-gray-300 dark:border-gray-700"><code>a + b</code></td>
+              </tr>
+              <tr>
+                <td className="p-3 border border-gray-300 dark:border-gray-700"><code>-</code></td>
+                <td className="p-3 border border-gray-300 dark:border-gray-700">Subtraction</td>
+                <td className="p-3 border border-gray-300 dark:border-gray-700"><code>a - b</code></td>
+              </tr>
+              <tr>
+                <td className="p-3 border border-gray-300 dark:border-gray-700"><code>*</code></td>
+                <td className="p-3 border border-gray-300 dark:border-gray-700">Multiplication</td>
+                <td className="p-3 border border-gray-300 dark:border-gray-700"><code>a * b</code></td>
+              </tr>
+              <tr>
+                <td className="p-3 border border-gray-300 dark:border-gray-700"><code>/</code></td>
+                <td className="p-3 border border-gray-300 dark:border-gray-700">Division</td>
+                <td className="p-3 border border-gray-300 dark:border-gray-700"><code>a / b</code></td>
+              </tr>
+              <tr>
+                <td className="p-3 border border-gray-300 dark:border-gray-700"><code>%</code></td>
+                <td className="p-3 border border-gray-300 dark:border-gray-700">Modulo</td>
+                <td className="p-3 border border-gray-300 dark:border-gray-700"><code>a % b</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
         <CodeWindow
-          code={`// Basic arithmetic operators
-door a = 10
-door b = 3
-
-// Addition
-door sum = a + b        // 13
-
-// Subtraction
-door difference = a - b  // 7
-
-// Multiplication
-door product = a * b     // 30
-
-// Division (returns float)
-door quotient = a / b    // 3.3333...
-
-// Integer Division (floor division)
-door int_div = a // b    // 3
-
-// Modulus (remainder)
-door remainder = a % b   // 1
-
-// Exponentiation
-door power = a ** b      // 1000 (10^3)
-
-// Negation
-door negative = -a       // -10`}
-          title="arithmetic_operators.sop"
+          title="arithmetic.sop"
+          code={`abn a = 10
+abn b = 3
+qor("Wadarta: " + (a + b))
+qor("Hadhaaga: " + (a % b))`}
         />
       </section>
 
-      {/* Comparison Operators */}
-      <section id="comparison-operators" className="mt-12">
-        <h2 className="text-2xl font-bold mb-6 pb-2 border-b border-[var(--border-color)]">
-          Comparison Operators
-        </h2>
+      {/* 🧮 Comparison Operators */}
+      <section id="comparison" className="mt-12">
+        <h2 className="text-2xl font-bold mb-4">🧮 Comparison Operators</h2>
+        <p className="mb-4">Lagu hubiyo isbarbar dhig ama sinnaansho u dhexeeya qiimeyaal.</p>
 
-        <p className="mb-4">
-          Comparison operators are used to compare two values or expressions and return a boolean
-          result (true or false).
-        </p>
+        <div className="my-4 overflow-x-auto">
+          <table className="min-w-full border border-collapse border-gray-300 dark:border-gray-700">
+            <thead>
+              <tr className="bg-gray-100 dark:bg-gray-800">
+                <th className="p-3 text-left border border-gray-300 dark:border-gray-700">Operator</th>
+                <th className="p-3 text-left border border-gray-300 dark:border-gray-700">Meaning</th>
+                <th className="p-3 text-left border border-gray-300 dark:border-gray-700">Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td className="p-3 border border-gray-300 dark:border-gray-700"><code>==</code></td>
+                <td className="p-3 border border-gray-300 dark:border-gray-700">Equal</td>
+                <td className="p-3 border border-gray-300 dark:border-gray-700"><code>a == b</code></td>
+              </tr>
+              <tr>
+                <td className="p-3 border border-gray-300 dark:border-gray-700"><code>!=</code></td>
+                <td className="p-3 border border-gray-300 dark:border-gray-700">Not equal</td>
+                <td className="p-3 border border-gray-300 dark:border-gray-700"><code>a != b</code></td>
+              </tr>
+              <tr>
+                <td className="p-3 border border-gray-300 dark:border-gray-700"><code>{`>`}</code></td>
+                <td className="p-3 border border-gray-300 dark:border-gray-700">Greater than</td>
+                <td className="p-3 border border-gray-300 dark:border-gray-700"><code>a {`>`} b</code></td>
+              </tr>
+              <tr>
+                <td className="p-3 border border-gray-300 dark:border-gray-700"><code>{`<`}</code></td>
+                <td className="p-3 border border-gray-300 dark:border-gray-700">Less than</td>
+                <td className="p-3 border border-gray-300 dark:border-gray-700"><code>a {`<`} b</code></td>
+              </tr>
+              <tr>
+                <td className="p-3 border border-gray-300 dark:border-gray-700"><code>{`>=`}</code></td>
+                <td className="p-3 border border-gray-300 dark:border-gray-700">Greater or equal</td>
+                <td className="p-3 border border-gray-300 dark:border-gray-700"><code>a {`>=`} b</code></td>
+              </tr>
+              <tr>
+                <td className="p-3 border border-gray-300 dark:border-gray-700"><code>{`<=`}</code></td>
+                <td className="p-3 border border-gray-300 dark:border-gray-700">Less or equal</td>
+                <td className="p-3 border border-gray-300 dark:border-gray-700"><code>a {`<=`} b</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
         <CodeWindow
-          code={`// Comparison operators
-door a = 10
-door b = 3
-
-// Equal to
-door is_equal = a == b       // false
-
-// Not equal to
-door not_equal = a != b      // true
-
-// Greater than
-door greater = a > b         // true
-
-// Less than
-door less = a < b            // false
-
-// Greater than or equal to
-door greater_equal = a >= b  // false
-
-// Less than or equal to
-door less_equal = a <= b     // false`}
-          title="comparison_operators.sop"
+          title="comparison.sop"
+          code={`door a = 5
+door b = 10
+qor("a == b: " + (a == b))
+qor("a < b: " + (a < b))`}
         />
       </section>
 
-      {/* Logical Operators */}
-      <section id="logical-operators" className="mt-12">
-        <h2 className="text-2xl font-bold mb-6 pb-2 border-b border-[var(--border-color)]">
-          Logical Operators
-        </h2>
+      {/* 🔗 Logical Operators */}
+      <section id="logical" className="mt-12">
+        <h2 className="text-2xl font-bold mb-4">🔗 Logical Operators</h2>
+        <p className="mb-4">Waxaa loo adeegsadaa isku-darka xaaladaha (conditions) boolean.</p>
 
-        <p className="mb-4">
-          Logical operators are used to combine conditional statements and evaluate boolean
-          expressions.
-        </p>
+        <div className="my-4 overflow-x-auto">
+          <table className="min-w-full border border-collapse border-gray-300 dark:border-gray-700">
+            <thead>
+              <tr className="bg-gray-100 dark:bg-gray-800">
+                <th className="p-3 text-left border border-gray-300 dark:border-gray-700">Operator</th>
+                <th className="p-3 text-left border border-gray-300 dark:border-gray-700">Meaning</th>
+                <th className="p-3 text-left border border-gray-300 dark:border-gray-700">Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td className="p-3 border border-gray-300 dark:border-gray-700"><code>&amp;&amp;</code></td>
+                <td className="p-3 border border-gray-300 dark:border-gray-700">Logical AND</td>
+                <td className="p-3 border border-gray-300 dark:border-gray-700"><code>(a {`>`} 5) && (b {`<`} 10)</code></td>
+              </tr>
+              <tr>
+                <td className="p-3 border border-gray-300 dark:border-gray-700"><code>||</code></td>
+                <td className="p-3 border border-gray-300 dark:border-gray-700">Logical OR</td>
+                <td className="p-3 border border-gray-300 dark:border-gray-700"><code>(a {`<`} 5) || (b {`>`} 3)</code></td>
+              </tr>
+              <tr>
+                <td className="p-3 border border-gray-300 dark:border-gray-700"><code>!</code></td>
+                <td className="p-3 border border-gray-300 dark:border-gray-700">Logical NOT</td>
+                <td className="p-3 border border-gray-300 dark:border-gray-700"><code>!(a == b)</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
         <CodeWindow
-          code={`// Logical operators
-door p = true
-door q = false
+          title="logical.sop"
+          code={`abn x = 5
+abn y = 10
 
-// Logical AND
-door and_result = p && q      // false
-
-// Logical OR
-door or_result = p || q       // true
-
-// Logical NOT
-door not_result = !p          // false
-
-// Alternative Somali keywords
-door iyo_result = p iyo q      // Same as p && q (false)
-door ama_result = p ama q      // Same as p || q (true)
-door ma_result = ma p          // Same as !p (false)`}
-          title="logical_operators.sop"
+bool isInRange = (x > 3) && (y < 15)
+bool isMismatch = !(x == y)
+qor("Is in range: " + isInRange)
+qor("Mismatch: " + isMismatch)`}
         />
       </section>
 
-      {/* Assignment Operators */}
-      <section id="assignment-operators" className="mt-12">
-        <h2 className="text-2xl font-bold mb-6 pb-2 border-b border-[var(--border-color)]">
-          Assignment Operators
-        </h2>
+      <p className="mt-8">
+        Operators-ka Soplang waxay kuu oggolaanayaan inaad dhisto muujiyeyo awood leh iyo
+        xakamayn (control flow) nadiif ah.
+      </p>
 
-        <p className="mb-4">
-          Assignment operators are used to assign values to variables, often combining assignment
-          with another operation.
-        </p>
-
-        <CodeWindow
-          code={`// Basic assignment
-door x = 10
-
-// Compound assignment operators
-
-// Addition assignment
-x += 5      // x = x + 5, now x is 15
-
-// Subtraction assignment
-x -= 3      // x = x - 3, now x is 12
-
-// Multiplication assignment
-x *= 2      // x = x * 2, now x is 24
-
-// Division assignment
-x /= 4      // x = x / 4, now x is 6
-
-// Integer division assignment
-x //= 2     // x = x // 2, now x is 3
-
-// Modulus assignment
-x %= 2      // x = x % 2, now x is 1`}
-          title="assignment_operators.sop"
-        />
-      </section>
-
-      {/* Bitwise Operators */}
-      <section id="bitwise-operators" className="mt-12">
-        <h2 className="text-2xl font-bold mb-6 pb-2 border-b border-[var(--border-color)]">
-          Bitwise Operators
-        </h2>
-
-        <p className="mb-4">
-          Bitwise operators perform operations on binary representations of integers at the bit
-          level.
-        </p>
-
-        <CodeWindow
-          code={`// Bitwise operators
-door a = 60  // 00111100 in binary
-door b = 13  // 00001101 in binary
-
-// Bitwise AND
-door and_result = a & b   // 12 (00001100)
-
-// Bitwise OR
-door or_result = a | b    // 61 (00111101)
-
-// Bitwise XOR (exclusive OR)
-door xor_result = a ^ b   // 49 (00110001)
-
-// Bitwise NOT (complement)
-door not_result = ~a      // -61 (11000011, in 2's complement)
-
-// Left shift
-door left_shift = a << 2  // 240 (11110000)
-
-// Right shift
-door right_shift = a >> 2 // 15 (00001111)`}
-          title="bitwise_operators.sop"
-        />
-      </section>
-
-      {/* Navigation */}
       <DocNavigation
         className="mt-12"
         prevPage={{
           href: "/docs/strings",
           title: "Strings",
-          description: "Return to string operations and formatting in Soplang",
+          description: "Ka shaqaynta xarfo iyo hababkooda ee Soplang",
         }}
         nextPage={{
           href: "/docs/conditional-statements",
           title: "Conditional Statements",
-          description: "Learn about if-else statements and decision making in Soplang",
+          description: "haddii / haddii_kale / ugudambeyn iyo go'aan qaadasho",
         }}
       />
     </div>
