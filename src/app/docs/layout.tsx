@@ -1,37 +1,38 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { useState } from "react";
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { useState } from 'react';
 
 // Documentation sidebar navigation structure
 const docsNav = [
   {
-    title: "Getting Started",
+    title: 'Getting Started',
     items: [
-      { title: "Introduction", href: "/docs" },
-      { title: "Quick Start", href: "/docs/getting-started" },
-      { title: "Installation", href: "/docs/installation" },
+      { title: 'Introduction', href: '/docs' },
+      { title: 'Quick Start', href: '/docs/getting-started' },
+      { title: 'Installation', href: '/docs/installation' },
       // { title: "Editor Setup", href: "/docs/editor-setup" },
     ],
   },
   {
-    title: "Core Concepts",
+    title: 'Core Concepts',
     items: [
-      { title: "Syntax Basics", href: "/docs/syntax-basics" },
-      { title: "Input & Output", href: "/docs/input-and-output" },
-      { title: "Variables", href: "/docs/variables" },
-      { title: "Data Types", href: "/docs/data-types" },
-      { title: "Type Conversions", href: "/docs/type-conversion" },
-      { title: "Numbers", href: "/docs/numbers" },
-      { title: "Strings", href: "/docs/strings" },
-      { title: "Operators", href: "/docs/operators" },
-      { title: "Conditional Statements", href: "/docs/conditional-statements" },
-      { title: "Loops", href: "/docs/loops" },
-      { title: "Functions", href: "/docs/functions" },
-      { title: "Arrays", href: "/docs/arrays" },
-      { title: "Objects", href: "/docs/objects" },
-      { title: "Built-in Functions", href: "/docs/built-in-functions" },
+      { title: 'Syntax Basics', href: '/docs/syntax-basics' },
+      { title: 'Input & Output', href: '/docs/input-and-output' },
+      { title: 'Variables', href: '/docs/variables' },
+      { title: 'Data Types', href: '/docs/data-types' },
+      { title: 'Type Conversions', href: '/docs/type-conversion' },
+      { title: 'Numbers', href: '/docs/numbers' },
+      { title: 'Strings', href: '/docs/strings' },
+      { title: 'Operators', href: '/docs/operators' },
+      { title: 'Conditional Statements', href: '/docs/conditional-statements' },
+      { title: 'Loops', href: '/docs/loops' },
+      { title: 'Functions', href: '/docs/functions' },
+      { title: 'Arrays', href: '/docs/arrays' },
+      { title: 'Objects', href: '/docs/objects' },
+      { title: 'Built-in Functions', href: '/docs/built-in-functions' },
+      { title: 'Keywords Reference', href: '/docs/keywords-reference' },
       // { title: "Error Handling", href: "/docs/error-handling" },
     ],
   },
@@ -81,7 +82,7 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className={`h-5 w-5 transition-transform ${
-                mobileNavOpen ? "transform rotate-180" : ""
+                mobileNavOpen ? 'transform rotate-180' : ''
               }`}
               fill="none"
               viewBox="0 0 24 24"
@@ -98,7 +99,7 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
         </div>
 
         {/* Sidebar Navigation */}
-        <div className={`lg:w-1/4 ${mobileNavOpen ? "block" : "hidden lg:block"}`}>
+        <div className={`lg:w-1/4 ${mobileNavOpen ? 'block' : 'hidden lg:block'}`}>
           <div className="sticky p-6 bg-white rounded-lg shadow-sm dark:bg-gray-800 top-24">
             <div className="space-y-8">
               {docsNav.map((section) => (
@@ -113,8 +114,8 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
                           href={item.href}
                           className={`block py-1 px-2 rounded text-sm ${
                             pathname === item.href
-                              ? "bg-primary/10 text-primary font-medium"
-                              : "text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary"
+                              ? 'bg-primary/10 text-primary font-medium'
+                              : 'text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary'
                           }`}
                           onClick={() => setMobileNavOpen(false)}
                         >

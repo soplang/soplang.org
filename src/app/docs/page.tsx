@@ -242,8 +242,9 @@ qor("Done!")`}
           </p>
         </Link>
         <Link
-          href="/docs/tutorials/cli-app"
+          href="https://www.youtube.com/@soplang"
           className="block p-6 transition-all duration-200 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 hover:shadow-md dark:border-gray-700 hover:border-primary dark:hover:border-blue-400"
+          
         >
           <h3 className="mt-0 mb-2 text-xl font-bold text-primary dark:text-blue-400">Tutorials</h3>
           <p className="mb-0 text-gray-600 dark:text-gray-300">
