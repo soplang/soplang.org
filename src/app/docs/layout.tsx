@@ -10,7 +10,6 @@ const docsNav = [
     title: 'Getting Started',
     items: [
       { title: 'Introduction', href: '/docs' },
-      { title: 'Quick Start', href: '/docs/getting-started' },
       { title: 'Installation', href: '/docs/installation' },
       // { title: "Editor Setup", href: "/docs/editor-setup" },
     ],

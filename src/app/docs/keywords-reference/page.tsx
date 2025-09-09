@@ -237,11 +237,6 @@ qor(isuGee(2, 3))`}
           title: "Built-in Functions",
           description: "Hawlaha ku-dhex jira ee Soplang",
         }}
-        nextPage={{
-          href: "/docs/syntax-basics",
-          title: "Syntax Basics",
-          description: "Aasaaska naxwaha Soplang",
-        }}
       />
     </div>
   );
