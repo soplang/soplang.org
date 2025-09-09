@@ -5,7 +5,7 @@ import DocNavigation from "@/components/DocNavigation";
 export const metadata = {
   title: "Strings in Soplang",
   description:
-    "Learn about string operations, formatting, and manipulation in the Soplang programming language.",
+    "Declare iyo ka shaqaynta xarfo (strings) ee Soplang: qoraal/door, iyo hababka sida qeybi, leeyahay, dhamaad, bilow, beddel, kudar, jar.",
 };
 
 export default function StringsPage() {
@@ -13,322 +13,142 @@ export default function StringsPage() {
     <div className="mb-12 prose prose-lg dark:prose-invert max-w-none">
       <h1 className="mb-8 text-3xl font-bold text-primary">Strings in Soplang</h1>
       <p className="mb-8 text-lg lead">
-        Strings in Soplang are sequences of characters used to represent text. Soplang provides a
-        rich set of operations and methods for working with strings, making text manipulation
-        intuitive and powerful.
+        Soplang waxa uu taageeraa habab kala duwan oo <em>string</em> manipulation ah oo leh magacyo
+        Soomaali u-dhega nugul. Strings waxaa lagu qeexaa <code>door</code> ama <code>qoraal</code>.
       </p>
 
-      {/* Navigation */}
-      <div className="p-6 my-8 rounded-lg bg-primary/10">
-        <h2 className="mb-4 text-xl font-bold">On This Page</h2>
-        <ul className="space-y-2 list-disc list-inside">
-          <li>
-            <a href="#string-creation" className="text-primary hover:underline">
-              String Creation
-            </a>
-          </li>
-          <li>
-            <a href="#string-operations" className="text-primary hover:underline">
-              Basic String Operations
-            </a>
-          </li>
-          <li>
-            <a href="#string-methods" className="text-primary hover:underline">
-              String Methods
-            </a>
-          </li>
-          <li>
-            <a href="#string-formatting" className="text-primary hover:underline">
-              String Formatting
-            </a>
-          </li>
-          <li>
-            <a href="#string-escape" className="text-primary hover:underline">
-              Escape Sequences
-            </a>
-          </li>
-          <li>
-            <a href="#string-best-practices" className="text-primary hover:underline">
-              Best Practices
-            </a>
-          </li>
-        </ul>
-      </div>
-
-      {/* String Creation */}
-      <section id="string-creation">
-        <h2 className="text-2xl font-bold mb-6 pb-2 border-b border-[var(--border-color)]">
-          String Creation
-        </h2>
-
-        <p className="mb-4">
-          In Soplang, strings can be created using single{" "}
-          <code className="px-1 rounded-md bg-blue-400/35">'</code> quotes, double{" "}
-          <code className="px-1 rounded-md bg-blue-400/35">"</code> quotes, or triple{" "}
-          <code className="rounded-md px- bg-blue-400/35">'''</code> quotes for multi-line strings.
-          The <code className="px-1 rounded-md bg-blue-400/35">qoraal</code> keyword is used for
-          static typing of strings, which comes from the Somali word for "text".
-        </p>
-
-        <h3 className="mt-6 mb-4 text-xl font-bold">String Literals</h3>
+      {/* 🧵 Declare a String */}
+      <section id="declare">
+        <h2 className="text-2xl font-bold mb-4">🧵 Declare a String</h2>
         <CodeWindow
-          code={`// String literals with single quotes
-door single_quoted = 'Hello, Soplang!'
-
-// String literals with double quotes
-door double_quoted = "Hello, Soplang!"
-
-// Multi-line strings with triple quotes
-door multi_line = """This is a multi-line string.
-It can span multiple lines.
-No need for escape characters at line breaks."""
-`}
-          title="string_literals.sop"
-        />
-
-        <h3 className="mt-6 mb-4 text-xl font-bold">Empty and Special Strings</h3>
-        <CodeWindow
-          code={`// Empty string
-door empty = ""
-
-// String with spaces
-door spaces = "   "
-
-// String with special characters
-door special = "★ Soplang ★"
-
-// Unicode characters
-door unicode = "नमस्ते" // Hindi
-door arabic = "مرحبا"   // Arabic
-door somali = "Soo dhowow"  // Somali`}
-          title="special_strings.sop"
+          title="declare_string.sop"
+          code={`qoraal magac = "Sharafdin Yusuf"
+door farriin = "Ku soo dhowow Soplang"`}
         />
       </section>
 
-      {/* Basic String Operations */}
-      <section id="string-operations" className="mt-12">
-        <h2 className="text-2xl font-bold mb-6 pb-2 border-b border-[var(--border-color)]">
-          Basic String Operations
-        </h2>
-
-        <h3 className="mt-6 mb-4 text-xl font-bold">Concatenation</h3>
+      {/* 🛠️ String Methods */}
+      <section id="methods" className="mt-12">
+        <h2 className="text-2xl font-bold mb-4">🛠️ String Methods</h2>
         <p className="mb-4">
-          Strings can be combined using the <code>+</code> operator.
+          Hababka hoose waxay ka tarjumayaan kuwa caanka ah ee luqadaha kale, balse magacyo
+          Soomaali ah ayay leeyihiin:
         </p>
 
+        <div className="my-6 overflow-x-auto">
+          <table className="min-w-full border border-collapse border-gray-300 dark:border-gray-700">
+            <thead>
+              <tr className="bg-gray-100 dark:bg-gray-800">
+                <th className="p-3 text-left border border-gray-300 dark:border-gray-700">Method</th>
+                <th className="p-3 text-left border border-gray-300 dark:border-gray-700">English Equivalent</th>
+                <th className="p-3 text-left border border-gray-300 dark:border-gray-700">Description</th>
+                <th className="p-3 text-left border border-gray-300 dark:border-gray-700">Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td className="p-3 border border-gray-300 dark:border-gray-700"><code>qeybi(xad)</code></td>
+                <td className="p-3 border border-gray-300 dark:border-gray-700"><code>split()</code></td>
+                <td className="p-3 border border-gray-300 dark:border-gray-700">Kala jabiso string iyadoo la adeegsanayo kala-sooc.</td>
+                <td className="p-3 border border-gray-300 dark:border-gray-700"><code>door parts = text.qeybi(",")</code></td>
+              </tr>
+              <tr>
+                <td className="p-3 border border-gray-300 dark:border-gray-700"><code>leeyahay(sub)</code></td>
+                <td className="p-3 border border-gray-300 dark:border-gray-700"><code>includes()</code></td>
+                <td className="p-3 border border-gray-300 dark:border-gray-700">Hubi in uu ku jiro far-qoraal gaaban.</td>
+                <td className="p-3 border border-gray-300 dark:border-gray-700"><code>haddii (text.leeyahay("search")) {'{'}...{'}'}</code></td>
+              </tr>
+              <tr>
+                <td className="p-3 border border-gray-300 dark:border-gray-700"><code>dhamaad(sub)</code></td>
+                <td className="p-3 border border-gray-300 dark:border-gray-700"><code>endsWith()</code></td>
+                <td className="p-3 border border-gray-300 dark:border-gray-700">Hubi in uu ku dhammaado far-qoraal.</td>
+                <td className="p-3 border border-gray-300 dark:border-gray-700"><code>haddii (text.dhamaad("ing")) {'{'}...{'}'}</code></td>
+              </tr>
+              <tr>
+                <td className="p-3 border border-gray-300 dark:border-gray-700"><code>bilow(sub)</code></td>
+                <td className="p-3 border border-gray-300 dark:border-gray-700"><code>startsWith()</code></td>
+                <td className="p-3 border border-gray-300 dark:border-gray-700">Hubi in uu ku bilaabmo far-qoraal.</td>
+                <td className="p-3 border border-gray-300 dark:border-gray-700"><code>haddii (text.bilow("http")) {'{'}...{'}'}</code></td>
+              </tr>
+              <tr>
+                <td className="p-3 border border-gray-300 dark:border-gray-700"><code>beddel(x, y)</code></td>
+                <td className="p-3 border border-gray-300 dark:border-gray-700"><code>replace()</code></td>
+                <td className="p-3 border border-gray-300 dark:border-gray-700">Beddel <em>x</em> adigoo u beddelaya <em>y</em>.</td>
+                <td className="p-3 border border-gray-300 dark:border-gray-700"><code>door cusub = text.beddel("old", "new")</code></td>
+              </tr>
+              <tr>
+                <td className="p-3 border border-gray-300 dark:border-gray-700"><code>kudar(teed)</code></td>
+                <td className="p-3 border border-gray-300 dark:border-gray-700"><code>join()</code></td>
+                <td className="p-3 border border-gray-300 dark:border-gray-700">Ku xiro liis xarfo adigoo isticmaalaya kala-soocan.</td>
+                <td className="p-3 border border-gray-300 dark:border-gray-700"><code>door text = ", ".kudar(names)</code></td>
+              </tr>
+              <tr>
+                <td className="p-3 border border-gray-300 dark:border-gray-700"><code>jar(bilow, dhamaad)</code></td>
+                <td className="p-3 border border-gray-300 dark:border-gray-700"><code>slice()</code></td>
+                <td className="p-3 border border-gray-300 dark:border-gray-700">Soo saar qayb ka timid <em>bilow</em> ilaa <em>dhamaad</em>.</td>
+                <td className="p-3 border border-gray-300 dark:border-gray-700"><code>door sub = text.jar(0, 3)</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      {/* 📌 Example Usage */}
+      <section id="example" className="mt-12">
+        <h2 className="text-2xl font-bold mb-4">📌 Example Usage</h2>
         <CodeWindow
-          code={`// String concatenation
-door first_name = "Mohamed"
-door last_name = "Ali"
+          title="strings_example.sop"
+          code={`qoraal jumlad = "Soplang waa luqad qurux badan"
 
-// Using + operator
-door full_name = first_name + " " + last_name
-qor(full_name)  // Mohamed Ali
+// Split string into parts
+teed ereyo = jumlad.qeybi(" ")
+qor("Ereyada: " + ereyo)
 
-// Concatenation with other types
-door age = 30
-door message = first_name + " is " + qoraal(age) + " years old"
-qor(message)  // Mohamed is 30 years old`}
-          title="string_concatenation.sop"
-        />
+// Check if it contains a word
+haddii (jumlad.leeyahay("luqad")) {
+    qor("Waa luqad!")
+}
 
-        <h3 className="mt-6 mb-4 text-xl font-bold">String Repetition</h3>
-        <p className="mb-4">
-          Strings can be repeated using the <code>*</code> operator.
-        </p>
+// Starts and ends with
+haddii (jumlad.bilow("Soplang")) {
+    qor("Waxay ku bilaabataa Soplang")
+}
 
-        <CodeWindow
-          code={`// String repetition
-door star = "*"
-door line = star * 10
-qor(line)  // **********
+haddii (jumlad.dhamaad("badan")) {
+    qor("Waxay ku dhammaanaysaa badan")
+}
 
-// Useful for creating separators
-door separator = "-" * 20
-qor(separator)  // --------------------
+// Replace word
+door beddelay = jumlad.beddel("luqad", "barnaamij")
+qor("Beddelay: " + beddelay)
 
-// Combining repetition with concatenation
-door header = "| " + "Title " + "|"
-door border = "+" + "-" * (header.dherer() - 2) + "+"
+// Join string from list
+teed magacyo = ["Ayaan", "Omar", "Zahra"]
+door joined = ", ".kudar(magacyo)
+qor("Dad: " + joined)
 
-qor(border)  // +-------+
-qor(header)  // | Title |
-qor(border)  // +-------+`}
-          title="string_repetition.sop"
+// Slice part of string
+door qeyb = jumlad.jar(0, 7)
+qor("Qeybta koowaad: " + qeyb)`}
         />
       </section>
 
-      {/* String Methods */}
-      <section id="string-methods" className="mt-12">
-        <h2 className="text-2xl font-bold mb-6 pb-2 border-b border-[var(--border-color)]">
-          String Methods
-        </h2>
+      <p className="mt-6">
+        Strings ee Soplang waa muujin iyo la-qabsan fudud, iyadoo magacyada hababka ay yihiin
+        Soomaali-first si ay u noqdaan kuwo si dabiici ah loo fahmo.
+      </p>
 
-        <p className="mb-4">
-          Soplang provides a rich set of methods for string manipulation. These methods do not
-          modify the original string but return a new string.
-        </p>
-
-        <h3 className="mt-6 mb-4 text-xl font-bold">Case Conversion</h3>
-        <CodeWindow
-          code={`// Case conversion methods
-door text = "Soplang Programming Language"
-
-// Converting to uppercase
-door upper = text.kor_dhig()
-qor(upper)  // SOPLANG PROGRAMMING LANGUAGE
-
-// Converting to lowercase
-door lower = text.yar_dhig()
-qor(lower)  // soplang programming language
-
-// Title case (capitalize first letter of each word)
-door title = text.cinwaan_dhig()
-qor(title)  // Soplang Programming Language
-
-// Capitalize (only first letter of string)
-door capitalized = "hello world".weyn_dhig_bilowga()
-qor(capitalized)  // Hello world`}
-          title="case_conversion.sop"
-        />
-
-        <h3 className="mt-6 mb-4 text-xl font-bold">Searching and Replacing</h3>
-        <CodeWindow
-          code={`// String searching methods
-door text = "Soplang is a programming language. Soplang is easy to learn."
-
-// Find the position of a substring
-door pos = text.raadi("programming")
-qor(pos)  // 12
-
-// Find the last occurrence
-door last_pos = text.raadi_dambe("Soplang")
-qor(last_pos)  // 35
-
-// Count occurrences
-door count = text.tiri("Soplang")
-qor(count)  // 2
-
-// Replacing substrings
-door replaced = text.badal("Soplang", "SopLang")
-qor(replaced)  // "SopLang is a programming language. SopLang is easy to learn."
-
-// Replace only the first occurrence
-door replaced_once = text.badal_hal("Soplang", "SopLang")
-qor(replaced_once)  // "SopLang is a programming language. Soplang is easy to learn."`}
-          title="search_replace.sop"
-        />
-
-        <h3 className="mt-6 mb-4 text-xl font-bold">Trimming and Padding</h3>
-        <CodeWindow
-          code={`// Trimming whitespace
-door text = "   Soplang   "
-
-// Remove whitespace from both ends
-door trimmed = text.jari()
-qor("'" + trimmed + "'")  // 'Soplang'
-
-// Remove whitespace from left side only
-door left_trimmed = text.jari_bidix()
-qor("'" + left_trimmed + "'")  // 'Soplang   '
-
-// Remove whitespace from right side only
-door right_trimmed = text.jari_midig()
-qor("'" + right_trimmed + "'")  // '   Soplang'
-
-// Padding strings
-door word = "Soplang"
-
-// Pad left with spaces to reach a total length
-door left_padded = word.buuxi_bidix(10)
-qor("'" + left_padded + "'")  // '   Soplang'
-
-// Pad right with spaces
-door right_padded = word.buuxi_midig(10)
-qor("'" + right_padded + "'")  // 'Soplang   '
-
-// Pad with a specific character
-door zero_padded = word.buuxi_bidix(10, "0")
-qor(zero_padded)  // 000Soplang`}
-          title="trim_pad.sop"
-        />
-
-        <h3 className="mt-6 mb-4 text-xl font-bold">Splitting and Joining</h3>
-        <CodeWindow
-          code={`// Splitting strings
-door sentence = "Soplang is easy to learn and use"
-
-// Split by spaces
-door words = sentence.kala_jar(" ")
-qor(words)  // ["Soplang", "is", "easy", "to", "learn", "and", "use"]
-
-// Split by a specific delimiter
-door csv = "apple,banana,orange,mango"
-door fruits = csv.kala_jar(",")
-qor(fruits)  // ["apple", "banana", "orange", "mango"]
-
-// Limit the number of splits
-door limited = sentence.kala_jar(" ", 3)
-qor(limited)  // ["Soplang", "is", "easy", "to learn and use"]
-
-// Joining strings
-door joined = " ".ku_biir(words)
-qor(joined)  // "Soplang is easy to learn and use"
-
-// Join with a different delimiter
-door comma_joined = ", ".ku_biir(fruits)
-qor(comma_joined)  // "apple, banana, orange, mango"`}
-          title="split_join.sop"
-        />
-
-        <h3 className="mt-6 mb-4 text-xl font-bold">Checking String Properties</h3>
-        <CodeWindow
-          code={`// String property checking methods
-
-// Check if string starts with a prefix
-door text = "Soplang Programming"
-door starts_with_sop = text.ku_bilaabma("Sop")
-qor(starts_with_sop)  // true
-
-// Check if string ends with a suffix
-door ends_with_ming = text.ku_dhammaada("ming")
-qor(ends_with_ming)  // true
-
-// Check if string consists of only alphabetic characters
-door is_alpha = "Soplang".xarfo_kaliya()
-qor(is_alpha)  // true
-
-// Check if string consists of alphanumeric characters
-door is_alnum = "Soplang123".xarfoabn_kaliya()
-qor(is_alnum)  // true
-
-// Check if string consists of only digits
-door is_digit = "12345".abn_kaliya()
-qor(is_digit)  // true
-
-// Check if string is lowercase
-door is_lower = "soplang".yar_kaliya()
-qor(is_lower)  // true
-
-// Check if string is uppercase
-door is_upper = "SOPLANG".kor_kaliya()
-qor(is_upper)  // true`}
-          title="string_properties.sop"
-        />
-      </section>
-
-      {/* Navigation */}
       <DocNavigation
         className="mt-12"
         prevPage={{
           href: "/docs/numbers",
           title: "Numbers",
-          description: "Return to numeric types and operations in Soplang",
+          description: "Labada nooc ee tirooyinka: abn & jajab",
         }}
         nextPage={{
           href: "/docs/operators",
           title: "Operators",
-          description: "Learn about operators and expressions in Soplang",
+          description: "Ku shaqaynta hawlgallada iyo muujiyeyaasha ee Soplang",
         }}
       />
     </div>
