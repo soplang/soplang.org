@@ -1,13 +1,11 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
 import { FaArrowRight } from "react-icons/fa";
 import { ModeSwitcher } from "./ui/mode-switcher";
-import { Separator } from "./ui/separator";
-import { GitHubLink } from "./github-link";
 
 const navLinks = [
   { name: "Home", path: "/" },
@@ -135,8 +133,7 @@ export default function Navbar() {
       {/* banner */}
       <div className="w-full bg-[var(--banner-background-color)] dark:bg-[var(--header-bg)] border border-white/10 dark:border-b dark:border-[var(--border-color)] overflow-x-auto py-2 px-4 text-center text-sm font-medium">
         <p className="text-white">
-          Waxaan qoraynaa oon dib uhabeyn ku wadnaa docs oo af-soomaali ku qoran, ka qeybqaadasho
-          raac lifaaqaan...
+          Ka Qeybqaado Soplang
           <Link href="https://www.soplang.org/contribute" className="ml-2 text-blue-500">
             Contribution guidelines
             <FaArrowRight className="inline-block w-3 h-3 ml-1" />
