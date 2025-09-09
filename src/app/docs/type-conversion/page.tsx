@@ -113,7 +113,7 @@ qor("Decimal to integer (truncation): " + int_from_decimal)`}
         />
 
         <p className="mt-4">
-          Shaqooyinkan beddelka noocyadu waxay muhiim u yihiin dhismaha <em>input-handling</em>
+          Shaqooyinkan beddelka noocyadu waxay muhiim u yihiin dhismaha <em>input-handling </em>
           adag, tusaale ahaan marka aad akhrinayso gelinta isticmaalaha ama faylasha oo aad rabto
           inaad hubiso noocyo sax ah ka hor inta aanad xisaab samayn.
         </p>
