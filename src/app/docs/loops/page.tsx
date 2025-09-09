@@ -5,7 +5,7 @@ import DocNavigation from "@/components/DocNavigation";
 export const metadata = {
   title: "Loops in Soplang",
   description:
-    "Learn about different types of loops and iteration techniques in the Soplang programming language.",
+    "intay (while), kuceli (for), iyo xakamaynta jooji/soco—ku celcelin iyo socod shuruudeed ee Soplang.",
 };
 
 export default function LoopsPage() {
@@ -13,339 +13,153 @@ export default function LoopsPage() {
     <div className="mb-12 prose prose-lg dark:prose-invert max-w-none">
       <h1 className="mb-8 text-3xl font-bold text-primary">Loops in Soplang</h1>
       <p className="mb-8 text-lg lead">
-        Loops are essential programming constructs that allow you to execute a block of code
-        repeatedly. Soplang provides several types of loops to handle different iteration needs.
+        Soplang waxa uu taageeraa laba nooc oo loops ah: <code>intay (shuruud)</code> oo u dhiganta
+        <em> while</em>, iyo <code>kuceli (bilow ilaa dhamaad)</code> oo u dhiganta <em>for</em>.
+        Waxa kale oo jira <code>jooji</code> (break) iyo <code>soco</code> (continue) si aad u yeelato
+        xakameyn faahfaahsan.
       </p>
 
-      {/* Navigation */}
-      <div className="p-6 my-8 rounded-lg bg-primary/10">
-        <h2 className="mb-4 text-xl font-bold">On This Page</h2>
-        <ul className="space-y-2 list-disc list-inside">
-          <li>
-            <a href="#for-loops" className="text-primary hover:underline">
-              For Loops
-            </a>
-          </li>
-          <li>
-            <a href="#while-loops" className="text-primary hover:underline">
-              While Loops
-            </a>
-          </li>
-          <li>
-            <a href="#do-while-loops" className="text-primary hover:underline">
-              Do-While Loops
-            </a>
-          </li>
-          <li>
-            <a href="#control-statements" className="text-primary hover:underline">
-              Loop Control Statements
-            </a>
-          </li>
-          <li>
-            <a href="#best-practices" className="text-primary hover:underline">
-              Best Practices
-            </a>
-          </li>
-        </ul>
-      </div>
-
-      {/* For Loops */}
-      <section id="for-loops">
-        <h2 className="text-2xl font-bold mb-6 pb-2 border-b border-[var(--border-color)]">
-          For Loops
-        </h2>
-
-        <p className="mb-4">
-          The <code className="px-2 rounded-md bg-blue-400/20">ku_celi</code>{" "}
-          <strong>(for loop)</strong> is used to iterate over a sequence (like..
-          <code className="px-2 mx-1 rounded-md bg-blue-400/15">a list</code>,
-          <code className="px-2 mx-1 rounded-md bg-blue-400/15">string</code>, or
-          <code className="px-2 mx-1 rounded-md bg-blue-400/15">range</code>) or any iterable
-          object. The name comes from the Somali phrase{" "}
-          <code className="px-1 rounded-md bg-blue-400/20">"ku celi"</code> which means{" "}
-          <code className="px-1 rounded-md bg-blue-400/20">"repeat"</code>.
-        </p>
-
-        <h3 className="mt-6 mb-4 text-xl font-bold">Basic For Loop</h3>
+      {/* 🔁 While Loop – intay */}
+      <section id="while-intay">
+        <h2 className="text-2xl font-bold mb-4">🔁 While Loop – <code>intay</code></h2>
+        <p className="mb-4">Koodhka ku jira block-ga wuu soconayaa inta shuruuddu tahay <em>run</em>:</p>
         <CodeWindow
-          code={`// Iterating over a list
-door fruits = ["apple", "banana", "orange", "mango"]
-
-ku_celi fruit ku dhex jira fruits {
-    qor(fruit)
-}
-
-// Output: 
-// apple 
-// banana 
-// orange 
-// mango
-`}
-          title="basic_for_loop.sop"
-        />
-
-        <h3 className="mt-6 mb-4 text-xl font-bold">For Loop with Range</h3>
-        <p className="mb-4">
-          You can use the <code>tiro_taxane</code> (range) function to iterate over a sequence of
-          numbers.
-        </p>
-
-        <CodeWindow
-          code={`// Iterating over a range of numbers
-ku_celi i ku dhex jira tiro_taxane(5) {
-    qor(i)
-}
-
-// Output:  
-// 0 
-// 1 
-// 2 
-// 3 
-// 4
-
-// Range with start, stop, and step parameters
-ku_celi i ku dhex jira tiro_taxane(2, 10, 2) {
-    qor(i)
-}
-
-// Output:  
-// 2 
-// 4 
-// 6 
-// 8
-`}
-          title="for_loop_range.sop"
-        />
-
-        <h3 className="mt-6 mb-4 text-xl font-bold">For Loop with Index</h3>
-        <p className="mb-4">
-          To access both the index and value during iteration, you can use the <code>tirsan</code>{" "}
-          (enumerate) function.
-        </p>
-
-        <CodeWindow
-          code={`// Iterating with index
-door fruits = ["apple", "banana", "orange", "mango"]
-
-ku_celi (index, fruit) ku dhex jira tirsan(fruits) {
-    qor(index + ": " + fruit)
-}
-
-// Output:   
-// 0: apple,  
-// 1: banana,  
-// 2: orange,  
-// 3: mango
-`}
-          title="for_loop_index.sop"
-        />
-
-        {/* <h3 className="mt-6 mb-4 text-xl font-bold">For Loop with Dictionary</h3>
-        <p className="mb-4">
-          You can iterate over the keys, values, or key-value pairs of a dictionary.
-        </p>
-
-        <CodeWindow
-          code={`// Dictionary iteration
-door person = {
-    "name": "Ahmed",
-    "age": 30,
-    "city": "Mogadishu",
-    "occupation": "Engineer"
-}
-
-// Iterating over keys
-qor("Keys:")
-ku_celi key ku dhex jira person.fureyaal() {
-    qor(key)
-}
-
-// Iterating over values
-qor("Values:")
-ku_celi value ku dhex jira person.qiyamyaal() {
-    qor(value)
-}
-
-// Iterating over key-value pairs
-qor("Key-Value Pairs:")
-ku_celi (key, value) ku dhex jira person.shayada() {
-    qor(key + ": " + value)
+          title="while_basic.sop"
+          code={`abn i = 1
+intay (i <= 5) {
+    qor("i = " + i)
+    i = i + 1
 }`}
-          title="for_loop_dictionary.sop"
-        /> */}
-      </section>
-
-      {/* While Loops */}
-      <section id="while-loops" className="mt-12">
-        <h2 className="text-2xl font-bold mb-6 pb-2 border-b border-[var(--border-color)]">
-          While Loops
-        </h2>
-
-        <p className="mb-4">
-          The <code className="px-2 rounded-md bg-blue-400/20">inta</code> (while) loop executes a
-          block of code as long as a specified condition is true. The name comes from the Somali
-          word <code className="px-1 rounded-md bg-blue-400/20">"inta"</code> which means{" "}
-          <code className="px-1 rounded-md bg-blue-400/20">"while"</code> or{" "}
-          <code className="px-1 rounded-md bg-blue-400/20">"as long as"</code>.
-        </p>
-
-        <h3 className="mt-6 mb-4 text-xl font-bold">Basic While Loop</h3>
-        <CodeWindow
-          code={`// Basic while loop
-door count = 1
-
-inta count <= 5 {
-    qor(count)
-    count += 1
-}
-
-// Output:
-// 1
-// 2
-// 3
-// 4
-// 5
-`}
-          title="basic_while_loop.sop"
         />
 
-        <h3 className="mt-6 mb-4 text-xl font-bold">While Loop with Condition Update</h3>
+        <p className="mt-6 mb-2">Waxay taageertaa <code>jooji</code> iyo <code>soco</code>:</p>
         <CodeWindow
-          code={`// Processing a list with while loop
-door numbers = [10, 20, 30, 40, 50]
-door index = 0
+          title="while_break_continue.sop"
+          code={`abn i = 0
+intay (i <= 10) {
+    i = i + 1
 
-inta index < numbers.dherer() {
-    qor("Number at index " + index + ": " + numbers[index])
-    index += 1
-}
-
-// Output:
-// Number at index 0: 10
-// Number at index 1: 20
-// Number at index 2: 30
-// Number at index 3: 40
-// Number at index 4: 50
-`}
-          title="while_loop_condition.sop"
-        />
-
-        <h3 className="mt-6 mb-4 text-xl font-bold">Infinite While Loop with Break</h3>
-        <p className="mb-4">
-          You can create an infinite loop using <code>inta true</code> and exit it using the{" "}
-          <code>jebi</code> (break) statement when a certain condition is met.
-        </p>
-
-        <CodeWindow
-          code={`// Infinite loop with break
-door count = 1
-
-inta true {
-    qor(count)
-    count += 1
-    
-    haddii count > 5 {
-        qor("Breaking the loop")
-        jebi  // Exit the loop
+    haddii (i % 2 == 0) {
+        soco        // ka bood tirooyinka labiska ah
     }
-}
 
-qor("Loop ended")
+    haddii (i == 7) {
+        jooji        // jooji loop-ka marka i = 7
+    }
 
-// Output:
-// 1
-// 2
-// 3
-// 4
-// 5
-// Breaking the loop
-// Loop ended
-`}
-          title="while_infinite_break.sop"
+    qor("i = " + i) // waxay daabacdaa: 1, 3, 5
+}`}
         />
       </section>
 
-      {/* Do-While Loops */}
-      <section id="do-while-loops" className="mt-12">
-        <h2 className="text-2xl font-bold mb-6 pb-2 border-b border-[var(--border-color)]">
-          Do-While Loops
-        </h2>
-
-        <p className="mb-4">
-          The <code>samee_inta</code> (do-while) loop is similar to the while loop, but it executes
-          the code block at least once before checking the condition. The name combines "samee" (do)
-          and "inta" (while) in Somali.
-        </p>
-
-        <h3 className="mt-6 mb-4 text-xl font-bold">Basic Do-While Loop</h3>
+      {/* 🔁 For Loop – kuceli */}
+      <section id="for-kuceli" className="mt-12">
+        <h2 className="text-2xl font-bold mb-4">🔁 For Loop – <code>kuceli</code></h2>
         <CodeWindow
-          code={`// Basic do-while loop
-door count = 1
-
-samee {
-    qor(count)
-    count += 1
-} inta count <= 5
-
-// Output:
-// 1
-// 2
-// 3
-// 4
-// 5
-`}
-          title="basic_do_while.sop"
+          title="for_basic.sop"
+          code={`kuceli (i 1 ilaa 5) {
+    qor("Tirada: " + i)
+}`}
         />
 
-        <h3 className="mt-6 mb-4 text-xl font-bold">Do-While vs While</h3>
-        <p className="mb-4">
-          The key difference between <code>samee_inta</code> and <code>inta</code> is that do-while
-          always executes the code block at least once, even if the condition is initially false.
-        </p>
-
+        <p className="mt-6 mb-2">Talaabo (step) la doortay:</p>
         <CodeWindow
-          code={`// Comparing do-while and while when condition is initially false
-door x = 10
-
-// Do-while loop (executes once)
-qor("Do-while loop:")
-samee {
-    qor("x = " + x)
-    x += 1
-} inta x < 10
-
-// While loop (doesn't execute)
-qor("While loop:")
-x = 10  // Reset x
-inta x < 10 {
-    qor("x = " + x)
-    x += 1
-}
-`}
-          // ! TODO: complete a comparison example of do_while vs while loop =
-          //* Output:
-          //* Do-while loop:
-          //* x = 10
-
-          //* While loop:
-          //* ...
-
-          title="do_while_vs_while.sop"
+          title="for_step.sop"
+          code={`kuceli (j 2 ilaa 10 :: 2) {
+    qor("Step: " + j)
+}`}
         />
       </section>
 
-      {/* Navigation */}
+      {/* 🔁 Loop Over List */}
+      <section id="loop-list" className="mt-12">
+        <h2 className="text-2xl font-bold mb-4">🔁 Loop Over List</h2>
+        <CodeWindow
+          title="loop_over_list.sop"
+          code={`teed numbers = [10, 20, 30]
+kuceli (i 0 ilaa numbers.dherer() - 1) {
+    qor("Element " + i + ": " + numbers[i])
+}`}
+        />
+      </section>
+
+      {/* 🔁 Nested Loops */}
+      <section id="nested" className="mt-12">
+        <h2 className="text-2xl font-bold mb-4">🔁 Nested Loops</h2>
+        <CodeWindow
+          title="nested_loops.sop"
+          code={`kuceli (i 1 ilaa 3) {
+    intay (i > 0) {
+        qor("Nested example")
+        jooji
+    }
+}`}
+        />
+      </section>
+
+      {/* 🔁 Factorial with While */}
+      <section id="factorial" className="mt-12">
+        <h2 className="text-2xl font-bold mb-4">🔁 Factorial with While</h2>
+        <CodeWindow
+          title="factorial_while.sop"
+          code={`abn a = 5
+abn result = 1
+abn n = a
+
+intay (n > 0) {
+    result = result * n
+    n = n - 1
+}
+qor(result)`}
+        />
+      </section>
+
+      {/* ✅ Summary */}
+      <section id="summary" className="mt-12">
+        <h2 className="text-2xl font-bold mb-4">✅ Summary</h2>
+        <div className="my-4 overflow-x-auto">
+          <table className="min-w-full border border-collapse border-gray-300 dark:border-gray-700">
+            <thead>
+              <tr className="bg-gray-100 dark:bg-gray-800">
+                <th className="p-3 text-left border border-gray-300 dark:border-gray-700">Keyword</th>
+                <th className="p-3 text-left border border-gray-300 dark:border-gray-700">Meaning</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td className="p-3 border border-gray-300 dark:border-gray-700"><code>intay</code></td>
+                <td className="p-3 border border-gray-300 dark:border-gray-700">while loop</td>
+              </tr>
+              <tr>
+                <td className="p-3 border border-gray-300 dark:border-gray-700"><code>kuceli</code></td>
+                <td className="p-3 border border-gray-300 dark:border-gray-700">for loop</td>
+              </tr>
+              <tr>
+                <td className="p-3 border border-gray-300 dark:border-gray-700"><code>jooji</code></td>
+                <td className="p-3 border border-gray-300 dark:border-gray-700">break</td>
+              </tr>
+              <tr>
+                <td className="p-3 border border-gray-300 dark:border-gray-700"><code>soco</code></td>
+                <td className="p-3 border border-gray-300 dark:border-gray-700">continue</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>Soplang loops waxay taageeraan labadaba ku-celcelin qaabaysan iyo socod ku saleysan shuruud.</p>
+      </section>
+
       <DocNavigation
         className="mt-12"
         prevPage={{
           href: "/docs/conditional-statements",
           title: "Conditional Statements",
-          description: "Return to conditional statements in Soplang",
+          description: "haddii / haddii_kale / ugudambeyn",
         }}
         nextPage={{
           href: "/docs/functions",
           title: "Functions",
-          description: "Learn about defining and using functions in Soplang",
+          description: "Qeexid iyo isticmaal howlaha (functions) ee Soplang",
         }}
       />
     </div>
