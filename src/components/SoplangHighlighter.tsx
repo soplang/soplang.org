@@ -42,7 +42,7 @@ const keywords = [
   'min',
   'ilaa',
   'hawl',
-  'soo_celi',
+  'celi',
   'isku_day',
   'qabo',
   'fasalka',

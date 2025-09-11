@@ -200,7 +200,7 @@ Soplang uses Somali keywords to make programming more intuitive for Somali speak
 |---------|-------------------|-------------|
 | `door` | function | Defines a function |
 | `hawl` | return | Returns a value from a function |
-| `soo_celi` | import | Imports modules or functions |
+| `celi` | import | Imports modules or functions |
 | `qor` | print | Outputs text to the console |
 | `akhri` | input | Reads user input |
 | `haddii` | if | Conditional statement |

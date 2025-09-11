@@ -18,7 +18,7 @@ qor("Da'da: " + qoraal(da))
 
 // Function
 hawl salaan(qofka) {
-    soo_celi "Salaan, " + qofka + "!"
+    celi "Salaan, " + qofka + "!"
 }
 qor(salaan(magac))
 `;

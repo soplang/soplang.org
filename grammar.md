@@ -98,7 +98,7 @@ ContinueStatement ::= "sii_wad"
 ## Return Statement
 
 ```ebnf
-ReturnStatement ::= "soo_celi" [Expression]
+ReturnStatement ::= "celi" [Expression]
 ```
 
 ## Try-Catch

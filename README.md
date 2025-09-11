@@ -39,7 +39,7 @@ qoraal cinwaan = "Soplang Developer"
 
 // Function
 hawl salaanta(qofka) {
-    soo_celi "Salaan, " + qofka + "!"
+    celi "Salaan, " + qofka + "!"
 }
 
 qor(salaanta(magac))
