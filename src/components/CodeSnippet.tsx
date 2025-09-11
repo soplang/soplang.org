@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 interface CodeSnippetProps {
   code: string;
   language?: string;
-  showLineNumbers?: boolean;
+  shawlineNumbers?: boolean;
   className?: string;
   title?: string;
 }
@@ -17,7 +17,7 @@ interface CodeSnippetProps {
 const CodeSnippet: React.FC<CodeSnippetProps> = ({
   code,
   language = 'bash',
-  showLineNumbers = false,
+  shawlineNumbers = false,
   className = '',
   title = 'terminal',
 }) => {
@@ -54,7 +54,7 @@ const CodeSnippet: React.FC<CodeSnippetProps> = ({
       {/* Code content */}
       <div className="bg-[#1e1e1e] dark:bg-[#1e1e1e] p-4 overflow-x-auto rounded-bl-lg rounded-br-lg dark:border-gray-700">
         <code
-          className={`block text-white font-mono text-sm ${showLineNumbers ? 'line-numbers' : ''}`}
+          className={`block text-white font-mono text-sm ${shawlineNumbers ? 'line-numbers' : ''}`}
           data-language={language}
         >
           {code}

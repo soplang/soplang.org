@@ -57,7 +57,7 @@ StaticType ::= "tiro"      // Number
 ## Function Declarations
 
 ```ebnf
-FunctionDeclaration ::= "howl" Identifier "(" [ParameterList] ")" Block
+FunctionDeclaration ::= "hawl" Identifier "(" [ParameterList] ")" Block
 
 ParameterList ::= Identifier {"," Identifier}
 ```
@@ -74,7 +74,7 @@ ArgumentList ::= Expression {"," Expression}
 ## Control Flow
 
 ```ebnf
-IfStatement ::= "haddii" "(" Expression ")" Block 
+IfStatement ::= "haddii" "(" Expression ")" Block
                {ElseIfClause}
                [ElseClause]
 
@@ -216,4 +216,4 @@ Comment ::= SingleLineComment | MultiLineComment
 SingleLineComment ::= "//" {Character} '\n'
 
 MultiLineComment ::= "/*" {Character} "*/"
-``` 
+```

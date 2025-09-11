@@ -6,8 +6,7 @@ import { notFound } from 'next/navigation';
 const blogPosts = [
   {
     id: 'Soplang-2.0-Is-Almost-Here-A-Somali-first-Programming-Language-Nears-Major-Release',
-    title:
-      'Soplang 2.0 Is Almost Here — A Somali-first Programming Language Nears Major Release',
+    title: 'Soplang 2.0 Is Almost Here — A Somali-first Programming Language Nears Major Release',
     excerpt:
       'Soplang 2.0 brings a native Somali programming language into the modern era, with powerful tooling, expanded libraries, and a growing ecosystem.',
     date: 'April 18, 2025',
@@ -24,7 +23,7 @@ const blogPosts = [
       
       <h3 class="text-xl font-bold mt-6 mb-3 text-primary">What's Soplang?</h3>
       
-      <p class="mb-4">Soplang is a general-purpose programming language built around Somali linguistic conventions. Its core syntax reflects Somali words — like <code>door</code> for variable declarations, <code>haddii</code> for conditionals, and <code>howl</code> for functions — making it more intuitive for native speakers.</p>
+      <p class="mb-4">Soplang is a general-purpose programming language built around Somali linguistic conventions. Its core syntax reflects Somali words — like <code>door</code> for variable declarations, <code>haddii</code> for conditionals, and <code>hawl</code> for functions — making it more intuitive for native speakers.</p>
       
       <p class="mb-4">Beyond the syntax, Soplang includes many of the features developers expect from a modern language: object-oriented programming, static typing, module support, and error handling.</p>
       
@@ -159,12 +158,8 @@ export default function BlogPostDetail({ params }: { params: { id: string } }) {
               <span className="bg-primary text-white px-2 py-1 rounded-full text-xs font-medium">
                 {blogPost.category}
               </span>
-              <span className="text-gray-500 dark:text-gray-400">
-                {blogPost.date}
-              </span>
-              <span className="text-gray-500 dark:text-gray-400">
-                {blogPost.readTime}
-              </span>
+              <span className="text-gray-500 dark:text-gray-400">{blogPost.date}</span>
+              <span className="text-gray-500 dark:text-gray-400">{blogPost.readTime}</span>
             </div>
             <h1 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
               {blogPost.title}
@@ -174,12 +169,8 @@ export default function BlogPostDetail({ params }: { params: { id: string } }) {
                 {blogPost.author.charAt(0)}
               </div>
               <div>
-                <div className="font-bold text-gray-900 dark:text-white">
-                  {blogPost.author}
-                </div>
-                <div className="text-gray-600 dark:text-gray-400">
-                  {blogPost.authorRole}
-                </div>
+                <div className="font-bold text-gray-900 dark:text-white">{blogPost.author}</div>
+                <div className="text-gray-600 dark:text-gray-400">{blogPost.authorRole}</div>
               </div>
             </div>
           </div>
@@ -194,9 +185,7 @@ export default function BlogPostDetail({ params }: { params: { id: string } }) {
             {/* Tags */}
             <div className="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700">
               <div className="flex flex-wrap gap-2">
-                <span className="text-sm text-gray-600 dark:text-gray-400">
-                  Tags:
-                </span>
+                <span className="text-sm text-gray-600 dark:text-gray-400">Tags:</span>
                 <a
                   href="#"
                   className="text-sm bg-gray-100 dark:bg-gray-700 px-3 py-1 rounded-full hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"

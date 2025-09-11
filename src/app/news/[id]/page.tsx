@@ -1,21 +1,20 @@
-import Image from "next/image";
-import Link from "next/link";
-import { notFound } from "next/navigation";
+import Image from 'next/image';
+import Link from 'next/link';
+import { notFound } from 'next/navigation';
 
 // This would typically come from a database or API
 const newsItems = [
   {
-    id: "Soplang-2.0-Is-Almost-Here-A-Somali-first-Programming-Language-Nears-Major-Release",
-    title:
-      "Soplang 2.0 Is Almost Here — A Somali-first Programming Language Nears Major Release",
+    id: 'Soplang-2.0-Is-Almost-Here-A-Somali-first-Programming-Language-Nears-Major-Release',
+    title: 'Soplang 2.0 Is Almost Here — A Somali-first Programming Language Nears Major Release',
     excerpt:
-      "Soplang 2.0 brings a native Somali programming language into the modern era, with powerful tooling, expanded libraries, and a growing ecosystem.",
-    date: "May 15, 2024",
-    category: "Announcement",
-    image: "/images/blog/soplang-2.0.svg",
-    imageAlt: "Soplang 2.0 Announcement",
-    author: "Mr Sharafdin",
-    authorRole: "Soplang Creator",
+      'Soplang 2.0 brings a native Somali programming language into the modern era, with powerful tooling, expanded libraries, and a growing ecosystem.',
+    date: 'May 15, 2024',
+    category: 'Announcement',
+    image: '/images/blog/soplang-2.0.svg',
+    imageAlt: 'Soplang 2.0 Announcement',
+    author: 'Mr Sharafdin',
+    authorRole: 'Soplang Creator',
     content: `
       <p class="mb-4">The programming language landscape is about to welcome a fresh and culturally grounded addition: <strong>Soplang</strong>, a Somali-first programming language, is preparing to launch its long-awaited 2.0 release. Designed with native Somali syntax, dual typing, and full developer tooling, Soplang 2.0 is shaping up to be more than just a language — it's an ecosystem.</p>
       
@@ -23,7 +22,7 @@ const newsItems = [
       
       <h3 class="text-xl font-bold mt-6 mb-3 text-primary">What's Soplang?</h3>
       
-      <p class="mb-4">Soplang is a general-purpose programming language built around Somali linguistic conventions. Its core syntax reflects Somali words — like <code>door</code> for variable declarations, <code>haddii</code> for conditionals, and <code>howl</code> for functions — making it more intuitive for native speakers.</p>
+      <p class="mb-4">Soplang is a general-purpose programming language built around Somali linguistic conventions. Its core syntax reflects Somali words — like <code>door</code> for variable declarations, <code>haddii</code> for conditionals, and <code>hawl</code> for functions — making it more intuitive for native speakers.</p>
       
       <p class="mb-4">Beyond the syntax, Soplang includes many of the features developers expect from a modern language: object-oriented programming, static typing, module support, and error handling.</p>
       
@@ -103,8 +102,8 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
 
   if (!newsItem) {
     return {
-      title: "News Article Not Found - Soplang",
-      description: "The requested news article could not be found.",
+      title: 'News Article Not Found - Soplang',
+      description: 'The requested news article could not be found.',
     };
   }
 

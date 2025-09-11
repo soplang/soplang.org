@@ -16,7 +16,7 @@
 Soplang is the first Somali programming language that makes coding intuitive, inclusive, and accessible. Created by Mr Sharafdin, it enables developers to write code in native Somali syntax using familiar keywords and expressions.
 
 > "Dhis Software Adigoo Adeegsanaya Afkaaga Hooyo!"  
-> *Build software using your native language!*
+> _Build software using your native language!_
 
 ## ✨ Key Features
 
@@ -38,7 +38,7 @@ door magac = "Sharafdin"
 qoraal cinwaan = "Soplang Developer"
 
 // Function
-howl salaanta(qofka) {
+hawl salaanta(qofka) {
     soo_celi "Salaan, " + qofka + "!"
 }
 

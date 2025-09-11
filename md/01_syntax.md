@@ -19,7 +19,7 @@ This is the simplest Soplang program. It uses the built-in function `qor()` to d
 Soplang programs consist of:
 
 - **Declarations** – using `door`, `abn`, `jajab`, or `madoor`
-- **Functions** – using `howl`, `celi`
+- **Functions** – using `hawl`, `celi`
 - **Control flow** – using `haddii`, `ugudambeyn`, `celi`, etc.
 - **Built-ins** – like `qor()`, `gelin()`, `nooc()`
 
@@ -30,7 +30,7 @@ Blocks are defined using curly braces `{}` and code is written line by line.
 ### 🔍 Example Program
 
 ```sop
-howl salaan(magac) {
+hawl salaan(magac) {
     qor("Asalaamu calaykum, " + magac)
 }
 
@@ -40,7 +40,7 @@ salaan(magaca)
 
 This example reads user input and greets them. It includes:
 
-- a function definition (`howl`)
+- a function definition (`hawl`)
 - a variable (`door`)
 - built-in functions (`qor`, `gelin`)
 

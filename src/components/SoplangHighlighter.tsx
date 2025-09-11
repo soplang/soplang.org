@@ -41,7 +41,7 @@ const keywords = [
   'sii_wad',
   'min',
   'ilaa',
-  'howl',
+  'hawl',
   'soo_celi',
   'isku_day',
   'qabo',
@@ -139,7 +139,7 @@ function tokenizeSoplangCode(code: string): Token[] {
       }
 
       // Check if it's a function definition
-      if (identifier === 'howl' || identifier === 'fasalka') {
+      if (identifier === 'hawl' || identifier === 'fasalka') {
         addToken('keyword', identifier);
         let ws = '';
         while (peek() === ' ' || peek() === '\t') {

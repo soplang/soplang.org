@@ -30,6 +30,37 @@ door magaca = "Aamina"
 qor("Magaca: " + magaca)`}
           title="print_console.sop"
         />
+        <br />
+        <CodeWindow
+  code={`qor("Sheeko Abuure")  
+
+door magac = gelin("Fadlan geli magacaaga: ")
+
+door da = gelin("Fadlan geli da'daada: ")
+
+door magaalo = gelin("Fadlan geli magaalada aad joogto: ")
+
+door xayawaan = gelin("Geli nooca xayawaanka aad jeceshahay: ")
+
+door saaxiib = gelin("Ugu dambeyn, geli magaca saaxiibkaa: ")
+
+// Abuur Sheeko
+hawl samee_sheeko(magac, da, magaalo, xayawaan, saaxiib) {
+    door sheeko = "Maalin maalmaha ka mid ah, " + magac + ", oo " + da + " jir ah, ayaa ku noolaa magaalada " + magaalo + "."
+    sheeko = sheeko + " Maalin kasta waxa uu waqti la qaataa " + xayawaan + " uu aad u jeclaa."
+    sheeko = sheeko + " Saaxiibkiisii " + saaxiib + " ayaa maalin u keenay hadiyad cajiib ah."
+    sheeko = sheeko + " Waxa dhacay arrin lama filaan ah… Laakiin sheekadaasi waa qaybta labaad!"
+
+    celi sheeko
+}
+
+door natiijo = samee_sheeko(magac, da, magaalo, xayawaan, saaxiib)
+qor("")
+qor("------ SHEEKADA LA ABUURAY ------")
+qor(natiijo)`}
+  title="sheeko_abuure.sop"
+/>
+
       </section>
 
       {/* ⌨️ gelin() – Read from User Input */}

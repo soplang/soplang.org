@@ -1,26 +1,26 @@
-"use client";
+'use client';
 
-import React, { useState, useEffect } from "react";
-import SoplangHighlighter from "./SoplangHighlighter";
-import Prism from "prismjs";
-import "prismjs/components/prism-bash";
-import "prismjs/components/prism-powershell";
-import "prismjs/themes/prism-tomorrow.css";
+import React, { useState, useEffect } from 'react';
+import SoplangHighlighter from './SoplangHighlighter';
+import Prism from 'prismjs';
+import 'prismjs/components/prism-bash';
+import 'prismjs/components/prism-powershell';
+import 'prismjs/themes/prism-tomorrow.css';
 
 // Initialize Prism for syntax highlighting
-if (typeof window !== "undefined") {
+if (typeof window !== 'undefined') {
   Prism.manual = true;
 }
 
 // Define line types for better type safety
-type LineType = "command" | "comment" | "empty" | "text";
+type LineType = 'command' | 'comment' | 'empty' | 'text';
 
 interface CodeWindowProps {
   code: string;
   title?: string;
   className?: string;
   language?: string;
-  showLineNumbers?: boolean;
+  shawlineNumbers?: boolean;
 }
 
 /**
@@ -29,28 +29,28 @@ interface CodeWindowProps {
  */
 const CodeWindow: React.FC<CodeWindowProps> = ({
   code,
-  title = "main.sop",
-  className = "",
-  language = "soplang",
-  showLineNumbers = false,
+  title = 'main.sop',
+  className = '',
+  language = 'soplang',
+  shawlineNumbers = false,
 }) => {
   const [copySuccess, setCopySuccess] = useState(false);
 
   // Determine the type of line for styling purposes
   const getLineType = (line: string): LineType => {
-    if (line.startsWith("$") || line.startsWith(">")) return "command";
-    if (line.startsWith("//")) return "comment";
-    if (line.trim() === "") return "empty";
-    return "text";
+    if (line.startsWith('$') || line.startsWith('>')) return 'command';
+    if (line.startsWith('//')) return 'comment';
+    if (line.trim() === '') return 'empty';
+    return 'text';
   };
 
   // Apply syntax highlighting to command
-  const highlightCommand = (command: string, shell: "bash" | "powershell") => {
+  const highlightCommand = (command: string, shell: 'bash' | 'powershell') => {
     // Extract the command part (without the prompt)
     const commandText = command.substring(1).trim();
 
     // Apply Prism highlighting
-    const language = shell === "bash" ? "bash" : "powershell";
+    const language = shell === 'bash' ? 'bash' : 'powershell';
     const html = Prism.highlight(commandText, Prism.languages[language], language);
 
     return html;
@@ -61,9 +61,9 @@ const CodeWindow: React.FC<CodeWindowProps> = ({
     const lineType = getLineType(line);
 
     switch (lineType) {
-      case "command":
-        const isWindows = line.startsWith(">");
-        const shell = isWindows ? "powershell" : "bash";
+      case 'command':
+        const isWindows = line.startsWith('>');
+        const shell = isWindows ? 'powershell' : 'bash';
         const highlightedCommand = highlightCommand(line, shell);
 
         return (
@@ -75,15 +75,15 @@ const CodeWindow: React.FC<CodeWindowProps> = ({
             />
           </div>
         );
-      case "comment":
+      case 'comment':
         return (
           <div key={index} className="mt-2 mb-1 text-green-800">
             {line}
           </div>
         );
-      case "empty":
+      case 'empty':
         return <div key={index} className="mb-2"></div>;
-      case "text":
+      case 'text':
         return (
           <div key={index} className="mb-1 text-gray-400">
             {line}
@@ -94,7 +94,7 @@ const CodeWindow: React.FC<CodeWindowProps> = ({
 
   // Custom renderer for terminal content
   const renderTerminalContent = () => {
-    const lines = code.split("\n");
+    const lines = code.split('\n');
     return (
       <div className="p-4 font-mono text-sm">
         {lines.map((line, index) => renderLine(line, index))}
@@ -109,7 +109,7 @@ const CodeWindow: React.FC<CodeWindowProps> = ({
       setCopySuccess(true);
       setTimeout(() => setCopySuccess(false), 2000);
     } catch (err) {
-      console.error("Failed to copy text: ", err);
+      console.error('Failed to copy text: ', err);
     }
   };
 
@@ -127,13 +127,13 @@ const CodeWindow: React.FC<CodeWindowProps> = ({
           onClick={handleCopy}
           className="px-2 py-1 text-xs text-gray-300 transition-colors bg-gray-700 rounded hover:bg-gray-600"
         >
-          {copySuccess ? "Copied!" : "Copy"}
+          {copySuccess ? 'Copied!' : 'Copy'}
         </button>
       </div>
 
       {/* Code content with proper syntax highlighting */}
       <div className="overflow-x-auto bg-[#1e1e1e] text-gray-300">
-        {title === "terminal" ? renderTerminalContent() : <SoplangHighlighter code={code} />}
+        {title === 'terminal' ? renderTerminalContent() : <SoplangHighlighter code={code} />}
       </div>
     </div>
   );

@@ -12,7 +12,7 @@ This document provides a reference for all keywords in the Soplang programming l
 | `labadaran` | Boolean type                 | `bool`             | `labadaran waaRun = true`               |
 | `shey`      | Object type                  | `object`           | `shey person = { "name": "Sharafdin" }` |
 | `liis`      | List/array type              | `array`            | `liis numbers = [1, 2, 3]`              |
-| `waxba`      | waxba value                   | `waxba`             | `door a = waxba`                         |
+| `waxba`     | waxba value                  | `waxba`            | `door a = waxba`                        |
 
 ## Control Flow Keywords
 
@@ -37,7 +37,7 @@ This document provides a reference for all keywords in the Soplang programming l
 
 | Keyword    | Meaning              | English Equivalent | Example                                |
 | ---------- | -------------------- | ------------------ | -------------------------------------- |
-| `howl`     | Function declaration | `function`         | `howl isuGee(a, b) { soo_celi a + b }` |
+| `hawl`     | Function declaration | `function`         | `hawl isuGee(a, b) { soo_celi a + b }` |
 | `soo_celi` | Return statement     | `return`           | `soo_celi x * 2`                       |
 
 ## Error Handling Keywords

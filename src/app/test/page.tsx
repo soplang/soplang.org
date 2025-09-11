@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import React from "react";
-import CodeWindow from "../../components/CodeWindow";
+import React from 'react';
+import CodeWindow from '../../components/CodeWindow';
 
 // Sample code snippet with Hello World example
 const codeSnippet = `// Hello World
@@ -17,7 +17,7 @@ qor("Cinwaanka: " + cinwaan)
 qor("Da'da: " + qoraal(da))
 
 // Function
-howl salaan(qofka) {
+hawl salaan(qofka) {
     soo_celi "Salaan, " + qofka + "!"
 }
 qor(salaan(magac))

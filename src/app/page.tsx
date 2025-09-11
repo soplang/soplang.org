@@ -1,5 +1,5 @@
-import Link from "next/link";
-import CodeWindow from "../components/CodeWindow";
+import Link from 'next/link';
+import CodeWindow from '../components/CodeWindow';
 
 // Sample code snippet for the hero section - back to Hello World
 const codeSnippet = `// Hello World
@@ -15,7 +15,7 @@ qor("Cinwaanka: " + cinwaan)
 qor("Da'da: " + qoraal(da))
 
 // Function
-howl salaan(qofka) {
+hawl salaan(qofka) {
     soo_celi "Salaan, " + qofka + "!"
 }
 qor(salaan(magac))
@@ -24,38 +24,38 @@ qor(salaan(magac))
 // Website sections for the sidebar
 const websiteSections = [
   {
-    title: "Learn",
+    title: 'Learn',
     links: [
-      { name: "Documentation", href: "/docs" },
-      { name: "Tutorial", href: "/docs/tutorial" },
-      { name: "Examples", href: "/docs/examples" },
+      { name: 'Documentation', href: '/docs' },
+      { name: 'Tutorial', href: '/docs/tutorial' },
+      { name: 'Examples', href: '/docs/examples' },
     ],
   },
   {
-    title: "Download",
+    title: 'Download',
     links: [
-      { name: "Latest Version", href: "/downloads/latest" },
-      { name: "All Releases", href: "/downloads" },
-      { name: "Source Code", href: "https://github.com/soplang/soplang" },
+      { name: 'Latest Version', href: '/downloads/latest' },
+      { name: 'All Releases', href: '/downloads' },
+      { name: 'Source Code', href: 'https://github.com/soplang/soplang' },
     ],
   },
   {
-    title: "Community",
+    title: 'Community',
     links: [
-      { name: "Community Home", href: "/community" },
-      { name: "Contribute", href: "/contribute" },
-      { name: "Security", href: "/contribute/security" },
+      { name: 'Community Home', href: '/community' },
+      { name: 'Contribute', href: '/contribute' },
+      { name: 'Security', href: '/contribute/security' },
       {
-        name: "Report Issues",
-        href: "https://github.com/soplang/soplang/issues",
+        name: 'Report Issues',
+        href: 'https://github.com/soplang/soplang/issues',
       },
     ],
   },
   {
-    title: "About",
+    title: 'About',
     links: [
-      { name: "About Soplang", href: "/about" },
-      { name: "Blog", href: "/blog" },
+      { name: 'About Soplang', href: '/about' },
+      { name: 'Blog', href: '/blog' },
     ],
   },
 ];
@@ -63,8 +63,8 @@ const websiteSections = [
 // Social media links
 const socialLinks = [
   {
-    name: "GitHub",
-    href: "https://github.com/soplang",
+    name: 'GitHub',
+    href: 'https://github.com/soplang',
     icon: (
       <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
         <path
@@ -76,8 +76,8 @@ const socialLinks = [
     ),
   },
   {
-    name: "Twitter",
-    href: "https://x.com/soplangorg",
+    name: 'Twitter',
+    href: 'https://x.com/soplangorg',
     icon: (
       <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
         <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
@@ -85,8 +85,8 @@ const socialLinks = [
     ),
   },
   {
-    name: "Discord",
-    href: "https://discord.gg/n296G4dd7x",
+    name: 'Discord',
+    href: 'https://discord.gg/n296G4dd7x',
     icon: (
       <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
         <path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z" />
@@ -148,7 +148,7 @@ export default function Home() {
                 <div className="space-y-4 text-base sm:text-lg">
                   <p>
                     <strong>Soplang</strong> (short for <em>Somali Programming Language</em>) is a
-                    culturally-rooted programming language designed and developed by{" "}
+                    culturally-rooted programming language designed and developed by{' '}
                     <strong>Mr Sharafdin</strong> (Sharafdin Yusuf Sharafdin). It allows developers
                     to write code in <strong>native Somali syntax</strong> using familiar keywords,
                     expressions, and structures — making programming feel natural and accessible.
@@ -173,7 +173,7 @@ export default function Home() {
                       Dual Typing System
                     </h3>
                     <p className="text-gray-700 dark:text-gray-300">
-                      Use <code>door</code> for dynamic typing, or <code>tiro</code>,{" "}
+                      Use <code>door</code> for dynamic typing, or <code>tiro</code>,{' '}
                       <code>qoraal</code>, etc. for static typing flexibility.
                     </p>
                   </div>
@@ -182,7 +182,7 @@ export default function Home() {
                       Object-Oriented Programming
                     </h3>
                     <p className="text-gray-700 dark:text-gray-300">
-                      Full support for OOP with <code>fasalka</code>, <code>ka_dhaxal</code>,{" "}
+                      Full support for OOP with <code>fasalka</code>, <code>ka_dhaxal</code>,{' '}
                       <code>cusub</code>, and <code>nafta</code>.
                     </p>
                   </div>
@@ -262,7 +262,12 @@ $ curl -sSL https://install.soplang.org | bash
                   Soplang is proudly supported by these amazing organizations:
                 </p>
                 <div className="flex justify-center items-center">
-                  <a href="https://www.docker.com" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center p-4 grayscale hover:grayscale-0 transition-all duration-300">
+                  <a
+                    href="https://www.docker.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center p-4 grayscale hover:grayscale-0 transition-all duration-300"
+                  >
                     <img src="/images/sponsors/Docker.svg" alt="Docker" className="h-20" />
                   </a>
                 </div>
@@ -287,8 +292,8 @@ $ curl -sSL https://install.soplang.org | bash
                           <Link
                             href={link.href}
                             className="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary"
-                            target={link.href.startsWith("http") ? "_blank" : undefined}
-                            rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                            target={link.href.startsWith('http') ? '_blank' : undefined}
+                            rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                           >
                             {link.name}
                           </Link>
