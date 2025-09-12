@@ -118,8 +118,7 @@ door xaqiiqo = run`}
 
         <CodeWindow
           title="constants_basic.sop"
-          code={`madoor magaca = "Soplang"
-madoor da: abn = 21`}
+          code={`madoor magaca = "Soplang"`}
         />
 
         <p className="mb-4">Constants lama u wareejin karo (reassign):</p>
