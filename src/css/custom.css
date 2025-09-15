@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is([data-theme="dark"] *));
+
+/* light theme */
+:root {
+  --ifm-color-primary: #00db80;
+  --ifm-color-primary-dark: #00c573;
+  --ifm-color-primary-darker: #00ba6d;
+  --ifm-color-primary-darkest: #00995a;
+  --ifm-color-primary-light: #00f18d;
+  --ifm-color-primary-lighter: #00fc93;
+  --ifm-color-primary-lightest: #1effa1;
+  --docusaurus-highlighted-code-line-bg: #e0e1e9;
+}
+
+/* dark theme */
+[data-theme="dark"] {
+  --ifm-color-primary: #00db80;
+  --ifm-color-primary-dark: #00c573;
+  --ifm-color-primary-darker: #00ba6d;
+  --ifm-color-primary-darkest: #00995a;
+  --ifm-color-primary-light: #00f18d;
+  --ifm-color-primary-lighter: #00fc93;
+  --ifm-color-primary-lightest: #1effa1;
+  --ifm-background-color: #03061c;
+  --docusaurus-highlighted-code-line-bg: #03061c;
+}
+
+@theme inline {
+  --color-green: #00db80;
+  --color-white: hsl(0deg, 0%, 100%);
+  --color-gray: #00db80;
+  --color-soft-blue: #0b4ea0;
+  --color-soft-green: hsl(146deg, 24%, 49%);
+}
