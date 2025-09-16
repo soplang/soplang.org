@@ -144,13 +144,60 @@ const config: Config = {
     },
     footer: {
       style: "dark",
+
       links: [
         {
-          title: "Docs",
+          title: "About",
           items: [
             {
-              label: "Tutorial",
-              to: "/docs/intro",
+              label: "About",
+              to: "/about",
+            },
+            {
+              label: "Get Started",
+              to: "/get-started",
+            },
+            {
+              label: "Help",
+              to: "/help",
+            },
+          ],
+        },
+        {
+          title: "Downloads",
+          items: [
+            {
+              label: "All Releases",
+              to: "/",
+            },
+            {
+              label: "Source Code",
+              to: "/",
+            },
+            {
+              label: "Windows",
+              to: "/",
+            },
+            {
+              label: "macOS",
+              to: "/",
+            },
+            {
+              label: "Linux/UNIX",
+              to: "/",
+            },
+          ],
+        },
+        {
+          title: "Documentation",
+          items: [
+            {
+              label: "Docs",
+              to: "/docs",
+            },
+            {
+              label: "FAQs",
+              to: "/faqs",
             },
           ],
         },
@@ -158,36 +205,46 @@ const config: Config = {
           title: "Community",
           items: [
             {
-              label: "Stack Overflow",
-              href: "https://stackoverflow.com/questions/tagged/docusaurus",
+              label: "Community Home",
+              to: "/community",
             },
             {
               label: "Discord",
-              href: "https://discordapp.com/invite/docusaurus",
+              to: "/discord",
             },
             {
-              label: "X",
-              href: "https://x.com/docusaurus",
+              label: "GitHub",
+              href: "https://github.com/facebook/docusaurus",
+            },
+            {
+              label: "Discussion",
+              to: "/github",
+            },
+            {
+              label: "Contributing",
+              to: "/",
             },
           ],
         },
         {
-          title: "More",
+          title: "Blog",
           items: [
             {
-              label: "Blog",
+              label: "Blog Home",
               to: "/blog",
-            },
-            {
-              label: "GitHub",
-
-              href: "https://github.com/facebook/docusaurus",
             },
           ],
         },
       ],
 
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      logo: {
+        alt: "Soplang Logo",
+        src: "img/logo.svg",
+        width: 160,
+        height: 51,
+      },
+
+      copyright: `Copyright ©2025 Soplang Software Foundation Soplang is an open-source programming language that lets you work quickly and integrate systems effectively.`,
     },
     prism: {
       theme: prismThemes.nightOwlLight,
