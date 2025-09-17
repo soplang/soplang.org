@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 16 16" id="Microsoft">
+  <path fill="#05df72" d="M8.5 7.5H16v-7a.5.5 0 0 0-.5-.5h-7v7.5z" class="color4caf50 svgShape"></path>
+  <path fill="#36f495" d="M7.5 7.5V0h-7a.5.5 0 0 0-.5.5v7h7.5z" class="colorf44336 svgShape"></path>
+  <path fill="#21f38a" d="M7.5 8.5H0v7a.5.5 0 0 0 .5.5h7V8.5z" class="color2196f3 svgShape"></path>
+  <path fill="#07ff83" d="M8.5 8.5V16h7a.5.5 0 0 0 .5-.5v-7H8.5z" class="colorffc107 svgShape"></path>
+</svg>

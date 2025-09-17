@@ -3,6 +3,9 @@
 @custom-variant dark (&:is([data-theme="dark"] *));
 
 :root {
+  scroll-behavior: smooth;
+
+  /* colors */
   --ifm-color-primary: #00db80;
   --ifm-color-primary-dark: #00c573;
   --ifm-color-primary-darker: #00ba6d;
@@ -11,7 +14,7 @@
   --ifm-color-primary-lighter: #00fc93;
   --ifm-color-primary-lightest: #1effa1;
   --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: var(--color-gray-200);
+  --docusaurus-highlighted-code-line-bg: #f7f1f1;
 }
 
 [data-theme="dark"] {
@@ -23,9 +26,29 @@
   --ifm-color-primary-lighter: #00fc93;
   --ifm-color-primary-lightest: #1effa1;
   --ifm-background-color: var(--color-dark-color) !important ;
+  --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: var(--color-footer);
 }
 
+/* custom css variables using tailwind direction of '@theme' */
+@theme inline {
+  --color-green: hsl(155deg, 100%, 43%);
+  --color-white: hsl(0deg, 0%, 100%);
+  --color-gray: hsl(155deg, 100%, 43%);
+  --color-soft-blue: hsl(213deg, 87%, 34%);
+  --color-soft-green: hsl(146deg, 24%, 49%);
+  --color-dark-color: hsl(231deg, 84%, 5%);
+  --color-footer: hsl(240deg, 6%, 3%);
+  --color-background: hsl(221deg, 36%, 9%);
+}
+
+/* custom utitilites for reusing it  */
+
+@utility shadom-1x {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* overidding the docusaours css styles to align with us */
 .footer {
   background-color: var(--color-footer);
 }
@@ -35,7 +58,7 @@
 }
 
 .footer__copyright {
-  font-size: 1.2rem;
+  font-size: 0.9rem;
   color: var(--color-gray-400);
   font-style: italic;
 }
@@ -63,22 +86,8 @@
   align-items: center;
   gap: 0.2rem;
 }
-@theme inline {
-  --color-green: #00db80;
-  --color-white: hsl(0deg, 0%, 100%);
-  --color-gray: #00db80;
-  --color-soft-blue: #0b4ea0;
-  --color-soft-green: hsl(146deg, 24%, 49%);
-  --color-dark-color: #020517;
-  --color-footer: #080809;
-}
 
-.header-github-link {
-  display: inline-flex !important;
-  align-items: center !important;
-  gap: 0.5em !important;
-}
-.header-github-link svg {
-  display: inline-block !important;
-  vertical-align: middle !important;
+h2 {
+  margin-top: 20px;
+  margin-bottom: 30px;
 }
