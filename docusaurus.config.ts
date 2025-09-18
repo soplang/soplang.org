@@ -136,9 +136,19 @@ const config: Config = {
         },
 
         {
-          href: "https://github.com/facebook/docusaurus",
-          label: "GitHub",
           position: "right",
+          label: "github",
+          href: "https://github.com/soplang/soplang.com-update",
+        },
+        {
+          position: "right",
+          label: "discord",
+          href: "https://discord.com/invite/n296G4dd7x",
+        },
+        {
+          position: "right",
+          label: "twitter",
+          href: "https://x.com/soplangorg",
         },
       ],
     },
@@ -210,19 +220,19 @@ const config: Config = {
             },
             {
               label: "Discord",
-              to: "/discord",
+              href: "https://discord.com/invite/n296G4dd7x",
             },
             {
               label: "GitHub",
-              href: "https://github.com/facebook/docusaurus",
+              href: "https://github.com/soplang/soplang.com-update",
             },
             {
               label: "Discussion",
-              to: "/github",
+              href: "https://github.com/orgs/soplang/discussions",
             },
             {
               label: "Contributing",
-              to: "/",
+              href: "https://github.com/soplang/soplang/blob/main/docs/CONTRIBUTING.md",
             },
           ],
         },

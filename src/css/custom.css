@@ -81,13 +81,14 @@
   );
 }
 
-.navbar__link {
-  display: flex;
-  align-items: center;
-  gap: 0.2rem;
+svg {
+  display: inline-flex;
 }
 
 h2 {
   margin-top: 20px;
   margin-bottom: 30px;
+}
+.navbar-sidebar {
+  background-color: var(--color-background);
 }
