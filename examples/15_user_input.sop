@@ -1,0 +1,25 @@
+// Gelin (Input) Function Example
+// This example shows how to use gelin to get user input
+
+// First, let's print a brief explanation
+qor("Gelin Example - User Input in Soplang")
+qor("---------------------------------")
+
+// For automated testing, we'll use a hardcoded value
+qor("Note: For automated testing, we'll simulate user input with a hardcoded value")
+// door magac = gelin("Enter your name: ")
+door magac = "Soplang User"  // Hardcoded value for testing
+qor("(Normally this would be: door magac = gelin('Enter your name: '))")
+
+// Display a greeting with the entered name
+qor("Hello, " + magac + "!")
+qor("Welcome to Soplang programming!")
+
+// Show the type of the input (always a string)
+qor("The type of your input is: " + nooc(magac))
+
+// Example of simple input processing
+qor("Your name has " + dherer(magac) + " characters.")
+
+// Thank the user
+qor("Thank you for trying gelin in Soplang!")

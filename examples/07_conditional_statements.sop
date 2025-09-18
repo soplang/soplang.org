@@ -1,0 +1,77 @@
+// Test: Conditional Statements
+// This test checks if conditional statements work properly
+
+qor("Testing conditional statements (haddii):")
+
+// Simple if statement
+abn age = 20
+qor("  age = " + age)
+
+qor("  Simple if statement:")
+haddii (age >= 18) {
+    qor("    Person is an adult")
+}
+
+// If-else statement
+qor("  If-else statement:")
+haddii (age >= 21) {
+    qor("    Person can drink alcohol")
+} ugudambeyn {
+    qor("    Person cannot drink alcohol")
+}
+
+// If-else if-else statement
+abn score = 85
+qor("  score = " + score)
+qor("  If-else if-else statement:")
+haddii (score >= 90) {
+    qor("    Grade: A")
+} haddii_kale (score >= 80) {
+    qor("    Grade: B")
+} haddii_kale (score >= 70) {
+    qor("    Grade: C")
+} haddii_kale (score >= 60) {
+    qor("    Grade: D")
+} ugudambeyn {
+    qor("    Grade: F")
+}
+
+// Nested if statements
+qor("  Nested if statements:")
+haddii (age >= 16) {
+    qor("    Person can drive")
+    haddii (age >= 18) {
+        qor("    Person can vote")
+        haddii (age >= 21) {
+            qor("    Person can drink alcohol")
+        }
+    }
+}
+
+// Using logical operators in conditions
+abn x = 10
+abn y = 20
+qor("  x = " + x + ", y = " + y)
+
+qor("  Using AND (&&) operator:")
+haddii (x > 5 && y < 30) {
+    qor("    Both conditions are true")
+}
+
+qor("  Using OR (||) operator:")
+haddii (x > 15 || y > 15) {
+    qor("    At least one condition is true")
+}
+
+// Testing with decimal values
+jajab temperature = 37.5
+qor("  temperature = " + temperature)
+
+qor("  Testing with decimal values:")
+haddii (temperature > 38.0) {
+    qor("    Person has a fever")
+} haddii_kale (temperature >= 37.5) {
+    qor("    Person has a slight temperature")
+} ugudambeyn {
+    qor("    Person's temperature is normal")
+}

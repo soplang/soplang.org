@@ -1,0 +1,71 @@
+// Test: While Loops
+// This test checks if while loops work properly
+
+qor("Testing while loops (intay):")
+
+// Simple while loop
+abn counter = 1
+qor("  Simple while loop:")
+intay (counter <= 5) {
+    qor("    Counter: " + counter)
+    counter = counter + 1
+}
+
+// While loop with break
+qor("  While loop with break (jooji):")
+counter = 1
+intay (counter <= 10) {
+    qor("    Counter: " + counter)
+
+    haddii (counter == 5) {
+        qor("    Breaking the loop at counter = 5")
+        jooji
+    }
+
+    counter = counter + 1
+}
+
+// While loop with continueA
+qor("  While loop with continue (soco):")
+counter = 0
+intay (counter < 5) {
+    counter = counter + 1
+
+    haddii (counter % 2 == 0) {
+        soco
+    }
+
+    qor("    Odd counter: " + counter)
+}
+
+// Nested while loops
+qor("  Nested while loops:")
+abn i = 1
+intay (i <= 3) {
+    qor("    Outer loop: " + i)
+    abn j = 1
+    intay (j <= 2) {
+        qor("      Inner loop: " + j)
+        j = j + 1
+    }
+    i = i + 1
+}
+
+// While loop with decimal values
+qor("  While loop with decimal values:")
+jajab x = 0.5
+intay (x < 3.0) {
+    qor("    x = " + x)
+    x = x + 0.5
+}
+
+// Factorial calculation using while loop
+abn a = 5
+abn factorial = 1
+abn n = a
+qor("  Factorial calculation for " + a + ":")
+intay (n > 0) {
+    factorial = factorial * n
+    n = n - 1
+}
+qor("    " + a + "! = " + factorial)

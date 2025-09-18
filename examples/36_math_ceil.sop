@@ -1,0 +1,64 @@
+// Test: Math Ceiling Function (kor)
+// This test demonstrates the kor() function which rounds up to the nearest integer
+
+qor("Testing math ceiling function (kor):")
+
+// Basic positive numbers
+qor("\nPositive numbers:")
+qor("  kor(4.2) = " + kor(4.2))       // Should be 5
+qor("  kor(5.8) = " + kor(5.8))       // Should be 6
+qor("  kor(9.01) = " + kor(9.01))     // Should be 10
+
+// Integers (should remain the same)
+qor("\nIntegers:")
+qor("  kor(7) = " + kor(7))           // Should be 7
+qor("  kor(0) = " + kor(0))           // Should be 0
+
+// Negative numbers (important edge case!)
+qor("\nNegative numbers:")
+qor("  kor(-3.7) = " + kor(-3.7))     // Should be -3
+qor("  kor(-1.2) = " + kor(-1.2))     // Should be -1
+qor("  kor(-8.999) = " + kor(-8.999)) // Should be -8
+
+// Edge cases
+qor("\nEdge cases:")
+qor("  kor(0.1) = " + kor(0.1))       // Should be 1
+qor("  kor(-0.1) = " + kor(-0.1))     // Should be 0
+qor("  kor(0.999) = " + kor(0.999))   // Should be 1
+
+// Compare with daji (floor) function
+qor("\nComparison with daji (floor):")
+door value1 = 7.3
+door value2 = -2.6
+qor("  Value 1: " + value1)
+qor("  daji(value1) = " + daji(value1))  // Should be 7
+qor("  kor(value1) = " + kor(value1))    // Should be 8
+qor("  Value 2: " + value2)
+qor("  daji(value2) = " + daji(value2))  // Should be -3
+qor("  kor(value2) = " + kor(value2))    // Should be -2
+
+// Dynamic variables
+qor("\nWith variables:")
+door x = 6.2
+door y = -4.8
+qor("  x = " + x)
+qor("  y = " + y)
+qor("  kor(x) = " + kor(x))           // Should be 7
+qor("  kor(y) = " + kor(y))           // Should be -4
+
+// Practical examples
+qor("\nPractical examples:")
+
+// Example: calculating minimum number of containers needed
+door items = 17
+door containerSize = 5
+door containers = kor(items / containerSize)
+qor("  " + items + " items with containers of size " + containerSize + " = " + containers + " containers needed")
+
+// Example: calculating minimum number of pages to show all results
+door results = 30
+door resultsPerPage = 8
+door pages = kor(results / resultsPerPage)
+qor("  " + results + " results with " + resultsPerPage + " per page = " + pages + " pages needed")
+
+qor("\nMath ceiling tests completed!")

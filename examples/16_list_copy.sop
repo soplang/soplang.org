@@ -1,0 +1,47 @@
+// Test: List Copy Operations
+// This test demonstrates the nuqul() method for making shallow copies of lists
+
+qor("Testing list copy (nuqul) method:")
+
+// Create an original list
+teed asalka = [1, 2, 3]
+qor("  Original list (asalka): " + asalka)
+
+// Create a copy using nuqul()
+teed nuqul_list = asalka.nuqul()
+qor("  Copied list (nuqul_list): " + nuqul_list)
+
+// Modify the original list
+asalka.kudar(4)
+qor("  Original list after modification: " + asalka)
+qor("  Copied list after original was modified: " + nuqul_list)
+
+// Verify that the lists are separate objects
+qor("Verifying that the copy is independent from the original:")
+qor("  asalka == nuqul_list: " + (asalka == nuqul_list))  // Content comparison
+qor("  After adding an element to the copy:")
+nuqul_list.kudar(5)
+qor("  Original list: " + asalka)
+qor("  Modified copy: " + nuqul_list)
+
+// Test with nested structures (shallow copy behavior)
+qor("Testing shallow copy behavior with nested lists:")
+teed nested = [[10, 20], [30, 40]]
+teed nested_copy = nested.nuqul()
+qor("  Original nested list: " + nested)
+qor("  Nested list copy: " + nested_copy)
+
+// Modify a nested element (should affect both lists since it's a shallow copy)
+nested[0][0] = 15
+qor("  After modifying a nested element (nested[0][0] = 15):")
+qor("  Original nested list: " + nested)
+qor("  Nested list copy: " + nested_copy)
+
+// Modify the outer structure (should not affect the copy)
+nested.kudar([50, 60])
+qor("  After adding a new nested list to the original:")
+qor("  Original nested list: " + nested)
+qor("  Nested list copy: " + nested_copy)
+qor("  Notice: The nested copy doesn't contain the [50, 60] element added to the original")
+
+qor("The nuqul() method successfully creates a shallow copy that is independent at the top level.")

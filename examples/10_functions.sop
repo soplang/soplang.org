@@ -1,0 +1,112 @@
+// Test: Functions
+// This test checks if functions work properly
+
+qor("Testing functions (hawl):")
+
+// Simple function with no parameters or return value
+hawl salaan() {
+    qor("  Salaan, Adduunka!")
+}
+
+qor("  Calling salaan function:")
+salaan()
+
+// Function with integer parameters
+hawl isku_dar_integers(x, y) {
+    celi x + y
+}
+
+qor("  Testing function with integer parameters:")
+qor("  isku_dar_integers(5, 7): " + isku_dar_integers(5, 7))
+qor("  isku_dar_integers(10, 20): " + isku_dar_integers(10, 20))
+
+// Function with decimal parameters
+hawl isku_dar_decimals(x, y) {
+    celi x + y
+}
+
+qor("  Testing function with decimal parameters:")
+qor("  isku_dar_decimals(5.5, 7.25): " + isku_dar_decimals(5.5, 7.25))
+qor("  isku_dar_decimals(10.1, 20.2): " + isku_dar_decimals(10.1, 20.2))
+
+// Function with string concatenation
+hawl isku_dar_strings(str1, str2) {
+    celi str1 + str2
+}
+
+qor("  Testing function with string parameters:")
+qor("  isku_dar_strings('Magac', 'Danbe'): " + isku_dar_strings("Magac", "Danbe"))
+
+// Function that doubles an integer
+hawl laban_jibbaar_integer(num) {
+    celi num * 2
+}
+
+// Function that doubles a decimal
+hawl laban_jibbaar_decimal(num) {
+    celi num * 2
+}
+
+qor("  Testing functions with specific return types:")
+qor("  laban_jibbaar_integer(8): " + laban_jibbaar_integer(8))
+qor("  laban_jibbaar_decimal(8.5): " + laban_jibbaar_decimal(8.5))
+
+// Function with type checking
+hawl check_even(num) {
+    haddii (num % 2 == 0) {
+        celi run
+    } ugudambeyn {
+        celi been
+    }
+}
+
+qor("  Testing function with type checking:")
+qor("  check_even(4): " + check_even(4))
+qor("  check_even(7): " + check_even(7))
+
+// Function with decimal rounding
+hawl round_decimal(num) {
+    abn rounded = abn(num)
+    celi rounded
+}
+
+qor("  Testing decimal rounding function:")
+qor("  round_decimal(4.7): " + round_decimal(4.7))
+qor("  round_decimal(9.2): " + round_decimal(9.2))
+
+// Function with conditional return
+hawl get_grade(score) {
+    haddii (score >= 90) {
+        celi "A"
+    } haddii_kale (score >= 80) {
+        celi "B"
+    } haddii_kale (score >= 70) {
+        celi "C"
+    } haddii_kale (score >= 60) {
+        celi "D"
+    } ugudambeyn {
+        celi "F"
+    }
+}
+
+qor("  Testing function with conditional return:")
+qor("  get_grade(95): " + get_grade(95))
+qor("  get_grade(85): " + get_grade(85))
+qor("  get_grade(75): " + get_grade(75))
+qor("  get_grade(65): " + get_grade(65))
+qor("  get_grade(55): " + get_grade(55))
+
+// Function that works with both integers and decimals
+hawl calculate_area(shape, a, b) {
+    haddii (shape == "rectangle") {
+        celi a * b
+    } haddii_kale (shape == "triangle") {
+        celi 0.5 * a * b
+    } ugudambeyn {
+        celi 0
+    }
+}
+
+qor("  Testing generic calculation function:")
+qor("  Rectangle area (integers) calculate_area('rectangle', 5, 10): " + calculate_area("rectangle", 5, 10))
+qor("  Triangle area (decimals) calculate_area('triangle', 5.5, 10.5): " + calculate_area("triangle", 5.5, 10.5))

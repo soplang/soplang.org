@@ -1,0 +1,44 @@
+// Test: List Clear Operations
+// This example demonstrates the nadiifi() method for clearing lists
+
+qor("Testing list clear (nadiifi) method:")
+
+// Basic usage as shown in the example
+qor("1. Basic usage:")
+teed xasuus = ["A", "B", "C"]
+qor("  Original list: " + xasuus)
+xasuus.nadiifi()
+qor("  After nadiifi(): " + xasuus)
+
+// Clearing an already empty list
+qor("2. Clearing an already empty list:")
+teed madhan = []
+qor("  Empty list: " + madhan)
+madhan.nadiifi()
+qor("  After nadiifi(): " + madhan)
+
+// Clearing a list with nested elements
+qor("3. Clearing a list with nested elements:")
+teed complex = [[1, 2], [3, 4], 5, "text"]
+qor("  Complex list: " + complex)
+complex.nadiifi()
+qor("  After nadiifi(): " + complex)
+
+// Adding items to a cleared list
+qor("4. Adding items to a cleared list:")
+teed list = [10, 20, 30]
+qor("  Original list: " + list)
+list.nadiifi()
+qor("  After nadiifi(): " + list)
+list.kudar(40)
+list.kudar(50)
+qor("  After adding new items: " + list)
+
+// Chaining operations
+qor("5. Chaining operations with nadiifi():")
+teed chain = [1, 2, 3]
+qor("  Original list: " + chain)
+chain.nadiifi().kudar(4).kudar(5)
+qor("  After: chain.nadiifi().kudar(4).kudar(5): " + chain)
+
+qor("The nadiifi() method successfully clears all items from a list.")

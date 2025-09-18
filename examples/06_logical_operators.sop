@@ -1,0 +1,46 @@
+// Test: Logical Operators
+// This test checks if logical operators work properly
+
+qor("Testing logical operators:")
+
+// Boolean values
+bool c = been
+bool d = run
+qor("  c = " + c + ", d = " + d)
+
+// Basic logical operations
+qor("  AND (c && d): " + (c && d))
+qor("  OR (c || d): " + (c || d))
+qor("  NOT (!c): " + (!c))
+qor("  NOT (!d): " + (!d))
+
+// Compound expressions
+qor("  Compound AND (c && !d): " + (c && !d))
+qor("  Compound OR (!c || d): " + (!c || d))
+qor("  Complex expression (c && (d || !d)): " + (c && (d || !d)))
+qor("  Complex expression ((c || d) && (c || !d)): " + ((c || d) && (c || !d)))
+
+// Using integer values in logical operations
+abn x = 10
+abn y = 20
+qor("\nLogical operations with integers:")
+qor("  x = " + x + ", y = " + y)
+qor("  Comparison in logical expression ((x > 5) && (y < 30)): " + ((x > 5) && (y < 30)))
+qor("  Comparison in logical expression ((x > 15) || (y < 30)): " + ((x > 15) || (y < 30)))
+
+// Using decimal values in logical operations
+jajab a = 10.5
+jajab b = 20.25
+qor("\nLogical operations with decimals:")
+qor("  a = " + a + ", b = " + b)
+qor("  Comparison in logical expression ((a > 5.5) && (b < 30.5)): " + ((a > 5.5) && (b < 30.5)))
+qor("  Comparison in logical expression ((a > 15.5) || (b < 30.5)): " + ((a > 15.5) || (b < 30.5)))
+
+// Mixed integer and decimal comparisons
+qor("\nLogical operations with mixed types:")
+qor("  Integer vs. Decimal ((x < a) && (y > b)): " + ((x < a) && (y > b)))
+qor("  Integer vs. Decimal ((x > a) || (y > b)): " + ((x > a) || (y > b)))
+
+// Assignment of logical operations
+door result = ((x < y) && (c || d))
+qor("\nAssignment of logical operation (result = (x < y) && (c || d)): " + result)

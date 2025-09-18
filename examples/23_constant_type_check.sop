@@ -1,0 +1,44 @@
+// Test: Constant Type Checking
+// This test verifies that typed constants are properly type-checked
+
+qor("Testing constant type checking:")
+
+// Define some typed constants
+madoor abn MAX_COUNT = 100
+madoor qoraal APP_NAME = "Soplang"
+madoor bool IS_DEBUG = run
+madoor teed ALLOWED_OPTIONS = ["option1", "option2", "option3"]
+madoor walax CONFIG = {host: "localhost", port: 8080}
+
+qor("Checking types of constants:")
+qor("  MAX_COUNT: " + nooc(MAX_COUNT))
+qor("  APP_NAME: " + nooc(APP_NAME))
+qor("  IS_DEBUG: " + nooc(IS_DEBUG))
+qor("  ALLOWED_OPTIONS: " + nooc(ALLOWED_OPTIONS))
+qor("  CONFIG: " + nooc(CONFIG))
+
+// Examples of valid usage
+abn counter = MAX_COUNT - 50
+qor("Counter: " + counter)
+
+qoraal message = "Welcome to " + APP_NAME
+qor("Message: " + message)
+
+haddii (IS_DEBUG) {
+    qor("Debug mode is enabled")
+}
+
+teed user_options = ALLOWED_OPTIONS
+user_options.kudar("option4")  // This modifies the copy, not the constant
+qor("User options: " + user_options)
+qor("Allowed options (constant): " + ALLOWED_OPTIONS)
+
+qor("Server config: " + CONFIG.host + ":" + CONFIG.port)
+
+// For demonstration - these would cause type errors if uncommented
+qor("Type errors if uncommented:")
+qor("  // madoor abn INVALID_INT = 'not a number'")
+qor("  // madoor qoraal INVALID_STRING = 123")
+qor("  // madoor bool INVALID_BOOL = 'not a boolean'")
+
+qor("Constant type checking test completed!")

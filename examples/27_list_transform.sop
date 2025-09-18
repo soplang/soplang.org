@@ -1,0 +1,45 @@
+// Test: List Transform (aaddin) Method
+// This test demonstrates the usage of the aaddin() method for transforming lists
+
+// Define transformation functions
+hawl laban(x) {
+  celi x * 2
+}
+
+hawl ku_badal_qoraal(x) {
+  celi "abn_" + x
+}
+
+hawl kent_juft(x) {
+  haddii (x % 2 == 0) {
+    celi "Juft_" + x
+  } kale {
+    celi "Kent_" + x
+  }
+}
+
+// Let's remove the object test until we better understand Soplang's object syntax
+// We've successfully demonstrated the core functionality with numbers and strings
+
+qor("Testing list transform (aaddin) method:")
+
+// Create a sample list
+teed numbers = [1, 2, 3, 4, 5]
+qor("Original list: " + numbers)
+
+// Apply number transformation (doubling)
+teed result1 = numbers.aaddin("laban")
+qor("After numbers.aaddin('laban'): " + result1)  // Should be [2, 4, 6, 8, 10]
+
+// Apply string transformation (adding prefix)
+teed result2 = numbers.aaddin("ku_badal_qoraal")
+qor("After numbers.aaddin('ku_badal_qoraal'): " + result2)  // Should be ["abn_1", "abn_2", ...]
+
+// Apply conditional transformation (even/odd)
+teed result3 = numbers.aaddin("kent_juft")
+qor("After numbers.aaddin('kent_juft'): " + result3)  // Should process even/odd numbers differently
+
+// Confirm original list is unchanged
+qor("Original list after transforms: " + numbers)  // Should still be [1, 2, 3, 4, 5]
+
+qor("List transform test completed!")

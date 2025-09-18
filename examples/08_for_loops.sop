@@ -1,0 +1,50 @@
+// Test: For Loops
+// This test checks if for loops work properly
+
+qor("Testing for loops (kuceli):")
+
+// Simple for loop
+qor("  Simple for loop:")
+kuceli (i 1 ilaa 5) {
+    qor("    Iteration: " + i)
+}
+
+// For loop with step
+qor("  For loop with custom step (every other number):")
+kuceli (j 2 ilaa 10 :: 2) {
+    qor("    Iteration: " + j)
+}
+
+// For loop with break
+qor("  For loop with break (jooji):")
+kuceli (i 1 ilaa 10) {
+    haddii (i > 5) {
+        jooji
+    }
+    qor("    Iteration: " + i)
+}
+
+// For loop with continue
+qor("  For loop with continue (soco):")
+kuceli (i 1 ilaa 5) {
+    haddii (i % 2 == 0) {
+        soco
+    }
+    qor("    Odd number: " + i)
+}
+
+// Nested for loops
+qor("  Nested for loops:")
+kuceli (i 1 ilaa 3) {
+    qor("    Outer loop: " + i)
+    kuceli (j 1 ilaa 2) {
+        qor("      Inner loop: " + j)
+    }
+}
+
+// For loop operating on a list
+teed numbers = [10, 20, 30, 40, 50]
+qor("  For loop iterating over a list with indices:")
+kuceli (i 0 ilaa numbers.dherer() - 1) {
+    qor("    Element at index " + i + ": " + numbers[i])
+}

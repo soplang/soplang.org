@@ -1,0 +1,45 @@
+// Test: List Reverse
+// This test checks if the rog() method correctly reverses lists in-place
+
+qor("Testing list reverse (rog) method:")
+
+// Simple list reversal
+teed magacyo = ["Ayaan", "Barwaaqo", "Cali"]
+qor("  Original list: " + magacyo)
+magacyo.rog()
+qor("  After rog(): " + magacyo)  // Should output: ["Cali", "Barwaaqo", "Ayaan"]
+
+// Reversal of a numeric list
+teed numbers = [1, 2, 3, 4, 5]
+qor("  Original numeric list: " + numbers)
+numbers.rog()
+qor("  After rog(): " + numbers)  // Should output: [5, 4, 3, 2, 1]
+
+// Verify the list is mutated (same reference)
+teed original = [10, 20, 30]
+qor("  Original list: " + original)
+door reference = original
+reference.rog()
+qor("  After rog() via reference: " + original)  // Should show the reversed list
+qor("  Proving it's the same reference: " + reference)  // Should be identical to original
+
+// Empty list
+teed empty = []
+qor("  Empty list: " + empty)
+empty.rog()
+qor("  After rog() on empty list: " + empty)  // Should still be empty
+
+// Single element list
+teed single = ["Solo"]
+qor("  Single element list: " + single)
+single.rog()
+qor("  After rog() on single element list: " + single)  // Should be unchanged
+
+// Method chaining
+teed chain = [1, 2, 3]
+qor("  Method chaining:")
+qor("  Original list: " + chain)
+chain.rog().kudar(4)
+qor("  After rog().kudar(4): " + chain)  // Should be [3, 2, 1, 4]
+
+qor("List reverse (rog) tests completed!")
