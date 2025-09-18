@@ -60,8 +60,8 @@ const CodeBlock: React.FC<CodeBlockProps> = ({
       <div className="group overflow-hidden rounded-2xl border border-gray-700  shadow-md">
         {/* Header */}
         <div style={{backgroundColor:"#101012"}} className="flex items-center justify-between border-b border-gray-800 p-2">
-          <div className="flex items-center gap-2 text-xs font-mono tracking-wide text-slate-700">
-            {title ? <Logo width={24} height={24} /> : null}
+          <div className="flex items-center gap-2 text-xs font-mono tracking-wide text-slate-500">
+            {title ? <Logo width={20} height={20}/> : null}
             <span>{title || ""}</span>
           </div>
           <button
