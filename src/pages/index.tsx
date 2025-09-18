@@ -10,7 +10,7 @@ export default function Home(): ReactNode {
     >
       <main>
         <h3>Hello world soplang</h3>
-        <CodeBlock code={"console.log('Hello Adam')"} className="w-[500px]"/>
+        <CodeBlock code={'qor("Hello from Soplang")'} className="w-[500px]" title="hello.sop"/>
       </main>
     </Layout>
   );
