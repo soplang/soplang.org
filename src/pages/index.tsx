@@ -1,5 +1,6 @@
 import Layout from "@theme/Layout";
 import type { ReactNode } from "react";
+import CodeBlock from "../components/shared/CodeBlock";
 
 export default function Home(): ReactNode {
   return (
@@ -9,6 +10,7 @@ export default function Home(): ReactNode {
     >
       <main>
         <h3>Hello world soplang</h3>
+        <CodeBlock code={"console.log('Hello Adam')"} className="w-[500px]"/>
       </main>
     </Layout>
   );
