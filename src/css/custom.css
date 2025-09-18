@@ -1,94 +1,91 @@
 @import "tailwindcss";
-
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 @custom-variant dark (&:is([data-theme="dark"] *));
+/* custom css variables using tailwind direction of '@theme' */
+@theme inline {
+    --color-green: hsl(155deg, 100%, 43%);
+    --color-white: hsl(0deg, 0%, 100%);
+    --color-gray: hsl(155deg, 100%, 43%);
+    --color-soft-blue: hsl(213deg, 87%, 34%);
+    --color-soft-green: hsl(146deg, 24%, 49%);
+    --color-dark-color: hsl(231deg, 84%, 5%);
+    --color-footer: hsl(240deg, 6%, 3%);
+    --color-background: hsl(221deg, 36%, 9%);
+}
+/* custom utitilites for reusing it  */
+@utility shadom-1x {
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
 
 :root {
-  scroll-behavior: smooth;
-
-  /* colors */
-  --ifm-color-primary: #00db80;
-  --ifm-color-primary-dark: #00c573;
-  --ifm-color-primary-darker: #00ba6d;
-  --ifm-color-primary-darkest: #00995a;
-  --ifm-color-primary-light: #00f18d;
-  --ifm-color-primary-lighter: #00fc93;
-  --ifm-color-primary-lightest: #1effa1;
-  --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: #f7f1f1;
+    scroll-behavior: smooth;
+    font-family: "Roboto", sans-serif;
+    /* colors */
+    --ifm-color-primary: #00db80;
+    --ifm-color-primary-dark: #00c573;
+    --ifm-color-primary-darker: #00ba6d;
+    --ifm-color-primary-darkest: #00995a;
+    --ifm-color-primary-light: #00f18d;
+    --ifm-color-primary-lighter: #00fc93;
+    --ifm-color-primary-lightest: #1effa1;
+    --ifm-code-font-size: 95%;
+    --docusaurus-highlighted-code-line-bg: #f7f1f1;
 }
 
 [data-theme="dark"] {
-  --ifm-color-primary: #00db80;
-  --ifm-color-primary-dark: #00c573;
-  --ifm-color-primary-darker: #00ba6d;
-  --ifm-color-primary-darkest: #00995a;
-  --ifm-color-primary-light: #00f18d;
-  --ifm-color-primary-lighter: #00fc93;
-  --ifm-color-primary-lightest: #1effa1;
-  --ifm-background-color: var(--color-dark-color) !important ;
-  --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: var(--color-footer);
-}
-
-/* custom css variables using tailwind direction of '@theme' */
-@theme inline {
-  --color-green: hsl(155deg, 100%, 43%);
-  --color-white: hsl(0deg, 0%, 100%);
-  --color-gray: hsl(155deg, 100%, 43%);
-  --color-soft-blue: hsl(213deg, 87%, 34%);
-  --color-soft-green: hsl(146deg, 24%, 49%);
-  --color-dark-color: hsl(231deg, 84%, 5%);
-  --color-footer: hsl(240deg, 6%, 3%);
-  --color-background: hsl(221deg, 36%, 9%);
-}
-
-/* custom utitilites for reusing it  */
-
-@utility shadom-1x {
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    --ifm-background-color: var(--color-dark-color) !important ;
+    --ifm-code-font-size: 95%;
+    --docusaurus-highlighted-code-line-bg: var(--color-footer);
 }
 
 /* overidding the docusaours css styles to align with us */
 .footer {
-  background-color: var(--color-footer);
+    background-color: var(--color-footer);
 }
 
 .footer__links {
-  padding-bottom: 10px;
+    padding-bottom: 10px;
 }
 
 .footer__copyright {
-  font-size: 0.9rem;
-  color: var(--color-gray-400);
-  font-style: italic;
+    font-size: 0.9rem;
+    color: var(--color-gray-400);
+    font-style: italic;
 }
 
 .footer__item a {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .navbar {
-  background-color: white;
+    background-color: white;
+    border-bottom: 2px solid #2a7dfd;
 }
 
 [data-theme="dark"] .navbar {
-  background: linear-gradient(
-    to bottom,
-    var(--color-footer) 99%,
-    var(--color-indigo-900) 1%
-  );
+    background: linear-gradient(
+        to bottom,
+        var(--color-footer) 99%,
+        var(--color-indigo-900) 1%
+    );
 }
 
 svg {
-  display: inline-flex;
+    display: inline-flex;
 }
 
 h2 {
-  margin-top: 20px;
-  margin-bottom: 30px;
+    margin-top: 20px;
+    margin-bottom: 30px;
 }
 .navbar-sidebar {
-  background-color: var(--color-background);
+    background-color: var(--color-background);
+}
+
+#code-block {
+    margin: 0 !important;
+    background-color: #161616 !important;
+    border-radius: unset !important;
 }
