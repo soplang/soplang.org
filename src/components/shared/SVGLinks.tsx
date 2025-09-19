@@ -1,16 +1,20 @@
 import Link from "@docusaurus/Link";
 
-export function GithubIcon() {
+interface GithubPros {
+  height?: number;
+  width?: number;
+}
+export function GithubIcon({ height = 20, width = 24 }: GithubPros) {
   return (
     <Link
-      href="https://github.com/soplang/soplang.com-update"
+      href="https://github.com/soplang/soplang.org"
       className={
-        " px-2 !text-black/80 hover:!text-green dark:!text-white dark:hover:!text-green transition-colors duration-300 hover:duration-500   "
+        "px-2 !text-black/80 hover:!text-green dark:!text-white dark:hover:!text-green transition-colors duration-300 hover:duration-500   "
       }
     >
       <svg
-        width="24"
-        height="20"
+        width={width}
+        height={height}
         viewBox="0 0 24 24"
         fill="none"
         aria-hidden="true"

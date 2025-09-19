@@ -105,7 +105,7 @@ const config: Config = {
       title: "Soplang",
       logo: {
         alt: "soplang logo",
-        src: "img/logo.svg",
+        src: "icons/logo.svg",
       },
       items: [
         {
@@ -249,7 +249,7 @@ const config: Config = {
 
       logo: {
         alt: "Soplang Logo",
-        src: "img/logo.svg",
+        src: "icons/logo.svg",
         width: 160,
         height: 51,
       },

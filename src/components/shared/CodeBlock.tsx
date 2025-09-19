@@ -8,7 +8,7 @@ A reusable component for displaying Soplang code with syntax highlighting
 
 import { Check, Copy } from "lucide-react";
 import React, { useState } from "react";
-import Logo from "../../../static/img/logo.svg";
+import Logo from "../../../static/icons/logo.svg";
 import SoplangHighlighter from "./SoplangHighlighter";
 
 interface CodeBlockProps {

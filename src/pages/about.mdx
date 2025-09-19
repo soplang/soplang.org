@@ -1,18 +1,20 @@
 import Link from "@docusaurus/Link";
 import Layout from "@theme/Layout";
 import { Quote } from "lucide-react";
+import Contributors from "../components/about/Contributors";
 import LanguageGoals from "../components/about/LanguageGoals";
 import LatestVersionFeatures from "../components/about/LatestVersionFeatures";
 import Tools from "../components/about/Tools";
+import Spacer from "../components/shared/Spacer";
 
 ## About Soplang
 
-<p className="text-[1.3rem] ">
+<p>
   > Soplang is a Somali-first programming language that makes coding intuitive,
   > inclusive, and accessible for Somali people.
 </p>
 
-<br className="mb-3.5" />
+<Spacer value={80} />
 
 ## Overview
 
@@ -37,14 +39,35 @@ import Tools from "../components/about/Tools";
       </div>
     </div>
 
+<Spacer value={80} />
+
 ## LanguageGoals
 
 <LanguageGoals />
+
+<Spacer value={80} />
 
 ## Current Version: Soplang 2.0
 
 <LatestVersionFeatures />
 
+<Spacer value={80} />
+
 ## Soplang Tooling
 
 <Tools />
+
+<Spacer value={80} />
+
+## Who Can Use It?
+
+<p>
+  > Students, teachers, new developers Somali learners exploring code for the >
+  first time Anyone passionate about coding in their native language
+</p>
+
+<Spacer value={60} />
+
+## Community & Contribution
+
+<Contributors />
