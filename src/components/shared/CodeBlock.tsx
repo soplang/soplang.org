@@ -6,10 +6,10 @@ A reusable component for displaying Soplang code with syntax highlighting
 ------------------
 */
 
+import { Check, Copy } from "lucide-react";
 import React, { useState } from "react";
-import SoplangHighlighter from "./SoplangHighlighter";
-import CopyIcon from "../icons/CopyIcon";
 import Logo from "../../../static/img/logo.svg";
+import SoplangHighlighter from "./SoplangHighlighter";
 
 interface CodeBlockProps {
   code: string;
@@ -51,17 +51,19 @@ const CodeBlock: React.FC<CodeBlockProps> = ({
       }
       setCopied(true);
       window.setTimeout(() => setCopied(false), 1500);
-    } catch (e) {
-    }
+    } catch (e) {}
   };
 
   return (
     <div className={`my-6 ${className}`}>
       <div className="group overflow-hidden rounded-2xl border border-gray-700  shadow-md">
         {/* Header */}
-        <div style={{backgroundColor:"#101012"}} className="flex items-center justify-between border-b border-gray-800 p-2">
+        <div
+          style={{ backgroundColor: "#101012" }}
+          className="flex items-center justify-between border-b border-gray-800 p-2"
+        >
           <div className="flex items-center gap-2 text-xs font-mono tracking-wide text-slate-500">
-            {title ? <Logo width={20} height={20}/> : null}
+            {title ? <Logo width={20} height={20} /> : null}
             <span>{title || ""}</span>
           </div>
           <button
@@ -71,7 +73,11 @@ const CodeBlock: React.FC<CodeBlockProps> = ({
             type="button"
           >
             <span className="tabular-nums">
-              {copied ? <span className="text-emerald-500 font-mono">Copied</span> : <CopyIcon />}
+              {copied ? (
+                <Check className="text-emerald-500 font-mono" />
+              ) : (
+                <Copy />
+              )}
             </span>
           </button>
         </div>
