@@ -17,6 +17,7 @@
   "dependencies": {
     "@docusaurus/core": "3.8.1",
     "@docusaurus/preset-classic": "3.8.1",
+    "@gsap/react": "^2.1.2",
     "@mdx-js/react": "^3.0.0",
     "@tailwindcss/postcss": "^4.1.13",
     "clsx": "^2.1.1",

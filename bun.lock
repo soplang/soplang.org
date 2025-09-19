@@ -6,6 +6,7 @@
       "dependencies": {
         "@docusaurus/core": "3.8.1",
         "@docusaurus/preset-classic": "3.8.1",
+        "@gsap/react": "^2.1.2",
         "@mdx-js/react": "^3.0.0",
         "@tailwindcss/postcss": "^4.1.13",
         "clsx": "^2.1.1",
@@ -425,6 +426,8 @@
     "@docusaurus/utils-common": ["@docusaurus/utils-common@3.8.1", "", { "dependencies": { "@docusaurus/types": "3.8.1", "tslib": "^2.6.0" } }, "sha512-zTZiDlvpvoJIrQEEd71c154DkcriBecm4z94OzEE9kz7ikS3J+iSlABhFXM45mZ0eN5pVqqr7cs60+ZlYLewtg=="],
 
     "@docusaurus/utils-validation": ["@docusaurus/utils-validation@3.8.1", "", { "dependencies": { "@docusaurus/logger": "3.8.1", "@docusaurus/utils": "3.8.1", "@docusaurus/utils-common": "3.8.1", "fs-extra": "^11.2.0", "joi": "^17.9.2", "js-yaml": "^4.1.0", "lodash": "^4.17.21", "tslib": "^2.6.0" } }, "sha512-gs5bXIccxzEbyVecvxg6upTwaUbfa0KMmTj7HhHzc016AGyxH2o73k1/aOD0IFrdCsfJNt37MqNI47s2MgRZMA=="],
+
+    "@gsap/react": ["@gsap/react@2.1.2", "", { "peerDependencies": { "gsap": "^3.12.5", "react": ">=17" } }, "sha512-JqliybO1837UcgH2hVOM4VO+38APk3ECNrsuSM4MuXp+rbf+/2IG2K1YJiqfTcXQHH7XlA0m3ykniFYstfq0Iw=="],
 
     "@hapi/hoek": ["@hapi/hoek@9.3.0", "", {}, "sha512-/c6rf4UJlmHlC9b5BaNvzAcFv7HZ2QHaV0D4/HNlBdvFnvQq8RI4kYdhyPCl7Xj+oWvTWQ8ujhqS53LIgAe6KQ=="],
 
