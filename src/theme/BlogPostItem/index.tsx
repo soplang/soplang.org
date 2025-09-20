@@ -1,4 +1,5 @@
 import { useBlogPost } from "@docusaurus/plugin-content-blog/client";
+import BlogHeader from "@site/src/components/shared/BlogHeader";
 import type { Props } from "@theme/BlogPostItem";
 import BlogPostItemContainer from "@theme/BlogPostItem/Container";
 import BlogPostItemContent from "@theme/BlogPostItem/Content";
@@ -10,7 +11,6 @@ import { type ReactNode } from "react";
 // apply a bottom margin in list view
 function useContainerClassName() {
   const { isBlogPostPage } = useBlogPost();
-  console.log(isBlogPostPage);
   return !isBlogPostPage ? "margin-bottom--xl" : undefined;
 }
 
@@ -23,9 +23,15 @@ export default function BlogPostItem({
   return (
     <BlogPostItemContainer className={clsx(containerClassName, className)}>
       <BlogPostItemHeader />
-      {!containerClassName ? (
+      {containerClassName ? (
+        <BlogHeader
+          title="Soplang 2.0 Is Almost Here"
+          subtitle="It is Almost Here — A Somali-first Programming Language Nears Major Release."
+          className="max-h-[200px]"
+        />
+      ) : (
         <BlogPostItemContent>{children}</BlogPostItemContent>
-      ) : null}
+      )}
 
       <BlogPostItemFooter />
     </BlogPostItemContainer>

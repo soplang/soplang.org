@@ -4,7 +4,7 @@ import Card from "../shared/Card";
 const languageGoals: CardType[] = [
   {
     title: "Simplicity",
-    description:
+    shorterDesc:
       "Clean, easy-to-read syntax designed to make programming concepts clear and approachable.",
     icon: (
       <CheckCircle className="scale-[2] group-hover:scale-[2.1] duration-300 will-change-transform transition-transform ease-out text-green/40" />
@@ -12,7 +12,7 @@ const languageGoals: CardType[] = [
   },
   {
     title: "Education",
-    description:
+    shorterDesc:
       "Built with learners in mind, making programming accessible to students and new developers.",
     icon: (
       <GraduationCap className="scale-[2] group-hover:scale-[2.1] duration-300 will-change-transform transition-transform ease-out text-green/40" />
@@ -20,7 +20,7 @@ const languageGoals: CardType[] = [
   },
   {
     title: "Localization",
-    description:
+    shorterDesc:
       "Native Somali throughout, embracing Somali language and cultural context in programming.",
     icon: (
       <Globe className="scale-[2] group-hover:scale-[2.1] duration-300 will-change-transform transition-transform ease-out text-green/40" />
@@ -28,7 +28,7 @@ const languageGoals: CardType[] = [
   },
   {
     title: "Accessibility",
-    description:
+    shorterDesc:
       "Removes English-language barriers, opening programming to a wider audience of Somali speakers.",
     icon: (
       <Accessibility className="scale-[2] group-hover:scale-[2.1] duration-300 will-change-transform transition-transform ease-out text-green/40" />
@@ -37,5 +37,5 @@ const languageGoals: CardType[] = [
 ];
 
 export default function LanguageGoals() {
-  return <Card cards={languageGoals} />;
+  return <Card cards={languageGoals} shorerOrLongerDesc />;
 }

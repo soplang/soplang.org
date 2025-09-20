@@ -11,7 +11,7 @@ export default function BlogPostItemContainer({
       <article
         className={cn(
           className,
-          "shadom-1x rounded-[10px] border border-black/10 dark:border-white/10 px-4 py-2 h-fit max-h-[400px] "
+          "shadom-1x rounded-[10px] border border-black/10 dark:border-white/10 px-4 py-2 h-fit "
         )}
       >
         {children}

@@ -89,3 +89,18 @@ svg {
 p {
   font-size: 1.3rem;
 }
+
+/* custimizing  the colors of adominations -info, success, warn, and so on */
+.alert--success {
+  background-color: whitesmoke;
+}
+[data-theme="dark"] .alert--success {
+  background-color: var(--color-slate-900);
+}
+
+.alert--info {
+  background-color: var(--color-slate-200);
+}
+[data-theme="dark"] .alert--info {
+  background-color: var(--color-green-900);
+}

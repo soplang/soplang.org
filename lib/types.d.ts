@@ -3,5 +3,6 @@ import { ReactNode } from "react";
 type CardType = {
   title: string;
   icon: ReactNode;
-  description: string;
+  shorterDesc?: string;
+  longerDesc?: string;
 };

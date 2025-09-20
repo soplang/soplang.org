@@ -1,13 +1,12 @@
-import React, {type ReactNode} from 'react';
-import clsx from 'clsx';
-import {useBlogPost} from '@docusaurus/plugin-content-blog/client';
-import {ThemeClassNames} from '@docusaurus/theme-common';
-import EditMetaRow from '@theme/EditMetaRow';
-import TagsListInline from '@theme/TagsListInline';
-import ReadMoreLink from '@theme/BlogPostItem/Footer/ReadMoreLink';
+import { useBlogPost } from "@docusaurus/plugin-content-blog/client";
+import { ThemeClassNames } from "@docusaurus/theme-common";
+import ReadMoreLink from "@theme/BlogPostItem/Footer/ReadMoreLink";
+import TagsListInline from "@theme/TagsListInline";
+import clsx from "clsx";
+import { type ReactNode } from "react";
 
 export default function BlogPostItemFooter(): ReactNode {
-  const {metadata, isBlogPostPage} = useBlogPost();
+  const { metadata, isBlogPostPage } = useBlogPost();
   const {
     tags,
     title,
@@ -37,25 +36,15 @@ export default function BlogPostItemFooter(): ReactNode {
         {tagsExists && (
           <div
             className={clsx(
-              'row',
-              'margin-top--sm',
-              ThemeClassNames.blog.blogFooterEditMetaRow,
-            )}>
+              "row",
+              "margin-top--sm",
+              ThemeClassNames.blog.blogFooterEditMetaRow
+            )}
+          >
             <div className="col">
               <TagsListInline tags={tags} />
             </div>
           </div>
-        )}
-        {canDisplayEditMetaRow && (
-          <EditMetaRow
-            className={clsx(
-              'margin-top--sm',
-              ThemeClassNames.blog.blogFooterEditMetaRow,
-            )}
-            editUrl={editUrl}
-            lastUpdatedAt={lastUpdatedAt}
-            lastUpdatedBy={lastUpdatedBy}
-          />
         )}
       </footer>
     );
@@ -63,20 +52,13 @@ export default function BlogPostItemFooter(): ReactNode {
   // BlogPost footer - list view
   else {
     return (
-      <footer className="row docusaurus-mt-lg">
+      <footer className="flex w-full justify-between flex-wrap lg:flex-nowrap items-center px-2 ">
         {tagsExists && (
-          <div className={clsx('col', {'col--9': truncatedPost})}>
+          <div className={clsx("col ", { "col--9": truncatedPost })}>
             <TagsListInline tags={tags} />
           </div>
         )}
-        {truncatedPost && (
-          <div
-            className={clsx('col text--right', {
-              'col--3': tagsExists,
-            })}>
-            <ReadMoreLink blogPostTitle={title} to={metadata.permalink} />
-          </div>
-        )}
+        <ReadMoreLink blogPostTitle={title} to={metadata.permalink} />
       </footer>
     );
   }
