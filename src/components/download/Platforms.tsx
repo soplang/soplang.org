@@ -64,7 +64,7 @@ export default function Platforms() {
         osInfo={"Version 2.0 (23.8 MB)"}
         instructions={linuxOSInstructions}
         downloadButtonText={"Download For linux"}
-        iconUrl="/img/linux.svg"
+        iconUrl="/icons/linux.svg"
       />
 
       <PlatformItem
@@ -72,7 +72,7 @@ export default function Platforms() {
         osInfo={"Version 2.0 (28.6 MB)"}
         instructions={windowOSInstructions}
         downloadButtonText={"Download For Window"}
-        iconUrl="/img/microsoft.svg"
+        iconUrl="/icons/microsoft.svg"
       />
 
       <PlatformItem
@@ -80,7 +80,7 @@ export default function Platforms() {
         osInfo={"Version 2.0 (26.2 MB)"}
         instructions={macOSInstructions}
         downloadButtonText={"Download For MacOs"}
-        iconUrl="/img/apple.svg"
+        iconUrl="/icons/apple.svg"
       />
     </section>
   );

@@ -108,11 +108,6 @@ const config: Config = {
           position: "left",
         },
         { to: "/blog", label: "Blog", position: "left" },
-        {
-          to: "/contact",
-          label: "Contact",
-          position: "left",
-        },
 
         {
           position: "right",

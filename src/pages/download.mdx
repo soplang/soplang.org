@@ -3,12 +3,13 @@ import Platforms from "../components/download/Platforms";
 import SystemRequirements from "../components/download/SystemRequirements";
 import { DownloadButton } from "../components/shared/Buttons";
 import HorizontalLine from "../components/shared/HorizontalLine";
+import Spacer from "../components/shared/Spacer";
 
 # Latest Release: v2.0
 
 <HorizontalLine />
 
-**What's New in Soplang 2.0**
+## What's New in Soplang 2.0
 
 - **Advanced Math Functions:** Enhanced standard library now includes powerful math capabilities for complex calculations.
 
@@ -22,6 +23,8 @@ import HorizontalLine from "../components/shared/HorizontalLine";
 
 <DownloadButton href="#choose-your-platform" text="Download Now" />
 
+<Spacer value={60} />
+
 ## System Requirements
 
 <HorizontalLine />
@@ -30,13 +33,15 @@ Check if your system meets the requirements to run Soplang.
 
 <SystemRequirements />
 
-<br />
+<Spacer value={60} />
 
 ## Choose Your Platform
 
 <Platforms />
 
 <HorizontalLine />
+
+<Spacer value={60} />
 
 ## Install via Package Managers
 
@@ -56,4 +61,6 @@ Choose from a variety of package managers to install Soplang on your system.
 
 <HorizontalLine />
 
-> For more installation options and troubleshooting, visit the [official documentation](/docs/intro).
+:::info[**Learn More**]
+For more installation options and troubleshooting, visit the [official documentation](/docs/intro).
+:::
