@@ -1,5 +1,3 @@
-// Soplang is open-source under the MIT License.
-
 import { CONTRIBUTORIS } from "@site/lib";
 import { GithubIcon } from "../shared/SVGLinks";
 import { AnimatedTooltip } from "../ui/animated-tooltip";

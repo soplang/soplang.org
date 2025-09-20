@@ -1,0 +1,76 @@
+---
+slug: soplang 2.0
+title: It is Almost Here Soplang 2.0 Version
+authors: [Sharafdin]
+tags: [Latest-version, Announcement, Programming-languge]
+---
+
+## Soplang 2.0
+
+It is Almost Here — A Somali-first Programming Language Nears Major Release.
+
+<!-- truncate -->
+
+The programming language landscape is about to welcome a fresh and culturally grounded addition: Soplang, a Somali-first programming language, is preparing to launch its long-awaited 2.0 release. Designed with native Somali syntax, dual typing, and full developer tooling, Soplang 2.0 is shaping up to be more than just a language — it's an ecosystem.
+
+Initially released as a minimalist interpreted language, Soplang has evolved into a feature-rich environment intended to make software development more accessible to Somali-speaking developers.
+
+## What's Soplang?
+
+Soplang is a general-purpose programming language built around Somali linguistic conventions. Its core syntax reflects Somali words — like door for variable declarations, haddii for conditionals, and hawl for functions — making it more intuitive for native speakers.
+
+Beyond the syntax, Soplang includes many of the features developers expect from a modern language: object-oriented programming, static typing, module support, and error handling.
+
+## Soplang 2.0: What's New?
+
+The upcoming 2.0 release is a full revamp that significantly expands language capabilities and introduces powerful development tools.
+
+## Language Improvements
+
+Dual Typing System: Support for both static and dynamic typing
+Class System: OOP via fasalka, inheritance with ka_dhaxal
+Structured Control Flow: Including haddii, celi, iska_joog, and loop constructs
+Error Handling: With isku_day/qabo (try/catch) semantics
+Soplang's syntax is backed by a formal EBNF grammar, implemented fully in the interpreter.
+
+## Expanded Standard Library
+
+Soplang 2.0 ships with a more complete standard library:
+
+Math Module: Functions for matrix operations, vectors, and basic statistics
+File I/O: Somali-named file handlers like faylka_fur, faylka_qor, and faylka_xir
+Networking: Basic HTTP functionality using shabakad_codso and shabakad_jawaab
+Date/Time: Native date manipulation in Somali syntax
+The goal is to keep everything practical while preserving linguistic clarity and accessibility.
+
+## Tooling & Developer Experience
+
+Tooling has been a major focus for Soplang 2.0, and it shows:
+
+VS Code Extension: Includes syntax highlighting, inline docs, and code suggestions
+REPL: Command-line interface with history and syntax coloring
+Browser Runtime (sopScript): For embedding Soplang in web applications and learning platforms
+CLI Tool (sop): Manage packages, run programs, and handle project scaffolding
+This is a level of polish rarely seen in small-language ecosystems — a promising sign of future growth.
+
+## Website & Docs
+
+The official website is now live at soplang.org. You'll find full documentation, language reference, community links, and project updates — all aligned with the language's mission to be educational, accessible, and community-driven.
+
+## What's Next?
+
+The current focus is on finalizing the Python-based interpreter and testing the tooling across platforms. A Rust-based compiler is on the roadmap for future versions, bringing faster performance and system-level capabilities.
+
+According to the team, the 2.0 beta release is expected within the next 4–6 weeks.
+
+## Why It Matters
+
+Soplang is part of a growing trend toward culturally contextual programming languages. For Somali-speaking learners and developers, this offers an easier entry point into coding — no translation required. For educators, it's a new tool to make computer science more accessible.
+
+And for the wider tech community, it's a reminder: programming doesn't need to be English-only.
+
+## Learn More
+
+GitHub: github.com/soplang/soplang
+Website: soplang.org
+Have thoughts on culturally localized programming? Seen similar efforts in your own region? Drop a comment below and let's talk.

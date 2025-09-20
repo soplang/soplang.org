@@ -30,3 +30,12 @@ export const CONTRIBUTORIS = [
     image: "/images/abdifitah.jpeg",
   },
 ];
+
+export const SOPLANG_COMMUNITY_LINKS = {
+  discord: "https://discord.com/invite/n296G4dd7x",
+  Contribute_link:
+    "https://github.com/soplang/soplang/blob/main/docs/CONTRIBUTING.md",
+  github_link: "https://github.com/soplang/soplang.org",
+  discussion_link: "https://github.com/orgs/soplang/discussions",
+  twitter: "https://x.com/soplangorg",
+};

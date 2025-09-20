@@ -1,13 +1,15 @@
 import Link from "@docusaurus/Link";
+import { SOPLANG_COMMUNITY_LINKS } from "@site/lib";
 
 interface GithubPros {
   height?: number;
   width?: number;
 }
+
 export function GithubIcon({ height = 20, width = 24 }: GithubPros) {
   return (
     <Link
-      href="https://github.com/soplang/soplang.org"
+      href={SOPLANG_COMMUNITY_LINKS.github_link}
       className={
         "px-2 !text-black/80 hover:!text-green dark:!text-white dark:hover:!text-green transition-colors duration-300 hover:duration-500   "
       }
@@ -38,7 +40,7 @@ export function GithubIcon({ height = 20, width = 24 }: GithubPros) {
 export function TwitterXIcon() {
   return (
     <Link
-      href="https://x.com/soplangorg"
+      href={SOPLANG_COMMUNITY_LINKS.twitter}
       className={
         "!text-black/80 hover:!text-green dark:!text-white px-2 dark:hover:!text-green transition-colors duration-300 hover:duration-500   "
       }
@@ -62,7 +64,7 @@ export function TwitterXIcon() {
 export function DiscordIcon() {
   return (
     <Link
-      href="https://discord.com/invite/n296G4dd7x"
+      href={SOPLANG_COMMUNITY_LINKS.discord}
       className={
         "!text-black/80 hover:!text-green dark:!text-white px-2 dark:hover:!text-green transition-colors duration-300 hover:duration-500   "
       }

@@ -76,10 +76,6 @@ svg {
   display: inline-flex;
 }
 
-h2 {
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
 .navbar-sidebar {
   background-color: var(--color-background);
 }

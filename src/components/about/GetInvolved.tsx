@@ -1,6 +1,7 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
+import Link from "@docusaurus/Link";
 import { ScrollTrigger } from "gsap/all";
 import { useRef } from "react";
 import { SlideBackroundButton } from "../shared/Buttons";
@@ -49,10 +50,13 @@ export default function GetInvolved() {
         Soplang
       </p>
       <div className="flex gap-4 mt-4">
-        <SlideBackroundButton
-          className="text-white"
-          text="Contribute to Soplang"
-        />
+        <Link href="https://github.com/soplang/soplang/blob/main/docs/CONTRIBUTING.md">
+          <SlideBackroundButton
+            className="text-white"
+            text="Contribute to Soplang"
+          />
+        </Link>
+
         <SlideBackroundButton
           text="Join Our Community"
           className="bg-transparent border text-black dark:text-white border-black/20 dark:border-white/20"

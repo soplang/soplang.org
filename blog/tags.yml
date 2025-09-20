@@ -1,19 +1,15 @@
-facebook:
-  label: Facebook
-  permalink: /facebook
-  description: Facebook tag description
+Latest-version:
+    label: Soplang 2.0
+    permalink: /soplang2.0
+    description: latest Soplang version 
 
-hello:
-  label: Hello
-  permalink: /hello
-  description: Hello tag description
+Announcement:
+    label: anouncement
+    permalink: /anouncement
+    description: latest Soplang version 
+  
+Programming-languge:
+    label: Programming languages
+    permalink: /programing-languages
+    description: latest Soplang version 
 
-docusaurus:
-  label: Docusaurus
-  permalink: /docusaurus
-  description: Docusaurus tag description
-
-hola:
-  label: Hola
-  permalink: /hola
-  description: Hola tag description

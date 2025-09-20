@@ -1,6 +1,7 @@
 import type * as Preset from "@docusaurus/preset-classic";
 import type { Config } from "@docusaurus/types";
 import { themes as prismThemes } from "prism-react-renderer";
+import { SOPLANG_COMMUNITY_LINKS } from "./lib";
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -34,24 +35,7 @@ const config: Config = {
   // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: "en",
-    locales: ["en", "so"],
-    path: "i18n",
-    localeConfigs: {
-      en: {
-        label: "English",
-        direction: "ltr",
-        htmlLang: "en-US",
-        calendar: "gregory",
-        path: "en",
-      },
-      so: {
-        label: "Somali",
-        direction: "rtl",
-        htmlLang: "so",
-        calendar: "gregory",
-        path: "so",
-      },
-    },
+    locales: ["en"],
   },
 
   presets: [
@@ -60,10 +44,6 @@ const config: Config = {
       {
         docs: {
           sidebarPath: "./sidebars.ts",
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
         },
         blog: {
           showReadingTime: true,
@@ -71,14 +51,13 @@ const config: Config = {
             type: ["rss", "atom"],
             xslt: true,
           },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
+
           // Useful options to enforce blogging best practices
           onInlineTags: "warn",
           onInlineAuthors: "warn",
           onUntruncatedBlogPosts: "warn",
+          blogSidebarCount: "ALL",
+          blogSidebarTitle: "All Blogs",
         },
         theme: {
           customCss: "./src/css/custom.css",
@@ -220,19 +199,19 @@ const config: Config = {
             },
             {
               label: "Discord",
-              href: "https://discord.com/invite/n296G4dd7x",
+              href: SOPLANG_COMMUNITY_LINKS.discord,
             },
             {
               label: "GitHub",
-              href: "https://github.com/soplang/soplang.com-update",
+              href: SOPLANG_COMMUNITY_LINKS.github_link,
             },
             {
               label: "Discussion",
-              href: "https://github.com/orgs/soplang/discussions",
+              href: SOPLANG_COMMUNITY_LINKS.discussion_link,
             },
             {
               label: "Contributing",
-              href: "https://github.com/soplang/soplang/blob/main/docs/CONTRIBUTING.md",
+              href: SOPLANG_COMMUNITY_LINKS.Contribute_link,
             },
           ],
         },
