@@ -1,0 +1,135 @@
+---
+sidebar_position: 2
+---
+
+import { ChevronRight } from "lucide-react";
+import HorizontalLine from "../../src/components/shared/HorizontalLine";
+import SoplangHighlighter from "../../src/components/shared/SoplangHighlighter";
+
+# Installing Soplang
+
+This guide shows two easy ways to get started with Soplang:  
+**downloading a prebuilt release** or **using the official Docker image**.
+
+<HorizontalLine />
+
+## General Download (All Platforms)
+
+1. **Download:**  
+   Grab the latest release for your platform from the [downloads page](#).
+
+2. **Extract / Install:**  
+   Unzip or install the package as provided by the release.  
+   If it’s a single binary, place it somewhere in your `PATH` (e.g., `~/bin` on UNIX-like systems).
+
+3. **(Optional) Add to PATH:**  
+   Ensure the `soplang` binary is available on your PATH. For example (bash/zsh):
+
+   ```bash
+   echo 'export PATH="$HOME/bin:$PATH"' >> ~/.bashrc && source ~/.bashrc
+   ```
+
+4. **Verify Installation:**  
+   Open your terminal and run:
+
+   ```bash
+   soplang --version
+   ```
+
+<HorizontalLine />
+
+## Run Your First Program
+
+Create a file named `hello.sop` with the following content:
+
+```js title='Write the fallowing:'
+qor("Hello World");
+```
+
+<br />
+
+```bash title='Execute the file by running:'
+soplang hello.sop
+```
+
+<HorizontalLine />
+
+## Use Docker (No Local Install)
+
+If you already have Docker, you can run Soplang without installing anything else.
+
+1. **Pull the Image:**
+
+   ```bash
+   docker pull soplang/soplang:latest
+   ```
+
+2. **Run an Interactive Session:**
+
+   ```bash
+   docker run -it --rm soplang/soplang
+   ```
+
+3. **Run a Local File:**  
+   Mount your project directory and execute a file:
+
+   ```bash title="From your project directory"
+   docker run -it --rm -v "$PWD":/app -w /app soplang/soplang soplang hello.sop
+   ```
+
+<HorizontalLine />
+
+## Checksums & Offline Install
+
+<ChevronRight className="scale-[.9] text-green/40 " /> **Verify downloads:** Compare
+the file’s checksum with the one on the downloads page.
+
+<ChevronRight className="scale-[.9] text-green/40 " /> **Offline:** Keep the extracted
+folder/binary and run directly—no internet required after download.
+
+<HorizontalLine />
+
+## Troubleshooting
+
+<div className=" rounded-lg p-6 shadow-md my-6">
+  <div className="flex items-start gap-3 mb-4">
+    <span className="text-center leading-8 w-8 h-8 bg-red-500 rounded-full  text-xl font-bold">
+      !
+    </span>
+    <div>
+      <b className="text-red-700">“command not found”</b>
+      <br />
+      <span>
+        Make sure <code className="bg-gray-200 px-2 py-1 rounded">soplang</code>
+        is on your <code className="bg-gray-200 px-2 py-1 rounded">PATH</code>, or
+        run it via Docker as shown above.
+      </span>
+    </div>
+  </div>
+  <div className="flex items-start gap-3 mb-4">
+    <span className="text-center leading-8 w-8 h-8 bg-yellow-500 rounded-full  text-xl font-bold ">
+      🔒
+    </span>
+    <div>
+      <b className="text-yellow-700">Permission denied (UNIX-like)</b>
+      <br />
+      <span>If you downloaded a binary, grant execute permissions:</span>
+      <pre className="bg-gray-100 rounded p-2 mt-2 text-sm">{`chmod +x /path/to/soplang`}</pre>
+    </div>
+  </div>
+  <div className="flex items-start gap-3">
+    <span className="text-center leading-8 w-8 h-8 bg-blue-500 rounded-full text-white text-xl font-bold">
+      💬
+    </span>
+    <div>
+      <b className="text-blue-700">Still stuck?</b>
+      <br />
+      <span>
+        Check the downloads page notes or ask in
+        <a href="/community" className="text-blue-600 underline">
+          community support
+        </a>
+      </span>
+    </div>
+  </div>
+</div>

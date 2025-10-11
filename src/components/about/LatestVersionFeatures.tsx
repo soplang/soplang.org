@@ -1,13 +1,5 @@
-// Dual Typing: door for dynamic, tiro, qoraal, etc. for static
-// Object-Oriented Programming: with fasalka, ka_dhaxal, cusub, nafta
-// Control Flow: haddii, haddii_kale, haddii_kalena, loops (ku_celi, inta_ay)
-// Error Handling: isku_day, qabo
-// Package Manager: Coming soon via the sop CLI
-// Standard Library: Includes Math, File System, Network, and Date/Time
-
 import { ChevronRight } from "lucide-react";
 
-// Interpreter: Python-based (compiler planned for future release)
 const features = [
   {
     header: "Dual Typing",

@@ -20,45 +20,45 @@ interface Token {
 
 // Define token types and styles for Soplang
 const tokenStyles: Record<string, TokenStyle> = {
-  keyword: { color: '#569CD6' },
-  string: { color: '#CE9178' },
-  comment: { color: '#6A9955' },
-  function: { color: '#DCDCAA' },
-  number: { color: '#B5CEA8' },
-  operator: { color: '#D4D4D4' },
-  punctuation: { color: '#D4D4D4' },
-  variable: { color: '#9CDCFE' },
-  default: { color: '#D4D4D4' },
+  keyword: { color: "#569CD6" },
+  string: { color: "#CE9178" },
+  comment: { color: "#6A9955" },
+  function: { color: "#DCDCAA" },
+  number: { color: "#B5CEA8" },
+  operator: { color: "#D4D4D4" },
+  punctuation: { color: "#D4D4D4" },
+  variable: { color: "#9CDCFE" },
+  default: { color: "#D4D4D4" },
 };
 
 // Keywords for Soplang language
 const keywords = [
-  'door',
-  'tiro',
-  'qoraal',
-  'labadaran',
-  'shey',
-  'liis',
-  'waxba',
-  'haddii',
-  'haddii_kale',
-  'haddii_kalena',
-  'ku_celi',
-  'inta_ay',
-  'jooji',
-  'sii_wad',
-  'min',
-  'ilaa',
-  'hawl',
-  'celi',
-  'isku_day',
-  'qabo',
-  'fasalka',
-  'nafta',
-  'ka_dhaxal',
-  'cusub',
-  'qor',
-  'akhri',
+  "door",
+  "tiro",
+  "qoraal",
+  "labadaran",
+  "shey",
+  "liis",
+  "waxba",
+  "haddii",
+  "haddii_kale",
+  "haddii_kalena",
+  "ku_celi",
+  "inta_ay",
+  "jooji",
+  "sii_wad",
+  "min",
+  "ilaa",
+  "hawl",
+  "celi",
+  "isku_day",
+  "qabo",
+  "fasalka",
+  "nafta",
+  "ka_dhaxal",
+  "cusub",
+  "qor",
+  "akhri",
 ];
 
 function tokenizeSoplangCode(code: string): Token[] {
@@ -78,15 +78,15 @@ function tokenizeSoplangCode(code: string): Token[] {
   }
 
   function peek(): string {
-    return code[position] || '';
+    return code[position] || "";
   }
 
   function peekNext(): string {
-    return code[position + 1] || '';
+    return code[position + 1] || "";
   }
 
   function advance(): string {
-    return code[position++] || '';
+    return code[position++] || "";
   }
 
   function addToken(type: string, content: string) {
@@ -101,12 +101,12 @@ function tokenizeSoplangCode(code: string): Token[] {
     const char = advance();
 
     // Handle comments
-    if (char === '/' && peek() === '/') {
+    if (char === "/" && peek() === "/") {
       let comment = char;
-      while (peek() !== '\n' && position < code.length) {
+      while (peek() !== "\n" && position < code.length) {
         comment += advance();
       }
-      addToken('comment', comment);
+      addToken("comment", comment);
       continue;
     }
 
@@ -117,7 +117,7 @@ function tokenizeSoplangCode(code: string): Token[] {
         (peek() !== char || (peek() === char && peekNext() === char)) &&
         position < code.length
       ) {
-        if (peek() === '\\' && peekNext() === char) {
+        if (peek() === "\\" && peekNext() === char) {
           string += advance(); // Add the escape character
         }
         string += advance();
@@ -125,17 +125,17 @@ function tokenizeSoplangCode(code: string): Token[] {
       if (position < code.length) {
         string += advance(); // Closing quote
       }
-      addToken('string', string);
+      addToken("string", string);
       continue;
     }
 
     // Handle numbers
     if (isDigit(char)) {
       let number = char;
-      while (isDigit(peek()) || peek() === '.') {
+      while (isDigit(peek()) || peek() === ".") {
         number += advance();
       }
-      addToken('number', number);
+      addToken("number", number);
       continue;
     }
 
@@ -147,38 +147,38 @@ function tokenizeSoplangCode(code: string): Token[] {
       }
 
       // Check if it's a function definition
-      if (identifier === 'hawl' || identifier === 'fasalka') {
-        addToken('keyword', identifier);
-        let ws = '';
-        while (peek() === ' ' || peek() === '\t') {
+      if (identifier === "hawl" || identifier === "fasalka") {
+        addToken("keyword", identifier);
+        let ws = "";
+        while (peek() === " " || peek() === "\t") {
           ws += advance();
         }
-        addToken('default', ws);
+        addToken("default", ws);
 
         // Get the function name
-        let functionName = '';
+        let functionName = "";
         while (isAlphaNumeric(peek())) {
           functionName += advance();
         }
-        addToken('function', functionName);
+        addToken("function", functionName);
         continue;
       }
 
       // Check if it's a function call
       let nextNonSpace = position;
-      while (code[nextNonSpace] === ' ' || code[nextNonSpace] === '\t') {
+      while (code[nextNonSpace] === " " || code[nextNonSpace] === "\t") {
         nextNonSpace++;
       }
-      if (code[nextNonSpace] === '(') {
-        addToken('function', identifier);
+      if (code[nextNonSpace] === "(") {
+        addToken("function", identifier);
         continue;
       }
 
       // Check if it's a keyword
       if (keywords.includes(identifier)) {
-        addToken('keyword', identifier);
+        addToken("keyword", identifier);
       } else {
-        addToken('variable', identifier);
+        addToken("variable", identifier);
       }
       continue;
     }
@@ -189,13 +189,13 @@ function tokenizeSoplangCode(code: string): Token[] {
       while (/[+\-*/%=<>!&|^]/.test(peek())) {
         operator += advance();
       }
-      addToken('operator', operator);
+      addToken("operator", operator);
       continue;
     }
 
     // Handle punctuation
     if (/[(){}[\];,.]/.test(char)) {
-      addToken('punctuation', char);
+      addToken("punctuation", char);
       continue;
     }
 
@@ -205,12 +205,12 @@ function tokenizeSoplangCode(code: string): Token[] {
       while (/\s/.test(peek())) {
         whitespace += advance();
       }
-      addToken('default', whitespace);
+      addToken("default", whitespace);
       continue;
     }
 
     // Handle any other character
-    addToken('default', char);
+    addToken("default", char);
   }
 
   return tokens;
@@ -225,7 +225,10 @@ export default function SoplangHighlighter({ code }: SoplangHighlighterProps) {
   const tokens = tokenizeSoplangCode(code);
 
   return (
-    <pre id="code-block" className="text-sm font-mono whitespace-pre leading-relaxed">
+    <pre
+      id="code-block"
+      className="text-sm font-mono whitespace-pre leading-relaxed !bg-[rgb(1, 22, 39)]"
+    >
       {tokens.map((token, index) => (
         <span key={index} style={{ color: token.style.color }}>
           {token.content}
