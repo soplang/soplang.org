@@ -1,0 +1,111 @@
+---
+title: Loops
+sidebar_position: 10
+---
+
+import HorizontalLine from "../../src/components/shared/HorizontalLine";
+import SoplangHighlighter from "../../src/components/shared/SoplangHighlighter";
+import TableRenderer from "../../src/components/shared/TableRenderer";
+
+# Loops in Soplang
+
+Soplang waxa uu taageeraa laba nooc oo loops ah: `intay` (shuruud) oo u dhiganta while, iyo `kuceli` (bilow ilaa dhamaad) oo u dhiganta for. Waxa kale oo jira `jooji` (break) iyo `soco` (continue) si aad u yeelato xakameyn faahfaahsan.
+
+## While Loop – intay
+
+Koodhka ku jira block-ga wuu soconayaa inta shuruuddu tahay run:
+
+<SoplangHighlighter
+  code={`abn i = 1
+intay (i <= 5) {
+    qor("i = " + i)
+    i = i + 1 // siyaadi one mar karste (increment by 1 in each iteration)
+}`}
+/>
+:::tip[Ogaaaw]
+
+Waxay taageertaa `jooji` iyo `soco`.
+:::
+
+<SoplangHighlighter code={`abn i = 0
+intay (i <= 10) {
+    i = i + 1
+
+    haddii (i % 2 == 0) {
+        soco        // ka bood tirooyinka dhabanka ah
+    }
+
+    haddii (i == 7) {
+        jooji        // jooji loop-ka marka i = 7
+    }
+
+    qor("i = " + i) // waxay daabacdaa: 1, 3, 5
+
+}`}/>
+
+## For Loop – kuceli
+
+<SoplangHighlighter
+  code={`kuceli (i 1 ilaa 5) {
+    qor("Tirada: " + i) // ku daaabac console ama termainal-ka
+}`}
+/>
+
+Talaabo (step) la doortay:
+
+<SoplangHighlighter
+  code={`kuceli (j 2 ilaa 10 :: 2) {
+    qor("Step: " + j)
+}`}
+/>
+
+<HorizontalLine />
+
+## Loop Over List
+
+<SoplangHighlighter
+  code={`teed numbers = [10, 20, 30]
+kuceli (i 0 ilaa numbers.dherer() - 1) {
+    qor("Element " + i + ": " + numbers[i])
+}`}
+/>
+
+## Nested Loops
+
+<SoplangHighlighter
+  code={`kuceli (i 1 ilaa 3) {
+    intay (i > 0) {
+        qor("Nested example")
+        jooji
+    }
+}`}
+/>
+
+## Factorial using While
+
+<SoplangHighlighter code={`abn a = 5
+abn result = 1
+abn n = a
+
+intay (n > 0) {
+result = result \* n // natiixadii hore ku dhufo 'n'
+n = n - 1
+}
+qor(result) // daabac`}
+/>
+
+## Summary
+
+<TableRenderer
+  headers={["Keyword", "Meaning"]}
+  rows={[
+    ["intay", "while loop"],
+    ["kuceli", "for loop"],
+    ["jooji", "break"],
+    ["soco", "continue"],
+  ]}
+/>
+
+Soplang loops waxay taageeraan labadaba ku-celcelin qaabaysan iyo socod ku saleysan shuruud.
+
+<HorizontalLine />
