@@ -1,0 +1,94 @@
+---
+title: conditional-statements
+sidebar_position: 9
+---
+
+import HorizontalLine from "../../src/components/shared/HorizontalLine";
+import SoplangHighlighter from "../../src/components/shared/SoplangHighlighter";
+import TableRenderer from "../../src/components/shared/TableRenderer";
+
+# Control Flow in Soplang
+
+Soplang waxay bixisaa fulin shuruudeed (conditional execution) iyadoo adeegsanaysa erayo Soomaali ah si ay u noqoto mid cad oo muujin leh.
+
+## If Statements (haddii, haddii_kale, ugudambeyn)
+
+Waxay u dhigmaan `if`, `else if`, iyo `else` luqadaha kale.
+
+<SoplangHighlighter code={`abn da = 17
+
+haddii (da >= 18) {
+qor("Waad qaan gaadhay")
+}
+
+haddii_kale (da >= 13) {
+qor("Waxaad tahay dhallinyaro")}
+
+ugudambeyn {
+qor("Waad yar tahay")
+}`}/>
+
+Block walba waxaa lagu xiraa `{}`. Waxaad isku xirin ama isku dhex dhigi kartaa (nest) sidaad u baahan tahay.
+
+## Boolean Conditions
+
+Adeegso muujiyeyaasha bool iyo operators-ka `&&`, `||`, iyo `!`.
+
+<SoplangHighlighter code={`abn x = 4
+abn y = 9
+
+haddii (x < y && y < 10) {
+qor("Shuruudaha waa sax")
+}
+
+// Negation
+haddii (!(x == y)) {
+qor("Qiimuhu ma sina")
+}`}/>
+
+## Summary
+
+<TableRenderer
+  headers={["Keyword", "Meaning"]}
+  rows={[
+    ["haddii", "if"],
+    ["haddii_kale", "else if"],
+    ["ugudambeyn", "else"],
+  ]}
+/>
+
+Control flow ee Soplang wuxuu raacaa qaab akhris-wanaagsan oo Somali-first ah.
+
+<HorizontalLine />
+
+## Switch-Case – dooro iyo xaalad
+
+Loogu talagalay laanayn cad oo ku saleysan hal qiime: `dooro` (switch expression), `xaalad` (case), iyo `ugudambeyn` (default).
+
+<SoplangHighlighter
+  code={`qoraal maalinta = "Jimce"
+dooro (maalinta) {
+xaalad "Isniin" {
+qor("Todobaad cusub")
+}
+
+xaalad "Jimce" {
+qor("Waqti nasasho")
+}
+
+// default case (xalada inta kale kaso harta)
+ugudambeyn {
+qor("Maalin kale")
+}
+} // end of switch case`}
+/>
+
+:::tip[Ogaaw]
+Tani waxay ku habboon tahay go'aan-qaadasho leh laamo badan oo ku saleysan qiime go'an.
+:::
+
+## Combined Usage
+
+Waxaad isku dari kartaa `haddii`/`haddii_kale`/`ugudambeyn` iyo `dooro` si aad u dhisto logic adag oo weli akhris-wanaagsan.
+
+<HorizontalLine />
