@@ -1,0 +1,70 @@
+---
+title: Functions
+sidebar_position: 11
+---
+
+import HorizontalLine from "../../src/components/shared/HorizontalLine";
+import SoplangHighlighter from "../../src/components/shared/SoplangHighlighter";
+import TableRenderer from "../../src/components/shared/TableRenderer";
+
+# Functions in Soplang
+
+Functions (hawlo) waa qaybo koodh oo dib loo isticmaali karo. Soplang waxa lagu qeexaa `hawl` waxaana natiijo lagu soo celinayaa `celi`.
+
+## Define a Function (hawl)
+
+Hawl waxa ay bilaabataa `hawl` kadibna magac hawl iyo parameters (aan lahayn type annotations).
+
+<SoplangHighlighter
+  code={`hawl salaan(magac) {
+    qor("Asalaamu calaykum, " + magac)
+}`}
+/>
+
+## Call a Function
+
+Marka aad qeexdo, ku wac magaceeda oo raaci doodaha (arguments):
+
+<SoplangHighlighter code={`salaan("Aamina")`} />
+
+## Return Values (celi)
+
+Adeegso `celi` si aad uga soo celiso hawl qiime.
+
+<SoplangHighlighter
+  code={`hawl labanlaab(x) {
+    celi x * 2
+}
+abn natiijo = labanlaab(5)
+qor("Natiijo: " + natiijo)`}
+/>
+
+<HorizontalLine />
+
+## Loops Inside Functions
+
+Hawluhu waxay ka kooban karaan loops iyo logic kale sida blocks-ka caadiga ah.
+
+<SoplangHighlighter
+  code={`// abuurida function (howl)
+hawl muujin(liis) {
+// looping 
+    kuceli (i 0 ilaa liis.dherer() - 1) {
+        qor("Liiska: " + liis[i])
+    }
+}`}
+/>
+
+## Summary
+
+<TableRenderer
+  headers={["Keyword", "Meaning"]}
+  rows={[
+    ["hawl", "function definition"],
+    ["celi", "return value"],
+  ]}
+/>
+
+Functions ee Soplang waxay ka dhigaan koodhka dib-u-isticmaal leh, nadiif, oo Somali-first.
+
+<HorizontalLine />
