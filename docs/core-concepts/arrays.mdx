@@ -1,0 +1,138 @@
+---
+title: Arrays
+sidebar_position: 12
+---
+
+import HorizontalLine from "../../src/components/shared/HorizontalLine";
+import SoplangHighlighter from "../../src/components/shared/SoplangHighlighter";
+import TableRenderer from "../../src/components/shared/TableRenderer";
+
+# Arrays in Soplang
+
+Arrays waxa lagu qeexaa erayga `teed`. Waxay hayaan uruurin qiimayaal ah oo leh habab badan: maarayn, beddelid, iyo falanqayn.
+
+## Declaring Arrays
+
+<SoplangHighlighter
+  code={`teed numbers = [1, 2, 3, 4]
+teed magacyo = ["Ali", "Zahra"]`}
+/>
+
+<HorizontalLine />
+
+## Core Array Methods
+
+### dherer() – Get Length
+
+<SoplangHighlighter
+  code={`teed x = [10, 20, 30]
+qor("Length: " + x.dherer())  // 3`}
+/>
+
+### kudar(x) – Add to End
+
+<SoplangHighlighter
+  code={`teed x = [1, 2]
+x.kudar(3)   // [1, 2, 3]
+x.kudar(4)   // [1, 2, 3, 4]`}
+/>
+
+### kasaar() – Remove Last
+
+<SoplangHighlighter
+  code={`door last = x.kasaar()
+qor("Removed: " + last)`}
+/>
+
+### kudar(teed) – Concatenate
+
+<SoplangHighlighter
+  code={`teed a = [1, 2]
+teed b = [3, 4]
+teed c = a.kudar(b)    // [1, 2, 3, 4]`}
+/>
+
+### leeyahay(x) – Contains Check
+
+<SoplangHighlighter
+  code={`haddii (c.leeyahay(3)) {
+    qor("Waa jiraa")
+}`}
+/>
+
+<HorizontalLine />
+
+## Utility Methods
+
+### nuqul() – Copy Array
+
+<SoplangHighlighter
+  code={`teed asal = [10, 20]
+teed copy = asal.nuqul()
+qor("Copy: " + copy)`}
+/>
+
+### rog() – Reverse
+
+<SoplangHighlighter
+  code={`asal.rog()
+qor("Reversed: " + asal)`}
+/>
+
+### nadiifi() – Clear
+
+<SoplangHighlighter
+  code={`copy.nadiifi()
+qor("Emptied copy: " + copy)`}
+/>
+
+### habee() – Sort
+
+<SoplangHighlighter
+  code={`teed t = [4, 2, 3]
+t.habee()
+qor("Sorted: " + t)`}
+/>
+
+<HorizontalLine />
+
+## Transform and Filter
+
+### aaddin(funk) – Map Items
+
+<SoplangHighlighter
+  code={`hawl laban(x) {
+    celi x * 2
+}
+teed nums = [1, 2, 3]
+teed doubled = nums.aaddin("laban")`}
+/>
+
+### shaandhee(funk) – Filter Items
+
+<SoplangHighlighter
+  code={`hawl is_even(x) {
+    celi x % 2 == 0
+}
+teed filtered = nums.shaandhee("is_even")`}
+/>
+
+<HorizontalLine />
+
+## Indexing and Slicing
+
+### muuji(x) – Find Index
+
+<SoplangHighlighter code={`abn i = nums.muuji(2) qor("Index of 2: " + i)`} />
+
+### jar(a, b) – Slice Sublist
+
+<SoplangHighlighter
+  code={`teed subset = nums.jar(1, 3) qor("Subset: " + subset)`}
+/>
+
+:::info[Gunaanad]
+`teed` waa qaab-dhismeed aasaasi ah oo Soo-maali-first ah, fududeynaaya maaraynta iyo ku celcelinta liisaska.
+:::
+
+<HorizontalLine />
