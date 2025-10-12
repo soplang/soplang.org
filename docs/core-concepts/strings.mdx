@@ -1,0 +1,110 @@
+---
+title: Strings
+sidebar_position: 7
+---
+
+import HorizontalLine from "../../src/components/shared/HorizontalLine";
+import SoplangHighlighter from "../../src/components/shared/SoplangHighlighter";
+import TableRenderer from "../../src/components/shared/TableRenderer";
+
+# Strings in Soplang
+
+Soplang waxa uu taageeraa habab kala duwan oo string manipulation ah oo leh magacyo Soomaali u-dhega nugul. Strings waxaa lagu qeexaa `door` ama `qoraal`.
+
+## Declare a String
+
+<SoplangHighlighter
+  code={`qoraal magac = "Sharafdin Yusuf"
+door farriin = "Ku soo dhowow Soplang"`}
+/>
+
+## String Methods
+
+Hababka hoose waxay ka tarjumayaan kuwa caanka ah ee luqadaha kale, balse magacyo Soomaali ah ayay leeyihiin:
+
+<TableRenderer
+  headers={["Method", "English Equivalent", "Description", "Example"]}
+  rows={[
+    [
+      "qeybi(xad)",
+      "split()",
+      "Kala jabiso string iyadoo la adeegsanayo kala-sooc.",
+      'door parts = text.qeybi(",")',
+    ],
+    [
+      "leeyahay(sub)",
+      "includes()",
+      "Hubi in uu ku jiro far-qoraal gaaban.",
+      'haddii (text.leeyahay("search"))',
+    ],
+    [
+      "dhamaad(sub)",
+      "endsWith()",
+      "Hubi in uu ku dhammaado far-qoraal.",
+      'haddii (text.dhamaad("ing"))',
+    ],
+    [
+      "bilow(sub)",
+      "startsWith()",
+      "Hubi in uu ku bilaabmo far-qoraal.",
+      'haddii (text.bilow("http"))',
+    ],
+    [
+      "beddel(x, y)",
+      "replace()",
+      "Beddel x adigoo u beddelaya y.",
+      'door cusub = text.beddel("old", "new")',
+    ],
+    [
+      "kudar(teed)",
+      "join()",
+      "Ku xiro liis xarfo adigoo isticmaalaya kala-soocan.",
+      'door text = ", ".kudar(names)',
+    ],
+    [
+      "jar(bilow, dhamaad)",
+      "slice()",
+      "Soo saar qayb ka timid bilow ilaa dhamaad.",
+      "door sub = text.jar(0, 3)",
+    ],
+  ]}
+/>
+
+## Example Usage
+
+<SoplangHighlighter code={`qoraal jumlad = "Soplang waa luqad qurux badan"
+
+// Split string into parts
+teed ereyo = jumlad.qeybi(" ")
+qor("Ereyada: " + ereyo)
+
+// Check if it contains a word
+haddii (jumlad.leeyahay("luqad")) {
+qor("Waa luqad!")
+}
+
+// Starts and ends with
+haddii (jumlad.bilow("Soplang")) {
+qor("Waxay ku bilaabataa Soplang")
+}
+
+haddii (jumlad.dhamaad("badan")) {
+qor("Waxay ku dhammaanaysaa badan")
+}
+
+// Replace word
+door beddelay = jumlad.beddel("luqad", "barnaamij")
+qor("Beddelay: " + beddelay)
+
+// Join string from list
+teed magacyo = ["Ayaan", "Omar", "Zahra"]
+door joined = ", ".kudar(magacyo)
+qor("Dad: " + joined)
+
+// Slice part of string
+door qeyb = jumlad.jar(0, 7)
+qor("Qeybta koowaad: " + qeyb)`}/>
+
+Strings ee Soplang waa muujin iyo la-qabsan fudud, iyadoo magacyada hababka ay yihiin Soomaali-first si ay u noqdaan kuwo si dabiici ah loo fahmo.
+
+<HorizontalLine />
