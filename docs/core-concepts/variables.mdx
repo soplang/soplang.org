@@ -1,0 +1,57 @@
+---
+title: Variables
+sidebar_position: 3
+---
+
+import HorizontalLine from "../../src/components/shared/HorizontalLine";
+import SoplangHighlighter from "../../src/components/shared/SoplangHighlighter";
+import TableRenderer from "../../src/components/shared/TableRenderer";
+
+# Soplang Variables
+
+Soplang variables waxaa lagu qeexaa erayo Somali-first ah oo ka tarjumaya doorka ama nooca. Tani waxay ka dhigtaa koodhka mid muujin leh oo u fudud barayaasha Af-Soomaaliga.
+
+## Dynamic Variables – door
+
+`door` waa soo gaabinta doorsoome oo loo adeegsado doorsoomayaal dynamically typed.
+
+<SoplangHighlighter
+  code={`door magaca = "Aamina"
+door da = 19
+door xaqiiqo = run`}
+/>
+
+<HorizontalLine />
+
+## Static Variables
+
+Doorsoomayaasha static waa kuwa si cad loo noocqeeyo (explicit types) si loo helo hufnaan iyo badbaado nooc (type safety).
+
+<TableRenderer
+  headers={["Type", "Keyword", "Stands for ", "Example"]}
+  rows={[
+    ["Integer", "abn", "abyoone", "abn tirada = 10"],
+    ["Float", "jajab", "jajab", "jajab qiime = 3.14"],
+    ["String", "qoraal", "qoraal", 'qoraal magaca = "Soplang"'],
+    ["Boolean", "bool", "bool", "bool sax = run"],
+    ["List", "teed", "teed", "teed liis = [1, 2, 3]"],
+    ["Object", "walax", "walax", 'walax qof = {magac: "Ali"}'],
+  ]}
+/>
+
+<HorizontalLine />
+
+## Constants – madoor
+
+`madoor` (soo gaabinta madoorsoome) waxaa loo adeegsadaa qiyamka aan la beddeli karin (immutable).
+
+<SoplangHighlighter code={`madoor magaca = "Soplang"`} />
+
+:::warning[**Digniin**]
+Constants looma wareejin karo (reassign):
+:::
+
+<SoplangHighlighter
+  code={`madoor luqad = "Somali"
+luqad = "English"  // ❌ Error: cannot reassign constant`}
+/>

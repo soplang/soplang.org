@@ -8,6 +8,9 @@ Written by:
 ------------------
 */
 
+import { Check, Copy } from "lucide-react";
+import { useState } from "react";
+
 interface TokenStyle {
   color: string;
 }
@@ -218,22 +221,114 @@ function tokenizeSoplangCode(code: string): Token[] {
 
 interface SoplangHighlighterProps {
   code: string;
-  title?: string;
+  language?: string;
+  filename?: string;
+  showCopy?: boolean;
 }
 
-export default function SoplangHighlighter({ code }: SoplangHighlighterProps) {
+export default function SoplangHighlighter({
+  code,
+  showCopy = true,
+}: SoplangHighlighterProps) {
   const tokens = tokenizeSoplangCode(code);
+  const [isCopied, setIsCopied] = useState(false);
+
+  async function handleCopyCode() {
+    if (!isCopied) {
+      await navigator.clipboard.writeText(code);
+      setIsCopied(true);
+      setTimeout(() => setIsCopied(false), 1500);
+    }
+  }
 
   return (
-    <pre
-      id="code-block"
-      className="text-sm font-mono whitespace-pre leading-relaxed !bg-[rgb(1, 22, 39)]"
+    <div
+      style={{
+        borderRadius: "12px",
+        overflow: "hidden",
+        boxShadow: "0 2px 12px rgba(0,0,0,0.12)",
+        background: "#23272e",
+        margin: "1.5em 0",
+        position: "relative",
+      }}
     >
-      {tokens.map((token, index) => (
-        <span key={index} style={{ color: token.style.color }}>
-          {token.content}
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          background: "#181a20",
+          padding: "0.5em 1em",
+          borderBottom: "1px solid #23272e",
+        }}
+      >
+        <div style={{ display: "flex", gap: "0.4em", marginRight: "1em" }}>
+          <span
+            style={{
+              width: 12,
+              height: 12,
+              borderRadius: "50%",
+              background: "#ff5f56",
+              display: "inline-block",
+            }}
+          />
+          <span
+            style={{
+              width: 12,
+              height: 12,
+              borderRadius: "50%",
+              background: "#ffbd2e",
+              display: "inline-block",
+            }}
+          />
+          <span
+            style={{
+              width: 12,
+              height: 12,
+              borderRadius: "50%",
+              background: "#27c93f",
+              display: "inline-block",
+            }}
+          />
+        </div>
+        <span
+          style={{
+            color: "#c9d1d9",
+            fontSize: "1em",
+            fontWeight: 500,
+            flex: 1,
+          }}
+        >
+          file-name.sop
         </span>
-      ))}
-    </pre>
+        {showCopy && (
+          <span style={{ marginLeft: "auto" }}>
+            {isCopied ? (
+              <Check style={{ color: "#27c93f", verticalAlign: "middle" }} />
+            ) : (
+              <Copy
+                className="cursor-pointer align-middle text-white/50"
+                onClick={handleCopyCode}
+              />
+            )}
+          </span>
+        )}
+      </div>
+      <div
+        style={{
+          fontFamily: "Fira Mono, Menlo, Monaco, Consolas, monospace",
+          fontSize: "1.1em",
+          padding: "1.1em",
+          background: "#23272e",
+          minHeight: "2.5em",
+          whiteSpace: "pre-wrap",
+        }}
+      >
+        {tokens.map((token, idx) => (
+          <span key={idx} style={{ color: token.style.color }}>
+            {token.content}
+          </span>
+        ))}
+      </div>
+    </div>
   );
 }

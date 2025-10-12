@@ -1,3 +1,14 @@
-export default function HorizontalLine() {
-  return <hr className="!bg-dark-color/10 dark:!bg-white/10" />;
+interface Props {
+  fromTop?: string;
+}
+
+export default function HorizontalLine({ fromTop }: Props) {
+  return (
+    <hr
+      style={{
+        marginTop: fromTop,
+      }}
+      className="!bg-dark-color/10 dark:!bg-white/10"
+    />
+  );
 }

@@ -1,0 +1,53 @@
+---
+title: Syntax
+sidebar_position: 1
+---
+
+import HorizontalLine from "../../src/components/shared/HorizontalLine";
+import SoplangHighlighter from "../../src/components/shared/SoplangHighlighter";
+
+# Soplang Syntax
+
+Soplang syntax waxaa loo qaabeeyey in ay noqoto mid cad, kooban, oo si sahlan loogu fahmo af-Soomaali. Waxay isticmaashaa ereyo Soomaali ah si ay u metesho fikradaha barnaamijyada caanka ah, taas oo ka dhigaysa koodhku mid dabiici ah oo la akhrin karo.
+
+## Hello World
+
+Tani waa barnaamijka ugu fudud ee Soplang. Waxay adeegsanaysaa shaqada-dhexdeeda `qor()` si ay u muujiso wax soo saar.
+
+<SoplangHighlighter code='qor("Hello, Adduun!")' title="Soplang" />
+
+## Structure
+
+Barnaamijyada Soplang waxay ka kooban yihiin qaybahaan:
+
+- **Declarations** – adigoo adeegsanaya `door`, `abn`, `jajab`, ama `madoor`
+- **Functions** – adigoo adeegsanaya `hawl`, `celi`
+- **Control flow** – adigoo adeegsanaya `haddii`, `ugudambeyn`, `celi`, iwm.
+- **Built-ins** – sida `qor()`, `gelin()`, `nooc()`
+
+Blocks waxaa lagu qeexaa laalaabyo (`{}`) koodhkuna wuxuu ku socdaa khad-khad.
+
+## Example Program
+
+Tusaalahan waxa uu akhriyaa gelinta isticmaalaha kadibna wuu salaamaa. Waxa uu ka kooban yahay: qeexid hawl (function), doorsoome, iyo built-ins.
+
+<SoplangHighlighter
+  code={`hawl salaan(magac) {
+	qor("Asalaamu calaykum, " + magac)}
+door magaca = gelin("Magacaaga qor: ")
+salaan(magaca)
+`}
+  title="Soplang Demo"
+/>
+
+## File Extension
+
+Faylasha il-koodhka Soplang waxay adeegsadaan kordhinta `.sop`. Waxaad ku ordi kartaa CLI ama REPL-ka Soplang:
+
+```sh
+soplang file.sop
+```
+
+Syntax-kan waxa uu ku barayaa qulqulka iyo dareenka Soplang: fudayd, muujin, iyo Somali-first.
+
+<HorizontalLine />

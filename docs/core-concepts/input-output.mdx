@@ -1,0 +1,38 @@
+---
+title: Input and Output
+sidebar_position: 2
+---
+
+import HorizontalLine from "../../src/components/shared/HorizontalLine";
+import SoplangHighlighter from "../../src/components/shared/SoplangHighlighter";
+
+# Input and Output in Soplang
+
+Soplang waxay isticmaashaa shaqooyin-dhexdeed fudud si loo soo bandhigo wax soo saar iyo in lagu akhriyo gelinta isticmaalaha.
+
+## Printing to Console
+
+Adeegso `qor()` si aad u muujiso qiimayaal ama xarfo (strings) shaashadda.
+
+<SoplangHighlighter
+  code={`qor("Hello, Adduun!")
+door magaca = "Aamina"
+qor("Magaca: " + magaca)`}
+/>
+
+## Reading from User Input
+
+Adeegso `gelin()` si aad u weydiiso isticmaalaha (user) inow wax soo galiyo. Qiimaha wuxuu had iyo jeer kusoo noqdaa string.
+
+<SoplangHighlighter
+  code={`door magaca = gelin("Magacaaga qor: ")
+qor("Waad ku mahadsan tahay, " + magaca)`}
+/>
+
+<br />
+Haddii aad u baahan tahay is-beddel nooc (type conversion), waxaad adeegsan kartaa
+`abn()` si aad ugu rogto -- ugu badasho tiro.
+
+<SoplangHighlighter code={`door da = abn(gelin("Da'daada qor: "))`} />
+
+<HorizontalLine />
