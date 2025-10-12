@@ -1,0 +1,62 @@
+---
+title: Type Conversion
+sidebar_position: 5
+---
+
+import HorizontalLine from "../../src/components/shared/HorizontalLine";
+import SoplangHighlighter from "../../src/components/shared/SoplangHighlighter";
+import TableRenderer from "../../src/components/shared/TableRenderer";
+
+# Type Conversion in Soplang
+
+Soplang waxa uu leeyahay shaqooyin-dhexdeed (built-ins) oo fudud oo lagu kala beddelo noocyada xogta. Kuwaas waxay kuu oggolaanayaan inaad si ammaan ah ugu beddesho u dhaxeysa integer, string, decimal, iyo boolean—adigoo ilaalinaya saxnaanta xogta.
+
+## Type Checking -- nooc()
+
+Adeegso `nooc()` si aad u hubiso nooca qiime kasta.
+
+<SoplangHighlighter
+  code={`door natiijo = nooc(42)         // "abn"
+door natiijo2 = nooc("abc")     // "qoraal"
+door natiijo3 = nooc(3.14)      // "jajab"`}
+/>
+
+<HorizontalLine />
+
+## Type Conversion Functions
+
+Hoos waxaa ku qoran is-beddellada caanka ah iyo shaqada la adeegsado:
+
+<TableRenderer
+  headers={["Conversion", "Function", "Example"]}
+  rows={[
+    ["Int → String", "qoraal()", "qoraal(42)"],
+    ["String → Int", "abn()", 'abn("123")'],
+    ["Float → String", "qoraal()", "qoraal(3.14)"],
+    ["String → Float", "jajab()", 'jajab("3.14")'],
+    ["Int → Float", "jajab()", "jajab(5)"],
+    ["Float → Int", "abn()", "abn(4.9) → 4"],
+    ["Any → Bool", "bool()", "bool(1) → run, bool(0) → been"],
+  ]}
+/>
+
+### Example
+
+<SoplangHighlighter code={`// Integer to string
+abn int_value = 42
+qoraal int_str = qoraal(int_value)
+qor("Integer to string: " + int_str + " (Type: " + nooc(int_str) + ")")
+
+// String to decimal
+qoraal decimal_string = "3.14159"
+jajab converted_decimal = jajab(decimal_string)
+qor("String to decimal: " + converted_decimal + " (Type: " + nooc(converted_decimal) + ")")
+
+// Decimal to integer (truncation)
+jajab decimal_num = 42.75
+abn int_from_decimal = abn(decimal_num)
+qor("Decimal to integer (truncation): " + int_from_decimal)`}/>
+
+Shaqooyinkan beddelka noocyadu waxay muhiim u yihiin dhismaha input-handling adag, tusaale ahaan marka aad akhrinayso gelinta isticmaalaha ama faylasha oo aad rabto inaad hubiso noocyo sax ah ka hor inta aanad xisaab samayn.
+
+<HorizontalLine />
