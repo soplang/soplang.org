@@ -53,6 +53,8 @@
 /* overidding the docusaours css styles to align with us */
 .footer {
   background-color: var(--color-footer);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 .footer__links {

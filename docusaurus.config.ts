@@ -10,10 +10,19 @@ const config: Config = {
   title: "Soplang Programming Language",
   tagline: "Dhis Software adigoo adeegsanyo Afkaada Hooyo",
   favicon: "img/favicon.ico",
+  headTags: [
+    {
+      tagName: "meta",
+      attributes: {
+        name: "algolia-site-verification",
+        content: "B6E927570DD6CA2F",
+      },
+    },
+  ],
 
-  // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
-    v4: true, // Improve compatibility with the upcoming Docusaurus v4
+    v4: true,
+    // Improve compatibility with the upcoming Docusaurus v4
   },
 
   // Set the production url of your site here
@@ -67,6 +76,19 @@ const config: Config = {
   ],
 
   themeConfig: {
+    algolia: {
+      appId: "7K6CJMHKM3",
+      apiKey: "4bb81b2a70031b66c6e0c01642bc25e9",
+      indexName: "soplang-docs",
+      contextualSearch: true,
+      externalUrlRegex: "external\\.com|domain\\.com",
+      replaceSearchResultPathname: {
+        from: "/docs/",
+        to: "/",
+      },
+      searchParameters: {},
+    },
+
     docs: {
       sidebar: {
         hideable: true,
