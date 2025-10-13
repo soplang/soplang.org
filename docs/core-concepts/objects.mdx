@@ -1,0 +1,81 @@
+---
+title: Objects
+sidebar_position: 13
+---
+
+import HorizontalLine from "../../src/components/shared/HorizontalLine";
+import SoplangHighlighter from "../../src/components/shared/SoplangHighlighter";
+
+# Objects in Soplang
+
+Objects in Soplang are defined using the `walax` type. They store `key–value` pairs and provide Somali-first methods to inspect, modify, and copy structured data.
+
+## Declaring an Object – walax
+
+<SoplangHighlighter
+  code={`walax qof = {
+    magac: "Ayaan",
+    da: 25,
+    shaqo: "barayaal"
+}`}
+/>
+
+## Core Object Methods
+
+### fure() – Get Keys
+
+<SoplangHighlighter
+  code={`door keys = qof.fure()
+qor(keys)`}
+/>
+
+### qiime() – Get Values
+
+<SoplangHighlighter
+  code={`door values = qof.qiime()
+qor(values)`}
+/>
+
+### lamaane() – Get Key-Value Pairs
+
+<SoplangHighlighter
+  code={`door pairs = qof.lamaane()
+qor(pairs)`}
+/>
+
+### leeyahay(x) – Has Key
+
+<SoplangHighlighter
+  code={`haddii (qof.leeyahay("magac")) {
+    qor("Magaca wuu jiraa")
+}`}
+/>
+
+### tir(x) – Delete Key
+
+<SoplangHighlighter code={`qof.tir("shaqo") qor(qof)`} />
+
+### kudar(obj) – Merge/Assign
+
+<SoplangHighlighter
+  code={`walax A = {x: 1}
+walax B = {y: 2}
+walax C = A.kudar(B)
+qor(C) // {x: 1, y: 2}`}
+/>
+
+### nuqul() – Copy
+
+<SoplangHighlighter
+  code={`walax asal = {a: 10, b: 20}
+walax copy = asal.nuqul()
+qor(copy)`}
+/>
+
+### nadiifi() – Clear All Properties
+
+<SoplangHighlighter code={`asal.nadiifi() qor("Cleared object: " + asal)`} />
+
+Gunaanad: `walax` waxay siisaa qaab awood badan oo lagu kaydiyo xog magacyo leh, iyadoo leh habab si buuxda ugu qoran Af-Soomaali.
+
+<HorizontalLine />
