@@ -1,4 +1,6 @@
+import { ReactNode } from "react";
 import { DownloadButton } from "../shared/Buttons";
+import { LinuxOS, MacOS, WindowOS } from "../shared/SVGLinks";
 
 const linuxOSInstructions = [
   {
@@ -64,7 +66,7 @@ export default function Platforms() {
         osInfo={"Version 2.0 (23.8 MB)"}
         instructions={linuxOSInstructions}
         downloadButtonText={"Download For linux"}
-        iconUrl="/icons/linux.svg"
+        icon={<LinuxOS />}
       />
 
       <PlatformItem
@@ -72,7 +74,7 @@ export default function Platforms() {
         osInfo={"Version 2.0 (28.6 MB)"}
         instructions={windowOSInstructions}
         downloadButtonText={"Download For Window"}
-        iconUrl="/icons/microsoft.svg"
+        icon={<WindowOS />}
       />
 
       <PlatformItem
@@ -80,7 +82,7 @@ export default function Platforms() {
         osInfo={"Version 2.0 (26.2 MB)"}
         instructions={macOSInstructions}
         downloadButtonText={"Download For MacOs"}
-        iconUrl="/icons/apple.svg"
+        icon={<MacOS />}
       />
     </section>
   );
@@ -95,7 +97,7 @@ interface Props {
     alternative?: string;
   }>;
   downloadButtonText: string;
-  iconUrl: string;
+  icon: ReactNode;
 }
 
 function PlatformItem({
@@ -103,12 +105,12 @@ function PlatformItem({
   osInfo,
   instructions,
   downloadButtonText,
-  iconUrl,
+  icon,
 }: Props) {
   return (
     <div className="bg-white flex-[1] shadom-1x dark:bg-background rounded-[8px] py-[.9rem] px-[.3rem] flex flex-col min-w-[400px] max-w-[500px] ">
       <div className="text-primary items-center flex-col justify-center flex  pb-3 mx-auto w-fit gap-3  p-3 bg-primary/10 rounded-full">
-        <img src={iconUrl} width={60} height={60} alt={`${oSName} icon`} />
+        {icon}
         <h3 className="font-bold text-center text-2xl text-black dark:text-white">
           {oSName}
         </h3>
@@ -124,7 +126,7 @@ function PlatformItem({
           }
           return (
             <li key={index} className="flex text-[.8rem] items-center gap-1">
-              <span className=" grid place-content-center px-1 py-1  bg-green/50 text-white size-[18px] rounded-full">
+              <span className=" grid place-content-center px-1 py-1  bg-soft-blue text-white size-[18px] rounded-full">
                 {index + 1}
               </span>
               {text}

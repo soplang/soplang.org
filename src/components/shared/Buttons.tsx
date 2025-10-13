@@ -10,7 +10,7 @@ export function DownloadButton({ href, text }: Props) {
   return (
     <Link
       href={href}
-      className="button button--primary my-[1rem] !bg-green !text-white decoration-0 inline-block rounded-[8px] hover:!bg-green/90 transition-colors duration-300 ease-out   text-[1.1rem] p-[0.75rem_2rem]"
+      className="button button--primary my-[1rem] !bg-soft-blue !text-white decoration-0 inline-block rounded-[8px] hover:!bg-soft-blue/40 transition-colors duration-300 ease-out   text-[1.1rem] p-[0.75rem_2rem]"
     >
       {text}
     </Link>
@@ -27,7 +27,7 @@ export function SlideBackroundButton({
   return (
     <button
       className={cn(
-        "relative overflow-hidden px-6 py-3 font-semibold text-white bg-gradient-to-b  from-green-700 via-green-800 to-green-600 rounded-lg transition-all cursor-pointer duration-500 hover:scale-105 group",
+        "relative overflow-hidden px-6 py-3 font-semibold text-white bg-soft-blue rounded-lg transition-all cursor-pointer duration-500 hover:scale-105 group",
         className
       )}
     >

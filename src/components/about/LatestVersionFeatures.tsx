@@ -39,7 +39,7 @@ export default function latestVersionFeatures() {
             key={index}
             className="flex text-sm md:text-[1.4rem] items-center gap-[6px]"
           >
-            <ChevronRight className="scale-[.9] text-green/40 " />
+            <ChevronRight className="scale-[.9] text-soft-blue " />
             <strong className="font-bold">{header}</strong>
             <i className="text-xs md:text-[1.1rem]">{description}</i>
           </li>

@@ -9,7 +9,7 @@ type TableRendererProps = {
 export default function TableRenderer({ headers, rows }: TableRendererProps) {
   return (
     <div
-      className={`rounded-lgbg-white   overflow-hidden text-black dark:text-white shadow-md my-8 w-full `}
+      className={`rounded-lgbg-white   overflow-hidden text-black dark:text-white dark:shadow-md  my-8 w-full `}
     >
       <table className="table-fixed border-collapse w-full  h-full">
         <thead className="w-full">

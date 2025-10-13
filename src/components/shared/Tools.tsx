@@ -9,7 +9,7 @@ const tools: CardType[] = [
     longerDesc: `Manage packages, run programs, and handle project scaffolding
  This is a level of polish rarely seen in small-language ecosystems — a promising sign of future growth.`,
     icon: (
-      <Terminal className="scale-[2] group-hover:scale-[2.1] duration-300 will-change-transform transition-transform ease-out text-green/40" />
+      <Terminal className="scale-[2] group-hover:scale-[2.1] duration-300 will-change-transform transition-transform ease-out text-soft-blue" />
     ),
   },
   {
@@ -18,7 +18,7 @@ const tools: CardType[] = [
     longerDesc:
       "Includes syntax highlighting, inline docs, and code suggestions.",
     icon: (
-      <Code className="scale-[2] group-hover:scale-[2.1] duration-300 will-change-transform transition-transform ease-out text-green/40" />
+      <Code className="scale-[2] group-hover:scale-[2.1] duration-300 will-change-transform transition-transform ease-out text-soft-blue" />
     ),
   },
   {
@@ -26,7 +26,7 @@ const tools: CardType[] = [
     shorterDesc: "Terminal-based environment with history and highlighting.",
     longerDesc: "Command-line interface with history and syntax coloring.",
     icon: (
-      <Activity className="scale-[2] group-hover:scale-[2.1] duration-300 will-change-transform transition-transform ease-out text-green/40" />
+      <Activity className="scale-[2] group-hover:scale-[2.1] duration-300 will-change-transform transition-transform ease-out text-soft-blue" />
     ),
   },
   {
@@ -34,7 +34,7 @@ const tools: CardType[] = [
     shorterDesc: "For online execution and learning demos.",
     longerDesc: `For embedding Soplang in web applications and learning platforms`,
     icon: (
-      <Globe className="scale-[2] group-hover:scale-[2.1] duration-300 will-change-transform transition-transform ease-out text-green/40" />
+      <Globe className="scale-[2] group-hover:scale-[2.1] duration-300 will-change-transform transition-transform ease-out text-soft-blue" />
     ),
   },
 ];

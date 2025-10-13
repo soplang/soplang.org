@@ -7,7 +7,7 @@ const languageGoals: CardType[] = [
     shorterDesc:
       "Clean, easy-to-read syntax designed to make programming concepts clear and approachable.",
     icon: (
-      <CheckCircle className="scale-[2] group-hover:scale-[2.1] duration-300 will-change-transform transition-transform ease-out text-green/40" />
+      <CheckCircle className="scale-[2] group-hover:scale-[2.1] duration-300 will-change-transform transition-transform ease-out text-soft-blue" />
     ),
   },
   {
@@ -15,7 +15,7 @@ const languageGoals: CardType[] = [
     shorterDesc:
       "Built with learners in mind, making programming accessible to students and new developers.",
     icon: (
-      <GraduationCap className="scale-[2] group-hover:scale-[2.1] duration-300 will-change-transform transition-transform ease-out text-green/40" />
+      <GraduationCap className="scale-[2] group-hover:scale-[2.1] duration-300 will-change-transform transition-transform ease-out text-soft-blue" />
     ),
   },
   {
@@ -23,7 +23,7 @@ const languageGoals: CardType[] = [
     shorterDesc:
       "Native Somali throughout, embracing Somali language and cultural context in programming.",
     icon: (
-      <Globe className="scale-[2] group-hover:scale-[2.1] duration-300 will-change-transform transition-transform ease-out text-green/40" />
+      <Globe className="scale-[2] group-hover:scale-[2.1] duration-300 will-change-transform transition-transform ease-out text-soft-blue" />
     ),
   },
   {
@@ -31,7 +31,7 @@ const languageGoals: CardType[] = [
     shorterDesc:
       "Removes English-language barriers, opening programming to a wider audience of Somali speakers.",
     icon: (
-      <Accessibility className="scale-[2] group-hover:scale-[2.1] duration-300 will-change-transform transition-transform ease-out text-green/40" />
+      <Accessibility className="scale-[2] group-hover:scale-[2.1] duration-300 will-change-transform transition-transform ease-out text-soft-blue" />
     ),
   },
 ];

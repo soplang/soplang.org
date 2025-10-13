@@ -102,12 +102,12 @@ const config: Config = {
           label: "About",
           position: "left",
         },
+        { to: "/blog", label: "Blog", position: "left" },
         {
           to: "/download",
           label: "Download",
           position: "left",
         },
-        { to: "/blog", label: "Blog", position: "left" },
 
         {
           position: "right",
