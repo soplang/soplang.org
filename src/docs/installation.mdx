@@ -1,0 +1,73 @@
+---
+title: Installing Soplang
+description: Download Soplang and run it via Docker. A simple, universal setup guide.
+order: 2
+---
+
+This guide shows two easy ways to get started with **Soplang**: downloading a prebuilt release or using the official Docker image.
+
+## General Download (All Platforms)
+
+1. **Download:** Grab the latest release for your platform from the [downloads page](/downloads).
+2. **Extract / Install:** Unzip or install the package as provided by the release. If it’s a single binary, place it somewhere in your PATH (e.g., `~/bin` on UNIX-like systems).
+3. **(Optional) Add to PATH:** Ensure the `soplang` binary is available on your PATH. For example (bash/zsh):
+    ```bash
+    echo 'export PATH="$HOME/bin:$PATH"' >> ~/.bashrc && source ~/.bashrc
+    ```
+4. **Verify:** Open your terminal and run:
+    ```bash
+    soplang --version
+    ```
+
+### Run Your First Program
+
+**hello.sop**
+```soplang
+qor("Hello, World!")
+```
+
+Execute the file:
+```bash
+soplang hello.sop
+```
+
+## Use Docker (No Local Install)
+
+If you already have Docker, you can run Soplang without installing anything else.
+
+### 1) Pull the Image
+```bash
+docker pull soplang/soplang:latest
+```
+
+### 2) Run an Interactive Session
+```bash
+docker run -it --rm soplang/soplang
+```
+
+### 3) Run a Local File
+Mount your project directory and execute a file:
+
+```bash
+# from your project directory
+docker run -it --rm -v "$PWD":/app -w /app soplang/soplang soplang hello.sop
+```
+
+## Checksums & Offline Install
+
+*   **Verify downloads:** Compare the file’s checksum with the one on the [downloads page](/downloads).
+*   **Offline:** Keep the extracted folder/binary and run directly—no internet required after download.
+
+## Troubleshooting
+
+### “command not found”
+Make sure `soplang` is on your PATH, or run it via Docker as shown above.
+
+### Permission denied (UNIX-like)
+If you downloaded a binary, grant execute permissions:
+```bash
+chmod +x /path/to/soplang
+```
+
+### Still stuck?
+Check the [downloads](/downloads) page notes or ask in [community support](/community).

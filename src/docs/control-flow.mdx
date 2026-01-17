@@ -1,0 +1,347 @@
+---
+title: Control Flow in Soplang
+description: Learn about conditional statements, loops, and other control flow structures in the Soplang programming language.
+order: 8
+---
+
+# Control Flow in Soplang
+
+Control flow structures allow you to control the execution path of your program based on conditions and to repeat code execution. Soplang provides intuitive control flow mechanisms using the Somali language.
+
+**basic_conditional.sop**
+```soplang
+// Basic if statement
+door age = 18
+
+haddii (age >= 18) {
+    qor("You are an adult")
+} haddii_kalena {
+    qor("You are underage")
+}
+```
+
+## Conditional Statements
+
+Conditional statements allow your program to make decisions based on certain conditions. Soplang provides `haddii` (if), `haddii_kale` (else if), and `haddii_kalena` (else) keywords for this purpose.
+
+### Basic If-Else
+
+**if_else.sop**
+```soplang
+// If-Else statement
+door temperature = 25
+
+haddii (temperature > 30) {
+    qor("It's hot outside")
+} haddii_kalena {
+    qor("The weather is pleasant")
+}
+```
+
+### Multiple Conditions
+
+**multiple_conditions.sop**
+```soplang
+// If-Else If-Else statement
+door age = 25
+door name = "Faarax"
+
+haddii (age < 13) {
+    qor(name + " is a child")
+} haddii_kale (age >= 13 && age < 20) {
+    qor(name + " is a teenager")
+} haddii_kale (age >= 20 && age < 65) {
+    qor(name + " is an adult")
+} haddii_kalena {
+    qor(name + " is a senior")
+}
+```
+
+### Nested Conditionals
+
+**nested_conditionals.sop**
+```soplang
+// Nested conditional statements
+door score = 85
+door isRegistered = true
+
+haddii (isRegistered) {
+    qor("User is registered")
+    
+    haddii (score >= 90) {
+        qor("Grade: A")
+    } haddii_kale (score >= 80) {
+        qor("Grade: B")
+    } haddii_kale (score >= 70) {
+        qor("Grade: C")
+    } haddii_kale (score >= 60) {
+        qor("Grade: D")
+    } haddii_kalena {
+        qor("Grade: F")
+    }
+} haddii_kalena {
+    qor("User is not registered")
+}
+```
+
+### Ternary Operator
+
+For simple conditions, you can use the ternary operator as a shorthand way of writing an if-else statement:
+
+**ternary_operator.sop**
+```soplang
+// Ternary operator
+door age = 20
+door status = age >= 18 ? "adult" : "minor"
+
+qor("Xaliimo is an " + status)  // Outputs: "Xaliimo is an adult"
+
+// Equivalent if-else
+door message
+haddii (age >= 18) {
+    message = "adult"
+} haddii_kalena {
+    message = "minor"
+}
+qor("Xaliimo is an " + message)  // Outputs: "Xaliimo is an adult"
+```
+
+## Loops
+
+Loops allow you to execute code repeatedly. Soplang offers several types of loops to handle different scenarios.
+
+### For Loops
+
+For loops in Soplang use the `ku_celi` keyword and come in multiple forms:
+
+**for_loops.sop**
+```soplang
+// Basic for loop with range
+ku_celi i min 1 ilaa 5 {
+    qor(i)  // Outputs: 1, 2, 3, 4, 5
+}
+
+// Looping through collections
+door magacyada = ["Faarax", "Xaliimo", "Abdi", "Yusuf", "Fardowsa"]
+ku_celi magac ku dhex jira magacyada {
+    qor("Hello, " + magac)
+}
+```
+
+### While Loops
+
+While loops use the `inta_ay` keyword and continue executing as long as a condition is true:
+
+**while_loops.sop**
+```soplang
+// Basic while loop
+door counter = 5
+inta_ay (counter > 0) {
+    qor("Countdown: " + counter)
+    counter = counter - 1
+}
+
+// While loop with conditional exit
+door userInput = ""
+door attempts = 0
+inta_ay (userInput != "exit" && attempts < 5) {
+    // In a real program, you would get input from the user
+    // This is a simulation
+    attempts = attempts + 1
+    haddii (attempts == 3) {
+        userInput = "exit"
+    }
+    qor("Attempt: " + attempts)
+}
+```
+
+### Do-While Loops
+
+Do-While loops use the `samee` and `inta_ay` keywords and execute at least once before checking the condition:
+
+**do_while_loops.sop**
+```soplang
+// Do-while loop
+door counter = 0
+samee {
+    qor("Counter value: " + counter)
+    counter = counter + 1
+} inta_ay (counter < 5)
+
+// Even when the condition starts as false, it executes once
+door x = 10
+samee {
+    qor("This will print only once")
+    x = x + 1
+} inta_ay (x < 5)
+```
+
+## Loop Control
+
+Soplang provides special statements to control the flow of loops:
+
+### Break
+
+The `jooji` keyword is used to exit a loop prematurely:
+
+**break_statement.sop**
+```soplang
+// Break in a for loop
+ku_celi i min 1 ilaa 10 {
+    qor(i)
+    haddii (i == 5) {
+        qor("Breaking the loop at 5")
+        jooji  // Exit the loop when i equals 5
+    }
+}
+
+// Break in a while loop
+door counter = 0
+inta_ay (true) {  // Infinite loop
+    counter = counter + 1
+    qor(counter)
+    
+    haddii (counter >= 5) {
+        qor("Breaking infinite loop")
+        jooji  // Exit the loop after counter reaches 5
+    }
+}
+```
+
+### Continue
+
+The `sii_wad` keyword is used to skip the rest of the current iteration and move to the next one:
+
+**continue_statement.sop**
+```soplang
+// Continue in a for loop - skip even numbers
+ku_celi i min 1 ilaa 10 {
+    haddii (i % 2 == 0) {
+        sii_wad  // Skip even numbers
+    }
+    qor(i)  // Outputs: 1, 3, 5, 7, 9
+}
+
+// Continue in a while loop
+door counter = 0
+inta_ay (counter < 10) {
+    counter = counter + 1
+    
+    haddii (counter % 3 != 0) {
+        sii_wad  // Skip numbers that are not multiples of 3
+    }
+    
+    qor(counter)  // Outputs: 3, 6, 9
+}
+```
+
+## Switch-Case Statements
+
+Switch-case statements provide a cleaner way to handle multiple conditions. In Soplang, they use the `doorka` keyword:
+
+**switch_case.sop**
+```soplang
+// Switch-case statement
+door day = "Monday"
+
+doorka (day) {
+    xaalad "Monday":
+        qor("Start of work week")
+        dhammaad
+        
+    xaalad "Tuesday":
+    xaalad "Wednesday":
+    xaalad "Thursday":
+        qor("Mid week")
+        dhammaad
+        
+    xaalad "Friday":
+        qor("End of work week")
+        dhammaad
+        
+    xaalad "Saturday":
+    xaalad "Sunday":
+        qor("Weekend")
+        dhammaad
+        
+    kale:
+        qor("Invalid day")
+        dhammaad
+}
+
+// Switch with expressions
+door grade = "B"
+
+doorka (grade) {
+    xaalad "A":
+        qor("Excellent")
+        dhammaad
+        
+    xaalad "B":
+        qor("Good")
+        dhammaad
+        
+    xaalad "C":
+        qor("Average")
+        dhammaad
+        
+    xaalad "D":
+        qor("Pass")
+        dhammaad
+        
+    xaalad "F":
+        qor("Fail")
+        dhammaad
+        
+    kale:
+        qor("Invalid grade")
+        dhammaad
+}
+```
+
+## Error Handling
+
+Error handling is an important aspect of control flow. Soplang provides try-catch blocks using `isku_day` and `qabo` keywords:
+
+**error_handling.sop**
+```soplang
+// Basic error handling
+isku_day {
+    door x = 10 / 0  // Division by zero error
+    qor("This will not be executed")
+} qabo (error) {
+    qor("An error occurred: " + error.fariin)
+}
+
+// Handling specific error types
+isku_day {
+    door names = ["Abdi", "Yusuf"]
+    qor(names[5])  // Index out of bounds
+} qabo (IndexOutOfBoundsError error) {
+    qor("Array index out of bounds: " + error.fariin)
+} qabo (error) {
+    qor("Other error: " + error.fariin)
+}
+
+// Finally block
+isku_day {
+    // Database or file operations
+    qor("Attempting to open a file")
+    // Simulate an error
+    throw cusub Error("File not found")
+} qabo (error) {
+    qor("Error: " + error.fariin)
+} ugu_dambeyn {
+    qor("This always executes, error or not")
+    qor("Closing any open resources")
+}
+```
+
+### Best Practices for Control Flow
+
+*   **Keep Conditions Simple:** For better readability, avoid overly complex conditions.
+*   **Limit Nesting:** Too many levels of nested conditionals can make code hard to follow.
+*   **Consider Early Returns:** In functions, return early to avoid deep nesting.
+*   **Use Loop Variables Meaningfully:** Choose descriptive names for loop variables.
+*   **Be Careful with Infinite Loops:** Always ensure there's a way to exit any loop.
+*   **Handle All Error Cases:** Account for all possible error conditions in try-catch blocks.

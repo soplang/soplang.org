@@ -1,0 +1,50 @@
+---
+title: Soplang Variables
+description: "Baro sida loo isticmaalo variables: door (dynamic), noocyada static (abn, jajab, qoraal, bool, teed, walax), iyo constants (madoor) ee Soplang."
+order: 20
+---
+
+# Soplang Variables
+
+Soplang variables waxaa lagu qeexaa erayo Somali-first ah oo ka tarjumaya doorka ama nooca. Tani waxay ka dhigtaa koodhka mid muujin leh oo u fudud barayaasha Af-Soomaaliga.
+
+## 🟢 Dynamic Variables – `door`
+
+`door` waa soo gaabinta *doorsoome* oo loo adeegsado doorsoomayaal *dynamically typed*.
+
+**dynamic_variables.sop**
+```soplang
+door magaca = "Aamina"
+door da = 19
+door xaqiiqo = run
+```
+
+## 🔵 Static Variables
+
+Doorsoomayaasha *static* waa kuwa si cad loo noocqeeyo (explicit types) si loo helo hufnaan iyo badbaado nooc (type safety).
+
+| Type | Keyword | Stands for | Example |
+| :--- | :--- | :--- | :--- |
+| Integer | `abn` | *abyoone* | `abn tirada = 10` |
+| Float | `jajab` | *jajab* | `jajab qiime = 3.14` |
+| String | `qoraal` | *qoraal* | `qoraal magaca = "Soplang"` |
+| Boolean | `bool` | *bool* | `bool sax = run` |
+| List | `teed` | *teed* | `teed liis = [1, 2, 3]` |
+| Object | `walax` | *walax* | `walax qof = {magac: "Ali"}` |
+
+## 🟡 Constants – `madoor`
+
+`madoor` (soo gaabinta *madoorsoome*) waxaa loo adeegsadaa qiyamka aan la beddeli karin (immutable).
+
+**constants_basic.sop**
+```soplang
+madoor magaca = "Soplang"
+```
+
+Constants lama u wareejin karo (reassign):
+
+**constants_reassign_error.sop**
+```soplang
+madoor luqad = "Somali"
+luqad = "English"  // ❌ Error: cannot reassign constant
+```

@@ -1,0 +1,63 @@
+---
+title: Built-in Functions in Soplang
+description: Tixraac degdeg ah oo ku saabsan hawlaha ku-dhexjira Soplang (qor, gelin, nooc, abn, jajab, qoraal, bool, teed, walax, daji, kor, dherer, xul).
+order: 6
+---
+
+# Built-in Functions in Soplang
+
+Soplang waxa uu leeyahay hawlo muhiim ah oo si joogto ah u diyaar ah—daabacaad, akhris, beddel-nooc, leex-leexin tiro (rounding), abuuris liis/obj, iyo in ka badan—dhammaantood magacyo Soomaali ah.
+
+## 📋 Built-in Function Reference
+
+| Function | Meaning | English Equivalent | Example |
+| :--- | :--- | :--- | :--- |
+| `qor()` | Print to console | `print()` | `qor("Salaan, Adduunka!")` |
+| `gelin()` | Read user input | `input()` | `door magac = gelin("Magacaaga geli: ")` |
+| `nooc()` | Get type of a value | `typeof` | `qor(nooc(magac))` |
+| `abn()` | Convert to integer | `int()` | `door n = abn("5")` |
+| `jajab()` | Convert to float | `float()` | `door f = jajab("3.14")` |
+| `qoraal()` | Convert to string | `str()` | `door s = qoraal(25)` |
+| `bool()` | Convert to boolean | `bool()` | `door b = bool(1)` |
+| `teed()` | Create an array | `list()` | `door liis = teed(1, 2, 3)` |
+| `walax()` | Create an object | `object()` | `door obj = walax(magac: "Ali")` |
+| `daji()` | Round down | `Math.floor()` | `door x = daji(4.9)` |
+| `kor()` | Round up | `Math.ceil()` | `door x = kor(4.2)` |
+| `dherer()` | Length of string/list | `len()/.length` | `door l = qoraal.dherer()` |
+| `xul()` | Pick random number | `random()` | `door n = xul(1, 6)` |
+
+## 🧪 Examples
+
+**builtins_examples.sop**
+```soplang
+// Output
+qor("Hello World")
+
+// Input
+door magac = gelin("Magacaaga geli: ")
+qor("Magacaaga waa: " + magac)
+
+// Type detection
+door t = nooc(5)
+qor("Type: " + t)
+
+// Conversion
+door a = abn("42")
+door f = jajab("3.14")
+door s = qoraal(100)
+door b = bool(0)
+
+// List and Object creation
+door l = teed(1, 2, 3)
+door o = walax(name: "Ayaan", age: 20)
+
+// Math rounding
+qor("Floor: " + daji(4.8))
+qor("Ceil: " + kor(4.2))
+
+// Random number
+door r = xul(1, 6)
+qor("Random: " + r)
+```
+
+**Gunaanad:** built-ins-ka Soplang waxay ka dhigaan koodhka mid kooban, muujin leh, isla markaana si dabiici ah ugu qoran Af-Soomaali.

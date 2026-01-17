@@ -1,0 +1,93 @@
+---
+title: Objects in Soplang
+description: Learn how to declare, modify, and manage walax (objects) in Soplang with Somali-first methods.
+order: 16
+---
+
+# Objects in Soplang
+
+Objects in Soplang are defined using the `walax` type. They store key–value pairs and provide Somali-first methods to inspect, modify, and copy structured data.
+
+## 🧾 Declaring an Object – `walax`
+
+**declare_object.sop**
+```soplang
+walax qof = {
+    magac: "Ayaan",
+    da: 25,
+    shaqo: "barayaal"
+}
+```
+
+## 🔧 Core Object Methods
+
+### `fure()` – Get Keys
+
+**keys.sop**
+```soplang
+door keys = qof.fure()
+qor(keys)
+```
+
+### `qiime()` – Get Values
+
+**values.sop**
+```soplang
+door values = qof.qiime()
+qor(values)
+```
+
+### `lamaane()` – Get Key-Value Pairs
+
+**pairs.sop**
+```soplang
+door pairs = qof.lamaane()
+qor(pairs)
+```
+
+### `leeyahay(x)` – Has Key
+
+**has_key.sop**
+```soplang
+haddii (qof.leeyahay("magac")) {
+    qor("Magaca wuu jiraa")
+}
+```
+
+### `tir(x)` – Delete Key
+
+**delete.sop**
+```soplang
+qof.tir("shaqo")
+qor(qof)
+```
+
+### `kudar(obj)` – Merge/Assign
+
+**merge.sop**
+```soplang
+walax A = {x: 1}
+walax B = {y: 2}
+walax C = A.kudar(B)
+
+qor(C)  // {x: 1, y: 2}
+```
+
+### `nuqul()` – Copy
+
+**copy.sop**
+```soplang
+walax asal = {a: 10, b: 20}
+walax copy = asal.nuqul()
+qor(copy)
+```
+
+### `nadiifi()` – Clear All Properties
+
+**clear.sop**
+```soplang
+asal.nadiifi()
+qor("Cleared object: " + asal)
+```
+
+**Gunaanad:** `walax` waxay siisaa qaab awood badan oo lagu kaydiyo xog magacyo leh, iyadoo leh habab si buuxda ugu qoran Af-Soomaali.
