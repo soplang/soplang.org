@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { FaWindows, FaApple, FaLinux } from 'react-icons/fa';
+import { Icon } from '@iconify/react';
 
 interface BaseOption {
   id: string;
@@ -39,7 +39,7 @@ const defaultOptions = {
       type: 'os' as const,
       id: '1',
       name: 'Windows',
-      icon: <FaWindows className="text-blue-400 mr-3 text-xl" />,
+      icon: <Icon icon="fa6-brands:windows" className="text-blue-400 mr-3 text-xl" />,
       description: 'Compatible with Windows 10 and later (64-bit)',
       downloadUrl: '/downloads/latest'
     },
@@ -47,7 +47,7 @@ const defaultOptions = {
       type: 'os' as const,
       id: '2',
       name: 'macOS',
-      icon: <FaApple className="text-blue-400 mr-3 text-xl" />,
+      icon: <Icon icon="fa6-brands:apple" className="text-blue-400 mr-3 text-xl" />,
       description: 'Compatible with macOS 10.15+ (Intel & Apple Silicon)',
       downloadUrl: '/downloads/latest'
     },
@@ -55,7 +55,7 @@ const defaultOptions = {
       type: 'os' as const,
       id: '3',
       name: 'Linux',
-      icon: <FaLinux className="text-blue-400 mr-3 text-xl" />,
+      icon: <Icon icon="fa6-brands:linux" className="text-blue-400 mr-3 text-xl" />,
       description: 'Compatible with major distributions (Ubuntu, Fedora, etc.)',
       downloadUrl: '/downloads/latest'
     }
@@ -107,18 +107,18 @@ const TerminalCard: React.FC<TerminalInstallerProps> = ({
         <div className="text-xs text-gray-300 font-mono">{title}</div>
         <div className="w-4"></div>
       </div>
-      
+
       {/* Terminal content */}
       <div className="bg-[#1e1e1e] text-gray-100 p-6 font-mono text-sm">
         <p className="text-green-400 mb-4">$ <span className="typing-animation">{command}</span></p>
         <p className="text-white mb-6">{introText}</p>
-        
+
         <div className="space-y-3 mb-6">
           {currentOptions.map((option) => (
             option.type === 'os' ? (
-              <Link 
+              <Link
                 key={option.id}
-                href={option.downloadUrl} 
+                href={option.downloadUrl}
                 className="terminal-option p-3 border border-gray-600 rounded hover:bg-gray-700 hover:border-blue-400 transition-all flex items-center"
               >
                 {option.icon}
@@ -128,7 +128,7 @@ const TerminalCard: React.FC<TerminalInstallerProps> = ({
                 </div>
               </Link>
             ) : (
-              <div 
+              <div
                 key={option.id}
                 className="terminal-option p-3 border border-gray-600 rounded hover:bg-gray-700 hover:border-blue-400 transition-all"
               >
@@ -142,9 +142,9 @@ const TerminalCard: React.FC<TerminalInstallerProps> = ({
             )
           ))}
         </div>
-        
+
         <p className="text-gray-400 border-t border-gray-700 pt-4 text-xs">
-          {footerText.split('soplang').map((part, i, arr) => 
+          {footerText.split('soplang').map((part, i, arr) =>
             i === arr.length - 1 ? part : (
               <React.Fragment key={i}>
                 {part}<span className="text-yellow-400">soplang</span>
