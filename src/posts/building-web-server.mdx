@@ -1,0 +1,26 @@
+---
+title: 'Building a Simple Web Server with Soplang'
+description: 'Did you know Soplang can handle HTTP requests? Learn how to build a basic web server in under 5 minutes.'
+date: '2025-01-15'
+author: 'Mr Sharafdin'
+authorRole: 'Soplang Creator'
+category: 'Tutorials'
+image: '/images/blog/web-server.svg'
+readTime: '15 min read'
+---
+
+Soplang isn't just for scripts; it's for the web too!
+
+## Setting up a Server
+
+Using the `net` module (coming soon in v2.0 standard lib):
+
+```sop
+keen "net" sida net;
+
+server = net.sameeServer((codsi, jawaab) => {
+    jawaab.dir("Salaan sare!");
+});
+
+server.dhegayso(3000);
+```
