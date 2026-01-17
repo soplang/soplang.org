@@ -1,11 +1,12 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import SoplangHighlighter from './SoplangHighlighter';
 import Prism from 'prismjs';
 import 'prismjs/components/prism-bash';
 import 'prismjs/components/prism-powershell';
-import 'prismjs/themes/prism-tomorrow.css';
+import 'prismjs/components/prism-powershell';
+import { Icon } from '@/components/ui/icon';
 
 // Initialize Prism for syntax highlighting
 if (typeof window !== 'undefined') {
@@ -20,19 +21,20 @@ interface CodeWindowProps {
   title?: string;
   className?: string;
   language?: string;
-  shawlineNumbers?: boolean;
+  showLineNumbers?: boolean;
 }
 
 /**
- * CodeWindow component - Displays code with syntax highlighting in a macOS-style window
+ * CodeWindow component - Displays code with syntax highlighting in a Windows-style window
  * Supports both Soplang code and terminal commands with special formatting
  */
 const CodeWindow: React.FC<CodeWindowProps> = ({
   code,
   title = 'main.sop',
   className = '',
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   language = 'soplang',
-  shawlineNumbers = false,
+  showLineNumbers = true,
 }) => {
   const [copySuccess, setCopySuccess] = useState(false);
 
@@ -76,6 +78,7 @@ const CodeWindow: React.FC<CodeWindowProps> = ({
           </div>
         );
       case 'comment':
+        // For terminal view, we render full lines
         return (
           <div key={index} className="mt-2 mb-1 text-green-800">
             {line}
@@ -96,44 +99,78 @@ const CodeWindow: React.FC<CodeWindowProps> = ({
   const renderTerminalContent = () => {
     const lines = code.split('\n');
     return (
-      <div className="p-4 font-mono text-sm">
+      <div className="p-4 font-mono text-sm leading-relaxed">
         {lines.map((line, index) => renderLine(line, index))}
+      </div>
+    );
+  };
+
+  // Generate line numbers
+  const renderLineNumbers = () => {
+    const lines = code.split('\n');
+    return (
+      <div className="flex flex-col text-right pr-4 select-none text-muted-foreground/30 text-sm pt-4 pb-4 bg-[#15151a] border-r border-white/5 font-mono leading-relaxed min-h-full">
+        {lines.map((_, i) => (
+          <span key={i} className="px-3">
+            {i + 1}
+          </span>
+        ))}
       </div>
     );
   };
 
   // Copy code to clipboard
   const handleCopy = async () => {
-    try {
-      await navigator.clipboard.writeText(code);
-      setCopySuccess(true);
-      setTimeout(() => setCopySuccess(false), 2000);
-    } catch (err) {
-      console.error('Failed to copy text: ', err);
-    }
-  };
+    if (navigator.clipboard) {
+      try {
+        await navigator.clipboard.writeText(code);
+        setCopySuccess(true);
+        setTimeout(() => setCopySuccess(false), 2000);
+      } catch (err) {
+        console.error('Failed to copy text: ', err);
+      }
+    } else {
+      // fallback(document.execCommand('copy')) for mobile
+      try {
+        const textArea = document.createElement('textarea');
+        textArea.value = code;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+        setCopySuccess(true);
+        setTimeout(() => setCopySuccess(false), 2000);
+      } catch (err) {
+        console.error('Failed to copy text: ', err);
+      }
+    };
+  }
+
+  const isTerminal = title === 'terminal';
 
   return (
-    <div className={`code-window rounded-lg overflow-hidden shadow-lg ${className}`}>
-      {/* macOS style window header */}
-      <div className="code-window-header bg-[#1e1e1e] px-4 py-2 flex items-center justify-between">
-        <div className="flex space-x-2">
-          <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-          <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-          <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+    <div className={`w-full rounded-xl overflow-hidden bg-[#15151a] border border-white/10 shadow-2xl ${className}`}>
+      {/* Windows style window header */}
+      <div className="flex items-center justify-between px-4 py-2 bg-[#15151a] border-b border-white/5">
+        <div className="flex items-center gap-3">
+          <span className="text-xs font-medium text-gray-300 font-mono px-2 py-0.5 bg-black/20 rounded border border-white/5">{title}</span>
         </div>
-        <div className="font-mono text-xs text-gray-300 window-title">{title}</div>
-        <button
-          onClick={handleCopy}
-          className="px-2 py-1 text-xs text-gray-300 transition-colors bg-gray-700 rounded hover:bg-gray-600"
-        >
-          {copySuccess ? 'Copied!' : 'Copy'}
-        </button>
+        <div className="flex items-center gap-3">
+          <button
+            onClick={handleCopy}
+            className="px-2 py-0.5 text-[10px] text-gray-400 font-mono transition-colors bg-white/5 rounded hover:bg-white/10 border border-white/5 mr-2"
+          >
+            {copySuccess ? <Icon icon="lucide:check" className="w-3 h-3 text-green-400" /> : <Icon icon="lucide:copy" className="w-3 h-3 text-gray-400" />}
+          </button>
+        </div>
       </div>
 
       {/* Code content with proper syntax highlighting */}
-      <div className="overflow-x-auto bg-[#1e1e1e] text-gray-300">
-        {title === 'terminal' ? renderTerminalContent() : <SoplangHighlighter code={code} />}
+      <div className="flex overflow-x-auto bg-[#15151a] text-gray-300 ">
+        {showLineNumbers && !isTerminal && renderLineNumbers()}
+        <div className="flex-1 w-full px-2">
+          {isTerminal ? renderTerminalContent() : <SoplangHighlighter code={code} className={showLineNumbers ? "pl-0" : ""} />}
+        </div>
       </div>
     </div>
   );
