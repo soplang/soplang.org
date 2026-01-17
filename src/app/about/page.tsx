@@ -1,288 +1,142 @@
-import Link from "next/link";
-
-export const metadata = {
-  title: "About Soplang - The Somali Programming Language",
-  description:
-    "Learn about Soplang, a Somali-first programming language that makes coding intuitive, inclusive, and accessible for Somali peoples.",
-};
+import React from "react";
+import { Icon } from "@iconify/react";
 
 export default function AboutPage() {
-  return (
-    <div className="py-12">
-      <div className="container-custom">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            About Soplang
-          </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Soplang is a Somali-first programming language that makes coding
-            intuitive, inclusive, and accessible for Somali peoples.
-          </p>
+    return (
+        <div className="min-h-screen bg-background relative overflow-hidden">
+            {/* Background Gradients */}
+            <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
+                <div className="absolute top-1/4 right-0 w-[600px] h-[600px] bg-indigo-500/10 rounded-full blur-[120px]" />
+                <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-[100px]" />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-purple-500/5 rounded-full blur-[150px]" />
+            </div>
+
+            <div className="container-custom py-10 md:py-22">
+                {/* Dynamic Header / Hero */}
+                <div className="text-center max-w-4xl mx-auto mb-20 relative">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-100 dark:bg-indigo-500/10 border border-indigo-200 dark:border-indigo-500/20 text-indigo-700 dark:text-indigo-400 text-sm font-medium mb-6 animate-fade-in-up">
+                        <Icon icon="lucide:sparkles" className="w-4 h-4" />
+                        <span>The Story of Soplang</span>
+                    </div>
+
+                    <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-8 tracking-tight animate-fade-in-up animation-delay-100 leading-tight">
+                        Empowering Somalia with <br className="hidden md:block" />
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
+                            Native Technology
+                        </span>
+                    </h1>
+
+                    <div className="relative inline-block">
+                        <Icon icon="lucide:quote" className="absolute -top-6 -left-8 w-12 h-12 text-indigo-200 dark:text-indigo-900/40 -z-10" />
+                        <p className="text-xl md:text-2xl text-muted-foreground font-light leading-relaxed animate-fade-in-up animation-delay-200 italic">
+                            "A Somali programming language designed to bring coding closer to Somali speakers and promote programming in the local language."
+                        </p>
+                        <div className="mt-4 flex items-center justify-center gap-2 text-sm text-muted-foreground font-medium animate-fade-in-up animation-delay-300">
+                            <div className="w-8 h-[1px] bg-border"></div>
+                            <span>Mr Sharafdin, Creator of Soplang</span>
+                            <div className="w-8 h-[1px] bg-border"></div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Mission Card */}
+                <div className="relative mb-24 animate-fade-in-up animation-delay-400">
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 blur-2xl transform scale-y-90 -z-10" />
+                    <div className="bg-card/50 backdrop-blur-xl border border-white/10 dark:border-white/5 rounded-3xl p-8 md:p-12 shadow-2xl overflow-hidden relative">
+                        {/* Decor */}
+                        <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-500/10 rounded-full blur-3xl translate-x-1/3 -translate-y-1/3 pointer-events-none" />
+
+                        <div className="flex flex-col md:flex-row items-center gap-10 relative z-10">
+                            <div className="w-full md:w-1/2">
+                                <div className="inline-block p-3 rounded-2xl bg-indigo-500/10 text-indigo-500 mb-6">
+                                    <Icon icon="lucide:flag" className="w-8 h-8" />
+                                </div>
+                                <h2 className="text-3xl font-bold mb-4">First of its Kind</h2>
+                                <p className="text-lg text-muted-foreground leading-relaxed">
+                                    Soplang is the first Somali programming language, created to make coding accessible to Somali speakers using native Somali syntax and keywords.
+                                </p>
+                            </div>
+                            <div className="w-full md:w-1/2">
+                                <div className="bg-indigo-600 rounded-2xl p-6 text-white shadow-lg transform md:rotate-2 hover:rotate-0 transition-transform duration-500">
+                                    <div className="flex items-center gap-3 mb-4 border-b border-white/20 pb-4">
+                                        <Icon icon="lucide:code-2" className="w-6 h-6" />
+                                        <span className="font-mono text-indigo-100">example.sop</span>
+                                    </div>
+                                    <pre className="font-mono text-sm md:text-base leading-relaxed overflow-x-auto">
+                                        {`lacag = 100
+hadii (lacag > 50) {
+    qor("Waxaad haysataa lacag badan");
+} kale {
+    qor("Lacagtaadu waa yar tahay");
+}`}
+                                    </pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Timeline & Facts Grid */}
+                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-24">
+                    {/* Card 1 */}
+                    <div className="group bg-card hover:bg-card/80 border border-border hover:border-primary/30 p-8 rounded-3xl transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                        <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <Icon icon="lucide:calendar-clock" className="w-6 h-6" />
+                        </div>
+                        <h3 className="text-lg font-semibold mb-2">History</h3>
+                        <p className="text-sm text-muted-foreground">Started in <strong className="text-foreground">February 2023</strong>, officially released in <strong className="text-foreground">October 2023</strong></p>
+                    </div>
+
+                    {/* Card 2 */}
+                    <div className="group bg-card hover:bg-card/80 border border-border hover:border-primary/30 p-8 rounded-3xl transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                        <div className="w-12 h-12 bg-amber-100 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <Icon icon="simple-icons:python" className="w-6 h-6" />
+                        </div>
+                        <h3 className="text-lg font-semibold mb-2">Built With</h3>
+                        <p className="text-sm text-muted-foreground">Current <strong className="text-foreground">Interpreter</strong> is built with <strong className="text-foreground">Python</strong>, but the coming soon <strong className="text-foreground">Compiler</strong> will be using <strong className="text-foreground">Rust</strong>.</p>
+                    </div>
+
+                    {/* Card 3 */}
+                    <div className="group bg-card hover:bg-card/80 border border-border hover:border-primary/30 p-8 rounded-3xl transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                        <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <Icon icon="lucide:box" className="w-6 h-6" />
+                        </div>
+                        <h3 className="text-lg font-semibold mb-2">Ecosystem</h3>
+                        <p className="text-sm text-muted-foreground">Includes a robust <strong className="text-foreground">Compiler</strong>, <strong className="text-foreground">Interpreter</strong>, and <strong className="text-foreground">VS Code Extension</strong>.</p>
+                    </div>
+
+                    {/* Card 4 */}
+                    <div className="group bg-card hover:bg-card/80 border border-border hover:border-primary/30 p-8 rounded-3xl transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                        <div className="w-12 h-12 bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <Icon icon="lucide:globe-2" className="w-6 h-6" />
+                        </div>
+                        <h3 className="text-lg font-semibold mb-2">Our Goal</h3>
+                        <p className="text-sm text-muted-foreground">Promoting <strong className="text-foreground">digital inclusion</strong> and advancing Somali language development in tech.</p>
+                    </div>
+                </div>
+
+                {/* Future/Update Section */}
+                <div className="relative rounded-3xl overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-r from-gray-900 to-gray-800 dark:from-black dark:to-gray-900" />
+                    <div className="absolute inset-0 bg-[url('/bg-grid.svg')] opacity-20" />
+
+                    <div className="relative z-10 p-10 md:p-20 text-center text-white">
+                        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-500/20 border border-indigo-500/30 text-indigo-300 text-sm font-medium mb-8">
+                            <span className="relative flex h-2 w-2">
+                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
+                                <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
+                            </span>
+                            Coming Soon
+                        </div>
+
+                        <h2 className="text-3xl md:text-5xl font-bold mb-6">The Future of Soplang</h2>
+                        <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
+                            We are currently working on a <span className="text-white font-semibold">powerful new update</span> that will revolutionize how you build with Soplang. Stay tuned for better performance, new features, and more.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
         </div>
-
-        {/* Overview */}
-        <section className="mb-16">
-          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
-            <div className="p-8">
-              <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                Overview
-              </h2>
-              <div className="space-y-4 text-gray-600 dark:text-gray-300">
-                <p>
-                  <strong>Soplang</strong> (short for{" "}
-                  <em>Somali Programming Language</em>) is a culturally-rooted
-                  programming language designed and developed by{" "}
-                  <strong>Mr Sharafdin</strong> (Sharafdin Yusuf Sharafdin).
-                </p>
-                <p>
-                  It allows developers to write code in{" "}
-                  <strong>native Somali syntax</strong> using familiar keywords,
-                  expressions, and structures — making programming feel natural
-                  and accessible.
-                </p>
-                <p className="text-xl font-semibold italic text-center border-l-4 border-primary pl-4 py-2 my-6">
-                  "Dhis Software Adigoo Adeegsanaya Afkaaga Hooyo!"
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Language Goals */}
-        <section className="mb-16">
-          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
-            <div className="p-8">
-              <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                Language Goals
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="p-6 bg-gray-50 dark:bg-gray-700 rounded-lg">
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
-                    Simplicity
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-300">
-                    Clean, easy-to-read syntax designed to make programming
-                    concepts clear and approachable.
-                  </p>
-                </div>
-                <div className="p-6 bg-gray-50 dark:bg-gray-700 rounded-lg">
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
-                    Education
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-300">
-                    Built with learners in mind, making programming accessible
-                    to students and new developers.
-                  </p>
-                </div>
-                <div className="p-6 bg-gray-50 dark:bg-gray-700 rounded-lg">
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
-                    Localization
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-300">
-                    Native Somali throughout, embracing Somali language and
-                    cultural context in programming.
-                  </p>
-                </div>
-                <div className="p-6 bg-gray-50 dark:bg-gray-700 rounded-lg">
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
-                    Accessibility
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-300">
-                    Removes English-language barriers, opening programming to a
-                    wider audience of Somali speakers.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Current Version */}
-        <section className="mb-16">
-          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
-            <div className="p-8">
-              <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                Current Version: Soplang 2.0
-              </h2>
-              <div className="space-y-4 text-gray-600 dark:text-gray-300">
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white">
-                  Key Features
-                </h3>
-                <ul className="list-disc pl-6 space-y-2">
-                  <li>
-                    <strong>Dual Typing:</strong> <code>door</code> for dynamic,{" "}
-                    <code>tiro</code>, <code>qoraal</code>, etc. for static
-                  </li>
-                  <li>
-                    <strong>Object-Oriented Programming:</strong> with{" "}
-                    <code>fasalka</code>, <code>ka_dhaxal</code>,{" "}
-                    <code>cusub</code>, <code>nafta</code>
-                  </li>
-                  <li>
-                    <strong>Control Flow:</strong> <code>haddii</code>,{" "}
-                    <code>haddii_kale</code>, <code>haddii_kalena</code>, loops
-                    (<code>ku_celi</code>, <code>inta_ay</code>)
-                  </li>
-                  <li>
-                    <strong>Error Handling:</strong> <code>isku_day</code>,{" "}
-                    <code>qabo</code>
-                  </li>
-                  <li>
-                    <strong>Package Manager:</strong> Coming soon via the{" "}
-                    <code>sop</code> CLI
-                  </li>
-                  <li>
-                    <strong>Standard Library:</strong> Includes Math, File
-                    System, Network, and Date/Time
-                  </li>
-                  <li>
-                    <strong>Interpreter:</strong> Python-based (compiler planned
-                    for future release)
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Tooling */}
-        <section className="mb-16">
-          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
-            <div className="p-8">
-              <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                Tooling
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="p-6 border border-gray-200 dark:border-gray-700 rounded-lg">
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
-                    CLI Tool (<code>sop</code>)
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-300">
-                    For running code, managing projects, and package management
-                  </p>
-                </div>
-                <div className="p-6 border border-gray-200 dark:border-gray-700 rounded-lg">
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
-                    VS Code Extension
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-300">
-                    Syntax highlighting, inline docs, and code execution
-                  </p>
-                </div>
-                <div className="p-6 border border-gray-200 dark:border-gray-700 rounded-lg">
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
-                    REPL (Interactive)
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-300">
-                    Terminal-based environment with history and highlighting
-                  </p>
-                </div>
-                <div className="p-6 border border-gray-200 dark:border-gray-700 rounded-lg">
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
-                    sopScript (Browser Runtime)
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-300">
-                    For online execution and learning demos
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Who Can Use It */}
-        <section className="mb-16">
-          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
-            <div className="p-8">
-              <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                Who Can Use It?
-              </h2>
-              <div className="space-y-4 text-gray-600 dark:text-gray-300">
-                <ul className="list-disc pl-6 space-y-2">
-                  <li>Students, teachers, new developers</li>
-                  <li>Somali learners exploring code for the first time</li>
-                  <li>
-                    Anyone passionate about coding in their native language
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Community & Contribution */}
-        <section className="mb-16">
-          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
-            <div className="p-8">
-              <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                Community & Contribution
-              </h2>
-              <div className="space-y-4 text-gray-600 dark:text-gray-300">
-                <p>
-                  Soplang is <strong>open-source</strong> under the{" "}
-                  <strong>MIT License</strong>.
-                </p>
-                <p>
-                  <strong>Everyone is welcome</strong> to contribute!
-                </p>
-                <p>
-                  GitHub:{" "}
-                  <a
-                    href="https://github.com/soplang/soplang"
-                    className="text-primary hover:underline"
-                  >
-                    github.com/soplang/soplang
-                  </a>
-                </p>
-
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mt-8 mb-4">
-                  Contributors:
-                </h3>
-                <ul className="list-disc pl-6 space-y-2">
-                  <li>
-                    <strong>Mr Sharafdin</strong> (Creator)
-                  </li>
-                  <li>
-                    <strong>Omar Tood</strong>
-                  </li>
-                  <li>
-                    <strong>Ismail Ainte</strong>
-                  </li>
-                  <li>
-                    <strong>Shiine</strong>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Contribute Section */}
-        <section>
-          <div className="bg-primary rounded-lg p-8 md:p-12 shadow-lg text-white text-center">
-            <h2 className="text-3xl font-bold mb-4">Get Involved</h2>
-            <p className="text-xl text-blue-100 max-w-3xl mx-auto mb-8">
-              Soplang is open-source and community-driven. You can contribute to
-              its development, documentation, or help grow the community.
-            </p>
-            <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-              <Link
-                href="/contribute"
-                className="bg-white text-primary font-semibold px-6 py-3 rounded-md hover:bg-gray-100 transition-colors"
-              >
-                Contribute to Soplang
-              </Link>
-              <Link
-                href="/community"
-                className="bg-transparent text-white border border-white px-6 py-3 rounded-md hover:bg-white/10 transition-colors"
-              >
-                Join Our Community
-              </Link>
-            </div>
-          </div>
-        </section>
-      </div>
-    </div>
-  );
+    );
 }
