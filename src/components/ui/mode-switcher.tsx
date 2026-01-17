@@ -35,7 +35,7 @@ export function ModeSwitcher({ className }: { className?: string }) {
         xmlns="http://www.w3.org/2000/svg"
         className={
           // Show sun when the page is in dark mode (immediately via CSS)
-          "absolute h-5 w-5 size-8 text-white dark:opacity-100 opacity-0 transition-opacity"
+          "absolute h-5 w-5 size-8 text-foreground dark:opacity-100 opacity-0 transition-opacity"
         }
         fill="none"
         viewBox="0 0 24 24"
@@ -54,7 +54,7 @@ export function ModeSwitcher({ className }: { className?: string }) {
         xmlns="http://www.w3.org/2000/svg"
         className={
           // Show moon when the page is in light mode (immediately via CSS)
-          "absolute w-5 size-8 text-white dark:opacity-0 opacity-100 transition-opacity"
+          "absolute w-5 size-8 text-indigo-600 dark:opacity-0 opacity-100 transition-opacity"
         }
         fill="currentColor"
         viewBox="0 0 24 24"
