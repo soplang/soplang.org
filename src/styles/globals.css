@@ -1,188 +1,106 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import './soplang-syntax.css';
 
-/* Prevent theme flash and ensure smooth transitions */
-html {
-  color-scheme: light;
-  --bg: #f9f7f7;
-}
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
 
-html.dark {
-  color-scheme: dark;
-  --bg: #1a202c;
-}
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
 
-body {
-  background-color: var(--bg);
-}
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
 
-/* Smooth theme transitions */
-*,
-*::before,
-*::after {
-  transition: background-color 0.2s ease-out;
-}
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
 
-:root {
-  --primary-color: #3f72af; /* Soft blue - easier on eyes */
-  --secondary-color: #5e9a78; /* Soft green - math education friendly */
-  --background-color: #f9f7f7; /* Very light gray with slight warmth */
-  --banner-background-color: #2d3748; /* banner color */
-  --text-color: #333333; /* Dark gray but not pure black */
-  --link-color: #3f72af; /* Matching primary */
-  --header-bg: #3f72af; /* Header background */
-  --footer-bg: #f2f2f2; /* Light gray */
-  --nav-hover: #5085c1; /* Slightly lighter blue for hover */
-  --border-color: #dbe2ef; /* Light blue-gray */
-  --accent: 0 0% 96.1%;
-  --accent-foreground: 0 0% 9%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
 
-  /* Responsive spacing variables */
-  --container-padding-mobile: 1rem;
-  --container-padding-tablet: 1.5rem;
-  --container-padding-desktop: 2rem;
-  --section-spacing-mobile: 2rem;
-  --section-spacing-desktop: 3rem;
-}
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
 
-.dark {
-  --primary-color: #5085c1; /* Lighter blue for dark mode */
-  --secondary-color: #6baa88; /* Lighter green for dark mode */
-  --background-color: #1a202c; /* Dark blue-gray, not pure black */
-  --banner-background-color: #5085c1; /* banner color */
-  --text-color: #e2e8f0; /* Off-white, not pure white */
-  --link-color: #5085c1; /* Matching dark mode primary */
-  --header-bg: #2d3748; /* Slightly lighter than background */
-  --footer-bg: #2d3748; /* Matching header */
-  --nav-hover: #5085c1; /* Same as primary */
-  --border-color: #4a5568; /* Medium gray */
-  --accent: 0 0% 14.9%;
-  --accent-foreground: 0 0% 98%;
-}
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
 
-/* Base responsive typography */
-html {
-  font-size: 16px;
-  overflow-y: scroll; /* Always show scrollbar to prevent layout shifts */
-  scrollbar-gutter: stable; /* Reserves space for scrollbar even when not visible */
-}
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
 
-@media (max-width: 640px) {
-  html {
-    font-size: 14px;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+
+    --radius: 0.5rem;
+
+    /* Legacy Soplang Vars mapping */
+    --primary-color: hsl(var(--primary));
+    --header-bg: hsl(var(--background));
+    --footer-bg: hsl(var(--secondary));
+    --link-color: hsl(var(--primary));
+  }
+
+  .dark {
+    --background: 240 10% 9%;
+    --foreground: 210 40% 98%;
+
+    --card: 240 10% 9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 240 10% 9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 240 6% 15%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 240 6% 15%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 240 6% 15%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 240 6% 15%;
+    --input: 240 6% 15%;
+    --ring: 212.7 26.8% 83.9%;
   }
 }
 
-body {
-  background-color: var(--background-color);
-  color: var(--text-color);
-  transition:
-    background-color 0.3s ease,
-    color 0.3s ease;
-  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
-  line-height: 1.5;
-  overflow-x: hidden; /* Prevent horizontal scroll on mobile */
-}
-
-/* Responsive images */
-img {
-  max-width: 100%;
-  height: auto;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
 
 @layer components {
-  .nav-container {
-    @apply px-4 mx-auto sm:px-6 lg:px-8;
-  }
+    .container-custom {
+        @apply container mx-auto px-4 md:px-6 lg:px-8;
+    }
+}
 
-  .container-custom {
-    @apply px-4 mx-auto max-w-7xl sm:px-6 lg:px-8;
-  }
-
-  .btn-primary {
-    @apply px-4 py-2 text-sm text-white transition-opacity rounded bg-primary hover:opacity-90 sm:text-base;
-  }
-
-  .btn-secondary {
-    @apply px-4 py-2 text-sm text-gray-800 transition-opacity rounded bg-secondary hover:opacity-90 sm:text-base;
-  }
-
-  .nav-link {
-    @apply text-white hover:bg-[var(--nav-hover)] px-3 py-2 rounded transition-colors;
-  }
-
-  .nav-link-active {
-    @apply bg-[var(--nav-hover)] text-white px-3 py-2 rounded;
-  }
-
-  .soplang-box {
-    @apply border border-[var(--border-color)] rounded p-4 sm:p-6 mb-4 bg-white dark:bg-gray-800;
-  }
-
-  .soplang-header {
-    @apply mb-2 text-xl font-bold text-primary;
-  }
-
-  .soplang-list {
-    @apply ml-4 space-y-1 list-disc list-inside;
-  }
-
-  .soplang-link {
-    @apply text-[var(--link-color)] hover:underline;
-  }
-
-  /* Note: Python-related classes have been removed as Soplang is a standalone 
-     Somali programming language with its own identity */
-
-  .main-content {
-    @apply py-6 sm:py-8;
-  }
-
-  .sidebar {
-    @apply border-t md:border-t-0 md:border-l border-[var(--border-color)] pt-6 md:pt-0 md:pl-6 mt-6 md:mt-0;
-  }
-
-  .sidebar-header {
-    @apply mb-3 text-lg font-bold text-primary;
-  }
-
-  .sidebar-list {
-    @apply mb-6 space-y-2;
-  }
-
-  .sidebar-item {
-    @apply text-[var(--link-color)] hover:underline block;
-  }
-
-  .quick-links {
-    @apply flex flex-wrap gap-2 mb-4;
-  }
-
-  .quick-link {
-    @apply px-3 py-1 text-sm transition-colors bg-gray-100 rounded dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600;
-  }
-
-  /* Responsive grid utilities */
-  .responsive-grid {
-    @apply grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 sm:gap-6;
-  }
-
-  /* Responsive text utilities */
-  .responsive-heading-1 {
-    @apply text-3xl font-bold sm:text-4xl md:text-5xl;
-  }
-
-  .responsive-heading-2 {
-    @apply text-2xl font-bold sm:text-3xl;
-  }
-
-  .responsive-heading-3 {
-    @apply text-xl font-bold sm:text-2xl;
-  }
-
-  .responsive-paragraph {
-    @apply text-sm sm:text-base;
-  }
+@layer utilities {
+    .text-gradient {
+        @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-600;
+    }
+    
+    .bg-grid-black {
+        background-size: 40px 40px;
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+                          linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+    }
+    
+    .dark .bg-grid-white {
+        background-size: 40px 40px;
+        background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                          linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    }
 }
