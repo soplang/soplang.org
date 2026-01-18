@@ -16,7 +16,7 @@ const footerLinks = [
     title: "Resources",
     links: [
       { name: "Getting Started", href: "/docs/getting-started" },
-      { name: "Tutorials", href: "/docs/tutorial" },
+      { name: "Tutorials", href: "/tutorial" },
       { name: "Examples", href: "/examples" },
     ],
   },
@@ -45,9 +45,9 @@ const socialLinks = [
     icon: <Icon icon="lucide:github" className="w-5 h-5" />,
   },
   {
-    name: "Twitter",
+    name: "X",
     href: "https://x.com/soplangorg",
-    icon: <Icon icon="lucide:twitter" className="w-5 h-5" />,
+    icon: <Icon icon="pajamas:twitter" className="w-5 h-5" />,
   },
   {
     name: "Discord",
