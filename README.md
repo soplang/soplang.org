@@ -62,7 +62,3 @@ Join the growing community of Somali developers and contributors:
 Soplang is open-source and released under the MIT license. We welcome contributions from the community. Please refer to our [contributing guidelines](https://soplang.org/contribute) for more information.
 
 ---
-
-<div align="center">
-  <sub>Built for the Somali community and beyond</sub>
-</div>
