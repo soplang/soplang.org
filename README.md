@@ -1,4 +1,4 @@
-# Soplang: The Somali Programming Language 🚀
+# Soplang: The Somali Programming Language
 
 <div align="center">
 
@@ -11,23 +11,23 @@
 
 </div>
 
-## 🌟 Overview
+## Overview
 
-Soplang is the first Somali programming language that makes coding intuitive, inclusive, and accessible. Created by Mr Sharafdin, it enables developers to write code in native Somali syntax using familiar keywords and expressions.
+Soplang is the first Somali programming language designed to make coding intuitive, inclusive, and accessible. Created by Mr Sharafdin, it enables developers to write code using native Somali syntax, keywords, and expressions.
 
 > "Dhis Software Adigoo Adeegsanaya Afkaaga Hooyo!"  
 > _Build software using your native language!_
 
-## ✨ Key Features
+## Key Features
 
-- **Native Somali Syntax** - Write code using Somali keywords and patterns
-- **Dual Type System** - Use dynamic typing (`door`) or static typing as needed
-- **Object-Oriented** - Full OOP support with classes, inheritance, and more
-- **Multi-Paradigm** - Supports procedural, OOP, and functional approaches
-- **Comprehensive Standard Library** - Built-in modules for common tasks
-- **Modern Tooling** - CLI tools, VS Code extension, and browser runtime
+- **Native Somali Syntax**: Write code using Somali keywords and patterns.
+- **Dual Type System**: Supports both dynamic typing (`door`) and static typing.
+- **Object-Oriented**: Full support for classes, inheritance, and modern OOP principles.
+- **Multi-Paradigm**: Flexibility to use procedural, object-oriented, or functional approaches.
+- **Standard Library**: Includes built-in modules for common development tasks.
+- **Tooling Support**: Integrated CLI tools, VS Code extension, and browser runtime.
 
-## 🚀 Quick Start
+## Quick Start
 
 ```js
 // Hello World
@@ -45,24 +45,24 @@ hawl salaanta(qofka) {
 qor(salaanta(magac))
 ```
 
-## 📚 Documentation
+## Documentation
 
-Visit [soplang.org/docs](https://soplang.org/docs) for comprehensive documentation, tutorials, and examples.
+Comprehensive documentation, tutorials, and examples are available at [soplang.org/docs](https://soplang.org/docs).
 
-## 👥 Community
+## Community
 
-Join our growing community of Somali developers and contributors!
+Join the growing community of Somali developers and contributors:
 
 - **Discord**: [Join our server](https://discord.gg/n296G4dd7x)
 - **Twitter**: [@soplang](https://twitter.com/soplangorg)
 - **GitHub**: [soplang/soplang](https://github.com/soplang/soplang)
 
-## 🤝 Contributing
+## Contributing
 
-Soplang is open-source under the MIT license. We welcome contributions of all kinds! See our [contributing guidelines](https://soplang.org/contribute) to get started.
+Soplang is open-source and released under the MIT license. We welcome contributions from the community. Please refer to our [contributing guidelines](https://soplang.org/contribute) for more information.
 
 ---
 
 <div align="center">
-  <sub>Built with ❤️ for the Somali community and beyond</sub>
+  <sub>Built for the Somali community and beyond</sub>
 </div>
