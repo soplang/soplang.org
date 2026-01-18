@@ -9,7 +9,7 @@ import { sample_codeSnippet } from '@/constants/codeSnippetData';
 
 export const Hero = () => {
     return (
-        <section className="relative overflow-hidden py-24">
+        <section className="relative overflow-hidden py-16">
             {/* Hero Background Pattern */}
             <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
 
@@ -26,11 +26,11 @@ export const Hero = () => {
                     <div className="w-full lg:w-1/2 text-center lg:text-left space-y-8">
                         {/* Badge */}
                         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary/50 border border-primary/20 text-sm font-semibold text-primary shadow-[0_0_10px_rgba(var(--primary),0.1)] backdrop-blur-sm animate-fade-in-up">
-                            <Icon icon="lucide:sparkles" className="w-4 h-4 text-amber-400" />
+                            <Icon icon="streamline-sharp:star-2" className="w-4 h-4 text-indigo-400" />
                             <span className="bg-gradient-to-r from-primary to-purple-500 bg-clip-text text-transparent">{latestVersion} is Now Stable</span>
                         </div>
 
-                        <h1 className="flex gap-2 flex-wrap items-center lg:ustify-center lg:w-full text-3xl md:text-5xl font-bold tracking-tight leading-[1.1] animate-fade-in-up animation-delay-100">
+                        <h1 className="flex gap-2 flex-wrap items-center justify-center lg:justify-start lg:w-full text-3xl md:text-5xl font-bold tracking-tight leading-[1.1] animate-fade-in-up animation-delay-100">
                             Build <br />
                             <Typewriter
                                 words={['Websites', 'APIs', 'Futures', 'Dreams']}
@@ -63,7 +63,7 @@ export const Hero = () => {
                         </div>
 
                         {/* Mini Social Proof */}
-                        <div className="pt-8 flex items-center justify-center lg:justify-start gap-4 text-sm text-muted-foreground animate-fade-in-up animation-delay-500">
+                        <div className="pt-8 flex flex-wrap items-center justify-center lg:justify-start gap-4 text-sm text-muted-foreground animate-fade-in-up animation-delay-500">
                             <div className="flex items-center gap-1">
                                 <Icon icon="lucide:terminal" className="w-4 h-4" /> Open Source
                             </div>
@@ -81,13 +81,13 @@ export const Hero = () => {
                     {/* Setup Code Preview */}
                     <div className="w-full lg:w-1/2 perspective-1000 relative animate-float-slow">
                         {/* Floating Icons */}
-                        <div className="absolute -top-12 -right-8 w-16 h-16 bg-blue-500/10 backdrop-blur-md border border-white/10 rounded-2xl flex items-center justify-center shadow-xl animate-float animation-delay-1000 z-20 hidden lg:flex">
+                        <div className="absolute -top-12 -right-8 w-16 h-16 bg-blue-500/10 backdrop-blur-md border border-white/10 rounded-2xl items-center justify-center shadow-xl animate-float animation-delay-1000 z-20 hidden lg:flex">
                             <Icon icon="lucide:globe" className="w-8 h-8 text-blue-500" />
                         </div>
-                        <div className="absolute top-1/2 -left-12 w-14 h-14 bg-purple-500/10 backdrop-blur-md border border-white/10 rounded-2xl flex items-center justify-center shadow-xl animate-float animation-delay-2000 z-20 hidden lg:flex">
+                        <div className="absolute top-1/2 -left-12 w-14 h-14 bg-purple-500/10 backdrop-blur-md border border-white/10 rounded-2xl items-center justify-center shadow-xl animate-float animation-delay-2000 z-20 hidden lg:flex">
                             <Icon icon="lucide:database" className="w-7 h-7 text-purple-500" />
                         </div>
-                        <div className="absolute -bottom-8 -right-4 w-12 h-12 bg-green-500/10 backdrop-blur-md border border-white/10 rounded-2xl flex items-center justify-center shadow-xl animate-float animation-delay-3000 z-20 hidden lg:flex">
+                        <div className="absolute -bottom-8 -right-4 w-12 h-12 bg-green-500/10 backdrop-blur-md border border-white/10 rounded-2xl items-center justify-center shadow-xl animate-float animation-delay-3000 z-20 hidden lg:flex">
                             <Icon icon="lucide:terminal" className="w-6 h-6 text-green-500" />
                         </div>
 
