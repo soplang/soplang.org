@@ -63,11 +63,14 @@ export default function AboutPage() {
                                         <span className="font-mono text-indigo-100">example.sop</span>
                                     </div>
                                     <pre className="font-mono text-sm md:text-base leading-relaxed overflow-x-auto">
-                                        {`lacag = 100
-hadii (lacag > 50) {
-    qor("Waxaad haysataa lacag badan");
+                                        {`qiimo = 150
+canshuur = 0.1
+wadarta = qiimo + (qiimo * canshuur)
+
+hadii (wadarta > 100) {
+    qor("Qiimaha wuu sareeyaa: " + wadarta);
 } kale {
-    qor("Lacagtaadu waa yar tahay");
+    qor("Qiimuhu waa macquul: " + wadarta);
 }`}
                                     </pre>
                                 </div>
