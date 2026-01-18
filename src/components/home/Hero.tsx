@@ -51,7 +51,7 @@ export const Hero = () => {
                                 className="w-full sm:w-auto h-14 px-8 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold text-lg flex items-center justify-center gap-3 shadow-lg shadow-blue-500/20 hover:shadow-blue-500/40 hover:-translate-y-1 hover:scale-105 transition-all duration-300 ring-2 ring-blue-500/20 ring-offset-2 ring-offset-background"
                             >
                                 <Icon icon="lucide:download" className="w-5 h-5" />
-                                Install SDK
+                                Install Soplang
                             </Link>
                             <Link
                                 href="/docs/getting-started"
