@@ -12,7 +12,7 @@ interface DocNavigationProps {
   nextPage?: {
     href: string;
     title: string;
-    description: string;
+    description?: string;
   };
   className?: string;
 }
