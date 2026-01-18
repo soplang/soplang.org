@@ -3,9 +3,9 @@
 import React, { useState } from 'react';
 import SoplangHighlighter from './SoplangHighlighter';
 import Prism from 'prismjs';
+import 'prismjs/components/prism-powershell';
 import 'prismjs/components/prism-bash';
-import 'prismjs/components/prism-powershell';
-import 'prismjs/components/prism-powershell';
+import 'prismjs/themes/prism-dark.min.css';
 import { Icon } from '@/components/ui/icon';
 
 // Initialize Prism for syntax highlighting
@@ -47,13 +47,20 @@ const CodeWindow: React.FC<CodeWindowProps> = ({
   };
 
   // Apply syntax highlighting to command
-  const highlightCommand = (command: string, shell: 'bash' | 'powershell') => {
-    // Extract the command part (without the prompt)
-    const commandText = command.substring(1).trim();
+  const highlightCommand = (command: string, shell: 'bash' | 'powershell' | 'shell') => {
+    // Extract the command part (without the prompt) if it seems to have one
+    // or just use the whole line if we're being called from the 'text' case workaround
+    const commandText = command.length > 0 ? command.substring(1).trim() : command;
 
     // Apply Prism highlighting
-    const language = shell === 'bash' ? 'bash' : 'powershell';
-    const html = Prism.highlight(commandText, Prism.languages[language], language);
+    const language = 'shell';
+    // Fallback to bash if shell is not defined, but usually it is aliased
+    const grammar = Prism.languages[language] || Prism.languages['bash'] || Prism.languages['powershell'];
+
+    // Safety check
+    if (!grammar) return commandText;
+
+    const html = Prism.highlight(commandText, grammar, language);
 
     return html;
   };
@@ -64,9 +71,8 @@ const CodeWindow: React.FC<CodeWindowProps> = ({
 
     switch (lineType) {
       case 'command':
-        const isWindows = line.startsWith('>');
-        const shell = isWindows ? 'powershell' : 'bash';
-        const highlightedCommand = highlightCommand(line, shell);
+        // User requested to use 'shell' for all commands
+        const highlightedCommand = highlightCommand(line, 'shell');
 
         return (
           <div key={index} className="mb-2">
@@ -87,6 +93,20 @@ const CodeWindow: React.FC<CodeWindowProps> = ({
       case 'empty':
         return <div key={index} className="mb-2"></div>;
       case 'text':
+        // If we are in a shell language context, try to highlight "text" lines as commands too
+        // This supports terminal windows where the user didn't include the prompt ($ or >)
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        const isShellLang = ['bash', 'sh', 'shell', 'powershell', 'zsh'].includes(language || '');
+
+        if (isShellLang) {
+          const highlightedText = highlightCommand(' ' + line, 'shell'); // Add space as dummy prompt for highlightCommand to strip
+          return (
+            <div key={index} className="mb-1 text-gray-300">
+              <span dangerouslySetInnerHTML={{ __html: highlightedText }} />
+            </div>
+          );
+        }
+
         return (
           <div key={index} className="mb-1 text-gray-400">
             {line}
@@ -153,7 +173,11 @@ const CodeWindow: React.FC<CodeWindowProps> = ({
       {/* Windows style window header */}
       <div className="flex items-center justify-between px-4 py-2 bg-[#15151a] border-b border-white/5">
         <div className="flex items-center gap-3">
-          <span className="text-xs font-medium text-gray-300 font-mono px-2 py-0.5 bg-black/20 rounded border border-white/5">{title}</span>
+          {
+            title && (
+              <span className="text-xs font-medium text-blue-300 font-mono px-2 py-0.5 bg-black/20 rounded border border-slate-800">{title}</span>
+            )
+          }
         </div>
         <div className="flex items-center gap-3">
           <button
@@ -166,13 +190,34 @@ const CodeWindow: React.FC<CodeWindowProps> = ({
       </div>
 
       {/* Code content with proper syntax highlighting */}
-      <div className="flex overflow-x-auto bg-[#15151a] text-gray-300 ">
-        {showLineNumbers && !isTerminal && renderLineNumbers()}
+      <div className="flex overflow-x-auto bg-[#15151a] text-gray-300">
+        {showLineNumbers && !isTerminal && language === 'soplang' && renderLineNumbers()}
         <div className="flex-1 w-full px-2">
-          {isTerminal ? renderTerminalContent() : <SoplangHighlighter code={code} className={showLineNumbers ? "pl-0" : ""} />}
+          {language === 'soplang' ? (
+            <SoplangHighlighter code={code} className={showLineNumbers ? "pl-0 text-sm" : "text-sm"} />
+          ) : isTerminal ? (
+            renderTerminalContent()
+          ) : (
+            <div className="p-4 font-mono text-sm leading-relaxed">
+              <pre className="!bg-transparent !m-0 !py-0 px-2 overflow-visible font-mono">
+                <code
+                  className={`language-${language}`}
+                  dangerouslySetInnerHTML={{
+                    __html: Prism.languages[language]
+                      ? Prism.highlight(
+                        code,
+                        Prism.languages[language],
+                        language
+                      )
+                      : code.replace(/</g, '&lt;').replace(/>/g, '&gt;'), // Basic escaping for fallback
+                  }}
+                />
+              </pre>
+            </div>
+          )}
         </div>
       </div>
-    </div>
+    </div >
   );
 };
 
