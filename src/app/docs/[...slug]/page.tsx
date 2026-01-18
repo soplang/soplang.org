@@ -1,11 +1,22 @@
 
 import React from 'react';
 import { notFound } from 'next/navigation';
-import { getDocBySlug, getAllDocs } from '@/lib/docs';
+import { getContentBySlug, getAllContent } from '@/lib/content';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import CodeWindow from '@/components/CodeWindow';
 import { Icon } from '@/components/ui/icon';
 import DocNavigation from '@/components/DocNavigation';
+
+import {
+    Table,
+    TableHeader,
+    TableBody,
+    TableFooter,
+    TableHead,
+    TableRow,
+    TableCell,
+    TableCaption,
+} from '@/components/ui/Table';
 
 // Define custom MDX components
 const components = {
@@ -34,6 +45,14 @@ const components = {
     p: (props: any) => <p className="leading-7 mb-4 text-muted-foreground" {...props} />,
     ul: (props: any) => <ul className="list-disc pl-6 mb-4 space-y-2 text-muted-foreground" {...props} />,
     code: (props: any) => <code className="bg-muted px-1.5 py-0.5 rounded text-sm font-mono text-primary" {...props} />,
+    Table,
+    TableHeader,
+    TableBody,
+    TableFooter,
+    TableHead,
+    TableRow,
+    TableCell,
+    TableCaption,
 };
 
 interface DocPageProps {
@@ -43,7 +62,7 @@ interface DocPageProps {
 }
 
 export async function generateStaticParams() {
-    const docs = getAllDocs();
+    const docs = getAllContent('docs');
     return docs.map((doc) => ({
         slug: [doc.slug],
     }));
@@ -51,7 +70,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: DocPageProps) {
     const slug = params.slug.join('/');
-    const doc = getDocBySlug(slug);
+    const doc = getContentBySlug('docs', slug);
 
     if (!doc) {
         return {
@@ -67,8 +86,8 @@ export async function generateMetadata({ params }: DocPageProps) {
 
 export default function DocPage({ params }: DocPageProps) {
     const slug = params.slug.join('/');
-    const doc = getDocBySlug(slug);
-    const allDocs = getAllDocs();
+    const doc = getContentBySlug('docs', slug);
+    const allDocs = getAllContent('docs');
     const docIndex = allDocs.findIndex((d) => d.slug === doc?.meta.slug);
 
     let prevPage, nextPage;
