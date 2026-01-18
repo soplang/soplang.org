@@ -44,7 +44,9 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {/* Step 1 */}
             <div className="relative p-8 bg-card rounded-2xl border border-border shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-              <div className="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center font-bold text-xl mb-6">1</div>
+              <div className="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center mb-6">
+                <Icon icon="clarity:install-line" className="w-8 h-8" />
+              </div>
               <h3 className="text-xl font-bold mb-3">Install</h3>
               <p className="text-muted-foreground mb-6">Download the latest version for your operating system.</p>
               <Link href="/downloads" className="text-primary font-semibold hover:underline flex items-center gap-1 group">
@@ -54,7 +56,9 @@ export default function Home() {
 
             {/* Step 2 */}
             <div className="relative p-8 bg-card rounded-2xl border border-border shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-              <div className="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center font-bold text-xl mb-6">2</div>
+              <div className="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center mb-6">
+                <Icon icon="streamline-freehand:learning-programming-book" className="w-8 h-8" />
+              </div>
               <h3 className="text-xl font-bold mb-3">Learn</h3>
               <p className="text-muted-foreground mb-6">Follow our step-by-step tutorial to write your first program.</p>
               <Link href="/docs/tutorial" className="text-primary font-semibold hover:underline flex items-center gap-1 group">
@@ -64,7 +68,9 @@ export default function Home() {
 
             {/* Step 3 */}
             <div className="relative p-8 bg-card rounded-2xl border border-border shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-              <div className="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center font-bold text-xl mb-6">3</div>
+              <div className="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center mb-6">
+                <Icon icon="fluent:people-community-20-regular" className="w-8 h-8" />
+              </div>
               <h3 className="text-xl font-bold mb-3">Join</h3>
               <p className="text-muted-foreground mb-6">Connect with the community and share your projects.</p>
               <Link href="/community" className="text-primary font-semibold hover:underline flex items-center gap-1 group">
@@ -82,7 +88,7 @@ export default function Home() {
           <h2 className="text-4xl md:text-6xl font-bold mb-8 tracking-tighter">Ready to start coding?</h2>
           <Link
             href="/docs/getting-started"
-            className="inline-flex h-14 items-center justify-center rounded-full bg-primary px-10 text-lg font-bold text-primary-foreground shadow-lg transition-all hover:bg-primary/90 hover:scale-105 hover:shadow-primary/25"
+            className="inline-flex h-14 items-center justify-center rounded-full text-white bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-lg px-6 py-2 font-medium shadow-lg hover:shadow-blue-500/25 transition-all duration-300"
           >
             Start Building Now
           </Link>
