@@ -131,7 +131,6 @@ commit_file "temp_backup/src/styles/globals.css" "Removed temporary backup of gl
 commit_file "temp_backup/src/utils/formatDate.ts" "Removed temporary backup of date formatter"
 
 # Miscellaneous
-commit_file "debug-tailwind.css" "Added tailwind debug styles"
 commit_file "download-page.png" "Added screenshot of updated downloads page"
 commit_file "package.json" "Updated dependencies and scripts"
 commit_file "commits.sh" "Updated commit automation script"
