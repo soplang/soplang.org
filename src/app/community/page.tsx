@@ -3,6 +3,8 @@ import Link from "next/link";
 import { Metadata } from "next";
 import { Icon } from "@iconify/react";
 
+import { communityStats } from "@/constants/communityStats";
+
 export const metadata: Metadata = {
   title: "Community - Soplang",
   description:
@@ -16,7 +18,7 @@ const platforms = [
     description:
       "Contribute to Soplang's development, report issues, and explore the source code.",
     icon: "lucide:github",
-    url: "https://github.com/soplang/soplang",
+    url: "https://github.com/soplang",
     buttonText: "Join on GitHub",
     gradient: "from-gray-800 to-black",
     textClass: "text-white",
@@ -89,8 +91,11 @@ export default function CommunityPage() {
         {/* Stats Section */}
         <div className="flex flex-wrap justify-center gap-4 mb-20">
           {[
-            { label: "GitHub Stars", value: "1.2k", icon: "lucide:star" },
-            { label: "Contributors", value: "45+", icon: "lucide:git-pull-request" },
+            { label: "Community Members", value: communityStats.discordMembers + "+", icon: "lucide:users" },
+            { label: "GitHub Stars", value: communityStats.stars, icon: "lucide:star" },
+            { label: "Forks", value: communityStats.forks, icon: "lucide:git-fork" },
+            { label: "Downloads", value: (communityStats.downloads / 1000).toFixed(1) + "k+", icon: "lucide:download" },
+            { label: "Contributors", value: communityStats.contributors, icon: "lucide:git-pull-request" },
           ].map((stat, i) => (
             <div key={i} className="p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-border text-center hover:border-primary/20 transition-colors w-full md:w-64">
               <Icon icon={stat.icon} className="w-6 h-6 mx-auto mb-3 text-primary/60" />
@@ -157,7 +162,7 @@ export default function CommunityPage() {
 
               <div className="grid sm:grid-cols-3 gap-4">
                 <Link
-                  href="/contribute"
+                  href="https://github.com/soplang/soplang"
                   className="bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/10 rounded-xl p-6 text-left transition-all hover:-translate-y-1 group"
                 >
                   <Icon icon="lucide:git-pull-request" className="w-8 h-8 mb-4 text-blue-300" />
@@ -166,7 +171,7 @@ export default function CommunityPage() {
                 </Link>
 
                 <Link
-                  href="https://github.com/soplang/docs"
+                  href="https://github.com/soplang/soplang/tree/main/docs"
                   className="bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/10 rounded-xl p-6 text-left transition-all hover:-translate-y-1 group"
                 >
                   <Icon icon="lucide:file-text" className="w-8 h-8 mb-4 text-purple-300" />
