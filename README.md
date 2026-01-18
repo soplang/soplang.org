@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![Soplang Logo](public/images/logo/logo.svg)
+<img src="public/images/logo/logo.svg" alt="Soplang Logo" width="160" />
 
 **Code in your native language. Build for the future.**
 
