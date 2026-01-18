@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { Icon } from '@/components/ui/icon';
 // For now, we will hardcode sidebar items or fetch them. 
 // Since this is a server component layout, we can fetch data.
-import { getAllDocs } from '@/lib/docs';
+import { getAllContent, ContentMetadata } from '@/lib/content';
 import DocsSidebar from '@/components/DocsSidebar';
 
 export default function DocsLayout({
@@ -13,7 +13,15 @@ export default function DocsLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const docs = getAllDocs();
+  const docs = [
+    {
+      title: 'Introduction',
+      slug: '',
+      description: 'Introduction to Soplang',
+      // Mock other required fields if any, or cast
+    } as any,
+    ...getAllContent('docs')
+  ];
 
   return (
     <div className="min-h-screen bg-background flex flex-col md:flex-row">
@@ -22,7 +30,7 @@ export default function DocsLayout({
           We use the client component for interactivity (search).
           It takes up the left side (md:w-72) and is sticky.
        */}
-      <DocsSidebar items={docs} />
+      <DocsSidebar items={docs} basePath="/docs" />
 
       {/* Main Content */}
       <main className="flex-1 min-w-0">
