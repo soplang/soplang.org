@@ -6,7 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "generate:downloads": "node scripts/generateDownloads.js",
+    "generate:community": "node scripts/generateCommunityStats.js",
+    "generate:contributors": "node scripts/generateContributors.js",
+    "generate:sitemap": "node scripts/generateSitemap.js"
   },
   "keywords": [
     "soplang",
