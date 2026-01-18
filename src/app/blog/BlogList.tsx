@@ -59,7 +59,7 @@ export default function BlogList({ initialPosts }: BlogListProps) {
     return (
         <div className="min-h-screen bg-background pb-20 selection:bg-primary/20">
             {/* 1. Header Section */}
-            <div className="pt-24 pb-12 text-center relative overflow-hidden">
+            <div className="pt-16 pb-12 text-center relative overflow-hidden">
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-primary/5 blur-[100px] rounded-full -z-10 pointer-events-none" />
 
                 <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-muted/50 border border-border/50 text-sm font-medium text-muted-foreground mb-8">
