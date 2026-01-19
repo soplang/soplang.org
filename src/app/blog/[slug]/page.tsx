@@ -34,6 +34,8 @@ const CustomPre = (props: any) => {
 };
 
 // Define components mapping for MDX
+import { Table, TableHeader, TableBody, TableHead, TableRow, TableCell } from '@/components/ui/Table';
+
 const components = {
     h1: (props: any) => <h1 className="text-3xl font-bold mt-8 mb-4 text-foreground" {...props} />,
     h2: (props: any) => <h2 className="text-2xl font-bold mt-8 mb-4 text-foreground flex items-center gap-2" {...props} />,
@@ -45,6 +47,18 @@ const components = {
     pre: CustomPre,
     a: (props: any) => <a className="text-primary hover:underline underline-offset-4" {...props} />,
     strong: (props: any) => <strong className="font-bold text-foreground" {...props} />,
+    table: Table,
+    thead: TableHeader,
+    tbody: TableBody,
+    th: TableHead,
+    tr: TableRow,
+    td: TableCell,
+    Table,
+    TableHeader,
+    TableBody,
+    TableHead,
+    TableRow,
+    TableCell,
 };
 
 

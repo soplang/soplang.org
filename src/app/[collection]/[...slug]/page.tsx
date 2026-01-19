@@ -34,14 +34,14 @@ const components = {
     p: (props: any) => <p className="leading-7 mb-4 text-muted-foreground" {...props} />,
     ul: (props: any) => <ul className="list-disc pl-6 mb-4 space-y-2 text-muted-foreground" {...props} />,
     code: (props: any) => <code className="bg-muted px-1.5 py-0.5 rounded text-sm font-mono text-primary" {...props} />,
-    Table,
-    TableHeader,
-    TableBody,
-    TableFooter,
-    TableHead,
-    TableRow,
-    TableCell,
-    TableCaption,
+    table: Table,
+    thead: TableHeader,
+    tbody: TableBody,
+    tfoot: TableFooter,
+    th: TableHead,
+    tr: TableRow,
+    td: TableCell,
+    caption: TableCaption as any,
 };
 
 interface PageProps {
