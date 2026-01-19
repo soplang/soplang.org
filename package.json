@@ -23,7 +23,7 @@
   "license": "MIT",
   "dependencies": {
     "@iconify/react": "^6.0.2",
-    "@radix-ui/react-separator": "^1.1.7",
+    "@radix-ui/react-slot": "^1.1.2",
     "@types/node": "^18.15.11",
     "@types/prismjs": "^1.26.5",
     "@types/react": "^18.0.33",
