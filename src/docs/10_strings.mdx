@@ -1,0 +1,114 @@
+---
+title: Strings in Soplang
+description: "Declare iyo ka shaqaynta xarfo (strings) ee Soplang: qoraal/door, iyo hababka sida qeybi, leeyahay, dhamaad, bilow, beddel, kudar, jar."
+order: 18
+---
+
+# Strings in Soplang
+
+Soplang waxa uu taageeraa habab kala duwan oo *string* manipulation ah oo leh magacyo Soomaali u-dhega nugul. Strings waxaa lagu qeexaa `door` ama `qoraal`.
+
+## Declare a String
+
+```soplang
+qoraal magac = "Sharafdin Yusuf"
+door farriin = "Ku soo dhowow Soplang"
+```
+
+## String Methods
+
+Hababka hoose waxay ka tarjumayaan kuwa caanka ah ee luqadaha kale, balse magacyo Soomaali ah ayay leeyihiin:
+
+<Table>
+  <TableHeader>
+    <TableRow>
+      <TableHead>Method</TableHead>
+      <TableHead>English Equivalent</TableHead>
+      <TableHead>Description</TableHead>
+      <TableHead>Example</TableHead>
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell>`qeybi(xad)`</TableCell>
+      <TableCell>`split()`</TableCell>
+      <TableCell>Kala jabiso string iyadoo la adeegsanayo kala-sooc.</TableCell>
+      <TableCell>`door parts = text.qeybi(",")`</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>`leeyahay(sub)`</TableCell>
+      <TableCell>`includes()`</TableCell>
+      <TableCell>Hubi in uu ku jiro far-qoraal gaaban.</TableCell>
+      <TableCell>`haddii (text.leeyahay("search")) {...}`</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>`dhamaad(sub)`</TableCell>
+      <TableCell>`endsWith()`</TableCell>
+      <TableCell>Hubi in uu ku dhammaado far-qoraal.</TableCell>
+      <TableCell>`haddii (text.dhamaad("ing")) {...}`</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>`bilow(sub)`</TableCell>
+      <TableCell>`startsWith()`</TableCell>
+      <TableCell>Hubi in uu ku bilaabmo far-qoraal.</TableCell>
+      <TableCell>`haddii (text.bilow("http")) {...}`</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>`beddel(x, y)`</TableCell>
+      <TableCell>`replace()`</TableCell>
+      <TableCell>Beddel *x* adigoo u beddelaya *y*.</TableCell>
+      <TableCell>`door cusub = text.beddel("old", "new")`</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>`kudar(teed)`</TableCell>
+      <TableCell>`join()`</TableCell>
+      <TableCell>Ku xiro liis xarfo adigoo isticmaalaya kala-soocan.</TableCell>
+      <TableCell>`door text = ", ".kudar(names)`</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>`jar(bilow, dhamaad)`</TableCell>
+      <TableCell>`slice()`</TableCell>
+      <TableCell>Soo saar qayb ka timid *bilow* ilaa *dhamaad*.</TableCell>
+      <TableCell>`door sub = text.jar(0, 3)`</TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
+
+## Example Usage
+
+```soplang
+qoraal jumlad = "Soplang waa luqad qurux badan"
+
+// Split string into parts
+teed ereyo = jumlad.qeybi(" ")
+qor("Ereyada: " + ereyo)
+
+// Check if it contains a word
+haddii (jumlad.leeyahay("luqad")) {
+    qor("Waa luqad!")
+}
+
+// Starts and ends with
+haddii (jumlad.bilow("Soplang")) {
+    qor("Waxay ku bilaabataa Soplang")
+}
+
+haddii (jumlad.dhamaad("badan")) {
+    qor("Waxay ku dhammaanaysaa badan")
+}
+
+// Replace word
+door beddelay = jumlad.beddel("luqad", "barnaamij")
+qor("Beddelay: " + beddelay)
+
+// Join string from list
+teed magacyo = ["Ayaan", "Omar", "Zahra"]
+door joined = ", ".kudar(magacyo)
+qor("Dad: " + joined)
+
+// Slice part of string
+door qeyb = jumlad.jar(0, 7)
+qor("Qeybta koowaad: " + qeyb)
+```
+
+Strings ee Soplang waa muujin iyo la-qabsan fudud, iyadoo magacyada hababka ay yihiin Soomaali-first si ay u noqdaan kuwo si dabiici ah loo fahmo.

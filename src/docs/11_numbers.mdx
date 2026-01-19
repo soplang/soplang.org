@@ -1,5 +1,5 @@
 ---
-title: Numbers in Soplang
+title: Numbers
 description: Learn the two numeric types in Soplang—abn (integers) and jajab (decimals)—with literals, arithmetic, comparisons, and conversions.
 order: 15
 ---
@@ -8,11 +8,10 @@ order: 15
 
 Soplang waxa uu leeyahay laba nooc oo tiro ah: **abn** (integers) iyo **jajab** (decimals). Boggan waxa uu muujinayaa sida loo qoro, loo xisaabiyo, loona is-beddelo labadan nooc.
 
-## 🧱 Integers — `abn`
+## Integers — `abn`
 
 `abn` waxa uu metelaa tirooyin dhan (…,-2,-1,0,1,2,…). Waxaad qeexi kartaa si *dynamic* (`door`) ama si *static* (`abn`).
 
-**integers_basic.sop**
 ```soplang
 // Literals & declaration
 abn da = 21
@@ -35,16 +34,14 @@ qor(a != b)   // run
 
 Qaybintu (`/`) waxay bixin kartaa natiijo *jajab* haddii aysan si buuxda u qaybsamin—haddii aad rabto integer oo keliya, isticmaal `abn()` si aad u *truncation* sameyso.
 
-**integers_division_trunc.sop**
 ```soplang
 abn natiijo_dhan = abn(10 / 3)  // 3 (truncation)
 ```
 
-## 💧 Decimals — `jajab`
+## Decimals — `jajab`
 
 `jajab` waxa uu metelaa tirooyinka leh meel-dhaaf (floating/decimal). Waxaa ku habboon xisaab sax ah oo leh jajab.
 
-**decimals_basic.sop**
 ```soplang
 // Literals & declaration
 jajab pi = 3.14159
@@ -65,17 +62,15 @@ qor(2.0 == 2)      // run (labaduba waxay loo turjumi karaa qiime isu eg)
 
 Haddii aad ka timid `door` oo aadan hubin nooca, waxaad ka fiirsan kartaa `nooc()` si aad u xaqiijiso.
 
-**decimals_type_check.sop**
 ```soplang
 door n = 2.75
 qor(nooc(n))  // "jajab"
 ```
 
-## 🔁 Isku-darka abn & jajab
+## Isku-darka abn & jajab
 
 Marka aad isku qasto `abn` iyo `jajab`, natiijadu inta badan waxay noqotaa `jajab`. Waxaad si cad u qasbi kartaa nooca adigoo adeegsanaya `abn()` ama `jajab()`.
 
-**mixed_arithmetic.sop**
 ```soplang
 abn a = 5
 jajab b = 2.0
@@ -94,9 +89,8 @@ jajab e = jajab(a * 2)
 qor(e)          // 10.0
 ```
 
-## 🧩 Beddel & xaqiijin degdeg ah
+## Beddel & xaqiijin degdeg ah
 
-**helpers_quick.sop**
 ```soplang
 // From input → number
 door gelin_da = gelin("Da'daada qor: ")

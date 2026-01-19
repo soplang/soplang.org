@@ -1,18 +1,17 @@
 ---
 title: Conditional Statements
-description: Shuruudo iyo laanayn - haddii, haddii_kale, ugudambeyn, iyo dooro/xaalad (switch-case) ee Soplang.
-order: 7
+description: Learn about conditional statements, loops, and other control flow structures in the Soplang programming language.
+order: 8
 ---
 
-# Control Flow in Soplang
+# Conditional Statements
 
 Soplang waxay bixisaa fulin shuruudeed (conditional execution) iyadoo adeegsanaysa erayo Soomaali ah si ay u noqoto mid cad oo muujin leh.
 
-## 🧠 If Statements – `haddii`, `haddii_kale`, `ugudambeyn`
+## If Statements – `haddii`, `haddii_kale`, `ugudambeyn`
 
 Waxay u dhigmaan *if*, *else if*, iyo *else* luqadaha kale.
 
-**if_else_basic.sop**
 ```soplang
 abn da = 17
 
@@ -27,11 +26,10 @@ haddii (da >= 18) {
 
 Block walba waxaa lagu xiraa `{}`. Waxaad isku xirin ama isku dhex dhigi kartaa (nest) sidaad u baahan tahay.
 
-## 🚦 Boolean Conditions
+## Boolean Conditions
 
 Adeegso muujiyeyaasha `bool` iyo operators-ka `&&`, `||`, iyo `!`.
 
-**boolean_conditions.sop**
 ```soplang
 abn x = 4
 abn y = 9
@@ -46,21 +44,37 @@ haddii (!(x == y)) {
 }
 ```
 
-## ✅ Summary
+## Summary
 
-| Keyword | Meaning |
-| :--- | :--- |
-| `haddii` | if |
-| `haddii_kale` | else if |
-| `ugudambeyn` | else |
+<Table>
+  <TableHeader>
+    <TableRow>
+      <TableHead>Keyword</TableHead>
+      <TableHead>Meaning</TableHead>
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell>`haddii`</TableCell>
+      <TableCell>if</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>`haddii_kale`</TableCell>
+      <TableCell>else if</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>`ugudambeyn`</TableCell>
+      <TableCell>else</TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
 
 Control flow ee Soplang wuxuu raacaa qaab akhris-wanaagsan oo Somali-first ah.
 
-## 🔄 Switch-Case – `dooro` iyo `xaalad`
+## Switch-Case – `dooro` iyo `xaalad`
 
 Loogu talagalay laanayn cad oo ku saleysan hal qiime: `dooro` (switch expression), `xaalad` (case), iyo `ugudambeyn` (default).
 
-**switch_case.sop**
 ```soplang
 qoraal maalinta = "Jimce"
 
@@ -79,6 +93,6 @@ dooro (maalinta) {
 
 Tani waxay ku habboon tahay go'aan-qaadasho leh laamo badan oo ku saleysan qiime go'an.
 
-## 🔁 Combined Usage
+## Combined Usage
 
 Waxaad isku dari kartaa `haddii`/`haddii_kale`/`ugudambeyn` iyo `dooro` si aad u dhisto logic adag oo weli akhris-wanaagsan.

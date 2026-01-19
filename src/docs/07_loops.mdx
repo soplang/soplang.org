@@ -1,5 +1,5 @@
 ---
-title: Loops in Soplang
+title: Loops
 description: intay (while), kuceli (for), iyo xakamaynta jooji/soco—ku celcelin iyo socod shuruudeed ee Soplang.
 order: 14
 ---
@@ -8,7 +8,7 @@ order: 14
 
 Soplang waxa uu taageeraa laba nooc oo loops ah: `intay (shuruud)` oo u dhiganta *while*, iyo `kuceli (bilow ilaa dhamaad)` oo u dhiganta *for*. Waxa kale oo jira `jooji` (break) iyo `soco` (continue) si aad u yeelato xakameyn faahfaahsan.
 
-## 🔁 While Loop – `intay`
+## While Loop – `intay`
 
 Koodhka ku jira block-ga wuu soconayaa inta shuruuddu tahay *run*:
 
@@ -41,7 +41,7 @@ intay (i <= 10) {
 }
 ```
 
-## 🔁 For Loop – `kuceli`
+## For Loop – `kuceli`
 
 **for_basic.sop**
 ```soplang
@@ -59,7 +59,7 @@ kuceli (j 2 ilaa 10 :: 2) {
 }
 ```
 
-## 🔁 Loop Over List
+## Loop Over List
 
 **loop_over_list.sop**
 ```soplang
@@ -69,7 +69,7 @@ kuceli (i 0 ilaa numbers.dherer() - 1) {
 }
 ```
 
-## 🔁 Nested Loops
+## Nested Loops
 
 **nested_loops.sop**
 ```soplang
@@ -81,7 +81,7 @@ kuceli (i 1 ilaa 3) {
 }
 ```
 
-## 🔁 Factorial with While
+## Factorial with While
 
 **factorial_while.sop**
 ```soplang
@@ -96,13 +96,33 @@ intay (n > 0) {
 qor(result)
 ```
 
-## ✅ Summary
+## Summary
 
-| Keyword | Meaning |
-| :--- | :--- |
-| `intay` | while loop |
-| `kuceli` | for loop |
-| `jooji` | break |
-| `soco` | continue |
+<Table>
+  <TableHeader>
+    <TableRow>
+      <TableHead>Keyword</TableHead>
+      <TableHead>Meaning</TableHead>
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell>`intay`</TableCell>
+      <TableCell>while loop</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>`kuceli`</TableCell>
+      <TableCell>for loop</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>`jooji`</TableCell>
+      <TableCell>break</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>`soco`</TableCell>
+      <TableCell>continue</TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
 
 Soplang loops waxay taageeraan labadaba ku-celcelin qaabaysan iyo socod ku saleysan shuruud.
