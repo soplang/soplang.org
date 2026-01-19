@@ -51,6 +51,9 @@ const keywords = [
   'cusub',
   'qor',
   'akhri',
+  'ka_keen',
+  'gelin',
+  'nuuc',
 ];
 
 function tokenizeSoplangCode(code: string): Token[] {

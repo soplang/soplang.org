@@ -16,7 +16,7 @@ const footerLinks = [
     title: "Resources",
     links: [
       { name: "Getting Started", href: "/docs/getting-started" },
-      { name: "Tutorials", href: "/tutorial" },
+      { name: "Tutorials", href: "/tutorials" },
       { name: "Examples", href: "/examples" },
     ],
   },
