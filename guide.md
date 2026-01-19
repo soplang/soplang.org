@@ -90,22 +90,65 @@ Instead of standard Markdown tables, use our custom table for a better look:
 
 ---
 
-## 5. Useful Commands
+## 5. Automation & Data Generation
 
-We have some "magic" commands to update the website data:
+The project uses several automation scripts located in the `scripts/` folder to keep dynamic data up-to-date. These scripts fetch information from external sources (like GitHub) and generate TypeScript/JSX files in `src/constants/`.
 
-*   **Update Downloads**: `npm run generate:downloads` (gets the latest download links).
-*   **Update Contributors**: `npm run generate:contributors` (finds people who helped on GitHub).
-*   **Update Sitemap**: `npm run generate:sitemap` (searches the whole site and updates the map). **Always run this before you finish your work.**
+### 🛠️ Download Links (`scripts/generateDownloads.js`)
+*   **Command**: `npm run generate:downloads`
+*   **How it works**: 
+    1.  It sends a request to the GitHub API: `https://api.github.com/repos/soplang/soplang/releases/latest`.
+    2.  It looks at the `assets` array of the latest release.
+    3.  It matches files against platform extensions (e.g., `.exe` for Windows, `.dmg` for Mac, `.tar.gz` for Linux).
+    4.  It calculates file sizes and maps them to the beautiful UI cards you see on the /downloads page.
+*   **Output**: Generates `src/constants/downloadData.tsx`.
+
+### 🗺️ Sitemap Crawler (`scripts/generateSitemap.js`)
+*   **Command**: `npm run generate:sitemap`
+*   **How it works**:
+    1.  It recursively crawls the `src/app/` directory to find all valid website routes.
+    2.  It automatically ignores Next.js internal folders (starting with `(` or `[`).
+    3.  It reads all `.mdx` files in `src/docs/` and `src/posts/` and uses `gray-matter` to extract the `title` and `order` from the top of the file.
+    4.  It sorts the entire site structure so that navigation stays consistent.
+*   **Output**: Generates `src/constants/sitemap.ts`. **Run this whenever you add a new page!**
+
+### 👥 Contributors Discovery (`scripts/generateContributors.js`)
+*   **Command**: `npm run generate:contributors`
+*   **How it works**:
+    1.  Fetches the list of contributors from the Soplang GitHub repository.
+    2.  Filters out bots to only show real users.
+    3.  Includes a "Fallback" mechanism: if the GitHub API is down or reaches a limit, it uses a hardcoded list to ensure the website doesn't break during build.
+*   **Output**: Generates `src/constants/contributorsData.tsx`.
+
+### 📊 Community Stats (`scripts/generateCommunityStats.js`)
+*   **Command**: `npm run generate:community`
+*   **How it works**:
+    1.  Fetches the number of GitHub Stars and Forks.
+    2.  Uses a clever "Link Header" trick to count total contributors without downloading the whole list.
+    3.  Combines this with hardcoded targets for Discord members and total downloads.
+*   **Output**: Generates `src/constants/communityStats.tsx`.
 
 ---
 
-## 6. Building for Production
+## 6. Development Tools
+
+### Syntax Highlighting
+We use a custom component `src/components/SoplangHighlighter.tsx` to colorize Soplang code snippets. If you add a new keyword to the Soplang language, you must add it to the `soplangKeywords` array in that file so it displays correctly on the website.
+
+### Custom Table Integration
+Standard Markdown tables (| header | ...) are automatically transformed into our premium `Table` component. However, for complex tables, we recommend using the `<Table>` JSX components directly in your MDX files for more layout control.
+
+---
+
+## 7. Building for Production
 
 When the website is ready to be put online, run:
 ```bash
 npm run build
 ```
-This will check for errors and make the website super fast.
+This will:
+1.  Check for Type errors (TypeScript).
+2.  Run the Next.js compiler to optimize assets.
+3.  Check all links and routes.
 
 If you have any questions, feel free to ask the team!
