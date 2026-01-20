@@ -57,83 +57,79 @@ export const siteStructure = [
         "links": [
             {
                 "name": "Installing Soplang",
-                "href": "/docs/installation"
+                "href": "/docs/00_installation"
             },
             {
                 "name": "Getting Started with Soplang",
-                "href": "/docs/getting-started"
+                "href": "/docs/00_getting-started"
             },
             {
                 "name": "Soplang Syntax",
-                "href": "/docs/syntax-basics"
+                "href": "/docs/01_syntax-basics"
             },
             {
-                "name": "Arrays in Soplang",
-                "href": "/docs/arrays"
+                "name": "Arrays",
+                "href": "/docs/12_arrays"
             },
             {
                 "name": "Built-in Functions in Soplang",
-                "href": "/docs/built-in-functions"
+                "href": "/docs/15_built-in-functions"
             },
             {
                 "name": "Conditional Statements",
-                "href": "/docs/conditional-statements"
+                "href": "/docs/06_conditional-statements"
             },
             {
-                "name": "Control Flow & Loops",
-                "href": "/docs/control-flow"
+                "name": "Data Types",
+                "href": "/docs/09_data-types"
             },
             {
-                "name": "Soplang Data Types",
-                "href": "/docs/data-types"
+                "name": "Functions",
+                "href": "/docs/08_functions"
             },
             {
-                "name": "Frequently Asked Questions",
-                "href": "/docs/faq"
-            },
-            {
-                "name": "Functions in Soplang",
-                "href": "/docs/functions"
-            },
-            {
-                "name": "Input and Output in Soplang",
-                "href": "/docs/input-and-output"
+                "name": "Input and Output",
+                "href": "/docs/02_input-and-output"
             },
             {
                 "name": "Soplang Keywords Reference",
-                "href": "/docs/keywords-reference"
+                "href": "/docs/14_keywords-reference"
             },
             {
-                "name": "Loops in Soplang",
-                "href": "/docs/loops"
+                "name": "Loops",
+                "href": "/docs/07_loops"
             },
             {
-                "name": "Numbers in Soplang",
-                "href": "/docs/numbers"
+                "name": "Numbers",
+                "href": "/docs/11_numbers"
             },
             {
                 "name": "Objects in Soplang",
-                "href": "/docs/objects"
+                "href": "/docs/13_objects"
             },
             {
-                "name": "Operators in Soplang",
-                "href": "/docs/operators"
+                "name": "Operators",
+                "href": "/docs/05_operators"
             },
             {
                 "name": "Strings in Soplang",
-                "href": "/docs/strings"
+                "href": "/docs/10_strings"
             },
             {
-                "name": "Type Conversion in Soplang",
-                "href": "/docs/type-conversion"
+                "name": "Type Conversion",
+                "href": "/docs/04_type-conversion"
             },
             {
-                "name": "Soplang Variables",
-                "href": "/docs/variables"
+                "name": "Variables",
+                "href": "/docs/03_variables"
             },
             {
                 "name": "Docs Home",
                 "href": "/docs"
+            },
+            {
+                "name": "Faq",
+                "href": "/docs/faq"
             }
         ]
     },
