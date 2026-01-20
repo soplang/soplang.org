@@ -1,0 +1,107 @@
+---
+title: Numbers
+description: Learn the two numeric types in Soplang—abn (integers) and jajab (decimals)—with literals, arithmetic, comparisons, and conversions.
+order: 15
+---
+
+# Numbers in Soplang
+
+Soplang waxa uu leeyahay laba nooc oo tiro ah: **abn** (integers) iyo **jajab** (decimals). Boggan waxa uu muujinayaa sida loo qoro, loo xisaabiyo, loona is-beddelo labadan nooc.
+
+## Integers — `abn`
+
+`abn` waxa uu metelaa tirooyin dhan (…,-2,-1,0,1,2,…). Waxaad qeexi kartaa si *dynamic* (`door`) ama si *static* (`abn`).
+
+```soplang
+// Literals & declaration
+abn da = 21
+door tirin = 100     // dynamic, but integer value
+
+// Arithmetic
+abn a = 10
+abn b = 3
+qor(a + b)   // 13
+qor(a - b)   // 7
+qor(a * b)   // 30
+qor(a / b)   // 3.333...  (natiijo jajab ah)
+qor(a % b)   // 1         (remainder)
+
+// Comparisons
+qor(a > b)    // run
+qor(a == 10)  // run
+qor(a != b)   // run
+```
+
+Qaybintu (`/`) waxay bixin kartaa natiijo *jajab* haddii aysan si buuxda u qaybsamin—haddii aad rabto integer oo keliya, isticmaal `abn()` si aad u *truncation* sameyso.
+
+```soplang
+abn natiijo_dhan = abn(10 / 3)  // 3 (truncation)
+```
+
+## Decimals — `jajab`
+
+`jajab` waxa uu metelaa tirooyinka leh meel-dhaaf (floating/decimal). Waxaa ku habboon xisaab sax ah oo leh jajab.
+
+```soplang
+// Literals & declaration
+jajab pi = 3.14159
+door qiime = 2.5       // dynamic, decimal value
+
+// Arithmetic
+jajab x = 10.0
+jajab y = 4.0
+qor(x + y)   // 14.0
+qor(x - y)   // 6.0
+qor(x * y)   // 40.0
+qor(x / y)   // 2.5
+
+// Comparisons
+qor(pi > 3)        // run
+qor(2.0 == 2)      // run (labaduba waxay loo turjumi karaa qiime isu eg)
+```
+
+Haddii aad ka timid `door` oo aadan hubin nooca, waxaad ka fiirsan kartaa `nooc()` si aad u xaqiijiso.
+
+```soplang
+door n = 2.75
+qor(nooc(n))  // "jajab"
+```
+
+## Isku-darka abn & jajab
+
+Marka aad isku qasto `abn` iyo `jajab`, natiijadu inta badan waxay noqotaa `jajab`. Waxaad si cad u qasbi kartaa nooca adigoo adeegsanaya `abn()` ama `jajab()`.
+
+```soplang
+abn a = 5
+jajab b = 2.0
+
+// Natiijo jajab
+door c = a + b
+qor(c)          // 7.0
+qor(nooc(c))    // "jajab"
+
+// Qasbi integer (truncation)
+abn d = abn(a / b)
+qor(d)          // 2
+
+// Qasbi decimal
+jajab e = jajab(a * 2)
+qor(e)          // 10.0
+```
+
+## Beddel & xaqiijin degdeg ah
+
+```soplang
+// From input → number
+door gelin_da = gelin("Da'daada qor: ")
+abn da = abn(gelin_da)               // "19" -> 19
+qor("Nooc: " + nooc(da))             // "abn"
+
+// String → decimal
+jajab qiime = jajab("12.75")
+qor(qiime + 0.25)                    // 13.0
+
+// Number → string
+qoraal s = qoraal(2025)
+qor("Sanad: " + s)
+```

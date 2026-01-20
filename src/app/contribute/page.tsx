@@ -1,6 +1,8 @@
 import Link from "next/link";
 import React from "react";
-import Image from "next/image";
+import { Icon } from "@iconify/react";
+import { contributors } from "@/constants/contributorsData";
+import CodeWindow from "@/components/CodeWindow";
 
 export const metadata = {
   title: "Contribute to Soplang - Join the Community",
@@ -12,360 +14,218 @@ export const metadata = {
 
 export default function ContributePage() {
   return (
-    <div className="py-12">
-      <div className="container-custom">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            Contribute to Soplang
+    <div className="min-h-screen bg-background relative overflow-hidden">
+      {/* Background Gradients */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
+        <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-[100px]" />
+        <div className="absolute bottom-0 left-1/4 w-[500px] h-[500px] bg-purple-500/10 rounded-full blur-[100px]" />
+      </div>
+
+      <div className="container-custom py-8 md:py-16">
+
+        {/* Hero Section */}
+        <div className="text-center mb-20 relative">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-500/10 border border-blue-200 dark:border-blue-500/20 text-blue-600 dark:text-blue-400 text-sm font-medium mb-6 animate-fade-in-up">
+            <Icon icon="lucide:heart" className="w-4 h-4 text-indigo-500" />
+            <span>Open Source & Community Driven</span>
+          </div>
+          <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6 tracking-tight animate-fade-in-up animation-delay-100">
+            Contribute to <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Soplang</span>
           </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Soplang is open-source under the MIT License and everyone is welcome
-            to contribute!
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8 animate-fade-in-up animation-delay-200">
+            Soplang is built by people like you. Whether you write code, improve documentation,
+            or help others, every contribution makes a difference.
           </p>
-          <div className="mt-6">
+          <div className="flex flex-wrap justify-center gap-4 animate-fade-in-up animation-delay-300">
             <a
               href="https://github.com/soplang/soplang/blob/main/docs/CONTRIBUTING.md"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-3 bg-primary text-white rounded-lg font-medium hover:bg-primary-dark transition-colors"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-white bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-lg font-medium shadow-lg hover:shadow-blue-500/25 transition-all duration-300"
             >
-              View Contribution Guidelines
+              <Icon icon="lucide:book-open" className="w-5 h-5" />
+              Read Guidelines
+            </a>
+            <a
+              href="https://github.com/soplang/soplang"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-card border border-border hover:border-primary/50 text-foreground font-semibold transition-all shadow-sm hover:shadow-md hover:-translate-y-1"
+            >
+              <Icon icon="lucide:github" className="w-5 h-5" />
+              Visit Repository
             </a>
           </div>
         </div>
 
-        {/* About contributing */}
-        <section className="mb-16">
-          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
-            <div className="p-8">
-              <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                Community & Contribution
-              </h2>
-              <div className="space-y-4 text-gray-600 dark:text-gray-300">
-                <p>
-                  Soplang is a community-driven project and we welcome
-                  contributions of all forms. Whether you're a developer,
-                  designer, writer, translator, or just enthusiastic about the
-                  language, there are many ways to contribute.
-                </p>
-                <p>
-                  GitHub:{" "}
-                  <a
-                    href="https://github.com/soplang/soplang"
-                    className="text-primary hover:underline"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    github.com/soplang/soplang
-                  </a>
-                </p>
-
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mt-8 mb-4">
-                  Current Contributors:
-                </h3>
-                <ul className="list-disc pl-6 space-y-2">
-                  <li>
-                    <strong>Mr Sharafdin</strong> (Creator)
-                  </li>
-                  <li>
-                    <strong>Omar Tood</strong>
-                  </li>
-                  <li>
-                    <strong>Ismail Ainte</strong>
-                  </li>
-                  <li>
-                    <strong>Shiine</strong>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* How to contribute */}
-        <section className="mb-16">
-          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
-            <div className="p-8">
-              <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                Ways to Contribute
-              </h2>
-              <div className="space-y-8">
-                <div>
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
-                    Code Contributions
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-300 mb-4">
-                    Help improve the Soplang interpreter, compiler, or standard
-                    library by contributing code. Check our{" "}
-                    <a
-                      href="https://github.com/soplang/soplang/blob/main/docs/CONTRIBUTING.md"
-                      className="text-primary hover:underline"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      contribution guidelines
-                    </a>{" "}
-                    for detailed instructions.
-                  </p>
-                  <ol className="list-decimal pl-6 space-y-2 text-gray-600 dark:text-gray-300">
-                    <li>Fork the repository on GitHub</li>
-                    <li>Clone your fork locally</li>
-                    <li>Create a new branch for your feature or bug fix</li>
-                    <li>Make your changes and write tests if applicable</li>
-                    <li>
-                      Submit a pull request with a clear description of your
-                      changes
-                    </li>
-                  </ol>
-                </div>
-
-                <div>
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
-                    Documentation
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-300 mb-4">
-                    Help improve Soplang's documentation, tutorials, or
-                    examples:
-                  </p>
-                  <ul className="list-disc pl-6 space-y-2 text-gray-600 dark:text-gray-300">
-                    <li>Fix typos or clarify existing documentation</li>
-                    <li>Write tutorials or guides for beginners</li>
-                    <li>
-                      Create example projects that showcase Soplang's features
-                    </li>
-                    <li>Help translate documentation into other languages</li>
-                  </ul>
-                </div>
-
-                <div>
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
-                    Bug Reports and Feature Requests
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-300 mb-4">
-                    Help us improve by reporting bugs or suggesting new
-                    features:
-                  </p>
-                  <ul className="list-disc pl-6 space-y-2 text-gray-600 dark:text-gray-300">
-                    <li>Submit detailed bug reports with steps to reproduce</li>
-                    <li>Suggest new features or improvements</li>
-                    <li>Vote on existing feature requests</li>
-                  </ul>
-                </div>
-
-                <div>
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
-                    Community Support
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-300 mb-4">
-                    Help grow the Soplang community:
-                  </p>
-                  <ul className="list-disc pl-6 space-y-2 text-gray-600 dark:text-gray-300">
-                    <li>
-                      Answer questions on GitHub Discussions or Stack Overflow
-                    </li>
-                    <li>Share your experience with Soplang</li>
-                    <li>Organize local meetups or workshops</li>
-                    <li>Spread the word about Soplang</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Security Section */}
-        <section className="mb-16">
-          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
-            <div className="p-8">
-              <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                Security
-              </h2>
-              <div className="space-y-4 text-gray-600 dark:text-gray-300">
-                <p>
-                  We take the security of Soplang seriously. If you discover a
-                  security vulnerability within Soplang, please responsibly
-                  disclose it by following these steps:
-                </p>
-
-                <div className="bg-red-50 dark:bg-red-900/20 p-6 rounded-lg mt-4">
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
-                    Reporting Security Issues
-                  </h3>
-
-                  <ol className="list-decimal pl-6 space-y-2">
-                    <li>
-                      <strong>Do not</strong> publicly disclose the
-                      vulnerability without contacting us first
-                    </li>
-                    <li>
-                      Email your findings to{" "}
-                      <a
-                        href="mailto:security@soplang.org"
-                        className="text-primary hover:underline"
-                      >
-                        security@soplang.org
-                      </a>
-                    </li>
-                    <li>
-                      Include detailed information about the vulnerability,
-                      including steps to reproduce
-                    </li>
-                    <li>
-                      Allow us reasonable time to address the issue before
-                      public disclosure
-                    </li>
-                  </ol>
-
-                  <p className="mt-4">
-                    For more information, please see our{" "}
-                    <a
-                      href="/contribute/security"
-                      className="text-primary hover:underline font-bold"
-                    >
-                      Security Policy
-                    </a>
-                    .
-                  </p>
-                </div>
-
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mt-6 mb-3">
-                  Security Best Practices
-                </h3>
-                <ul className="list-disc pl-6 space-y-2">
-                  <li>
-                    Keep your Soplang installation updated to the latest version
-                  </li>
-                  <li>
-                    Review the dependencies in your Soplang projects regularly
-                  </li>
-                  <li>
-                    Follow security best practices when deploying Soplang
-                    applications
-                  </li>
-                  <li>Be cautious when running untrusted Soplang code</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Contribution Guidelines */}
-        <section className="mb-16">
-          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
-            <div className="p-8">
-              <h2
-                className="text-3xl font-bold text-gray-900 dark:text-white mb-6"
-                id="guidelines"
+        {/* Ways to Contribute */}
+        <section className="mb-24">
+          <h2 className="text-3xl font-bold text-center mb-12">Ways to Contribute</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              {
+                title: "Code",
+                desc: "Fix bugs, optimize performance, or build new features for the compiler and interpreter.",
+                icon: "lucide:code-2",
+                color: "text-blue-500",
+                bg: "bg-blue-500/10",
+                link: "https://github.com/soplang/soplang/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22"
+              },
+              {
+                title: "Documentation",
+                desc: "Improve guides, fix typos, and write tutorials to help new users learn Soplang.",
+                icon: "lucide:file-text",
+                color: "text-green-500",
+                bg: "bg-green-500/10",
+                link: "https://github.com/soplang/soplang/tree/main/docs"
+              },
+              {
+                title: "Community",
+                desc: "Answer questions, help beginners, and share your Soplang projects with the world.",
+                icon: "lucide:users",
+                color: "text-purple-500",
+                bg: "bg-purple-500/10",
+                link: "/community"
+              }
+            ].map((way, i) => (
+              <a
+                key={i}
+                href={way.link}
+                className="group p-8 rounded-2xl bg-card border border-border hover:border-primary/20 hover:shadow-lg transition-all"
               >
-                Contribution Guidelines
-              </h2>
-              <div className="space-y-4 text-gray-600 dark:text-gray-300">
-                <p>
-                  We've created comprehensive guidelines to help you contribute
-                  effectively to Soplang. These guidelines cover code style,
-                  pull request processes, testing requirements, and more.
-                </p>
-
-                <div className="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg mt-4">
-                  <p className="font-medium">
-                    Please review our detailed{" "}
-                    <a
-                      href="https://github.com/soplang/soplang/blob/main/docs/CONTRIBUTING.md"
-                      className="text-primary hover:underline font-bold"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Contribution Guidelines on GitHub
-                    </a>{" "}
-                    before submitting your contributions.
-                  </p>
+                <div className={`w-14 h-14 rounded-xl flex items-center justify-center mb-6 ${way.bg} ${way.color}`}>
+                  <Icon icon={way.icon} className="w-7 h-7" />
                 </div>
-              </div>
-            </div>
+                <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">{way.title}</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  {way.desc}
+                </p>
+              </a>
+            ))}
           </div>
         </section>
 
-        {/* Code of Conduct */}
-        <section className="mb-16">
-          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
-            <div className="p-8">
-              <h2
-                className="text-3xl font-bold text-gray-900 dark:text-white mb-6"
-                id="code-of-conduct"
-              >
-                Code of Conduct
-              </h2>
-              <div className="space-y-4 text-gray-600 dark:text-gray-300">
-                <p>
-                  Soplang is committed to providing a welcoming and inclusive
-                  environment for everyone. We expect all community members to
-                  abide by our Code of Conduct.
-                </p>
-                <div className="bg-gray-50 dark:bg-gray-700 p-6 rounded-lg">
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
-                    Our Pledge
-                  </h3>
-                  <p className="mb-4">
-                    In the interest of fostering an open and welcoming
-                    environment, we as contributors and maintainers pledge to
-                    make participation in our project and our community a
-                    harassment-free experience for everyone, regardless of age,
-                    body size, disability, ethnicity, gender identity and
-                    expression, level of experience, nationality, personal
-                    appearance, race, religion, or sexual identity and
-                    orientation.
-                  </p>
-                </div>
-
-                <div className="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg mt-6">
-                  <p className="font-medium">
-                    Please read our complete{" "}
-                    <a
-                      href="https://github.com/soplang/soplang/blob/main/CODE_OF_CONDUCT.md"
-                      className="text-primary hover:underline font-bold"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Code of Conduct on GitHub
-                    </a>{" "}
-                    for full details on our community standards and enforcement
-                    guidelines.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Get Started CTA */}
-        <section>
-          <div className="bg-primary rounded-lg p-8 md:p-12 shadow-lg text-white text-center">
-            <h2 className="text-3xl font-bold mb-4">Ready to Contribute?</h2>
-            <p className="text-xl text-blue-100 max-w-3xl mx-auto mb-8">
-              Join us in making programming more accessible through Soplang.
-              Your contributions make a difference!
+        {/* Hall of Fame - Contributors Grid */}
+        <section className="mb-24">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4">Hall of Fame</h2>
+            <p className="text-muted-foreground text-lg">
+              A huge thanks to our amazing contributors who make Soplang possible.
             </p>
-            <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+            {contributors.map((contributor) => (
               <a
-                href="https://github.com/soplang/soplang"
+                key={contributor.login}
+                href={contributor.html_url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-white text-primary font-semibold px-6 py-3 rounded-md hover:bg-gray-100 transition-colors"
+                className="group flex flex-col items-center p-4 rounded-xl bg-card border border-border hover:border-primary/30 hover:shadow-md transition-all hover:-translate-y-1"
               >
-                GitHub Repository
+                <div className="relative mb-3">
+                  <img
+                    src={contributor.avatar_url}
+                    alt={contributor.login}
+                    className="w-20 h-20 rounded-full border-4 border-background group-hover:border-primary/20 transition-colors"
+                  />
+                  <div className="absolute -bottom-1 -right-1 bg-primary text-primary-foreground text-xs font-bold px-2 py-0.5 rounded-full shadow-sm">
+                    {contributor.contributions}
+                  </div>
+                </div>
+                <span className="font-semibold text-sm truncate w-full text-center group-hover:text-primary transition-colors">
+                  {contributor.login}
+                </span>
               </a>
-              <a
-                href="https://github.com/soplang/soplang/blob/main/docs/CONTRIBUTING.md"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-transparent text-white border border-white px-6 py-3 rounded-md hover:bg-white/10 transition-colors"
-              >
-                Contribution Guidelines
-              </a>
-            </div>
+            ))}
+          </div>
+
+          <div className="mt-12 text-center">
+            <p className="text-muted-foreground">
+              Want to see your face here? <a href="https://github.com/soplang/soplang" className="text-primary hover:underline font-medium">Start contributing!</a>
+            </p>
           </div>
         </section>
+
+        {/* Getting Started Steps */}
+        <section className="max-w-6xl mx-auto mb-20">
+          <div className="bg-gradient-to-br from-card to-background rounded-3xl border border-border p-8 md:p-12 shadow-sm">
+            <h2 className="text-3xl font-bold mb-8 text-center">Development Setup</h2>
+            <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
+              There are two recommended ways to set up your development environment.
+              We recommend using Docker to eliminate "works on my machine" issues.
+            </p>
+
+            {/* Option 1: Docker */}
+            <div className="mb-16">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 font-bold px-4 py-1.5 rounded-full text-sm uppercase tracking-wide">
+                  Option 1 (Recommended)
+                </div>
+                <h3 className="text-2xl font-bold">Docker Setup</h3>
+              </div>
+
+              <div className="space-y-6">
+                <div>
+                  <p className="text-muted-foreground mb-3 font-medium">1. Clone the repository:</p>
+                  <CodeWindow
+                    code={`git clone https://github.com/soplang/soplang.git\ncd soplang\ndocker-compose build\ndocker-compose up -d`}
+                    title="Terminal"
+                    language="shell"
+                    showLineNumbers={false}
+                  />
+                </div>
+                <div>
+                  <p className="text-muted-foreground mb-3 font-medium">2. Run commands inside the container:</p>
+                  <CodeWindow
+                    code={`# Run the shell\ndocker-compose exec soplang python main.py\n\n# Run tests\ndocker-compose exec soplang python -m unittest discover tests`}
+                    title="Terminal"
+                    language="shell"
+                    showLineNumbers={false}
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* Option 2: Local */}
+            <div>
+              <div className="flex items-center gap-4 mb-6">
+                <div className="bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 font-bold px-4 py-1.5 rounded-full text-sm uppercase tracking-wide">
+                  Option 2
+                </div>
+                <h3 className="text-2xl font-bold">Local Setup</h3>
+              </div>
+
+              <div className="space-y-6">
+                <div>
+                  <p className="text-muted-foreground mb-3 font-medium">Prerequisites: Python 3.6+, Git</p>
+                  <CodeWindow
+                    code={`git clone https://github.com/soplang/soplang.git\ncd soplang\n\n# Create virtual env (Recommended)\npython -m venv env\nsource env/bin/activate  # On Windows: env\\Scripts\\activate\n\n# Install dependencies\npip install -r requirements-dev.txt`}
+                    title="Terminal"
+                    language="shell"
+                    showLineNumbers={false}
+                  />
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        {/* Security Alert */}
+        <section className="max-w-3xl mx-auto text-center p-8 rounded-2xl bg-red-500/5 border border-red-500/20">
+          <h3 className="text-xl font-bold text-red-600 dark:text-red-400 mb-2 flex items-center justify-center gap-2">
+            <Icon icon="lucide:shield-alert" className="w-5 h-5" />
+            Security Policy
+          </h3>
+          <p className="text-muted-foreground mb-4">
+            Found a vulnerability? Please do NOT open a GitHub issue.
+          </p>
+          <a href="mailto:security@soplang.org" className="text-primary font-medium hover:underline">
+            Report to security@soplang.org
+          </a>
+        </section>
+
       </div>
     </div>
   );

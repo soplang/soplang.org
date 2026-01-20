@@ -1,0 +1,350 @@
+---
+title: Soplang Keywords Reference
+description: Tixraac dhamaystiran ee ereyada (keywords) Soplang (door, madoor, haddii, kuceli, hawl, celi, iwm).
+order: 13
+---
+
+# Soplang Keywords Reference
+
+Dukumeentigani waxa uu soo koobayaa ereyada (keywords) ee Soplang, macnahooda, u dhigmaha Ingiriisiga, iyo tusaalooyin isticmaal.
+
+## Variable Declaration Keywords
+
+<Table>
+  <TableHeader>
+    <TableRow>
+      <TableHead>Keyword</TableHead>
+      <TableHead>Meaning</TableHead>
+      <TableHead>English Equivalent</TableHead>
+      <TableHead>Example</TableHead>
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell>`door`</TableCell>
+      <TableCell>Dynamic variable declaration</TableCell>
+      <TableCell>`var/let`</TableCell>
+      <TableCell>`door magac = "Sharafdin"`</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>`madoor`</TableCell>
+      <TableCell>Constant variable declaration</TableCell>
+      <TableCell>`const`</TableCell>
+      <TableCell>`madoor PI = 3.14159`</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>`abn`</TableCell>
+      <TableCell>Integer type</TableCell>
+      <TableCell>`int`</TableCell>
+      <TableCell>`abn da = 25`</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>`jajab`</TableCell>
+      <TableCell>Decimal/float type</TableCell>
+      <TableCell>`float/double`</TableCell>
+      <TableCell>`jajab qiimo = 3.14`</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>`qoraal`</TableCell>
+      <TableCell>String type</TableCell>
+      <TableCell>`string`</TableCell>
+      <TableCell>`qoraal magac = "Sharafdin"`</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>`bool`</TableCell>
+      <TableCell>Boolean type</TableCell>
+      <TableCell>`bool`</TableCell>
+      <TableCell>`bool waaRun = run`</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>`walax`</TableCell>
+      <TableCell>Object type</TableCell>
+      <TableCell>`object`</TableCell>
+      <TableCell>`walax person = { name: "Sharafdin" }`</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>`teed`</TableCell>
+      <TableCell>List/array type</TableCell>
+      <TableCell>`array`</TableCell>
+      <TableCell>`teed numbers = [1, 2, 3]`</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>`maran`</TableCell>
+      <TableCell>Null value</TableCell>
+      <TableCell>`null`</TableCell>
+      <TableCell>`door a = maran`</TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
+
+## Control Flow Keywords
+
+<Table>
+  <TableHeader>
+    <TableRow>
+      <TableHead>Keyword</TableHead>
+      <TableHead>Meaning</TableHead>
+      <TableHead>English Equivalent</TableHead>
+      <TableHead>Example</TableHead>
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell>`haddii`</TableCell>
+      <TableCell>If statement</TableCell>
+      <TableCell>`if`</TableCell>
+      <TableCell>`haddii (x > 10) { qor("Weyn") }`</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>`haddii_kale`</TableCell>
+      <TableCell>Else if statement</TableCell>
+      <TableCell>`else if`</TableCell>
+      <TableCell>`haddii_kale (x == 10) { qor("Dhexe") }`</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>`ugudambeyn`</TableCell>
+      <TableCell>Else statement</TableCell>
+      <TableCell>`else`</TableCell>
+      <TableCell>`ugudambeyn { qor("Yar") }`</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>`dooro`</TableCell>
+      <TableCell>Switch statement</TableCell>
+      <TableCell>`switch`</TableCell>
+      <TableCell>`dooro (x) { xaalad 1 { qor("Hal") } }`</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>`xaalad`</TableCell>
+      <TableCell>Case clause</TableCell>
+      <TableCell>`case`</TableCell>
+      <TableCell>`xaalad "A" { qor("Case A") }`</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>`kuceli`</TableCell>
+      <TableCell>For loop</TableCell>
+      <TableCell>`for`</TableCell>
+      <TableCell>`kuceli (i 1 ilaa 5) { qor(i) }`</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>`ilaa`</TableCell>
+      <TableCell>Loop range end</TableCell>
+      <TableCell>`to`</TableCell>
+      <TableCell>`kuceli (i 1 ilaa 5) { qor(i) }`</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>`::`</TableCell>
+      <TableCell>Loop increment</TableCell>
+      <TableCell>`step`</TableCell>
+      <TableCell>`kuceli (i 1 ilaa 10 :: 2) { qor(i) }`</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>`intay`</TableCell>
+      <TableCell>While loop</TableCell>
+      <TableCell>`while`</TableCell>
+      <TableCell>`intay (x < 5) { qor(x) }`</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>`jooji`</TableCell>
+      <TableCell>Break statement</TableCell>
+      <TableCell>`break`</TableCell>
+      <TableCell>`haddii (x == 3) { jooji }`</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>`soco`</TableCell>
+      <TableCell>Continue statement</TableCell>
+      <TableCell>`continue`</TableCell>
+      <TableCell>`haddii (x == 3) { soco }`</TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
+
+## Function Keywords
+
+<Table>
+  <TableHeader>
+    <TableRow>
+      <TableHead>Keyword</TableHead>
+      <TableHead>Meaning</TableHead>
+      <TableHead>English Equivalent</TableHead>
+      <TableHead>Example</TableHead>
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell>`hawl`</TableCell>
+      <TableCell>Function declaration</TableCell>
+      <TableCell>`function`</TableCell>
+      <TableCell>`hawl isuGee(a, b) { celi a + b }`</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>`celi`</TableCell>
+      <TableCell>Return statement</TableCell>
+      <TableCell>`return`</TableCell>
+      <TableCell>`celi x * 2`</TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
+
+## Special Values
+
+<Table>
+  <TableHeader>
+    <TableRow>
+      <TableHead>Somali Value</TableHead>
+      <TableHead>English Equivalent</TableHead>
+      <TableHead>Description</TableHead>
+      <TableHead>Example</TableHead>
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell>`run`</TableCell>
+      <TableCell>`true`</TableCell>
+      <TableCell>Boolean true value</TableCell>
+      <TableCell>`haddii (run) { ... }`</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>`been`</TableCell>
+      <TableCell>`false`</TableCell>
+      <TableCell>Boolean false value</TableCell>
+      <TableCell>`haddii (!been) { ... }`</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>`maran`</TableCell>
+      <TableCell>`null`</TableCell>
+      <TableCell>Empty/null value</TableCell>
+      <TableCell>`door val = maran`</TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
+
+## Operators
+
+<Table>
+  <TableHeader>
+    <TableRow>
+      <TableHead>Somali Operator</TableHead>
+      <TableHead>English Equivalent</TableHead>
+      <TableHead>Description</TableHead>
+      <TableHead>Example</TableHead>
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell>`+`</TableCell>
+      <TableCell>`+`</TableCell>
+      <TableCell>Addition</TableCell>
+      <TableCell>`x = a + b`</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>`-`</TableCell>
+      <TableCell>`-`</TableCell>
+      <TableCell>Subtraction</TableCell>
+      <TableCell>`x = a - b`</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>`*`</TableCell>
+      <TableCell>`*`</TableCell>
+      <TableCell>Multiplication</TableCell>
+      <TableCell>`x = a * b`</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>`/`</TableCell>
+      <TableCell>`/`</TableCell>
+      <TableCell>Division</TableCell>
+      <TableCell>`x = a / b`</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>`%`</TableCell>
+      <TableCell>`%`</TableCell>
+      <TableCell>Modulo</TableCell>
+      <TableCell>`x = a % b`</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>`==`</TableCell>
+      <TableCell>`==`</TableCell>
+      <TableCell>Equal to</TableCell>
+      <TableCell>`haddii (a == b) {...}`</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>`!=`</TableCell>
+      <TableCell>`!=`</TableCell>
+      <TableCell>Not equal to</TableCell>
+      <TableCell>`haddii (a != b) {...}`</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>`>`</TableCell>
+      <TableCell>`>`</TableCell>
+      <TableCell>Greater than</TableCell>
+      <TableCell>`haddii (a > b) {...}`</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>`<`</TableCell>
+      <TableCell>`<`</TableCell>
+      <TableCell>Less than</TableCell>
+      <TableCell>`haddii (a < b) {...}`</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>`>=`</TableCell>
+      <TableCell>`>=`</TableCell>
+      <TableCell>Greater than or equal to</TableCell>
+      <TableCell>`haddii (a >= b) {...}`</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>`<=`</TableCell>
+      <TableCell>`<=`</TableCell>
+      <TableCell>Less than or equal to</TableCell>
+      <TableCell>`haddii (a <= b) {...}`</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>`&&`</TableCell>
+      <TableCell>`&&`</TableCell>
+      <TableCell>Logical AND</TableCell>
+      <TableCell>`haddii (a && b) {...}`</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>`||`</TableCell>
+      <TableCell>`||`</TableCell>
+      <TableCell>Logical OR</TableCell>
+      <TableCell>`haddii (a || b) {...}`</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>`!`</TableCell>
+      <TableCell>`!`</TableCell>
+      <TableCell>Logical NOT</TableCell>
+      <TableCell>`haddii (!a) {...}`</TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
+
+## Quick Examples
+
+**keywords_quick_examples.sop**
+```soplang
+// Variables
+door magac = "Sharafdin"
+madoor PI = 3.14159
+abn da = 25
+jajab qiimo = 3.14
+qoraal qora = "Salaan"
+bool sax = run
+teed numbers = [1, 2, 3]
+walax qof = { magac: "Ayaan" }
+door wax = maran
+
+// Control flow
+haddii (da >= 18) { qor("Qof weyn") } ugudambeyn { qor("Ilmo") }
+
+dooro (qora) {
+  xaalad "Salaan" { qor("Hello!") }
+  ugudambeyn { qor("Unknown") }
+}
+
+kuceli (i 1 ilaa 5 :: 2) { qor(i) }
+abn x = 1
+intay (x < 3) { qor(x); x = x + 1 }
+
+// Functions
+hawl isuGee(a, b) { celi a + b }
+qor(isuGee(2, 3))
+```

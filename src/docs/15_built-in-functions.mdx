@@ -1,0 +1,140 @@
+---
+title: Built-in Functions in Soplang
+description: Tixraac degdeg ah oo ku saabsan hawlaha ku-dhexjira Soplang (qor, gelin, nooc, abn, jajab, qoraal, bool, teed, walax, daji, kor, dherer, xul).
+order: 6
+---
+
+# Built-in Functions in Soplang
+
+Soplang waxa uu leeyahay hawlo muhiim ah oo si joogto ah u diyaar ah—daabacaad, akhris, beddel-nooc, leex-leexin tiro (rounding), abuuris liis/obj, iyo in ka badan—dhammaantood magacyo Soomaali ah.
+
+## 📋 Built-in Function Reference
+
+
+
+<Table>
+  <TableHeader>
+    <TableRow>
+      <TableHead>Function</TableHead>
+      <TableHead>Meaning</TableHead>
+      <TableHead>English Equivalent</TableHead>
+      <TableHead>Example</TableHead>
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell className="font-mono text-primary">qor()</TableCell>
+      <TableCell>Print to console</TableCell>
+      <TableCell className="font-mono text-muted-foreground">print()</TableCell>
+      <TableCell className="font-mono text-xs">qor("Salaan, Adduunka!")</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell className="font-mono text-primary">gelin()</TableCell>
+      <TableCell>Read user input</TableCell>
+      <TableCell className="font-mono text-muted-foreground">input()</TableCell>
+      <TableCell className="font-mono text-xs">door magac = gelin("Magacaaga geli: ")</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell className="font-mono text-primary">nooc()</TableCell>
+      <TableCell>Get type of a value</TableCell>
+      <TableCell className="font-mono text-muted-foreground">typeof</TableCell>
+      <TableCell className="font-mono text-xs">qor(nooc(magac))</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell className="font-mono text-primary">abn()</TableCell>
+      <TableCell>Convert to integer</TableCell>
+      <TableCell className="font-mono text-muted-foreground">int()</TableCell>
+      <TableCell className="font-mono text-xs">door n = abn("5")</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell className="font-mono text-primary">jajab()</TableCell>
+      <TableCell>Convert to float</TableCell>
+      <TableCell className="font-mono text-muted-foreground">float()</TableCell>
+      <TableCell className="font-mono text-xs">door f = jajab("3.14")</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell className="font-mono text-primary">qoraal()</TableCell>
+      <TableCell>Convert to string</TableCell>
+      <TableCell className="font-mono text-muted-foreground">str()</TableCell>
+      <TableCell className="font-mono text-xs">door s = qoraal(25)</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell className="font-mono text-primary">bool()</TableCell>
+      <TableCell>Convert to boolean</TableCell>
+      <TableCell className="font-mono text-muted-foreground">bool()</TableCell>
+      <TableCell className="font-mono text-xs">door b = bool(1)</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell className="font-mono text-primary">teed()</TableCell>
+      <TableCell>Create an array</TableCell>
+      <TableCell className="font-mono text-muted-foreground">list()</TableCell>
+      <TableCell className="font-mono text-xs">door liis = teed(1, 2, 3)</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell className="font-mono text-primary">walax()</TableCell>
+      <TableCell>Create an object</TableCell>
+      <TableCell className="font-mono text-muted-foreground">object()</TableCell>
+      <TableCell className="font-mono text-xs">door obj = walax(magac: "Ali")</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell className="font-mono text-primary">daji()</TableCell>
+      <TableCell>Round down</TableCell>
+      <TableCell className="font-mono text-muted-foreground">Math.floor()</TableCell>
+      <TableCell className="font-mono text-xs">door x = daji(4.9)</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell className="font-mono text-primary">kor()</TableCell>
+      <TableCell>Round up</TableCell>
+      <TableCell className="font-mono text-muted-foreground">Math.ceil()</TableCell>
+      <TableCell className="font-mono text-xs">door x = kor(4.2)</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell className="font-mono text-primary">dherer()</TableCell>
+      <TableCell>Length of string/list</TableCell>
+      <TableCell className="font-mono text-muted-foreground">len()/.length</TableCell>
+      <TableCell className="font-mono text-xs">door l = "text".dherer()</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell className="font-mono text-primary">xul()</TableCell>
+      <TableCell>Pick random number</TableCell>
+      <TableCell className="font-mono text-muted-foreground">random()</TableCell>
+      <TableCell className="font-mono text-xs">door n = xul(1, 6)</TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
+
+## 🧪 Examples
+
+**builtins_examples.sop**
+```soplang
+// Output
+qor("Hello World")
+
+// Input
+door magac = gelin("Magacaaga geli: ")
+qor("Magacaaga waa: " + magac)
+
+// Type detection
+door t = nooc(5)
+qor("Type: " + t)
+
+// Conversion
+door a = abn("42")
+door f = jajab("3.14")
+door s = qoraal(100)
+door b = bool(0)
+
+// List and Object creation
+door l = teed(1, 2, 3)
+door o = walax(name: "Ayaan", age: 20)
+
+// Math rounding
+qor("Floor: " + daji(4.8))
+qor("Ceil: " + kor(4.2))
+
+// Random number
+door r = xul(1, 6)
+qor("Random: " + r)
+```
+
+**Gunaanad:** built-ins-ka Soplang waxay ka dhigaan koodhka mid kooban, muujin leh, isla markaana si dabiici ah ugu qoran Af-Soomaali.

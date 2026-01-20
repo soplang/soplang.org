@@ -1,0 +1,75 @@
+---
+title: Functions
+description: Qeexid iyo isticmaal hawlaha (hawl) ee Soplang, wicitaan, celin qiime (celi), iyo loops gudaha hawl.
+order: 11
+---
+
+# Functions in Soplang
+
+Functions (hawlo) waa qaybo koodh oo dib loo isticmaali karo. Soplang waxa lagu qeexaa `hawl` waxaana natiijo lagu soo celinayaa `celi`.
+
+## Define a Function – `hawl`
+
+Hawl waxa ay bilaabataa `hawl` kadibna magac hawl iyo parameters (aan lahayn type annotations).
+
+```soplang
+hawl salaan(magac) {
+    qor("Asalaamu calaykum, " + magac)
+}
+```
+
+## Call a Function
+
+Marka aad qeexdo, ku wac magaceeda oo raaci doodaha (arguments):
+
+```soplang
+salaan("Aamina")
+```
+
+## Return Values – `celi`
+
+Adeegso `celi` si aad uga soo celiso hawl qiime.
+
+```soplang
+hawl labanlaab(x) {
+    celi x * 2
+}
+
+abn natiijo = labanlaab(5)
+qor("Natiijo: " + natiijo)
+```
+
+## Loops Inside Functions
+
+Hawluhu waxay ka kooban karaan loops iyo logic kale sida blocks-ka caadiga ah.
+
+```soplang
+hawl muujin(liis) {
+    kuceli (i 0 ilaa liis.dherer() - 1) {
+        qor("Liiska: " + liis[i])
+    }
+}
+```
+
+## Summary
+
+<Table>
+  <TableHeader>
+    <TableRow>
+      <TableHead>Keyword</TableHead>
+      <TableHead>Meaning</TableHead>
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell>`hawl`</TableCell>
+      <TableCell>function definition</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>`celi`</TableCell>
+      <TableCell>return value</TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
+
+Functions ee Soplang waxay ka dhigaan koodhka dib-u-isticmaal leh, nadiif, oo Somali-first.

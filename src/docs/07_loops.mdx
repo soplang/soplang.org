@@ -1,0 +1,128 @@
+---
+title: Loops
+description: intay (while), kuceli (for), iyo xakamaynta jooji/soco—ku celcelin iyo socod shuruudeed ee Soplang.
+order: 14
+---
+
+# Loops in Soplang
+
+Soplang waxa uu taageeraa laba nooc oo loops ah: `intay (shuruud)` oo u dhiganta *while*, iyo `kuceli (bilow ilaa dhamaad)` oo u dhiganta *for*. Waxa kale oo jira `jooji` (break) iyo `soco` (continue) si aad u yeelato xakameyn faahfaahsan.
+
+## While Loop – `intay`
+
+Koodhka ku jira block-ga wuu soconayaa inta shuruuddu tahay *run*:
+
+**while_basic.sop**
+```soplang
+abn i = 1
+intay (i <= 5) {
+    qor("i = " + i)
+    i = i + 1
+}
+```
+
+Waxay taageertaa `jooji` iyo `soco`:
+
+**while_break_continue.sop**
+```soplang
+abn i = 0
+intay (i <= 10) {
+    i = i + 1
+
+    haddii (i % 2 == 0) {
+        soco        // ka bood tirooyinka labiska ah
+    }
+
+    haddii (i == 7) {
+        jooji        // jooji loop-ka marka i = 7
+    }
+
+    qor("i = " + i) // waxay daabacdaa: 1, 3, 5
+}
+```
+
+## For Loop – `kuceli`
+
+**for_basic.sop**
+```soplang
+kuceli (i 1 ilaa 5) {
+    qor("Tirada: " + i)
+}
+```
+
+Talaabo (step) la doortay:
+
+**for_step.sop**
+```soplang
+kuceli (j 2 ilaa 10 :: 2) {
+    qor("Step: " + j)
+}
+```
+
+## Loop Over List
+
+**loop_over_list.sop**
+```soplang
+teed numbers = [10, 20, 30]
+kuceli (i 0 ilaa numbers.dherer() - 1) {
+    qor("Element " + i + ": " + numbers[i])
+}
+```
+
+## Nested Loops
+
+**nested_loops.sop**
+```soplang
+kuceli (i 1 ilaa 3) {
+    intay (i > 0) {
+        qor("Nested example")
+        jooji
+    }
+}
+```
+
+## Factorial with While
+
+**factorial_while.sop**
+```soplang
+abn a = 5
+abn result = 1
+abn n = a
+
+intay (n > 0) {
+    result = result * n
+    n = n - 1
+}
+qor(result)
+```
+
+## Summary
+
+<Table>
+  <TableHeader>
+    <TableRow>
+      <TableHead>Keyword</TableHead>
+      <TableHead>Meaning</TableHead>
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell>`intay`</TableCell>
+      <TableCell>while loop</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>`kuceli`</TableCell>
+      <TableCell>for loop</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>`jooji`</TableCell>
+      <TableCell>break</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>`soco`</TableCell>
+      <TableCell>continue</TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
+
+Soplang loops waxay taageeraan labadaba ku-celcelin qaabaysan iyo socod ku saleysan shuruud.

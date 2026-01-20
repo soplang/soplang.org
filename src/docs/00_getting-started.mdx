@@ -1,0 +1,149 @@
+---
+title: Getting Started with Soplang
+description: Welcome to Soplang! This guide will help you install Soplang, set up your development environment, and write your first Soplang program.
+order: 3
+section: Getting Started
+---
+
+Welcome to Soplang! This guide will help you install Soplang, set up your development environment, and write your first Soplang program.
+
+## 1. Installation
+
+Before you can start programming with Soplang, you need to install it on your system. Choose the installation method that works best for you:
+
+### Option 1: Direct Download
+
+**soplang-installer**
+```bash
+soplang --install
+```
+*Welcome to the Soplang installer. Please select your operating system...*
+
+### Option 2: Package Managers
+
+**package-manager-install**
+```bash
+soplang --package-manager
+```
+*Choose your preferred package manager to install Soplang...*
+
+For more detailed installation instructions, check out our [comprehensive installation guide](/docs/installation).
+
+## 2. Your First Soplang Program
+
+Now that you have Soplang installed, let's write a simple "Hello, World!" program:
+
+**hello.sop**
+```soplang
+// This is a comment
+print("Hello, World!")
+
+// Variables
+name = "Soplang"
+version = 1.2
+print(f"Welcome to {name} version {version}!")
+
+// Simple function
+def greet(person):
+    return f"Hello, {person}!"
+
+message = greet("Developer")
+print(message)
+```
+
+Save this code in a file named `hello.sop`.
+
+### Running Your Program
+
+To run your Soplang program, open a terminal or command prompt and navigate to the directory where you saved the file. Then run:
+
+```bash
+soplang hello.sop
+```
+
+You should see the following output:
+
+```text
+Hello, World!
+Welcome to Soplang version 1.2!
+Hello, Developer!
+```
+
+Congratulations! You've just written and executed your first Soplang program.
+
+## 3. Basic Concepts
+
+### Variables and Data Types
+
+Soplang is dynamically typed, meaning you don't need to declare variable types. The language supports common data types like strings, numbers, booleans, lists, and dictionaries.
+
+**data_types.sop**
+```soplang
+// String
+name = "Soplang"
+
+// Integer
+version = 1
+
+// Float
+pi = 3.14159
+
+// Boolean
+is_awesome = True
+
+// List
+languages = ["Somali", "JavaScript", "Soplang"]
+
+// Dictionary
+features = {
+    "syntax": "clean",
+    "learning_curve": "gentle",
+    "performance": "excellent"
+}
+```
+
+### Control Flow
+
+Soplang uses indentation to define code blocks in control structures:
+
+**control_flow.sop**
+```soplang
+// If-else statement
+age = 25
+if age < 18:
+    print("You are a minor")
+elif age >= 18 and age < 65:
+    print("You are an adult")
+else:
+    print("You are a senior")
+
+// For loop
+for language in ["Somali", "JavaScript", "Soplang"]:
+    print(f"I like {language}")
+
+// While loop
+count = 5
+while count > 0:
+    print(count)
+    count -= 1
+print("Blast off!")
+```
+
+### Functions
+
+Functions in Soplang are defined using the `def` keyword:
+
+**functions.sop**
+```soplang
+//Simple function
+def greet(name):
+    return f"Hello, {name}!"
+
+// Function with default parameter
+def power(base, exponent=2):
+    return base ** exponent
+
+// Function with type hints (optional)
+def add(a: int, b: int) -> int:
+    return a + b
+```

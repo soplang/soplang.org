@@ -1,0 +1,54 @@
+---
+title: Soplang Syntax
+description: Soplang syntax waa mid fudud, nadiif ah, oo Somali-first ah—halkan ka bar bilowga iyo dareenka luuqadda.
+order: 4
+---
+
+# Soplang Syntax
+
+Soplang syntax waxaa loo qaabeeyey in ay noqoto mid cad, kooban, oo si sahlan loogu fahmo af-Soomaali. Waxay isticmaashaa ereyo Soomaali ah si ay u metesho fikradaha barnaamijyada caanka ah, taas oo ka dhigaysa koodhku mid dabiici ah oo la akhrin karo.
+
+## Hello World
+
+Tani waa barnaamijka ugu fudud ee Soplang. Waxay adeegsanaysaa shaqada-dhexdeeda `qor()` si ay u muujiso wax soo saar.
+
+**hello-world.sop**
+```soplang
+qor("Hello, Adduun!")
+```
+
+## Structure
+
+Barnaamijyada Soplang waxay ka kooban yihiin qaybahaan:
+
+*   **Declarations** – adigoo adeegsanaya `door`, `abn`, `jajab`, ama `madoor`
+*   **Functions** – adigoo adeegsanaya `hawl`, `celi`
+*   **Control flow** – adigoo adeegsanaya `haddii`, `ugudambeyn`, `celi`, iwm.
+*   **Built-ins** – sida `qor()`, `gelin()`, `nooc()`
+
+Blocks waxaa lagu qeexaa laalaabyo (`{}`) koodhkuna wuxuu ku socdaa khad-khad.
+
+## Example Program
+
+Tusaalahan waxa uu akhriyaa gelinta isticmaalaha kadibna wuu salaamaa. Waxa uu ka kooban yahay: *qeexid hawl (function)*, *doorsoome*, iyo *built-ins*.
+
+**example.sop**
+```soplang
+hawl salaan(magac) {
+    qor("Asalaamu calaykum, " + magac)
+}
+
+door magaca = gelin("Magacaaga qor: ")
+salaan(magaca)
+```
+
+## File Extension
+
+Faylasha il-koodhka Soplang waxay adeegsadaan kordhinta `.sop`. Waxaad ku ordi kartaa CLI ama REPL-ka Soplang:
+
+**run.sh**
+```shell
+soplang file.sop
+```
+
+Syntax-kan waxa uu ku barayaa qulqulka iyo dareenka Soplang: fudayd, muujin, iyo Somali-first.

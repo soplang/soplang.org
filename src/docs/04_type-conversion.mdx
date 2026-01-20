@@ -1,0 +1,92 @@
+---
+title: Type Conversion
+description: Baro nooc-ogaanshaha (nooc) iyo shaqooyinka beddelka noocyo xog (abn, jajab, qoraal, bool) ee Soplang.
+order: 19
+---
+
+# Type Conversion in Soplang
+
+Soplang waxa uu leeyahay shaqooyin-dhexdeed (built-ins) oo fudud oo lagu kala beddelo noocyada xogta. Kuwaas waxay kuu oggolaanayaan inaad si ammaan ah ugu beddesho u dhaxeysa integer, string, decimal, iyo boolean—adigoo ilaalinaya saxnaanta xogta.
+
+## `nooc()` – Type Checking
+
+Adeegso `nooc()` si aad u hubiso nooca qiime kasta.
+
+**type_checking.sop**
+```soplang
+door natiijo = nooc(42)         // "abn"
+door natiijo2 = nooc("abc")     // "qoraal"
+door natiijo3 = nooc(3.14)      // "jajab"
+```
+
+## Type Conversion Functions
+
+Hoos waxaa ku qoran is-beddellada caanka ah iyo shaqada la adeegsado:
+
+<Table>
+  <TableHeader>
+    <TableRow>
+      <TableHead>Conversion</TableHead>
+      <TableHead>Function</TableHead>
+      <TableHead>Example</TableHead>
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell>Int → String</TableCell>
+      <TableCell>`qoraal()`</TableCell>
+      <TableCell>`qoraal(42)`</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>String → Int</TableCell>
+      <TableCell>`abn()`</TableCell>
+      <TableCell>`abn("123")`</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>Float → String</TableCell>
+      <TableCell>`qoraal()`</TableCell>
+      <TableCell>`qoraal(3.14)`</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>String → Float</TableCell>
+      <TableCell>`jajab()`</TableCell>
+      <TableCell>`jajab("3.14")`</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>Int → Float</TableCell>
+      <TableCell>`jajab()`</TableCell>
+      <TableCell>`jajab(5)`</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>Float → Int</TableCell>
+      <TableCell>`abn()`</TableCell>
+      <TableCell>`abn(4.9)` → `4` *(truncates)*</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>Any → Bool</TableCell>
+      <TableCell>`bool()`</TableCell>
+      <TableCell>`bool(1)` → `run`, `bool(0)` → `been`</TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
+
+## Example
+
+```soplang
+// Integer to string
+abn int_value = 42
+qoraal int_str = qoraal(int_value)
+qor("Integer to string: " + int_str + " (Type: " + nooc(int_str) + ")")
+
+// String to decimal
+qoraal decimal_string = "3.14159"
+jajab converted_decimal = jajab(decimal_string)
+qor("String to decimal: " + converted_decimal + " (Type: " + nooc(converted_decimal) + ")")
+
+// Decimal to integer (truncation)
+jajab decimal_num = 42.75
+abn int_from_decimal = abn(decimal_num)
+qor("Decimal to integer (truncation): " + int_from_decimal)
+```
+
+Shaqooyinkan beddelka noocyadu waxay muhiim u yihiin dhismaha *input-handling* adag, tusaale ahaan marka aad akhrinayso gelinta isticmaalaha ama faylasha oo aad rabto inaad hubiso noocyo sax ah ka hor inta aanad xisaab samayn.
