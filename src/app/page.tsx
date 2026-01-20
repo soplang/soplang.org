@@ -61,7 +61,7 @@ export default function Home() {
               </div>
               <h3 className="text-xl font-bold mb-3">Learn</h3>
               <p className="text-muted-foreground mb-6">Follow our step-by-step tutorial to write your first program.</p>
-              <Link href="/docs/tutorial" className="text-primary font-semibold hover:underline flex items-center gap-1 group">
+              <Link href="/tutorials" className="text-primary font-semibold hover:underline flex items-center gap-1 group">
                 Start Tutorial <Icon icon="lucide:arrow-right" className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
@@ -87,7 +87,7 @@ export default function Home() {
         <div className="container-custom">
           <h2 className="text-4xl md:text-6xl font-bold mb-8 tracking-tighter">Ready to start coding?</h2>
           <Link
-            href="/docs/getting-started"
+            href="/docs"
             className="inline-flex h-14 items-center justify-center rounded-full text-white bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-lg px-6 py-2 font-medium shadow-lg hover:shadow-blue-500/25 transition-all duration-300"
           >
             Start Building Now
