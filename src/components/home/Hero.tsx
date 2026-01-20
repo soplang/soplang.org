@@ -54,7 +54,7 @@ export const Hero = () => {
                                 Install Soplang
                             </Link>
                             <Link
-                                href="/docs/getting-started"
+                                href="/docs"
                                 className="w-full sm:w-auto h-14 px-8 rounded-xl bg-card border border-border/50 hover:border-primary/50 hover:bg-secondary/50 font-semibold text-lg flex items-center justify-center gap-3 transition-all duration-300 group backdrop-blur-sm"
                             >
                                 Documentation
