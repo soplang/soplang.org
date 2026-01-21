@@ -1,40 +1,47 @@
-import Link from "next/link";
-import { getCurrentYear } from "@/utils/formatDate";
-import { Icon } from "@iconify/react";
-import { NavLogo } from "./navbar/NavLogo";
+import { siteStructure } from "@/constants/sitemap";
+
+const findSitemapLink = (sectionTitle: string, linkName: string) => {
+  const section = siteStructure.find((s) => s.title === sectionTitle);
+  return section?.links.find((l) => l.name === linkName);
+};
+
+const getSectionHome = (sectionTitle: string) => {
+  const section = siteStructure.find((s) => s.title === sectionTitle);
+  return section?.links.find((l) => l.name.endsWith("Home") || l.name === sectionTitle);
+};
 
 const footerLinks = [
   {
     title: "Product",
     links: [
-      { name: "Download", href: "/downloads" },
-      { name: "Documentation", href: "/docs" },
+      { ...getSectionHome("Downloads"), name: "Download" },
+      { ...getSectionHome("Docs"), name: "Documentation" },
       { name: "Source Code", href: "https://github.com/soplang/soplang.git", target: "_blank" },
-    ],
+    ].filter(Boolean) as { name: string; href: string; target?: string }[],
   },
   {
     title: "Resources",
     links: [
-      { name: "Getting Started", href: "/docs/getting-started" },
-      { name: "Tutorials", href: "/tutorials" },
-      { name: "Examples", href: "/examples" },
-    ],
+      findSitemapLink("Docs", "Getting Started with Soplang"),
+      getSectionHome("Tutorials"),
+      getSectionHome("Examples"),
+    ].filter(Boolean) as { name: string; href: string; target?: string }[],
   },
   {
     title: "Community",
     links: [
       { name: "Discord Server", href: "https://discord.gg/n296G4dd7x", target: "_blank" },
       { name: "GitHub Discussions", href: "https://github.com/orgs/soplang/discussions", target: "_blank" },
-      { name: "Contributing", href: "/contribute" },
-    ],
+      getSectionHome("Contribute"),
+    ].filter(Boolean) as { name: string; href: string; target?: string }[],
   },
   {
     title: "Legal",
     links: [
-      { name: "Privacy Policy", href: "/privacy" },
-      { name: "Terms of Service", href: "/terms" },
-      { name: "Trademarks", href: "/trademarks" },
-    ],
+      getSectionHome("Privacy"),
+      getSectionHome("Terms"),
+      getSectionHome("Trademarks"),
+    ].filter(Boolean) as { name: string; href: string; target?: string }[],
   },
 ];
 
@@ -55,6 +62,11 @@ const socialLinks = [
     icon: <Icon icon="simple-icons:discord" className="w-5 h-5" />,
   },
 ];
+
+import Link from "next/link";
+import { getCurrentYear } from "@/utils/formatDate";
+import { Icon } from "@iconify/react";
+import { NavLogo } from "./navbar/NavLogo";
 
 export default function Footer() {
   const currentYear = getCurrentYear();

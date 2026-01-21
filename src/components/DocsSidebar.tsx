@@ -32,6 +32,15 @@ export default function DocsSidebar({ items, basePath = '/docs' }: DocsSidebarPr
         setIsOpen(false);
     }, [pathname]);
 
+    // Close on escape key
+    React.useEffect(() => {
+        const handleEscape = (e: KeyboardEvent) => {
+            if (e.key === 'Escape') setIsOpen(false);
+        };
+        window.addEventListener('keydown', handleEscape);
+        return () => window.removeEventListener('keydown', handleEscape);
+    }, []);
+
     // Prevent body scroll when mobile menu is open
     React.useEffect(() => {
         if (isOpen) {
@@ -90,14 +99,6 @@ export default function DocsSidebar({ items, basePath = '/docs' }: DocsSidebarPr
                         <Icon icon="lucide:book-open" className="w-5 h-5 text-primary" />
                         Documentation
                     </h4>
-                    {isOpen && (
-                        <button
-                            onClick={() => setIsOpen(false)}
-                            className="md:hidden p-2 text-muted-foreground hover:text-foreground"
-                        >
-                            <Icon icon="lucide:x" className="w-5 h-5" />
-                        </button>
-                    )}
                 </div>
                 <div className="relative group">
                     <Icon
@@ -182,8 +183,23 @@ export default function DocsSidebar({ items, basePath = '/docs' }: DocsSidebarPr
 
             {/* Mobile Overlay */}
             {isOpen && (
-                <div className="fixed inset-0 z-50 bg-background/95 backdrop-blur-sm md:hidden">
-                    <SidebarContent />
+                <div
+                    className="fixed inset-0 z-[200] bg-background md:hidden flex flex-col"
+                >
+                    {/* Mobile Header with Close Button */}
+                    <div className="flex items-center justify-end p-4 border-b border-border/40 bg-card/80 backdrop-blur-md sticky top-0 z-50">
+                        <button
+                            onClick={() => setIsOpen(false)}
+                            className="p-2.5 bg-muted/80 rounded-full text-muted-foreground hover:text-destructive hover:bg-destructive/10 transition-all border border-border/40"
+                            aria-label="Close Menu"
+                        >
+                            <Icon icon="lucide:x" className="w-5 h-5" />
+                        </button>
+                    </div>
+
+                    <div className="flex-1 overflow-y-auto">
+                        <SidebarContent />
+                    </div>
                 </div>
             )}
 
