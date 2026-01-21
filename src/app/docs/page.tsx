@@ -2,6 +2,17 @@ import Link from "next/link";
 import CodeWindow from "@/components/CodeWindow";
 import DocNavigation from "@/components/DocNavigation";
 import { Icon } from "@/components/ui/icon";
+import { siteStructure } from "@/constants/sitemap";
+
+const findSitemapLink = (sectionTitle: string, linkName: string) => {
+  const section = siteStructure.find((s) => s.title === sectionTitle);
+  return section?.links.find((l) => l.name === linkName);
+};
+
+const getSectionHome = (sectionTitle: string) => {
+  const section = siteStructure.find((s) => s.title === sectionTitle);
+  return section?.links.find((l) => l.name.endsWith("Home") || l.name === sectionTitle);
+};
 
 export const metadata = {
   title: "Soplang Documentation - Introduction",
@@ -144,7 +155,7 @@ qor("Done!")`}
 
       <div className="grid grid-cols-1 gap-6 my-8 sm:grid-cols-2 not-prose">
         <Link
-          href="/docs/installation"
+          href={findSitemapLink("Docs", "Installing Soplang")?.href || "/docs/installation"}
           className="group block p-6 transition-all duration-200 bg-card border border-border rounded-xl shadow-sm hover:shadow-md hover:border-primary/50"
         >
           <div className="flex items-center justify-between mb-2">
@@ -156,7 +167,8 @@ qor("Done!")`}
           </p>
         </Link>
 
-        <Link
+        {/* Future use for video tutorials */}
+        {/* <Link
           href="https://www.youtube.com/@soplang"
           target="_blank"
           className="group block p-6 transition-all duration-200 bg-card border border-border rounded-xl shadow-sm hover:shadow-md hover:border-primary/50"
@@ -168,7 +180,7 @@ qor("Done!")`}
           <p className="text-muted-foreground">
             Watch step-by-step tutorials to build real applications.
           </p>
-        </Link>
+        </Link> */}
       </div>
 
       <div className="mt-16 pt-8 border-t border-border">
@@ -199,11 +211,11 @@ qor("Done!")`}
 
       <DocNavigation
         prevPage={{
-          href: "/docs",
+          href: getSectionHome("Docs")?.href || "/docs",
           hidden: true,
         }}
         nextPage={{
-          href: "/docs/installation",
+          href: findSitemapLink("Docs", "Installing Soplang")?.href || "/docs/installation",
           title: "Installation",
           description: "Get Soplang installed on your machine",
         }}
